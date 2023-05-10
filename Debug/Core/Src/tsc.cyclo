@@ -1,0 +1,3 @@
+tsc.c:30:6:MX_TSC_Init	2
+tsc.c:68:6:HAL_TSC_MspInit	2
+tsc.c:105:6:HAL_TSC_MspDeInit	2
