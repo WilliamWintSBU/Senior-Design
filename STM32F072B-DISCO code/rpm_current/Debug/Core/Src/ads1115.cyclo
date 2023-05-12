@@ -1,0 +1,3 @@
+ads1115.c:66:19:ADS1115_Init	9
+ads1115.c:112:19:ADS1115_readSingleEnded	3
+ads1115.c:138:19:ADS1115_read	3
