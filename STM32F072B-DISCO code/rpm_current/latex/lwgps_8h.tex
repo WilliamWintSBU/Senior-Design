@@ -1,0 +1,86 @@
+\hypertarget{lwgps_8h}{}\doxysection{Core/\+Inc/lwgps/lwgps.h File Reference}
+\label{lwgps_8h}\index{Core/Inc/lwgps/lwgps.h@{Core/Inc/lwgps/lwgps.h}}
+
+
+GPS main file.  
+
+
+{\ttfamily \#include $<$limits.\+h$>$}\newline
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}lwgps/lwgps\+\_\+opt.\+h\char`\"{}}\newline
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structlwgps__sat__t}{lwgps\+\_\+sat\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Satellite descriptor. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structlwgps__t}{lwgps\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em GPS main structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___l_w_g_p_s_ga455538f2d4ddfc2739ed30bac8c3af32}{lwgps\+\_\+is\+\_\+valid}}(\+\_\+gh)~(0)
+\begin{DoxyCompactList}\small\item\em Check if current GPS data contain valid signal. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef float \mbox{\hyperlink{group___l_w_g_p_s_ga0e01296c9b3162a56da030716e5902c8}{lwgps\+\_\+float\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em GPS float definition, can be either {\ttfamily float} or {\ttfamily double} \end{DoxyCompactList}\item 
+typedef void($\ast$ \mbox{\hyperlink{group___l_w_g_p_s_gaa4373288016a287f47bb79ebbbc1a90a}{lwgps\+\_\+process\+\_\+fn}}) (\mbox{\hyperlink{group___l_w_g_p_s_gabab85c279fb364e161ba08aaf8a14284}{lwgps\+\_\+statement\+\_\+t}} res)
+\begin{DoxyCompactList}\small\item\em Signature for caller-\/suplied callback function from gps\+\_\+process. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group___l_w_g_p_s_gabab85c279fb364e161ba08aaf8a14284}{lwgps\+\_\+statement\+\_\+t}} \{ \newline
+\mbox{\hyperlink{group___l_w_g_p_s_ggabab85c279fb364e161ba08aaf8a14284abde6113d898001338feb65fd66c6a202}{STAT\+\_\+\+UNKNOWN}} = 0
+, \mbox{\hyperlink{group___l_w_g_p_s_ggabab85c279fb364e161ba08aaf8a14284abdbe20e8d57472a78f7475f6b6bbe824}{STAT\+\_\+\+GGA}} = 1
+, \mbox{\hyperlink{group___l_w_g_p_s_ggabab85c279fb364e161ba08aaf8a14284ad118c8a518c0a17caa66b0840b4fd3a4}{STAT\+\_\+\+GSA}} = 2
+, \mbox{\hyperlink{group___l_w_g_p_s_ggabab85c279fb364e161ba08aaf8a14284a0f6523feb25eb37cf2dccb4db9c919bd}{STAT\+\_\+\+GSV}} = 3
+, \newline
+\mbox{\hyperlink{group___l_w_g_p_s_ggabab85c279fb364e161ba08aaf8a14284a76d6b8c5fa017a36997f576a98c4c542}{STAT\+\_\+\+RMC}} = 4
+, \mbox{\hyperlink{group___l_w_g_p_s_ggabab85c279fb364e161ba08aaf8a14284a0f9b13471fd992020d7d3ec5f0679355}{STAT\+\_\+\+UBX}} = 5
+, \mbox{\hyperlink{group___l_w_g_p_s_ggabab85c279fb364e161ba08aaf8a14284acf09eca3c1673f7f55c7463cf728cfca}{STAT\+\_\+\+UBX\+\_\+\+TIME}} = 6
+, \mbox{\hyperlink{group___l_w_g_p_s_ggabab85c279fb364e161ba08aaf8a14284a4a96f2283467bd7821167ac9bf1c8119}{STAT\+\_\+\+CHECKSUM\+\_\+\+FAIL}} = UINT8\+\_\+\+MAX
+ \}
+\begin{DoxyCompactList}\small\item\em ENUM of possible GPS statements parsed. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group___l_w_g_p_s_ga8028585ea87281677e6add0512bb8c92}{lwgps\+\_\+speed\+\_\+t}} \{ \newline
+\mbox{\hyperlink{group___l_w_g_p_s_gga8028585ea87281677e6add0512bb8c92a3566494895057382f83db729189bd0f3}{lwgps\+\_\+speed\+\_\+kps}}
+, \mbox{\hyperlink{group___l_w_g_p_s_gga8028585ea87281677e6add0512bb8c92a9cd1df0627d56561a74b1a321d9efc87}{lwgps\+\_\+speed\+\_\+kph}}
+, \mbox{\hyperlink{group___l_w_g_p_s_gga8028585ea87281677e6add0512bb8c92a1d06853ea210e56a82bc17d2e88cf724}{lwgps\+\_\+speed\+\_\+mps}}
+, \mbox{\hyperlink{group___l_w_g_p_s_gga8028585ea87281677e6add0512bb8c92a1c7ef2c720bc6783695dca518269eee3}{lwgps\+\_\+speed\+\_\+mpm}}
+, \newline
+\mbox{\hyperlink{group___l_w_g_p_s_gga8028585ea87281677e6add0512bb8c92a4e13223246b72a00f12e8ffa83b11c67}{lwgps\+\_\+speed\+\_\+mips}}
+, \mbox{\hyperlink{group___l_w_g_p_s_gga8028585ea87281677e6add0512bb8c92a3cede1dc92b738cef62f7c7047f58b73}{lwgps\+\_\+speed\+\_\+mph}}
+, \mbox{\hyperlink{group___l_w_g_p_s_gga8028585ea87281677e6add0512bb8c92a16a71a6fa9346084637a5a62caa9115b}{lwgps\+\_\+speed\+\_\+fps}}
+, \mbox{\hyperlink{group___l_w_g_p_s_gga8028585ea87281677e6add0512bb8c92ab36e5a0bfb8cc6910219817e0615a341}{lwgps\+\_\+speed\+\_\+fpm}}
+, \newline
+\mbox{\hyperlink{group___l_w_g_p_s_gga8028585ea87281677e6add0512bb8c92afd6dacc16526f2823a84c97a9fc147e6}{lwgps\+\_\+speed\+\_\+mpk}}
+, \mbox{\hyperlink{group___l_w_g_p_s_gga8028585ea87281677e6add0512bb8c92a79b776832821701e07e744bc5a01c0a9}{lwgps\+\_\+speed\+\_\+spk}}
+, \mbox{\hyperlink{group___l_w_g_p_s_gga8028585ea87281677e6add0512bb8c92a98eae2eba4bb581bfadc1ff2e7384298}{lwgps\+\_\+speed\+\_\+sp100m}}
+, \mbox{\hyperlink{group___l_w_g_p_s_gga8028585ea87281677e6add0512bb8c92ab9ecb54bcde4fda74d483b4f0242c19d}{lwgps\+\_\+speed\+\_\+mipm}}
+, \newline
+\mbox{\hyperlink{group___l_w_g_p_s_gga8028585ea87281677e6add0512bb8c92ae38b3a84c0b375edd407b800f6ac57fa}{lwgps\+\_\+speed\+\_\+spm}}
+, \mbox{\hyperlink{group___l_w_g_p_s_gga8028585ea87281677e6add0512bb8c92a9bfd0475f51cdf0f2a2921ed9f30dec8}{lwgps\+\_\+speed\+\_\+sp100y}}
+, \mbox{\hyperlink{group___l_w_g_p_s_gga8028585ea87281677e6add0512bb8c92aab8e16004c58202291efa3566de9f04c}{lwgps\+\_\+speed\+\_\+smph}}
+ \}
+\begin{DoxyCompactList}\small\item\em List of optional speed transformation from GPS values (in knots) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{group___l_w_g_p_s_gaf69993c7ad6cb474707f86d4d986d87f}{lwgps\+\_\+init}} (\mbox{\hyperlink{structlwgps__t}{lwgps\+\_\+t}} $\ast$gh)
+\begin{DoxyCompactList}\small\item\em Init GPS handle. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group___l_w_g_p_s_gaf169c4cd93a4c22c976c9f17b69055a0}{lwgps\+\_\+process}} (\mbox{\hyperlink{structlwgps__t}{lwgps\+\_\+t}} $\ast$gh, const void $\ast$data, size\+\_\+t len)
+\begin{DoxyCompactList}\small\item\em Process NMEA data from GPS receiver. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group___l_w_g_p_s_ga547ed9d1fcff169ef72060f3e70b29f4}{lwgps\+\_\+distance\+\_\+bearing}} (\mbox{\hyperlink{group___l_w_g_p_s_ga0e01296c9b3162a56da030716e5902c8}{lwgps\+\_\+float\+\_\+t}} las, \mbox{\hyperlink{group___l_w_g_p_s_ga0e01296c9b3162a56da030716e5902c8}{lwgps\+\_\+float\+\_\+t}} los, \mbox{\hyperlink{group___l_w_g_p_s_ga0e01296c9b3162a56da030716e5902c8}{lwgps\+\_\+float\+\_\+t}} lae, \mbox{\hyperlink{group___l_w_g_p_s_ga0e01296c9b3162a56da030716e5902c8}{lwgps\+\_\+float\+\_\+t}} loe, \mbox{\hyperlink{group___l_w_g_p_s_ga0e01296c9b3162a56da030716e5902c8}{lwgps\+\_\+float\+\_\+t}} $\ast$d, \mbox{\hyperlink{group___l_w_g_p_s_ga0e01296c9b3162a56da030716e5902c8}{lwgps\+\_\+float\+\_\+t}} $\ast$b)
+\item 
+\mbox{\hyperlink{group___l_w_g_p_s_ga0e01296c9b3162a56da030716e5902c8}{lwgps\+\_\+float\+\_\+t}} \mbox{\hyperlink{group___l_w_g_p_s_gacb9e55ca2fc668510c417a180c99abe7}{lwgps\+\_\+to\+\_\+speed}} (\mbox{\hyperlink{group___l_w_g_p_s_ga0e01296c9b3162a56da030716e5902c8}{lwgps\+\_\+float\+\_\+t}} sik, \mbox{\hyperlink{group___l_w_g_p_s_ga8028585ea87281677e6add0512bb8c92}{lwgps\+\_\+speed\+\_\+t}} ts)
+\begin{DoxyCompactList}\small\item\em Convert NMEA GPS speed (in knots = nautical mile per hour) to different speed format. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+GPS main file. 
+
+
+
+Definition in file \mbox{\hyperlink{lwgps_8h_source}{lwgps.\+h}}.
+

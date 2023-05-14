@@ -1,0 +1,509 @@
+\hypertarget{_m_a_x31865_8c}{}\doxysection{Core/\+Src/\+MAX31865.c File Reference}
+\label{_m_a_x31865_8c}\index{Core/Src/MAX31865.c@{Core/Src/MAX31865.c}}
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}max31865.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}max31865\+Conf.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{_m_a_x31865_8c_ab924ad713f7577f19788b9c3b7fc6bbd}{MAX31856\+\_\+\+CONFIG\+\_\+\+REG}}~0x00
+\item 
+\#define \mbox{\hyperlink{_m_a_x31865_8c_a8e048f929ad4a1977077e617e7058cfb}{MAX31856\+\_\+\+CONFIG\+\_\+\+BIAS}}~0x80
+\item 
+\#define \mbox{\hyperlink{_m_a_x31865_8c_a0cea7c6824864b7c47c5845693f5ee2d}{MAX31856\+\_\+\+CONFIG\+\_\+\+MODEAUTO}}~0x40
+\item 
+\#define \mbox{\hyperlink{_m_a_x31865_8c_a91005ffc7dcc0f688b28440f078ff5c2}{MAX31856\+\_\+\+CONFIG\+\_\+\+MODEOFF}}~0x00
+\item 
+\#define \mbox{\hyperlink{_m_a_x31865_8c_a233b3314417cdf826acb838155f15511}{MAX31856\+\_\+\+CONFIG\+\_\+1\+SHOT}}~0x20
+\item 
+\#define \mbox{\hyperlink{_m_a_x31865_8c_a7fd8e17c98439ff5422f1610b95cc874}{MAX31856\+\_\+\+CONFIG\+\_\+3\+WIRE}}~0x10
+\item 
+\#define \mbox{\hyperlink{_m_a_x31865_8c_a554bfd4262971eced5efd851444887de}{MAX31856\+\_\+\+CONFIG\+\_\+24\+WIRE}}~0x00
+\item 
+\#define \mbox{\hyperlink{_m_a_x31865_8c_a700913733a7c97c6be4ddc2b3321e0b0}{MAX31856\+\_\+\+CONFIG\+\_\+\+FAULTSTAT}}~0x02
+\item 
+\#define \mbox{\hyperlink{_m_a_x31865_8c_a938f37b96be7da76751f677982336962}{MAX31856\+\_\+\+CONFIG\+\_\+\+FILT50\+HZ}}~0x01
+\item 
+\#define \mbox{\hyperlink{_m_a_x31865_8c_abdb84c39ef49972e3f3538d2f83a1d59}{MAX31856\+\_\+\+CONFIG\+\_\+\+FILT60\+HZ}}~0x00
+\item 
+\#define \mbox{\hyperlink{_m_a_x31865_8c_aeca64adebcaf6cdf4a7194989d5e231b}{MAX31856\+\_\+\+RTDMSB\+\_\+\+REG}}~0x01
+\item 
+\#define \mbox{\hyperlink{_m_a_x31865_8c_af6ead005407c2544874c971387e822d7}{MAX31856\+\_\+\+RTDLSB\+\_\+\+REG}}~0x02
+\item 
+\#define \mbox{\hyperlink{_m_a_x31865_8c_ae23560e8d38213fc542a01c5a02d072d}{MAX31856\+\_\+\+HFAULTMSB\+\_\+\+REG}}~0x03
+\item 
+\#define \mbox{\hyperlink{_m_a_x31865_8c_abb8ca7239fe34ef321fba99e817095d6}{MAX31856\+\_\+\+HFAULTLSB\+\_\+\+REG}}~0x04
+\item 
+\#define \mbox{\hyperlink{_m_a_x31865_8c_a0e6bd7ba536ddc30a82c1ca5e4384f4a}{MAX31856\+\_\+\+LFAULTMSB\+\_\+\+REG}}~0x05
+\item 
+\#define \mbox{\hyperlink{_m_a_x31865_8c_a914db7d96d8bafd4f93c893ddc3c6fff}{MAX31856\+\_\+\+LFAULTLSB\+\_\+\+REG}}~0x06
+\item 
+\#define \mbox{\hyperlink{_m_a_x31865_8c_a266476db2f5c8aa5c96af7b5302d5b13}{MAX31856\+\_\+\+FAULTSTAT\+\_\+\+REG}}~0x07
+\item 
+\#define \mbox{\hyperlink{_m_a_x31865_8c_a869cec7d243fbbc2e3c5236efe1147c5}{MAX31865\+\_\+\+FAULT\+\_\+\+HIGHTHRESH}}~0x80
+\item 
+\#define \mbox{\hyperlink{_m_a_x31865_8c_a9a7538398d0bef4c13a50b5945d75aa9}{MAX31865\+\_\+\+FAULT\+\_\+\+LOWTHRESH}}~0x40
+\item 
+\#define \mbox{\hyperlink{_m_a_x31865_8c_a2b2e19ed31e813869e2bc8ed6226c87d}{MAX31865\+\_\+\+FAULT\+\_\+\+REFINLOW}}~0x20
+\item 
+\#define \mbox{\hyperlink{_m_a_x31865_8c_addaed1ea33f541805430a826310e23a8}{MAX31865\+\_\+\+FAULT\+\_\+\+REFINHIGH}}~0x10
+\item 
+\#define \mbox{\hyperlink{_m_a_x31865_8c_a969a3697c38b63e57c66c0ac3b4462e7}{MAX31865\+\_\+\+FAULT\+\_\+\+RTDINLOW}}~0x08
+\item 
+\#define \mbox{\hyperlink{_m_a_x31865_8c_a1d01b072876657cfafb3b359be869623}{MAX31865\+\_\+\+FAULT\+\_\+\+OVUV}}~0x04
+\item 
+\#define \mbox{\hyperlink{_m_a_x31865_8c_a67b098bcecf7d326638c621d3de7d3a4}{RTD\+\_\+A}}~3.\+9083e-\/3
+\item 
+\#define \mbox{\hyperlink{_m_a_x31865_8c_a1a4ebeac22bba6b479c6d968e49ae884}{RTD\+\_\+B}}~-\/5.\+775e-\/7
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_m_a_x31865_8c_a9417d597a56290f175e682a52fa743be}{Max31865\+\_\+delay}} (uint32\+\_\+t delay\+\_\+ms)
+\item 
+void \mbox{\hyperlink{_m_a_x31865_8c_ae7b650a3bb1f982b64641de1b2e8f22f}{Max31865\+\_\+read\+RegisterN}} (\mbox{\hyperlink{struct_max31865__t}{Max31865\+\_\+t}} $\ast$max31865, uint8\+\_\+t addr, uint8\+\_\+t $\ast$buffer, uint8\+\_\+t n)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_m_a_x31865_8c_a1def21e275aba4989d1e188a5742e924}{Max31865\+\_\+read\+Register8}} (\mbox{\hyperlink{struct_max31865__t}{Max31865\+\_\+t}} $\ast$max31865, uint8\+\_\+t addr)
+\item 
+uint16\+\_\+t \mbox{\hyperlink{_m_a_x31865_8c_ae7f625f37f782b985ac5d8ffa6dfd304}{Max31865\+\_\+read\+Register16}} (\mbox{\hyperlink{struct_max31865__t}{Max31865\+\_\+t}} $\ast$max31865, uint8\+\_\+t addr)
+\item 
+void \mbox{\hyperlink{_m_a_x31865_8c_a8a760830f5dd73238cfd6c95ff0e6a96}{Max31865\+\_\+write\+Register8}} (\mbox{\hyperlink{struct_max31865__t}{Max31865\+\_\+t}} $\ast$max31865, uint8\+\_\+t addr, uint8\+\_\+t data)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{_m_a_x31865_8c_a4d1b5f6e70785f5feb2c39261b0d2120}{Max31865\+\_\+read\+Fault}} (\mbox{\hyperlink{struct_max31865__t}{Max31865\+\_\+t}} $\ast$max31865)
+\item 
+void \mbox{\hyperlink{_m_a_x31865_8c_a983960e61a3e138670dd616ce2484ff6}{Max31865\+\_\+clear\+Fault}} (\mbox{\hyperlink{struct_max31865__t}{Max31865\+\_\+t}} $\ast$max31865)
+\item 
+void \mbox{\hyperlink{_m_a_x31865_8c_ac7ac63acf4aab42ff359e6b8d44db8e4}{Max31865\+\_\+enable\+Bias}} (\mbox{\hyperlink{struct_max31865__t}{Max31865\+\_\+t}} $\ast$max31865, uint8\+\_\+t enable)
+\item 
+void \mbox{\hyperlink{_m_a_x31865_8c_a205621280de434194dc3efd8e996dfea}{Max31865\+\_\+auto\+Convert}} (\mbox{\hyperlink{struct_max31865__t}{Max31865\+\_\+t}} $\ast$max31865, uint8\+\_\+t enable)
+\item 
+void \mbox{\hyperlink{_m_a_x31865_8c_a9b2c144b9e5c00f9dc2ea660f7fb06ff}{Max31865\+\_\+set\+Wires}} (\mbox{\hyperlink{struct_max31865__t}{Max31865\+\_\+t}} $\ast$max31865, uint8\+\_\+t num\+Wires)
+\item 
+void \mbox{\hyperlink{_m_a_x31865_8c_adfafc24694570b3dbf8e083246f2b193}{Max31865\+\_\+set\+Filter}} (\mbox{\hyperlink{struct_max31865__t}{Max31865\+\_\+t}} $\ast$max31865, uint8\+\_\+t filter\+Hz)
+\item 
+uint16\+\_\+t \mbox{\hyperlink{_m_a_x31865_8c_a2c7f8f03b79c9a7175978a979bd82ccd}{Max31865\+\_\+read\+RTD}} (\mbox{\hyperlink{struct_max31865__t}{Max31865\+\_\+t}} $\ast$max31865)
+\item 
+void \mbox{\hyperlink{_m_a_x31865_8c_a7af0698160523a69eee213637c8c3ce0}{Max31865\+\_\+init}} (\mbox{\hyperlink{struct_max31865__t}{Max31865\+\_\+t}} $\ast$max31865, SPI\+\_\+\+Handle\+Type\+Def $\ast$spi, GPIO\+\_\+\+Type\+Def $\ast$cs\+\_\+gpio, uint16\+\_\+t cs\+\_\+pin, uint8\+\_\+t numwires, uint8\+\_\+t filter\+Hz)
+\item 
+bool \mbox{\hyperlink{_m_a_x31865_8c_a16213618890e307f757c658fd64226c2}{Max31865\+\_\+read\+TempC}} (\mbox{\hyperlink{struct_max31865__t}{Max31865\+\_\+t}} $\ast$max31865, float $\ast$read\+Temp)
+\item 
+bool \mbox{\hyperlink{_m_a_x31865_8c_a99d07f2cc1fcc073a889e28b323d16e4}{Max31865\+\_\+read\+TempF}} (\mbox{\hyperlink{struct_max31865__t}{Max31865\+\_\+t}} $\ast$max31865, float $\ast$read\+Temp)
+\item 
+float \mbox{\hyperlink{_m_a_x31865_8c_ad7de685bbd61fb2dd020ad9a15380149}{Max31865\+\_\+\+Filter}} (float new\+Input, float last\+Output, float efective\+Factor)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{_m_a_x31865_8c_a233b3314417cdf826acb838155f15511}\label{_m_a_x31865_8c_a233b3314417cdf826acb838155f15511}} 
+\index{MAX31865.c@{MAX31865.c}!MAX31856\_CONFIG\_1SHOT@{MAX31856\_CONFIG\_1SHOT}}
+\index{MAX31856\_CONFIG\_1SHOT@{MAX31856\_CONFIG\_1SHOT}!MAX31865.c@{MAX31865.c}}
+\doxysubsubsection{\texorpdfstring{MAX31856\_CONFIG\_1SHOT}{MAX31856\_CONFIG\_1SHOT}}
+{\footnotesize\ttfamily \#define MAX31856\+\_\+\+CONFIG\+\_\+1\+SHOT~0x20}
+
+
+
+Definition at line \mbox{\hyperlink{_m_a_x31865_8c_source_l00013}{13}} of file \mbox{\hyperlink{_m_a_x31865_8c_source}{MAX31865.\+c}}.
+
+\mbox{\Hypertarget{_m_a_x31865_8c_a554bfd4262971eced5efd851444887de}\label{_m_a_x31865_8c_a554bfd4262971eced5efd851444887de}} 
+\index{MAX31865.c@{MAX31865.c}!MAX31856\_CONFIG\_24WIRE@{MAX31856\_CONFIG\_24WIRE}}
+\index{MAX31856\_CONFIG\_24WIRE@{MAX31856\_CONFIG\_24WIRE}!MAX31865.c@{MAX31865.c}}
+\doxysubsubsection{\texorpdfstring{MAX31856\_CONFIG\_24WIRE}{MAX31856\_CONFIG\_24WIRE}}
+{\footnotesize\ttfamily \#define MAX31856\+\_\+\+CONFIG\+\_\+24\+WIRE~0x00}
+
+
+
+Definition at line \mbox{\hyperlink{_m_a_x31865_8c_source_l00015}{15}} of file \mbox{\hyperlink{_m_a_x31865_8c_source}{MAX31865.\+c}}.
+
+\mbox{\Hypertarget{_m_a_x31865_8c_a7fd8e17c98439ff5422f1610b95cc874}\label{_m_a_x31865_8c_a7fd8e17c98439ff5422f1610b95cc874}} 
+\index{MAX31865.c@{MAX31865.c}!MAX31856\_CONFIG\_3WIRE@{MAX31856\_CONFIG\_3WIRE}}
+\index{MAX31856\_CONFIG\_3WIRE@{MAX31856\_CONFIG\_3WIRE}!MAX31865.c@{MAX31865.c}}
+\doxysubsubsection{\texorpdfstring{MAX31856\_CONFIG\_3WIRE}{MAX31856\_CONFIG\_3WIRE}}
+{\footnotesize\ttfamily \#define MAX31856\+\_\+\+CONFIG\+\_\+3\+WIRE~0x10}
+
+
+
+Definition at line \mbox{\hyperlink{_m_a_x31865_8c_source_l00014}{14}} of file \mbox{\hyperlink{_m_a_x31865_8c_source}{MAX31865.\+c}}.
+
+\mbox{\Hypertarget{_m_a_x31865_8c_a8e048f929ad4a1977077e617e7058cfb}\label{_m_a_x31865_8c_a8e048f929ad4a1977077e617e7058cfb}} 
+\index{MAX31865.c@{MAX31865.c}!MAX31856\_CONFIG\_BIAS@{MAX31856\_CONFIG\_BIAS}}
+\index{MAX31856\_CONFIG\_BIAS@{MAX31856\_CONFIG\_BIAS}!MAX31865.c@{MAX31865.c}}
+\doxysubsubsection{\texorpdfstring{MAX31856\_CONFIG\_BIAS}{MAX31856\_CONFIG\_BIAS}}
+{\footnotesize\ttfamily \#define MAX31856\+\_\+\+CONFIG\+\_\+\+BIAS~0x80}
+
+
+
+Definition at line \mbox{\hyperlink{_m_a_x31865_8c_source_l00010}{10}} of file \mbox{\hyperlink{_m_a_x31865_8c_source}{MAX31865.\+c}}.
+
+\mbox{\Hypertarget{_m_a_x31865_8c_a700913733a7c97c6be4ddc2b3321e0b0}\label{_m_a_x31865_8c_a700913733a7c97c6be4ddc2b3321e0b0}} 
+\index{MAX31865.c@{MAX31865.c}!MAX31856\_CONFIG\_FAULTSTAT@{MAX31856\_CONFIG\_FAULTSTAT}}
+\index{MAX31856\_CONFIG\_FAULTSTAT@{MAX31856\_CONFIG\_FAULTSTAT}!MAX31865.c@{MAX31865.c}}
+\doxysubsubsection{\texorpdfstring{MAX31856\_CONFIG\_FAULTSTAT}{MAX31856\_CONFIG\_FAULTSTAT}}
+{\footnotesize\ttfamily \#define MAX31856\+\_\+\+CONFIG\+\_\+\+FAULTSTAT~0x02}
+
+
+
+Definition at line \mbox{\hyperlink{_m_a_x31865_8c_source_l00016}{16}} of file \mbox{\hyperlink{_m_a_x31865_8c_source}{MAX31865.\+c}}.
+
+\mbox{\Hypertarget{_m_a_x31865_8c_a938f37b96be7da76751f677982336962}\label{_m_a_x31865_8c_a938f37b96be7da76751f677982336962}} 
+\index{MAX31865.c@{MAX31865.c}!MAX31856\_CONFIG\_FILT50HZ@{MAX31856\_CONFIG\_FILT50HZ}}
+\index{MAX31856\_CONFIG\_FILT50HZ@{MAX31856\_CONFIG\_FILT50HZ}!MAX31865.c@{MAX31865.c}}
+\doxysubsubsection{\texorpdfstring{MAX31856\_CONFIG\_FILT50HZ}{MAX31856\_CONFIG\_FILT50HZ}}
+{\footnotesize\ttfamily \#define MAX31856\+\_\+\+CONFIG\+\_\+\+FILT50\+HZ~0x01}
+
+
+
+Definition at line \mbox{\hyperlink{_m_a_x31865_8c_source_l00017}{17}} of file \mbox{\hyperlink{_m_a_x31865_8c_source}{MAX31865.\+c}}.
+
+\mbox{\Hypertarget{_m_a_x31865_8c_abdb84c39ef49972e3f3538d2f83a1d59}\label{_m_a_x31865_8c_abdb84c39ef49972e3f3538d2f83a1d59}} 
+\index{MAX31865.c@{MAX31865.c}!MAX31856\_CONFIG\_FILT60HZ@{MAX31856\_CONFIG\_FILT60HZ}}
+\index{MAX31856\_CONFIG\_FILT60HZ@{MAX31856\_CONFIG\_FILT60HZ}!MAX31865.c@{MAX31865.c}}
+\doxysubsubsection{\texorpdfstring{MAX31856\_CONFIG\_FILT60HZ}{MAX31856\_CONFIG\_FILT60HZ}}
+{\footnotesize\ttfamily \#define MAX31856\+\_\+\+CONFIG\+\_\+\+FILT60\+HZ~0x00}
+
+
+
+Definition at line \mbox{\hyperlink{_m_a_x31865_8c_source_l00018}{18}} of file \mbox{\hyperlink{_m_a_x31865_8c_source}{MAX31865.\+c}}.
+
+\mbox{\Hypertarget{_m_a_x31865_8c_a0cea7c6824864b7c47c5845693f5ee2d}\label{_m_a_x31865_8c_a0cea7c6824864b7c47c5845693f5ee2d}} 
+\index{MAX31865.c@{MAX31865.c}!MAX31856\_CONFIG\_MODEAUTO@{MAX31856\_CONFIG\_MODEAUTO}}
+\index{MAX31856\_CONFIG\_MODEAUTO@{MAX31856\_CONFIG\_MODEAUTO}!MAX31865.c@{MAX31865.c}}
+\doxysubsubsection{\texorpdfstring{MAX31856\_CONFIG\_MODEAUTO}{MAX31856\_CONFIG\_MODEAUTO}}
+{\footnotesize\ttfamily \#define MAX31856\+\_\+\+CONFIG\+\_\+\+MODEAUTO~0x40}
+
+
+
+Definition at line \mbox{\hyperlink{_m_a_x31865_8c_source_l00011}{11}} of file \mbox{\hyperlink{_m_a_x31865_8c_source}{MAX31865.\+c}}.
+
+\mbox{\Hypertarget{_m_a_x31865_8c_a91005ffc7dcc0f688b28440f078ff5c2}\label{_m_a_x31865_8c_a91005ffc7dcc0f688b28440f078ff5c2}} 
+\index{MAX31865.c@{MAX31865.c}!MAX31856\_CONFIG\_MODEOFF@{MAX31856\_CONFIG\_MODEOFF}}
+\index{MAX31856\_CONFIG\_MODEOFF@{MAX31856\_CONFIG\_MODEOFF}!MAX31865.c@{MAX31865.c}}
+\doxysubsubsection{\texorpdfstring{MAX31856\_CONFIG\_MODEOFF}{MAX31856\_CONFIG\_MODEOFF}}
+{\footnotesize\ttfamily \#define MAX31856\+\_\+\+CONFIG\+\_\+\+MODEOFF~0x00}
+
+
+
+Definition at line \mbox{\hyperlink{_m_a_x31865_8c_source_l00012}{12}} of file \mbox{\hyperlink{_m_a_x31865_8c_source}{MAX31865.\+c}}.
+
+\mbox{\Hypertarget{_m_a_x31865_8c_ab924ad713f7577f19788b9c3b7fc6bbd}\label{_m_a_x31865_8c_ab924ad713f7577f19788b9c3b7fc6bbd}} 
+\index{MAX31865.c@{MAX31865.c}!MAX31856\_CONFIG\_REG@{MAX31856\_CONFIG\_REG}}
+\index{MAX31856\_CONFIG\_REG@{MAX31856\_CONFIG\_REG}!MAX31865.c@{MAX31865.c}}
+\doxysubsubsection{\texorpdfstring{MAX31856\_CONFIG\_REG}{MAX31856\_CONFIG\_REG}}
+{\footnotesize\ttfamily \#define MAX31856\+\_\+\+CONFIG\+\_\+\+REG~0x00}
+
+
+
+Definition at line \mbox{\hyperlink{_m_a_x31865_8c_source_l00009}{9}} of file \mbox{\hyperlink{_m_a_x31865_8c_source}{MAX31865.\+c}}.
+
+\mbox{\Hypertarget{_m_a_x31865_8c_a266476db2f5c8aa5c96af7b5302d5b13}\label{_m_a_x31865_8c_a266476db2f5c8aa5c96af7b5302d5b13}} 
+\index{MAX31865.c@{MAX31865.c}!MAX31856\_FAULTSTAT\_REG@{MAX31856\_FAULTSTAT\_REG}}
+\index{MAX31856\_FAULTSTAT\_REG@{MAX31856\_FAULTSTAT\_REG}!MAX31865.c@{MAX31865.c}}
+\doxysubsubsection{\texorpdfstring{MAX31856\_FAULTSTAT\_REG}{MAX31856\_FAULTSTAT\_REG}}
+{\footnotesize\ttfamily \#define MAX31856\+\_\+\+FAULTSTAT\+\_\+\+REG~0x07}
+
+
+
+Definition at line \mbox{\hyperlink{_m_a_x31865_8c_source_l00026}{26}} of file \mbox{\hyperlink{_m_a_x31865_8c_source}{MAX31865.\+c}}.
+
+\mbox{\Hypertarget{_m_a_x31865_8c_abb8ca7239fe34ef321fba99e817095d6}\label{_m_a_x31865_8c_abb8ca7239fe34ef321fba99e817095d6}} 
+\index{MAX31865.c@{MAX31865.c}!MAX31856\_HFAULTLSB\_REG@{MAX31856\_HFAULTLSB\_REG}}
+\index{MAX31856\_HFAULTLSB\_REG@{MAX31856\_HFAULTLSB\_REG}!MAX31865.c@{MAX31865.c}}
+\doxysubsubsection{\texorpdfstring{MAX31856\_HFAULTLSB\_REG}{MAX31856\_HFAULTLSB\_REG}}
+{\footnotesize\ttfamily \#define MAX31856\+\_\+\+HFAULTLSB\+\_\+\+REG~0x04}
+
+
+
+Definition at line \mbox{\hyperlink{_m_a_x31865_8c_source_l00023}{23}} of file \mbox{\hyperlink{_m_a_x31865_8c_source}{MAX31865.\+c}}.
+
+\mbox{\Hypertarget{_m_a_x31865_8c_ae23560e8d38213fc542a01c5a02d072d}\label{_m_a_x31865_8c_ae23560e8d38213fc542a01c5a02d072d}} 
+\index{MAX31865.c@{MAX31865.c}!MAX31856\_HFAULTMSB\_REG@{MAX31856\_HFAULTMSB\_REG}}
+\index{MAX31856\_HFAULTMSB\_REG@{MAX31856\_HFAULTMSB\_REG}!MAX31865.c@{MAX31865.c}}
+\doxysubsubsection{\texorpdfstring{MAX31856\_HFAULTMSB\_REG}{MAX31856\_HFAULTMSB\_REG}}
+{\footnotesize\ttfamily \#define MAX31856\+\_\+\+HFAULTMSB\+\_\+\+REG~0x03}
+
+
+
+Definition at line \mbox{\hyperlink{_m_a_x31865_8c_source_l00022}{22}} of file \mbox{\hyperlink{_m_a_x31865_8c_source}{MAX31865.\+c}}.
+
+\mbox{\Hypertarget{_m_a_x31865_8c_a914db7d96d8bafd4f93c893ddc3c6fff}\label{_m_a_x31865_8c_a914db7d96d8bafd4f93c893ddc3c6fff}} 
+\index{MAX31865.c@{MAX31865.c}!MAX31856\_LFAULTLSB\_REG@{MAX31856\_LFAULTLSB\_REG}}
+\index{MAX31856\_LFAULTLSB\_REG@{MAX31856\_LFAULTLSB\_REG}!MAX31865.c@{MAX31865.c}}
+\doxysubsubsection{\texorpdfstring{MAX31856\_LFAULTLSB\_REG}{MAX31856\_LFAULTLSB\_REG}}
+{\footnotesize\ttfamily \#define MAX31856\+\_\+\+LFAULTLSB\+\_\+\+REG~0x06}
+
+
+
+Definition at line \mbox{\hyperlink{_m_a_x31865_8c_source_l00025}{25}} of file \mbox{\hyperlink{_m_a_x31865_8c_source}{MAX31865.\+c}}.
+
+\mbox{\Hypertarget{_m_a_x31865_8c_a0e6bd7ba536ddc30a82c1ca5e4384f4a}\label{_m_a_x31865_8c_a0e6bd7ba536ddc30a82c1ca5e4384f4a}} 
+\index{MAX31865.c@{MAX31865.c}!MAX31856\_LFAULTMSB\_REG@{MAX31856\_LFAULTMSB\_REG}}
+\index{MAX31856\_LFAULTMSB\_REG@{MAX31856\_LFAULTMSB\_REG}!MAX31865.c@{MAX31865.c}}
+\doxysubsubsection{\texorpdfstring{MAX31856\_LFAULTMSB\_REG}{MAX31856\_LFAULTMSB\_REG}}
+{\footnotesize\ttfamily \#define MAX31856\+\_\+\+LFAULTMSB\+\_\+\+REG~0x05}
+
+
+
+Definition at line \mbox{\hyperlink{_m_a_x31865_8c_source_l00024}{24}} of file \mbox{\hyperlink{_m_a_x31865_8c_source}{MAX31865.\+c}}.
+
+\mbox{\Hypertarget{_m_a_x31865_8c_af6ead005407c2544874c971387e822d7}\label{_m_a_x31865_8c_af6ead005407c2544874c971387e822d7}} 
+\index{MAX31865.c@{MAX31865.c}!MAX31856\_RTDLSB\_REG@{MAX31856\_RTDLSB\_REG}}
+\index{MAX31856\_RTDLSB\_REG@{MAX31856\_RTDLSB\_REG}!MAX31865.c@{MAX31865.c}}
+\doxysubsubsection{\texorpdfstring{MAX31856\_RTDLSB\_REG}{MAX31856\_RTDLSB\_REG}}
+{\footnotesize\ttfamily \#define MAX31856\+\_\+\+RTDLSB\+\_\+\+REG~0x02}
+
+
+
+Definition at line \mbox{\hyperlink{_m_a_x31865_8c_source_l00021}{21}} of file \mbox{\hyperlink{_m_a_x31865_8c_source}{MAX31865.\+c}}.
+
+\mbox{\Hypertarget{_m_a_x31865_8c_aeca64adebcaf6cdf4a7194989d5e231b}\label{_m_a_x31865_8c_aeca64adebcaf6cdf4a7194989d5e231b}} 
+\index{MAX31865.c@{MAX31865.c}!MAX31856\_RTDMSB\_REG@{MAX31856\_RTDMSB\_REG}}
+\index{MAX31856\_RTDMSB\_REG@{MAX31856\_RTDMSB\_REG}!MAX31865.c@{MAX31865.c}}
+\doxysubsubsection{\texorpdfstring{MAX31856\_RTDMSB\_REG}{MAX31856\_RTDMSB\_REG}}
+{\footnotesize\ttfamily \#define MAX31856\+\_\+\+RTDMSB\+\_\+\+REG~0x01}
+
+
+
+Definition at line \mbox{\hyperlink{_m_a_x31865_8c_source_l00020}{20}} of file \mbox{\hyperlink{_m_a_x31865_8c_source}{MAX31865.\+c}}.
+
+\mbox{\Hypertarget{_m_a_x31865_8c_a869cec7d243fbbc2e3c5236efe1147c5}\label{_m_a_x31865_8c_a869cec7d243fbbc2e3c5236efe1147c5}} 
+\index{MAX31865.c@{MAX31865.c}!MAX31865\_FAULT\_HIGHTHRESH@{MAX31865\_FAULT\_HIGHTHRESH}}
+\index{MAX31865\_FAULT\_HIGHTHRESH@{MAX31865\_FAULT\_HIGHTHRESH}!MAX31865.c@{MAX31865.c}}
+\doxysubsubsection{\texorpdfstring{MAX31865\_FAULT\_HIGHTHRESH}{MAX31865\_FAULT\_HIGHTHRESH}}
+{\footnotesize\ttfamily \#define MAX31865\+\_\+\+FAULT\+\_\+\+HIGHTHRESH~0x80}
+
+
+
+Definition at line \mbox{\hyperlink{_m_a_x31865_8c_source_l00029}{29}} of file \mbox{\hyperlink{_m_a_x31865_8c_source}{MAX31865.\+c}}.
+
+\mbox{\Hypertarget{_m_a_x31865_8c_a9a7538398d0bef4c13a50b5945d75aa9}\label{_m_a_x31865_8c_a9a7538398d0bef4c13a50b5945d75aa9}} 
+\index{MAX31865.c@{MAX31865.c}!MAX31865\_FAULT\_LOWTHRESH@{MAX31865\_FAULT\_LOWTHRESH}}
+\index{MAX31865\_FAULT\_LOWTHRESH@{MAX31865\_FAULT\_LOWTHRESH}!MAX31865.c@{MAX31865.c}}
+\doxysubsubsection{\texorpdfstring{MAX31865\_FAULT\_LOWTHRESH}{MAX31865\_FAULT\_LOWTHRESH}}
+{\footnotesize\ttfamily \#define MAX31865\+\_\+\+FAULT\+\_\+\+LOWTHRESH~0x40}
+
+
+
+Definition at line \mbox{\hyperlink{_m_a_x31865_8c_source_l00030}{30}} of file \mbox{\hyperlink{_m_a_x31865_8c_source}{MAX31865.\+c}}.
+
+\mbox{\Hypertarget{_m_a_x31865_8c_a1d01b072876657cfafb3b359be869623}\label{_m_a_x31865_8c_a1d01b072876657cfafb3b359be869623}} 
+\index{MAX31865.c@{MAX31865.c}!MAX31865\_FAULT\_OVUV@{MAX31865\_FAULT\_OVUV}}
+\index{MAX31865\_FAULT\_OVUV@{MAX31865\_FAULT\_OVUV}!MAX31865.c@{MAX31865.c}}
+\doxysubsubsection{\texorpdfstring{MAX31865\_FAULT\_OVUV}{MAX31865\_FAULT\_OVUV}}
+{\footnotesize\ttfamily \#define MAX31865\+\_\+\+FAULT\+\_\+\+OVUV~0x04}
+
+
+
+Definition at line \mbox{\hyperlink{_m_a_x31865_8c_source_l00034}{34}} of file \mbox{\hyperlink{_m_a_x31865_8c_source}{MAX31865.\+c}}.
+
+\mbox{\Hypertarget{_m_a_x31865_8c_addaed1ea33f541805430a826310e23a8}\label{_m_a_x31865_8c_addaed1ea33f541805430a826310e23a8}} 
+\index{MAX31865.c@{MAX31865.c}!MAX31865\_FAULT\_REFINHIGH@{MAX31865\_FAULT\_REFINHIGH}}
+\index{MAX31865\_FAULT\_REFINHIGH@{MAX31865\_FAULT\_REFINHIGH}!MAX31865.c@{MAX31865.c}}
+\doxysubsubsection{\texorpdfstring{MAX31865\_FAULT\_REFINHIGH}{MAX31865\_FAULT\_REFINHIGH}}
+{\footnotesize\ttfamily \#define MAX31865\+\_\+\+FAULT\+\_\+\+REFINHIGH~0x10}
+
+
+
+Definition at line \mbox{\hyperlink{_m_a_x31865_8c_source_l00032}{32}} of file \mbox{\hyperlink{_m_a_x31865_8c_source}{MAX31865.\+c}}.
+
+\mbox{\Hypertarget{_m_a_x31865_8c_a2b2e19ed31e813869e2bc8ed6226c87d}\label{_m_a_x31865_8c_a2b2e19ed31e813869e2bc8ed6226c87d}} 
+\index{MAX31865.c@{MAX31865.c}!MAX31865\_FAULT\_REFINLOW@{MAX31865\_FAULT\_REFINLOW}}
+\index{MAX31865\_FAULT\_REFINLOW@{MAX31865\_FAULT\_REFINLOW}!MAX31865.c@{MAX31865.c}}
+\doxysubsubsection{\texorpdfstring{MAX31865\_FAULT\_REFINLOW}{MAX31865\_FAULT\_REFINLOW}}
+{\footnotesize\ttfamily \#define MAX31865\+\_\+\+FAULT\+\_\+\+REFINLOW~0x20}
+
+
+
+Definition at line \mbox{\hyperlink{_m_a_x31865_8c_source_l00031}{31}} of file \mbox{\hyperlink{_m_a_x31865_8c_source}{MAX31865.\+c}}.
+
+\mbox{\Hypertarget{_m_a_x31865_8c_a969a3697c38b63e57c66c0ac3b4462e7}\label{_m_a_x31865_8c_a969a3697c38b63e57c66c0ac3b4462e7}} 
+\index{MAX31865.c@{MAX31865.c}!MAX31865\_FAULT\_RTDINLOW@{MAX31865\_FAULT\_RTDINLOW}}
+\index{MAX31865\_FAULT\_RTDINLOW@{MAX31865\_FAULT\_RTDINLOW}!MAX31865.c@{MAX31865.c}}
+\doxysubsubsection{\texorpdfstring{MAX31865\_FAULT\_RTDINLOW}{MAX31865\_FAULT\_RTDINLOW}}
+{\footnotesize\ttfamily \#define MAX31865\+\_\+\+FAULT\+\_\+\+RTDINLOW~0x08}
+
+
+
+Definition at line \mbox{\hyperlink{_m_a_x31865_8c_source_l00033}{33}} of file \mbox{\hyperlink{_m_a_x31865_8c_source}{MAX31865.\+c}}.
+
+\mbox{\Hypertarget{_m_a_x31865_8c_a67b098bcecf7d326638c621d3de7d3a4}\label{_m_a_x31865_8c_a67b098bcecf7d326638c621d3de7d3a4}} 
+\index{MAX31865.c@{MAX31865.c}!RTD\_A@{RTD\_A}}
+\index{RTD\_A@{RTD\_A}!MAX31865.c@{MAX31865.c}}
+\doxysubsubsection{\texorpdfstring{RTD\_A}{RTD\_A}}
+{\footnotesize\ttfamily \#define RTD\+\_\+A~3.\+9083e-\/3}
+
+
+
+Definition at line \mbox{\hyperlink{_m_a_x31865_8c_source_l00037}{37}} of file \mbox{\hyperlink{_m_a_x31865_8c_source}{MAX31865.\+c}}.
+
+\mbox{\Hypertarget{_m_a_x31865_8c_a1a4ebeac22bba6b479c6d968e49ae884}\label{_m_a_x31865_8c_a1a4ebeac22bba6b479c6d968e49ae884}} 
+\index{MAX31865.c@{MAX31865.c}!RTD\_B@{RTD\_B}}
+\index{RTD\_B@{RTD\_B}!MAX31865.c@{MAX31865.c}}
+\doxysubsubsection{\texorpdfstring{RTD\_B}{RTD\_B}}
+{\footnotesize\ttfamily \#define RTD\+\_\+B~-\/5.\+775e-\/7}
+
+
+
+Definition at line \mbox{\hyperlink{_m_a_x31865_8c_source_l00038}{38}} of file \mbox{\hyperlink{_m_a_x31865_8c_source}{MAX31865.\+c}}.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_m_a_x31865_8c_a205621280de434194dc3efd8e996dfea}\label{_m_a_x31865_8c_a205621280de434194dc3efd8e996dfea}} 
+\index{MAX31865.c@{MAX31865.c}!Max31865\_autoConvert@{Max31865\_autoConvert}}
+\index{Max31865\_autoConvert@{Max31865\_autoConvert}!MAX31865.c@{MAX31865.c}}
+\doxysubsubsection{\texorpdfstring{Max31865\_autoConvert()}{Max31865\_autoConvert()}}
+{\footnotesize\ttfamily void Max31865\+\_\+auto\+Convert (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_max31865__t}{Max31865\+\_\+t}} $\ast$}]{max31865,  }\item[{uint8\+\_\+t}]{enable }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_m_a_x31865_8c_source_l00112}{112}} of file \mbox{\hyperlink{_m_a_x31865_8c_source}{MAX31865.\+c}}.
+
+\mbox{\Hypertarget{_m_a_x31865_8c_a983960e61a3e138670dd616ce2484ff6}\label{_m_a_x31865_8c_a983960e61a3e138670dd616ce2484ff6}} 
+\index{MAX31865.c@{MAX31865.c}!Max31865\_clearFault@{Max31865\_clearFault}}
+\index{Max31865\_clearFault@{Max31865\_clearFault}!MAX31865.c@{MAX31865.c}}
+\doxysubsubsection{\texorpdfstring{Max31865\_clearFault()}{Max31865\_clearFault()}}
+{\footnotesize\ttfamily void Max31865\+\_\+clear\+Fault (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_max31865__t}{Max31865\+\_\+t}} $\ast$}]{max31865 }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_m_a_x31865_8c_source_l00094}{94}} of file \mbox{\hyperlink{_m_a_x31865_8c_source}{MAX31865.\+c}}.
+
+\mbox{\Hypertarget{_m_a_x31865_8c_a9417d597a56290f175e682a52fa743be}\label{_m_a_x31865_8c_a9417d597a56290f175e682a52fa743be}} 
+\index{MAX31865.c@{MAX31865.c}!Max31865\_delay@{Max31865\_delay}}
+\index{Max31865\_delay@{Max31865\_delay}!MAX31865.c@{MAX31865.c}}
+\doxysubsubsection{\texorpdfstring{Max31865\_delay()}{Max31865\_delay()}}
+{\footnotesize\ttfamily void Max31865\+\_\+delay (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{delay\+\_\+ms }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_m_a_x31865_8c_source_l00040}{40}} of file \mbox{\hyperlink{_m_a_x31865_8c_source}{MAX31865.\+c}}.
+
+\mbox{\Hypertarget{_m_a_x31865_8c_ac7ac63acf4aab42ff359e6b8d44db8e4}\label{_m_a_x31865_8c_ac7ac63acf4aab42ff359e6b8d44db8e4}} 
+\index{MAX31865.c@{MAX31865.c}!Max31865\_enableBias@{Max31865\_enableBias}}
+\index{Max31865\_enableBias@{Max31865\_enableBias}!MAX31865.c@{MAX31865.c}}
+\doxysubsubsection{\texorpdfstring{Max31865\_enableBias()}{Max31865\_enableBias()}}
+{\footnotesize\ttfamily void Max31865\+\_\+enable\+Bias (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_max31865__t}{Max31865\+\_\+t}} $\ast$}]{max31865,  }\item[{uint8\+\_\+t}]{enable }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_m_a_x31865_8c_source_l00102}{102}} of file \mbox{\hyperlink{_m_a_x31865_8c_source}{MAX31865.\+c}}.
+
+\mbox{\Hypertarget{_m_a_x31865_8c_ad7de685bbd61fb2dd020ad9a15380149}\label{_m_a_x31865_8c_ad7de685bbd61fb2dd020ad9a15380149}} 
+\index{MAX31865.c@{MAX31865.c}!Max31865\_Filter@{Max31865\_Filter}}
+\index{Max31865\_Filter@{Max31865\_Filter}!MAX31865.c@{MAX31865.c}}
+\doxysubsubsection{\texorpdfstring{Max31865\_Filter()}{Max31865\_Filter()}}
+{\footnotesize\ttfamily float Max31865\+\_\+\+Filter (\begin{DoxyParamCaption}\item[{float}]{new\+Input,  }\item[{float}]{last\+Output,  }\item[{float}]{efective\+Factor }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_m_a_x31865_8c_source_l00228}{228}} of file \mbox{\hyperlink{_m_a_x31865_8c_source}{MAX31865.\+c}}.
+
+\mbox{\Hypertarget{_m_a_x31865_8c_a7af0698160523a69eee213637c8c3ce0}\label{_m_a_x31865_8c_a7af0698160523a69eee213637c8c3ce0}} 
+\index{MAX31865.c@{MAX31865.c}!Max31865\_init@{Max31865\_init}}
+\index{Max31865\_init@{Max31865\_init}!MAX31865.c@{MAX31865.c}}
+\doxysubsubsection{\texorpdfstring{Max31865\_init()}{Max31865\_init()}}
+{\footnotesize\ttfamily void Max31865\+\_\+init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_max31865__t}{Max31865\+\_\+t}} $\ast$}]{max31865,  }\item[{SPI\+\_\+\+Handle\+Type\+Def $\ast$}]{spi,  }\item[{GPIO\+\_\+\+Type\+Def $\ast$}]{cs\+\_\+gpio,  }\item[{uint16\+\_\+t}]{cs\+\_\+pin,  }\item[{uint8\+\_\+t}]{numwires,  }\item[{uint8\+\_\+t}]{filter\+Hz }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_m_a_x31865_8c_source_l00158}{158}} of file \mbox{\hyperlink{_m_a_x31865_8c_source}{MAX31865.\+c}}.
+
+\mbox{\Hypertarget{_m_a_x31865_8c_a4d1b5f6e70785f5feb2c39261b0d2120}\label{_m_a_x31865_8c_a4d1b5f6e70785f5feb2c39261b0d2120}} 
+\index{MAX31865.c@{MAX31865.c}!Max31865\_readFault@{Max31865\_readFault}}
+\index{Max31865\_readFault@{Max31865\_readFault}!MAX31865.c@{MAX31865.c}}
+\doxysubsubsection{\texorpdfstring{Max31865\_readFault()}{Max31865\_readFault()}}
+{\footnotesize\ttfamily uint8\+\_\+t Max31865\+\_\+read\+Fault (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_max31865__t}{Max31865\+\_\+t}} $\ast$}]{max31865 }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_m_a_x31865_8c_source_l00089}{89}} of file \mbox{\hyperlink{_m_a_x31865_8c_source}{MAX31865.\+c}}.
+
+\mbox{\Hypertarget{_m_a_x31865_8c_ae7f625f37f782b985ac5d8ffa6dfd304}\label{_m_a_x31865_8c_ae7f625f37f782b985ac5d8ffa6dfd304}} 
+\index{MAX31865.c@{MAX31865.c}!Max31865\_readRegister16@{Max31865\_readRegister16}}
+\index{Max31865\_readRegister16@{Max31865\_readRegister16}!MAX31865.c@{MAX31865.c}}
+\doxysubsubsection{\texorpdfstring{Max31865\_readRegister16()}{Max31865\_readRegister16()}}
+{\footnotesize\ttfamily uint16\+\_\+t Max31865\+\_\+read\+Register16 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_max31865__t}{Max31865\+\_\+t}} $\ast$}]{max31865,  }\item[{uint8\+\_\+t}]{addr }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_m_a_x31865_8c_source_l00070}{70}} of file \mbox{\hyperlink{_m_a_x31865_8c_source}{MAX31865.\+c}}.
+
+\mbox{\Hypertarget{_m_a_x31865_8c_a1def21e275aba4989d1e188a5742e924}\label{_m_a_x31865_8c_a1def21e275aba4989d1e188a5742e924}} 
+\index{MAX31865.c@{MAX31865.c}!Max31865\_readRegister8@{Max31865\_readRegister8}}
+\index{Max31865\_readRegister8@{Max31865\_readRegister8}!MAX31865.c@{MAX31865.c}}
+\doxysubsubsection{\texorpdfstring{Max31865\_readRegister8()}{Max31865\_readRegister8()}}
+{\footnotesize\ttfamily uint8\+\_\+t Max31865\+\_\+read\+Register8 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_max31865__t}{Max31865\+\_\+t}} $\ast$}]{max31865,  }\item[{uint8\+\_\+t}]{addr }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_m_a_x31865_8c_source_l00063}{63}} of file \mbox{\hyperlink{_m_a_x31865_8c_source}{MAX31865.\+c}}.
+
+\mbox{\Hypertarget{_m_a_x31865_8c_ae7b650a3bb1f982b64641de1b2e8f22f}\label{_m_a_x31865_8c_ae7b650a3bb1f982b64641de1b2e8f22f}} 
+\index{MAX31865.c@{MAX31865.c}!Max31865\_readRegisterN@{Max31865\_readRegisterN}}
+\index{Max31865\_readRegisterN@{Max31865\_readRegisterN}!MAX31865.c@{MAX31865.c}}
+\doxysubsubsection{\texorpdfstring{Max31865\_readRegisterN()}{Max31865\_readRegisterN()}}
+{\footnotesize\ttfamily void Max31865\+\_\+read\+RegisterN (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_max31865__t}{Max31865\+\_\+t}} $\ast$}]{max31865,  }\item[{uint8\+\_\+t}]{addr,  }\item[{uint8\+\_\+t $\ast$}]{buffer,  }\item[{uint8\+\_\+t}]{n }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_m_a_x31865_8c_source_l00049}{49}} of file \mbox{\hyperlink{_m_a_x31865_8c_source}{MAX31865.\+c}}.
+
+\mbox{\Hypertarget{_m_a_x31865_8c_a2c7f8f03b79c9a7175978a979bd82ccd}\label{_m_a_x31865_8c_a2c7f8f03b79c9a7175978a979bd82ccd}} 
+\index{MAX31865.c@{MAX31865.c}!Max31865\_readRTD@{Max31865\_readRTD}}
+\index{Max31865\_readRTD@{Max31865\_readRTD}!MAX31865.c@{MAX31865.c}}
+\doxysubsubsection{\texorpdfstring{Max31865\_readRTD()}{Max31865\_readRTD()}}
+{\footnotesize\ttfamily uint16\+\_\+t Max31865\+\_\+read\+RTD (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_max31865__t}{Max31865\+\_\+t}} $\ast$}]{max31865 }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_m_a_x31865_8c_source_l00142}{142}} of file \mbox{\hyperlink{_m_a_x31865_8c_source}{MAX31865.\+c}}.
+
+\mbox{\Hypertarget{_m_a_x31865_8c_a16213618890e307f757c658fd64226c2}\label{_m_a_x31865_8c_a16213618890e307f757c658fd64226c2}} 
+\index{MAX31865.c@{MAX31865.c}!Max31865\_readTempC@{Max31865\_readTempC}}
+\index{Max31865\_readTempC@{Max31865\_readTempC}!MAX31865.c@{MAX31865.c}}
+\doxysubsubsection{\texorpdfstring{Max31865\_readTempC()}{Max31865\_readTempC()}}
+{\footnotesize\ttfamily bool Max31865\+\_\+read\+TempC (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_max31865__t}{Max31865\+\_\+t}} $\ast$}]{max31865,  }\item[{float $\ast$}]{read\+Temp }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_m_a_x31865_8c_source_l00175}{175}} of file \mbox{\hyperlink{_m_a_x31865_8c_source}{MAX31865.\+c}}.
+
+\mbox{\Hypertarget{_m_a_x31865_8c_a99d07f2cc1fcc073a889e28b323d16e4}\label{_m_a_x31865_8c_a99d07f2cc1fcc073a889e28b323d16e4}} 
+\index{MAX31865.c@{MAX31865.c}!Max31865\_readTempF@{Max31865\_readTempF}}
+\index{Max31865\_readTempF@{Max31865\_readTempF}!MAX31865.c@{MAX31865.c}}
+\doxysubsubsection{\texorpdfstring{Max31865\_readTempF()}{Max31865\_readTempF()}}
+{\footnotesize\ttfamily bool Max31865\+\_\+read\+TempF (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_max31865__t}{Max31865\+\_\+t}} $\ast$}]{max31865,  }\item[{float $\ast$}]{read\+Temp }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_m_a_x31865_8c_source_l00221}{221}} of file \mbox{\hyperlink{_m_a_x31865_8c_source}{MAX31865.\+c}}.
+
+\mbox{\Hypertarget{_m_a_x31865_8c_adfafc24694570b3dbf8e083246f2b193}\label{_m_a_x31865_8c_adfafc24694570b3dbf8e083246f2b193}} 
+\index{MAX31865.c@{MAX31865.c}!Max31865\_setFilter@{Max31865\_setFilter}}
+\index{Max31865\_setFilter@{Max31865\_setFilter}!MAX31865.c@{MAX31865.c}}
+\doxysubsubsection{\texorpdfstring{Max31865\_setFilter()}{Max31865\_setFilter()}}
+{\footnotesize\ttfamily void Max31865\+\_\+set\+Filter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_max31865__t}{Max31865\+\_\+t}} $\ast$}]{max31865,  }\item[{uint8\+\_\+t}]{filter\+Hz }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_m_a_x31865_8c_source_l00132}{132}} of file \mbox{\hyperlink{_m_a_x31865_8c_source}{MAX31865.\+c}}.
+
+\mbox{\Hypertarget{_m_a_x31865_8c_a9b2c144b9e5c00f9dc2ea660f7fb06ff}\label{_m_a_x31865_8c_a9b2c144b9e5c00f9dc2ea660f7fb06ff}} 
+\index{MAX31865.c@{MAX31865.c}!Max31865\_setWires@{Max31865\_setWires}}
+\index{Max31865\_setWires@{Max31865\_setWires}!MAX31865.c@{MAX31865.c}}
+\doxysubsubsection{\texorpdfstring{Max31865\_setWires()}{Max31865\_setWires()}}
+{\footnotesize\ttfamily void Max31865\+\_\+set\+Wires (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_max31865__t}{Max31865\+\_\+t}} $\ast$}]{max31865,  }\item[{uint8\+\_\+t}]{num\+Wires }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_m_a_x31865_8c_source_l00122}{122}} of file \mbox{\hyperlink{_m_a_x31865_8c_source}{MAX31865.\+c}}.
+
+\mbox{\Hypertarget{_m_a_x31865_8c_a8a760830f5dd73238cfd6c95ff0e6a96}\label{_m_a_x31865_8c_a8a760830f5dd73238cfd6c95ff0e6a96}} 
+\index{MAX31865.c@{MAX31865.c}!Max31865\_writeRegister8@{Max31865\_writeRegister8}}
+\index{Max31865\_writeRegister8@{Max31865\_writeRegister8}!MAX31865.c@{MAX31865.c}}
+\doxysubsubsection{\texorpdfstring{Max31865\_writeRegister8()}{Max31865\_writeRegister8()}}
+{\footnotesize\ttfamily void Max31865\+\_\+write\+Register8 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_max31865__t}{Max31865\+\_\+t}} $\ast$}]{max31865,  }\item[{uint8\+\_\+t}]{addr,  }\item[{uint8\+\_\+t}]{data }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_m_a_x31865_8c_source_l00080}{80}} of file \mbox{\hyperlink{_m_a_x31865_8c_source}{MAX31865.\+c}}.
+

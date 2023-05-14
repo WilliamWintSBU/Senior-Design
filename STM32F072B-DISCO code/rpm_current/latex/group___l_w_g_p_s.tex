@@ -1,0 +1,355 @@
+\hypertarget{group___l_w_g_p_s}{}\doxysection{Lightweight GPS NMEA parser}
+\label{group___l_w_g_p_s}\index{Lightweight GPS NMEA parser@{Lightweight GPS NMEA parser}}
+
+
+Lightweight GPS NMEA parser.  
+
+
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structlwgps__sat__t}{lwgps\+\_\+sat\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Satellite descriptor. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structlwgps__t}{lwgps\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em GPS main structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___l_w_g_p_s_ga455538f2d4ddfc2739ed30bac8c3af32}{lwgps\+\_\+is\+\_\+valid}}(\+\_\+gh)~(0)
+\begin{DoxyCompactList}\small\item\em Check if current GPS data contain valid signal. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef float \mbox{\hyperlink{group___l_w_g_p_s_ga0e01296c9b3162a56da030716e5902c8}{lwgps\+\_\+float\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em GPS float definition, can be either {\ttfamily float} or {\ttfamily double} \end{DoxyCompactList}\item 
+typedef void($\ast$ \mbox{\hyperlink{group___l_w_g_p_s_gaa4373288016a287f47bb79ebbbc1a90a}{lwgps\+\_\+process\+\_\+fn}}) (\mbox{\hyperlink{group___l_w_g_p_s_gabab85c279fb364e161ba08aaf8a14284}{lwgps\+\_\+statement\+\_\+t}} res)
+\begin{DoxyCompactList}\small\item\em Signature for caller-\/suplied callback function from gps\+\_\+process. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group___l_w_g_p_s_gabab85c279fb364e161ba08aaf8a14284}{lwgps\+\_\+statement\+\_\+t}} \{ \newline
+\mbox{\hyperlink{group___l_w_g_p_s_ggabab85c279fb364e161ba08aaf8a14284abde6113d898001338feb65fd66c6a202}{STAT\+\_\+\+UNKNOWN}} = 0
+, \mbox{\hyperlink{group___l_w_g_p_s_ggabab85c279fb364e161ba08aaf8a14284abdbe20e8d57472a78f7475f6b6bbe824}{STAT\+\_\+\+GGA}} = 1
+, \mbox{\hyperlink{group___l_w_g_p_s_ggabab85c279fb364e161ba08aaf8a14284ad118c8a518c0a17caa66b0840b4fd3a4}{STAT\+\_\+\+GSA}} = 2
+, \mbox{\hyperlink{group___l_w_g_p_s_ggabab85c279fb364e161ba08aaf8a14284a0f6523feb25eb37cf2dccb4db9c919bd}{STAT\+\_\+\+GSV}} = 3
+, \newline
+\mbox{\hyperlink{group___l_w_g_p_s_ggabab85c279fb364e161ba08aaf8a14284a76d6b8c5fa017a36997f576a98c4c542}{STAT\+\_\+\+RMC}} = 4
+, \mbox{\hyperlink{group___l_w_g_p_s_ggabab85c279fb364e161ba08aaf8a14284a0f9b13471fd992020d7d3ec5f0679355}{STAT\+\_\+\+UBX}} = 5
+, \mbox{\hyperlink{group___l_w_g_p_s_ggabab85c279fb364e161ba08aaf8a14284acf09eca3c1673f7f55c7463cf728cfca}{STAT\+\_\+\+UBX\+\_\+\+TIME}} = 6
+, \mbox{\hyperlink{group___l_w_g_p_s_ggabab85c279fb364e161ba08aaf8a14284a4a96f2283467bd7821167ac9bf1c8119}{STAT\+\_\+\+CHECKSUM\+\_\+\+FAIL}} = UINT8\+\_\+\+MAX
+ \}
+\begin{DoxyCompactList}\small\item\em ENUM of possible GPS statements parsed. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group___l_w_g_p_s_ga8028585ea87281677e6add0512bb8c92}{lwgps\+\_\+speed\+\_\+t}} \{ \newline
+\mbox{\hyperlink{group___l_w_g_p_s_gga8028585ea87281677e6add0512bb8c92a3566494895057382f83db729189bd0f3}{lwgps\+\_\+speed\+\_\+kps}}
+, \mbox{\hyperlink{group___l_w_g_p_s_gga8028585ea87281677e6add0512bb8c92a9cd1df0627d56561a74b1a321d9efc87}{lwgps\+\_\+speed\+\_\+kph}}
+, \mbox{\hyperlink{group___l_w_g_p_s_gga8028585ea87281677e6add0512bb8c92a1d06853ea210e56a82bc17d2e88cf724}{lwgps\+\_\+speed\+\_\+mps}}
+, \mbox{\hyperlink{group___l_w_g_p_s_gga8028585ea87281677e6add0512bb8c92a1c7ef2c720bc6783695dca518269eee3}{lwgps\+\_\+speed\+\_\+mpm}}
+, \newline
+\mbox{\hyperlink{group___l_w_g_p_s_gga8028585ea87281677e6add0512bb8c92a4e13223246b72a00f12e8ffa83b11c67}{lwgps\+\_\+speed\+\_\+mips}}
+, \mbox{\hyperlink{group___l_w_g_p_s_gga8028585ea87281677e6add0512bb8c92a3cede1dc92b738cef62f7c7047f58b73}{lwgps\+\_\+speed\+\_\+mph}}
+, \mbox{\hyperlink{group___l_w_g_p_s_gga8028585ea87281677e6add0512bb8c92a16a71a6fa9346084637a5a62caa9115b}{lwgps\+\_\+speed\+\_\+fps}}
+, \mbox{\hyperlink{group___l_w_g_p_s_gga8028585ea87281677e6add0512bb8c92ab36e5a0bfb8cc6910219817e0615a341}{lwgps\+\_\+speed\+\_\+fpm}}
+, \newline
+\mbox{\hyperlink{group___l_w_g_p_s_gga8028585ea87281677e6add0512bb8c92afd6dacc16526f2823a84c97a9fc147e6}{lwgps\+\_\+speed\+\_\+mpk}}
+, \mbox{\hyperlink{group___l_w_g_p_s_gga8028585ea87281677e6add0512bb8c92a79b776832821701e07e744bc5a01c0a9}{lwgps\+\_\+speed\+\_\+spk}}
+, \mbox{\hyperlink{group___l_w_g_p_s_gga8028585ea87281677e6add0512bb8c92a98eae2eba4bb581bfadc1ff2e7384298}{lwgps\+\_\+speed\+\_\+sp100m}}
+, \mbox{\hyperlink{group___l_w_g_p_s_gga8028585ea87281677e6add0512bb8c92ab9ecb54bcde4fda74d483b4f0242c19d}{lwgps\+\_\+speed\+\_\+mipm}}
+, \newline
+\mbox{\hyperlink{group___l_w_g_p_s_gga8028585ea87281677e6add0512bb8c92ae38b3a84c0b375edd407b800f6ac57fa}{lwgps\+\_\+speed\+\_\+spm}}
+, \mbox{\hyperlink{group___l_w_g_p_s_gga8028585ea87281677e6add0512bb8c92a9bfd0475f51cdf0f2a2921ed9f30dec8}{lwgps\+\_\+speed\+\_\+sp100y}}
+, \mbox{\hyperlink{group___l_w_g_p_s_gga8028585ea87281677e6add0512bb8c92aab8e16004c58202291efa3566de9f04c}{lwgps\+\_\+speed\+\_\+smph}}
+ \}
+\begin{DoxyCompactList}\small\item\em List of optional speed transformation from GPS values (in knots) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{group___l_w_g_p_s_gaf69993c7ad6cb474707f86d4d986d87f}{lwgps\+\_\+init}} (\mbox{\hyperlink{structlwgps__t}{lwgps\+\_\+t}} $\ast$gh)
+\begin{DoxyCompactList}\small\item\em Init GPS handle. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group___l_w_g_p_s_gaf169c4cd93a4c22c976c9f17b69055a0}{lwgps\+\_\+process}} (\mbox{\hyperlink{structlwgps__t}{lwgps\+\_\+t}} $\ast$gh, const void $\ast$data, size\+\_\+t len)
+\begin{DoxyCompactList}\small\item\em Process NMEA data from GPS receiver. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group___l_w_g_p_s_ga547ed9d1fcff169ef72060f3e70b29f4}{lwgps\+\_\+distance\+\_\+bearing}} (\mbox{\hyperlink{group___l_w_g_p_s_ga0e01296c9b3162a56da030716e5902c8}{lwgps\+\_\+float\+\_\+t}} las, \mbox{\hyperlink{group___l_w_g_p_s_ga0e01296c9b3162a56da030716e5902c8}{lwgps\+\_\+float\+\_\+t}} los, \mbox{\hyperlink{group___l_w_g_p_s_ga0e01296c9b3162a56da030716e5902c8}{lwgps\+\_\+float\+\_\+t}} lae, \mbox{\hyperlink{group___l_w_g_p_s_ga0e01296c9b3162a56da030716e5902c8}{lwgps\+\_\+float\+\_\+t}} loe, \mbox{\hyperlink{group___l_w_g_p_s_ga0e01296c9b3162a56da030716e5902c8}{lwgps\+\_\+float\+\_\+t}} $\ast$d, \mbox{\hyperlink{group___l_w_g_p_s_ga0e01296c9b3162a56da030716e5902c8}{lwgps\+\_\+float\+\_\+t}} $\ast$b)
+\item 
+\mbox{\hyperlink{group___l_w_g_p_s_ga0e01296c9b3162a56da030716e5902c8}{lwgps\+\_\+float\+\_\+t}} \mbox{\hyperlink{group___l_w_g_p_s_gacb9e55ca2fc668510c417a180c99abe7}{lwgps\+\_\+to\+\_\+speed}} (\mbox{\hyperlink{group___l_w_g_p_s_ga0e01296c9b3162a56da030716e5902c8}{lwgps\+\_\+float\+\_\+t}} sik, \mbox{\hyperlink{group___l_w_g_p_s_ga8028585ea87281677e6add0512bb8c92}{lwgps\+\_\+speed\+\_\+t}} ts)
+\begin{DoxyCompactList}\small\item\em Convert NMEA GPS speed (in knots = nautical mile per hour) to different speed format. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Lightweight GPS NMEA parser. 
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group___l_w_g_p_s_ga455538f2d4ddfc2739ed30bac8c3af32}\label{group___l_w_g_p_s_ga455538f2d4ddfc2739ed30bac8c3af32}} 
+\index{Lightweight GPS NMEA parser@{Lightweight GPS NMEA parser}!lwgps\_is\_valid@{lwgps\_is\_valid}}
+\index{lwgps\_is\_valid@{lwgps\_is\_valid}!Lightweight GPS NMEA parser@{Lightweight GPS NMEA parser}}
+\doxysubsubsection{\texorpdfstring{lwgps\_is\_valid}{lwgps\_is\_valid}}
+{\footnotesize\ttfamily \#define lwgps\+\_\+is\+\_\+valid(\begin{DoxyParamCaption}\item[{}]{\+\_\+gh }\end{DoxyParamCaption})~(0)}
+
+
+
+Check if current GPS data contain valid signal. 
+
+\begin{DoxyNote}{Note}
+\mbox{\hyperlink{group___l_w_g_p_s___o_p_t_ga3d44255f7998842d847d496b7881aec9}{LWGPS\+\_\+\+CFG\+\_\+\+STATEMENT\+\_\+\+GPRMC}} must be enabled and {\ttfamily GPRMC} statement must be sent from GPS receiver 
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+gh} & GPS handle \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily 1} on success, {\ttfamily 0} otherwise 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{lwgps_8h_source_l00271}{271}} of file \mbox{\hyperlink{lwgps_8h_source}{lwgps.\+h}}.
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{group___l_w_g_p_s_ga0e01296c9b3162a56da030716e5902c8}\label{group___l_w_g_p_s_ga0e01296c9b3162a56da030716e5902c8}} 
+\index{Lightweight GPS NMEA parser@{Lightweight GPS NMEA parser}!lwgps\_float\_t@{lwgps\_float\_t}}
+\index{lwgps\_float\_t@{lwgps\_float\_t}!Lightweight GPS NMEA parser@{Lightweight GPS NMEA parser}}
+\doxysubsubsection{\texorpdfstring{lwgps\_float\_t}{lwgps\_float\_t}}
+{\footnotesize\ttfamily typedef float \mbox{\hyperlink{group___l_w_g_p_s_ga0e01296c9b3162a56da030716e5902c8}{lwgps\+\_\+float\+\_\+t}}}
+
+
+
+GPS float definition, can be either {\ttfamily float} or {\ttfamily double} 
+
+\begin{DoxyNote}{Note}
+Check for \mbox{\hyperlink{group___l_w_g_p_s___o_p_t_ga0fc7807db100b4183d9c93ed06bede35}{LWGPS\+\_\+\+CFG\+\_\+\+DOUBLE}} configuration 
+\end{DoxyNote}
+
+
+Definition at line \mbox{\hyperlink{lwgps_8h_source_l00059}{59}} of file \mbox{\hyperlink{lwgps_8h_source}{lwgps.\+h}}.
+
+\mbox{\Hypertarget{group___l_w_g_p_s_gaa4373288016a287f47bb79ebbbc1a90a}\label{group___l_w_g_p_s_gaa4373288016a287f47bb79ebbbc1a90a}} 
+\index{Lightweight GPS NMEA parser@{Lightweight GPS NMEA parser}!lwgps\_process\_fn@{lwgps\_process\_fn}}
+\index{lwgps\_process\_fn@{lwgps\_process\_fn}!Lightweight GPS NMEA parser@{Lightweight GPS NMEA parser}}
+\doxysubsubsection{\texorpdfstring{lwgps\_process\_fn}{lwgps\_process\_fn}}
+{\footnotesize\ttfamily typedef void($\ast$ lwgps\+\_\+process\+\_\+fn) (\mbox{\hyperlink{group___l_w_g_p_s_gabab85c279fb364e161ba08aaf8a14284}{lwgps\+\_\+statement\+\_\+t}} res)}
+
+
+
+Signature for caller-\/suplied callback function from gps\+\_\+process. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em res} & statement type of recently parsed statement \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{lwgps_8h_source_l00260}{260}} of file \mbox{\hyperlink{lwgps_8h_source}{lwgps.\+h}}.
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{group___l_w_g_p_s_ga8028585ea87281677e6add0512bb8c92}\label{group___l_w_g_p_s_ga8028585ea87281677e6add0512bb8c92}} 
+\index{Lightweight GPS NMEA parser@{Lightweight GPS NMEA parser}!lwgps\_speed\_t@{lwgps\_speed\_t}}
+\index{lwgps\_speed\_t@{lwgps\_speed\_t}!Lightweight GPS NMEA parser@{Lightweight GPS NMEA parser}}
+\doxysubsubsection{\texorpdfstring{lwgps\_speed\_t}{lwgps\_speed\_t}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group___l_w_g_p_s_ga8028585ea87281677e6add0512bb8c92}{lwgps\+\_\+speed\+\_\+t}}}
+
+
+
+List of optional speed transformation from GPS values (in knots) 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{lwgps\_speed\_kps@{lwgps\_speed\_kps}!Lightweight GPS NMEA parser@{Lightweight GPS NMEA parser}}\index{Lightweight GPS NMEA parser@{Lightweight GPS NMEA parser}!lwgps\_speed\_kps@{lwgps\_speed\_kps}}}\mbox{\Hypertarget{group___l_w_g_p_s_gga8028585ea87281677e6add0512bb8c92a3566494895057382f83db729189bd0f3}\label{group___l_w_g_p_s_gga8028585ea87281677e6add0512bb8c92a3566494895057382f83db729189bd0f3}} 
+lwgps\+\_\+speed\+\_\+kps&Kilometers per second \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{lwgps\_speed\_kph@{lwgps\_speed\_kph}!Lightweight GPS NMEA parser@{Lightweight GPS NMEA parser}}\index{Lightweight GPS NMEA parser@{Lightweight GPS NMEA parser}!lwgps\_speed\_kph@{lwgps\_speed\_kph}}}\mbox{\Hypertarget{group___l_w_g_p_s_gga8028585ea87281677e6add0512bb8c92a9cd1df0627d56561a74b1a321d9efc87}\label{group___l_w_g_p_s_gga8028585ea87281677e6add0512bb8c92a9cd1df0627d56561a74b1a321d9efc87}} 
+lwgps\+\_\+speed\+\_\+kph&Kilometers per hour \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{lwgps\_speed\_mps@{lwgps\_speed\_mps}!Lightweight GPS NMEA parser@{Lightweight GPS NMEA parser}}\index{Lightweight GPS NMEA parser@{Lightweight GPS NMEA parser}!lwgps\_speed\_mps@{lwgps\_speed\_mps}}}\mbox{\Hypertarget{group___l_w_g_p_s_gga8028585ea87281677e6add0512bb8c92a1d06853ea210e56a82bc17d2e88cf724}\label{group___l_w_g_p_s_gga8028585ea87281677e6add0512bb8c92a1d06853ea210e56a82bc17d2e88cf724}} 
+lwgps\+\_\+speed\+\_\+mps&Meters per second \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{lwgps\_speed\_mpm@{lwgps\_speed\_mpm}!Lightweight GPS NMEA parser@{Lightweight GPS NMEA parser}}\index{Lightweight GPS NMEA parser@{Lightweight GPS NMEA parser}!lwgps\_speed\_mpm@{lwgps\_speed\_mpm}}}\mbox{\Hypertarget{group___l_w_g_p_s_gga8028585ea87281677e6add0512bb8c92a1c7ef2c720bc6783695dca518269eee3}\label{group___l_w_g_p_s_gga8028585ea87281677e6add0512bb8c92a1c7ef2c720bc6783695dca518269eee3}} 
+lwgps\+\_\+speed\+\_\+mpm&Meters per minute \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{lwgps\_speed\_mips@{lwgps\_speed\_mips}!Lightweight GPS NMEA parser@{Lightweight GPS NMEA parser}}\index{Lightweight GPS NMEA parser@{Lightweight GPS NMEA parser}!lwgps\_speed\_mips@{lwgps\_speed\_mips}}}\mbox{\Hypertarget{group___l_w_g_p_s_gga8028585ea87281677e6add0512bb8c92a4e13223246b72a00f12e8ffa83b11c67}\label{group___l_w_g_p_s_gga8028585ea87281677e6add0512bb8c92a4e13223246b72a00f12e8ffa83b11c67}} 
+lwgps\+\_\+speed\+\_\+mips&Miles per second \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{lwgps\_speed\_mph@{lwgps\_speed\_mph}!Lightweight GPS NMEA parser@{Lightweight GPS NMEA parser}}\index{Lightweight GPS NMEA parser@{Lightweight GPS NMEA parser}!lwgps\_speed\_mph@{lwgps\_speed\_mph}}}\mbox{\Hypertarget{group___l_w_g_p_s_gga8028585ea87281677e6add0512bb8c92a3cede1dc92b738cef62f7c7047f58b73}\label{group___l_w_g_p_s_gga8028585ea87281677e6add0512bb8c92a3cede1dc92b738cef62f7c7047f58b73}} 
+lwgps\+\_\+speed\+\_\+mph&Miles per hour \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{lwgps\_speed\_fps@{lwgps\_speed\_fps}!Lightweight GPS NMEA parser@{Lightweight GPS NMEA parser}}\index{Lightweight GPS NMEA parser@{Lightweight GPS NMEA parser}!lwgps\_speed\_fps@{lwgps\_speed\_fps}}}\mbox{\Hypertarget{group___l_w_g_p_s_gga8028585ea87281677e6add0512bb8c92a16a71a6fa9346084637a5a62caa9115b}\label{group___l_w_g_p_s_gga8028585ea87281677e6add0512bb8c92a16a71a6fa9346084637a5a62caa9115b}} 
+lwgps\+\_\+speed\+\_\+fps&Foots per second \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{lwgps\_speed\_fpm@{lwgps\_speed\_fpm}!Lightweight GPS NMEA parser@{Lightweight GPS NMEA parser}}\index{Lightweight GPS NMEA parser@{Lightweight GPS NMEA parser}!lwgps\_speed\_fpm@{lwgps\_speed\_fpm}}}\mbox{\Hypertarget{group___l_w_g_p_s_gga8028585ea87281677e6add0512bb8c92ab36e5a0bfb8cc6910219817e0615a341}\label{group___l_w_g_p_s_gga8028585ea87281677e6add0512bb8c92ab36e5a0bfb8cc6910219817e0615a341}} 
+lwgps\+\_\+speed\+\_\+fpm&Foots per minute \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{lwgps\_speed\_mpk@{lwgps\_speed\_mpk}!Lightweight GPS NMEA parser@{Lightweight GPS NMEA parser}}\index{Lightweight GPS NMEA parser@{Lightweight GPS NMEA parser}!lwgps\_speed\_mpk@{lwgps\_speed\_mpk}}}\mbox{\Hypertarget{group___l_w_g_p_s_gga8028585ea87281677e6add0512bb8c92afd6dacc16526f2823a84c97a9fc147e6}\label{group___l_w_g_p_s_gga8028585ea87281677e6add0512bb8c92afd6dacc16526f2823a84c97a9fc147e6}} 
+lwgps\+\_\+speed\+\_\+mpk&Minutes per kilometer \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{lwgps\_speed\_spk@{lwgps\_speed\_spk}!Lightweight GPS NMEA parser@{Lightweight GPS NMEA parser}}\index{Lightweight GPS NMEA parser@{Lightweight GPS NMEA parser}!lwgps\_speed\_spk@{lwgps\_speed\_spk}}}\mbox{\Hypertarget{group___l_w_g_p_s_gga8028585ea87281677e6add0512bb8c92a79b776832821701e07e744bc5a01c0a9}\label{group___l_w_g_p_s_gga8028585ea87281677e6add0512bb8c92a79b776832821701e07e744bc5a01c0a9}} 
+lwgps\+\_\+speed\+\_\+spk&Seconds per kilometer \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{lwgps\_speed\_sp100m@{lwgps\_speed\_sp100m}!Lightweight GPS NMEA parser@{Lightweight GPS NMEA parser}}\index{Lightweight GPS NMEA parser@{Lightweight GPS NMEA parser}!lwgps\_speed\_sp100m@{lwgps\_speed\_sp100m}}}\mbox{\Hypertarget{group___l_w_g_p_s_gga8028585ea87281677e6add0512bb8c92a98eae2eba4bb581bfadc1ff2e7384298}\label{group___l_w_g_p_s_gga8028585ea87281677e6add0512bb8c92a98eae2eba4bb581bfadc1ff2e7384298}} 
+lwgps\+\_\+speed\+\_\+sp100m&Seconds per 100 meters \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{lwgps\_speed\_mipm@{lwgps\_speed\_mipm}!Lightweight GPS NMEA parser@{Lightweight GPS NMEA parser}}\index{Lightweight GPS NMEA parser@{Lightweight GPS NMEA parser}!lwgps\_speed\_mipm@{lwgps\_speed\_mipm}}}\mbox{\Hypertarget{group___l_w_g_p_s_gga8028585ea87281677e6add0512bb8c92ab9ecb54bcde4fda74d483b4f0242c19d}\label{group___l_w_g_p_s_gga8028585ea87281677e6add0512bb8c92ab9ecb54bcde4fda74d483b4f0242c19d}} 
+lwgps\+\_\+speed\+\_\+mipm&Minutes per mile \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{lwgps\_speed\_spm@{lwgps\_speed\_spm}!Lightweight GPS NMEA parser@{Lightweight GPS NMEA parser}}\index{Lightweight GPS NMEA parser@{Lightweight GPS NMEA parser}!lwgps\_speed\_spm@{lwgps\_speed\_spm}}}\mbox{\Hypertarget{group___l_w_g_p_s_gga8028585ea87281677e6add0512bb8c92ae38b3a84c0b375edd407b800f6ac57fa}\label{group___l_w_g_p_s_gga8028585ea87281677e6add0512bb8c92ae38b3a84c0b375edd407b800f6ac57fa}} 
+lwgps\+\_\+speed\+\_\+spm&Seconds per mile \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{lwgps\_speed\_sp100y@{lwgps\_speed\_sp100y}!Lightweight GPS NMEA parser@{Lightweight GPS NMEA parser}}\index{Lightweight GPS NMEA parser@{Lightweight GPS NMEA parser}!lwgps\_speed\_sp100y@{lwgps\_speed\_sp100y}}}\mbox{\Hypertarget{group___l_w_g_p_s_gga8028585ea87281677e6add0512bb8c92a9bfd0475f51cdf0f2a2921ed9f30dec8}\label{group___l_w_g_p_s_gga8028585ea87281677e6add0512bb8c92a9bfd0475f51cdf0f2a2921ed9f30dec8}} 
+lwgps\+\_\+speed\+\_\+sp100y&Seconds per 100 yards \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{lwgps\_speed\_smph@{lwgps\_speed\_smph}!Lightweight GPS NMEA parser@{Lightweight GPS NMEA parser}}\index{Lightweight GPS NMEA parser@{Lightweight GPS NMEA parser}!lwgps\_speed\_smph@{lwgps\_speed\_smph}}}\mbox{\Hypertarget{group___l_w_g_p_s_gga8028585ea87281677e6add0512bb8c92aab8e16004c58202291efa3566de9f04c}\label{group___l_w_g_p_s_gga8028585ea87281677e6add0512bb8c92aab8e16004c58202291efa3566de9f04c}} 
+lwgps\+\_\+speed\+\_\+smph&Sea miles per hour \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{lwgps_8h_source_l00231}{231}} of file \mbox{\hyperlink{lwgps_8h_source}{lwgps.\+h}}.
+
+\mbox{\Hypertarget{group___l_w_g_p_s_gabab85c279fb364e161ba08aaf8a14284}\label{group___l_w_g_p_s_gabab85c279fb364e161ba08aaf8a14284}} 
+\index{Lightweight GPS NMEA parser@{Lightweight GPS NMEA parser}!lwgps\_statement\_t@{lwgps\_statement\_t}}
+\index{lwgps\_statement\_t@{lwgps\_statement\_t}!Lightweight GPS NMEA parser@{Lightweight GPS NMEA parser}}
+\doxysubsubsection{\texorpdfstring{lwgps\_statement\_t}{lwgps\_statement\_t}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group___l_w_g_p_s_gabab85c279fb364e161ba08aaf8a14284}{lwgps\+\_\+statement\+\_\+t}}}
+
+
+
+ENUM of possible GPS statements parsed. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STAT\_UNKNOWN@{STAT\_UNKNOWN}!Lightweight GPS NMEA parser@{Lightweight GPS NMEA parser}}\index{Lightweight GPS NMEA parser@{Lightweight GPS NMEA parser}!STAT\_UNKNOWN@{STAT\_UNKNOWN}}}\mbox{\Hypertarget{group___l_w_g_p_s_ggabab85c279fb364e161ba08aaf8a14284abde6113d898001338feb65fd66c6a202}\label{group___l_w_g_p_s_ggabab85c279fb364e161ba08aaf8a14284abde6113d898001338feb65fd66c6a202}} 
+STAT\+\_\+\+UNKNOWN&Unknown NMEA statement \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STAT\_GGA@{STAT\_GGA}!Lightweight GPS NMEA parser@{Lightweight GPS NMEA parser}}\index{Lightweight GPS NMEA parser@{Lightweight GPS NMEA parser}!STAT\_GGA@{STAT\_GGA}}}\mbox{\Hypertarget{group___l_w_g_p_s_ggabab85c279fb364e161ba08aaf8a14284abdbe20e8d57472a78f7475f6b6bbe824}\label{group___l_w_g_p_s_ggabab85c279fb364e161ba08aaf8a14284abdbe20e8d57472a78f7475f6b6bbe824}} 
+STAT\+\_\+\+GGA&GPGGA statement \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STAT\_GSA@{STAT\_GSA}!Lightweight GPS NMEA parser@{Lightweight GPS NMEA parser}}\index{Lightweight GPS NMEA parser@{Lightweight GPS NMEA parser}!STAT\_GSA@{STAT\_GSA}}}\mbox{\Hypertarget{group___l_w_g_p_s_ggabab85c279fb364e161ba08aaf8a14284ad118c8a518c0a17caa66b0840b4fd3a4}\label{group___l_w_g_p_s_ggabab85c279fb364e161ba08aaf8a14284ad118c8a518c0a17caa66b0840b4fd3a4}} 
+STAT\+\_\+\+GSA&GPGSA statement \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STAT\_GSV@{STAT\_GSV}!Lightweight GPS NMEA parser@{Lightweight GPS NMEA parser}}\index{Lightweight GPS NMEA parser@{Lightweight GPS NMEA parser}!STAT\_GSV@{STAT\_GSV}}}\mbox{\Hypertarget{group___l_w_g_p_s_ggabab85c279fb364e161ba08aaf8a14284a0f6523feb25eb37cf2dccb4db9c919bd}\label{group___l_w_g_p_s_ggabab85c279fb364e161ba08aaf8a14284a0f6523feb25eb37cf2dccb4db9c919bd}} 
+STAT\+\_\+\+GSV&GPGSV statement \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STAT\_RMC@{STAT\_RMC}!Lightweight GPS NMEA parser@{Lightweight GPS NMEA parser}}\index{Lightweight GPS NMEA parser@{Lightweight GPS NMEA parser}!STAT\_RMC@{STAT\_RMC}}}\mbox{\Hypertarget{group___l_w_g_p_s_ggabab85c279fb364e161ba08aaf8a14284a76d6b8c5fa017a36997f576a98c4c542}\label{group___l_w_g_p_s_ggabab85c279fb364e161ba08aaf8a14284a76d6b8c5fa017a36997f576a98c4c542}} 
+STAT\+\_\+\+RMC&GPRMC statement \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STAT\_UBX@{STAT\_UBX}!Lightweight GPS NMEA parser@{Lightweight GPS NMEA parser}}\index{Lightweight GPS NMEA parser@{Lightweight GPS NMEA parser}!STAT\_UBX@{STAT\_UBX}}}\mbox{\Hypertarget{group___l_w_g_p_s_ggabab85c279fb364e161ba08aaf8a14284a0f9b13471fd992020d7d3ec5f0679355}\label{group___l_w_g_p_s_ggabab85c279fb364e161ba08aaf8a14284a0f9b13471fd992020d7d3ec5f0679355}} 
+STAT\+\_\+\+UBX&UBX statement (u\+Blox specific) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STAT\_UBX\_TIME@{STAT\_UBX\_TIME}!Lightweight GPS NMEA parser@{Lightweight GPS NMEA parser}}\index{Lightweight GPS NMEA parser@{Lightweight GPS NMEA parser}!STAT\_UBX\_TIME@{STAT\_UBX\_TIME}}}\mbox{\Hypertarget{group___l_w_g_p_s_ggabab85c279fb364e161ba08aaf8a14284acf09eca3c1673f7f55c7463cf728cfca}\label{group___l_w_g_p_s_ggabab85c279fb364e161ba08aaf8a14284acf09eca3c1673f7f55c7463cf728cfca}} 
+STAT\+\_\+\+UBX\+\_\+\+TIME&UBX TIME statement (u\+Blox specific) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STAT\_CHECKSUM\_FAIL@{STAT\_CHECKSUM\_FAIL}!Lightweight GPS NMEA parser@{Lightweight GPS NMEA parser}}\index{Lightweight GPS NMEA parser@{Lightweight GPS NMEA parser}!STAT\_CHECKSUM\_FAIL@{STAT\_CHECKSUM\_FAIL}}}\mbox{\Hypertarget{group___l_w_g_p_s_ggabab85c279fb364e161ba08aaf8a14284a4a96f2283467bd7821167ac9bf1c8119}\label{group___l_w_g_p_s_ggabab85c279fb364e161ba08aaf8a14284a4a96f2283467bd7821167ac9bf1c8119}} 
+STAT\+\_\+\+CHECKSUM\+\_\+\+FAIL&Special case, used when checksum fails \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \mbox{\hyperlink{lwgps_8h_source_l00075}{75}} of file \mbox{\hyperlink{lwgps_8h_source}{lwgps.\+h}}.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group___l_w_g_p_s_ga547ed9d1fcff169ef72060f3e70b29f4}\label{group___l_w_g_p_s_ga547ed9d1fcff169ef72060f3e70b29f4}} 
+\index{Lightweight GPS NMEA parser@{Lightweight GPS NMEA parser}!lwgps\_distance\_bearing@{lwgps\_distance\_bearing}}
+\index{lwgps\_distance\_bearing@{lwgps\_distance\_bearing}!Lightweight GPS NMEA parser@{Lightweight GPS NMEA parser}}
+\doxysubsubsection{\texorpdfstring{lwgps\_distance\_bearing()}{lwgps\_distance\_bearing()}}
+{\footnotesize\ttfamily uint8\+\_\+t lwgps\+\_\+distance\+\_\+bearing (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___l_w_g_p_s_ga0e01296c9b3162a56da030716e5902c8}{lwgps\+\_\+float\+\_\+t}}}]{las,  }\item[{\mbox{\hyperlink{group___l_w_g_p_s_ga0e01296c9b3162a56da030716e5902c8}{lwgps\+\_\+float\+\_\+t}}}]{los,  }\item[{\mbox{\hyperlink{group___l_w_g_p_s_ga0e01296c9b3162a56da030716e5902c8}{lwgps\+\_\+float\+\_\+t}}}]{lae,  }\item[{\mbox{\hyperlink{group___l_w_g_p_s_ga0e01296c9b3162a56da030716e5902c8}{lwgps\+\_\+float\+\_\+t}}}]{loe,  }\item[{\mbox{\hyperlink{group___l_w_g_p_s_ga0e01296c9b3162a56da030716e5902c8}{lwgps\+\_\+float\+\_\+t}} $\ast$}]{d,  }\item[{\mbox{\hyperlink{group___l_w_g_p_s_ga0e01296c9b3162a56da030716e5902c8}{lwgps\+\_\+float\+\_\+t}} $\ast$}]{b }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{group___l_w_g_p_s_gaf69993c7ad6cb474707f86d4d986d87f}\label{group___l_w_g_p_s_gaf69993c7ad6cb474707f86d4d986d87f}} 
+\index{Lightweight GPS NMEA parser@{Lightweight GPS NMEA parser}!lwgps\_init@{lwgps\_init}}
+\index{lwgps\_init@{lwgps\_init}!Lightweight GPS NMEA parser@{Lightweight GPS NMEA parser}}
+\doxysubsubsection{\texorpdfstring{lwgps\_init()}{lwgps\_init()}}
+{\footnotesize\ttfamily uint8\+\_\+t lwgps\+\_\+init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlwgps__t}{lwgps\+\_\+t}} $\ast$}]{gh }\end{DoxyParamCaption})}
+
+
+
+Init GPS handle. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em gh} & GPS handle structure \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily 1} on success, {\ttfamily 0} otherwise 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{lwgps_8c_source_l00456}{456}} of file \mbox{\hyperlink{lwgps_8c_source}{lwgps.\+c}}.
+
+\mbox{\Hypertarget{group___l_w_g_p_s_gaf169c4cd93a4c22c976c9f17b69055a0}\label{group___l_w_g_p_s_gaf169c4cd93a4c22c976c9f17b69055a0}} 
+\index{Lightweight GPS NMEA parser@{Lightweight GPS NMEA parser}!lwgps\_process@{lwgps\_process}}
+\index{lwgps\_process@{lwgps\_process}!Lightweight GPS NMEA parser@{Lightweight GPS NMEA parser}}
+\doxysubsubsection{\texorpdfstring{lwgps\_process()}{lwgps\_process()}}
+{\footnotesize\ttfamily uint8\+\_\+t lwgps\+\_\+process (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structlwgps__t}{lwgps\+\_\+t}} $\ast$}]{gh,  }\item[{const void $\ast$}]{data,  }\item[{size\+\_\+t}]{len }\end{DoxyParamCaption})}
+
+
+
+Process NMEA data from GPS receiver. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em gh} & GPS handle structure \\
+\hline
+\mbox{\texttt{ in}}  & {\em data} & Received data \\
+\hline
+\mbox{\texttt{ in}}  & {\em len} & Number of bytes to process \\
+\hline
+\mbox{\texttt{ in}}  & {\em evt\+\_\+fn} & Event function to notify application layer. This parameter is available only if \mbox{\hyperlink{group___l_w_g_p_s___o_p_t_ga9c77abde9a09218d5590e0ccd962ac03}{LWGPS\+\_\+\+CFG\+\_\+\+STATUS}} is enabled \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily 1} on success, {\ttfamily 0} otherwise 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{lwgps_8c_source_l00474}{474}} of file \mbox{\hyperlink{lwgps_8c_source}{lwgps.\+c}}.
+
+\mbox{\Hypertarget{group___l_w_g_p_s_gacb9e55ca2fc668510c417a180c99abe7}\label{group___l_w_g_p_s_gacb9e55ca2fc668510c417a180c99abe7}} 
+\index{Lightweight GPS NMEA parser@{Lightweight GPS NMEA parser}!lwgps\_to\_speed@{lwgps\_to\_speed}}
+\index{lwgps\_to\_speed@{lwgps\_to\_speed}!Lightweight GPS NMEA parser@{Lightweight GPS NMEA parser}}
+\doxysubsubsection{\texorpdfstring{lwgps\_to\_speed()}{lwgps\_to\_speed()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___l_w_g_p_s_ga0e01296c9b3162a56da030716e5902c8}{lwgps\+\_\+float\+\_\+t}} lwgps\+\_\+to\+\_\+speed (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___l_w_g_p_s_ga0e01296c9b3162a56da030716e5902c8}{lwgps\+\_\+float\+\_\+t}}}]{sik,  }\item[{\mbox{\hyperlink{group___l_w_g_p_s_ga8028585ea87281677e6add0512bb8c92}{lwgps\+\_\+speed\+\_\+t}}}]{ts }\end{DoxyParamCaption})}
+
+
+
+Convert NMEA GPS speed (in knots = nautical mile per hour) to different speed format. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em sik} & Speed in knots, received from GPS NMEA statement \\
+\hline
+\mbox{\texttt{ in}}  & {\em ts} & Target speed to convert to from knots \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Speed calculated from knots 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{lwgps_8c_source_l00601}{601}} of file \mbox{\hyperlink{lwgps_8c_source}{lwgps.\+c}}.
+

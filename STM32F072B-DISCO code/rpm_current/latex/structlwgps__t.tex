@@ -1,0 +1,115 @@
+\hypertarget{structlwgps__t}{}\doxysection{lwgps\+\_\+t Struct Reference}
+\label{structlwgps__t}\index{lwgps\_t@{lwgps\_t}}
+
+
+GPS main structure.  
+
+
+
+
+{\ttfamily \#include $<$lwgps.\+h$>$}
+
+\doxysubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\>\mbox{\hyperlink{group___l_w_g_p_s_gabab85c279fb364e161ba08aaf8a14284}{lwgps\+\_\+statement\+\_\+t}} \mbox{\hyperlink{structlwgps__t_af0a0d8ffdf231f5ff58d3a8aa6725983}{stat}}\\
+\>char \mbox{\hyperlink{structlwgps__t_ae21c3829b38844c590d24e649525a2dc}{term\+\_\+str}} \mbox{[}13\mbox{]}\\
+\>uint8\_t \mbox{\hyperlink{structlwgps__t_a1fdb57bd189d6a15778b50cd29e3d695}{term\+\_\+pos}}\\
+\>uint8\_t \mbox{\hyperlink{structlwgps__t_a8a962fe759ffe972d4c91a3a79ad331c}{term\+\_\+num}}\\
+\>uint8\_t \mbox{\hyperlink{structlwgps__t_acbefe770ce24afa349da65bfa0be56aa}{star}}\\
+\>union \{\\
+\>\>uint8\_t \mbox{\hyperlink{structlwgps__t_aff7b59f569ec689a7580bd6911daafd5}{dummy}}\\
+\>\} \mbox{\hyperlink{structlwgps__t_a766558304b56abeea2c89b726885646c}{data}}\\
+\} \mbox{\hyperlink{structlwgps__t_a6bbebbf08cf210522c54b9ef80307131}{p}}\\
+
+\end{tabbing}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+GPS main structure. 
+
+Definition at line \mbox{\hyperlink{lwgps_8h_source_l00089}{89}} of file \mbox{\hyperlink{lwgps_8h_source}{lwgps.\+h}}.
+
+
+
+\doxysubsection{Field Documentation}
+\mbox{\Hypertarget{structlwgps__t_a766558304b56abeea2c89b726885646c}\label{structlwgps__t_a766558304b56abeea2c89b726885646c}} 
+\index{lwgps\_t@{lwgps\_t}!data@{data}}
+\index{data@{data}!lwgps\_t@{lwgps\_t}}
+\doxysubsubsection{\texorpdfstring{}{}}
+{\footnotesize\ttfamily union  \{ ... \}  data}
+
+Union with data for each information \mbox{\Hypertarget{structlwgps__t_aff7b59f569ec689a7580bd6911daafd5}\label{structlwgps__t_aff7b59f569ec689a7580bd6911daafd5}} 
+\index{lwgps\_t@{lwgps\_t}!dummy@{dummy}}
+\index{dummy@{dummy}!lwgps\_t@{lwgps\_t}}
+\doxysubsubsection{\texorpdfstring{dummy}{dummy}}
+{\footnotesize\ttfamily uint8\+\_\+t dummy}
+
+Dummy byte 
+
+Definition at line \mbox{\hyperlink{lwgps_8h_source_l00167}{167}} of file \mbox{\hyperlink{lwgps_8h_source}{lwgps.\+h}}.
+
+\mbox{\Hypertarget{structlwgps__t_a6bbebbf08cf210522c54b9ef80307131}\label{structlwgps__t_a6bbebbf08cf210522c54b9ef80307131}} 
+\index{lwgps\_t@{lwgps\_t}!p@{p}}
+\index{p@{p}!lwgps\_t@{lwgps\_t}}
+\doxysubsubsection{\texorpdfstring{}{}}
+{\footnotesize\ttfamily struct  \{ ... \}  p}
+
+Structure with private data \mbox{\Hypertarget{structlwgps__t_acbefe770ce24afa349da65bfa0be56aa}\label{structlwgps__t_acbefe770ce24afa349da65bfa0be56aa}} 
+\index{lwgps\_t@{lwgps\_t}!star@{star}}
+\index{star@{star}!lwgps\_t@{lwgps\_t}}
+\doxysubsubsection{\texorpdfstring{star}{star}}
+{\footnotesize\ttfamily uint8\+\_\+t star}
+
+Star detected flag 
+
+Definition at line \mbox{\hyperlink{lwgps_8h_source_l00160}{160}} of file \mbox{\hyperlink{lwgps_8h_source}{lwgps.\+h}}.
+
+\mbox{\Hypertarget{structlwgps__t_af0a0d8ffdf231f5ff58d3a8aa6725983}\label{structlwgps__t_af0a0d8ffdf231f5ff58d3a8aa6725983}} 
+\index{lwgps\_t@{lwgps\_t}!stat@{stat}}
+\index{stat@{stat}!lwgps\_t@{lwgps\_t}}
+\doxysubsubsection{\texorpdfstring{stat}{stat}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___l_w_g_p_s_gabab85c279fb364e161ba08aaf8a14284}{lwgps\+\_\+statement\+\_\+t}} stat}
+
+Statement index 
+
+Definition at line \mbox{\hyperlink{lwgps_8h_source_l00155}{155}} of file \mbox{\hyperlink{lwgps_8h_source}{lwgps.\+h}}.
+
+\mbox{\Hypertarget{structlwgps__t_a8a962fe759ffe972d4c91a3a79ad331c}\label{structlwgps__t_a8a962fe759ffe972d4c91a3a79ad331c}} 
+\index{lwgps\_t@{lwgps\_t}!term\_num@{term\_num}}
+\index{term\_num@{term\_num}!lwgps\_t@{lwgps\_t}}
+\doxysubsubsection{\texorpdfstring{term\_num}{term\_num}}
+{\footnotesize\ttfamily uint8\+\_\+t term\+\_\+num}
+
+Current term number 
+
+Definition at line \mbox{\hyperlink{lwgps_8h_source_l00158}{158}} of file \mbox{\hyperlink{lwgps_8h_source}{lwgps.\+h}}.
+
+\mbox{\Hypertarget{structlwgps__t_a1fdb57bd189d6a15778b50cd29e3d695}\label{structlwgps__t_a1fdb57bd189d6a15778b50cd29e3d695}} 
+\index{lwgps\_t@{lwgps\_t}!term\_pos@{term\_pos}}
+\index{term\_pos@{term\_pos}!lwgps\_t@{lwgps\_t}}
+\doxysubsubsection{\texorpdfstring{term\_pos}{term\_pos}}
+{\footnotesize\ttfamily uint8\+\_\+t term\+\_\+pos}
+
+Current index position in term 
+
+Definition at line \mbox{\hyperlink{lwgps_8h_source_l00157}{157}} of file \mbox{\hyperlink{lwgps_8h_source}{lwgps.\+h}}.
+
+\mbox{\Hypertarget{structlwgps__t_ae21c3829b38844c590d24e649525a2dc}\label{structlwgps__t_ae21c3829b38844c590d24e649525a2dc}} 
+\index{lwgps\_t@{lwgps\_t}!term\_str@{term\_str}}
+\index{term\_str@{term\_str}!lwgps\_t@{lwgps\_t}}
+\doxysubsubsection{\texorpdfstring{term\_str}{term\_str}}
+{\footnotesize\ttfamily char term\+\_\+str\mbox{[}13\mbox{]}}
+
+Current term in string format 
+
+Definition at line \mbox{\hyperlink{lwgps_8h_source_l00156}{156}} of file \mbox{\hyperlink{lwgps_8h_source}{lwgps.\+h}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Core/\+Inc/lwgps/\mbox{\hyperlink{lwgps_8h}{lwgps.\+h}}\end{DoxyCompactItemize}

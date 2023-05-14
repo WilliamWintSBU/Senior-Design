@@ -39,7 +39,7 @@ Core/Src/my_code.o: ../Core/Src/my_code.c ../Core/Inc/my_code.h \
  ../Core/Inc/lwgps/lwgps.h ../Core/Inc/lwgps/lwgps_opt.h \
  ../Core/Inc/lwgps/lwgps_opts.h ../Core/Inc/ads1115.h ../Core/Inc/LCD.h \
  ../Core/Inc/gpio.h ../Core/Src/MAX31865.h ../Core/Inc/gpio.h \
- ../Core/Inc/spi.h
+ ../Core/Inc/spi.h ../Core/Inc/pcf8574.h ../Core/Inc/i2c.h
 ../Core/Inc/my_code.h:
 ../Core/Inc/main.h:
 ../Drivers/STM32F0xx_HAL_Driver/Inc/stm32f0xx_hal.h:
@@ -88,3 +88,5 @@ Core/Src/my_code.o: ../Core/Src/my_code.c ../Core/Inc/my_code.h \
 ../Core/Src/MAX31865.h:
 ../Core/Inc/gpio.h:
 ../Core/Inc/spi.h:
+../Core/Inc/pcf8574.h:
+../Core/Inc/i2c.h:

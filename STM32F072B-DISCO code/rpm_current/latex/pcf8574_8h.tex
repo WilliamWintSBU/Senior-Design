@@ -1,0 +1,149 @@
+\hypertarget{pcf8574_8h}{}\doxysection{Core/\+Inc/pcf8574.h File Reference}
+\label{pcf8574_8h}\index{Core/Inc/pcf8574.h@{Core/Inc/pcf8574.h}}
+{\ttfamily \#include \char`\"{}main.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}i2c.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{pcf8574_8h_a615635d9f97355bf6e4fe7b4a1dc9bf9}{PCF8574\+\_\+\+I2\+C\+\_\+\+ADDRESS}}~(0x27 $<$$<$ 1)
+\item 
+\#define \mbox{\hyperlink{pcf8574_8h_a2c95c2e5ba86350835f6a4907bd08d87}{PCF8574\+\_\+\+I2\+C\+\_\+\+HANDLER}}~\mbox{\hyperlink{i2c_8h_ac379bcc152d860f08b1279fd3e232295}{hi2c2}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{pcf8574_8h_a1a112ccb22e4f631614b4d4df1553949}{pcf8574\+\_\+send\+\_\+cmd}} (uint8\+\_\+t cmd)
+\item 
+void \mbox{\hyperlink{pcf8574_8h_a4b069190c7f6000df4fe9e8c214b0e17}{pcf8574\+\_\+send\+\_\+data}} (uint8\+\_\+t cmd)
+\item 
+void \mbox{\hyperlink{pcf8574_8h_aa35596e8e898426a066c74eb86266837}{pcf8574\+\_\+clr}} ()
+\item 
+void \mbox{\hyperlink{pcf8574_8h_ad7a2ce201ada868604cc706faf280eb1}{pcf8574\+\_\+cursor}} (uint8\+\_\+t row, uint8\+\_\+t col)
+\item 
+void \mbox{\hyperlink{pcf8574_8h_a80c7fedc95b28a8c4711b846eec74901}{pcf8574\+\_\+send\+\_\+string}} (char $\ast$str)
+\item 
+void \mbox{\hyperlink{pcf8574_8h_a06fa8d95b31275734b484344375014a9}{pcf8574\+\_\+send\+\_\+integer}} (int32\+\_\+t i)
+\item 
+void \mbox{\hyperlink{pcf8574_8h_ae44610b0b8ca4116e813b60957cb8852}{pcf8574\+\_\+send\+\_\+float}} (double f)
+\item 
+void \mbox{\hyperlink{pcf8574_8h_a54c9ca1eefab91724d90b1372ce3447b}{pcf8574\+\_\+test}} ()
+\item 
+void \mbox{\hyperlink{pcf8574_8h_aa66e90a23f82feabb60b63dd39299ad6}{pcf8574\+\_\+init}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{pcf8574_8h_a615635d9f97355bf6e4fe7b4a1dc9bf9}\label{pcf8574_8h_a615635d9f97355bf6e4fe7b4a1dc9bf9}} 
+\index{pcf8574.h@{pcf8574.h}!PCF8574\_I2C\_ADDRESS@{PCF8574\_I2C\_ADDRESS}}
+\index{PCF8574\_I2C\_ADDRESS@{PCF8574\_I2C\_ADDRESS}!pcf8574.h@{pcf8574.h}}
+\doxysubsubsection{\texorpdfstring{PCF8574\_I2C\_ADDRESS}{PCF8574\_I2C\_ADDRESS}}
+{\footnotesize\ttfamily \#define PCF8574\+\_\+\+I2\+C\+\_\+\+ADDRESS~(0x27 $<$$<$ 1)}
+
+
+
+Definition at line \mbox{\hyperlink{pcf8574_8h_source_l00012}{12}} of file \mbox{\hyperlink{pcf8574_8h_source}{pcf8574.\+h}}.
+
+\mbox{\Hypertarget{pcf8574_8h_a2c95c2e5ba86350835f6a4907bd08d87}\label{pcf8574_8h_a2c95c2e5ba86350835f6a4907bd08d87}} 
+\index{pcf8574.h@{pcf8574.h}!PCF8574\_I2C\_HANDLER@{PCF8574\_I2C\_HANDLER}}
+\index{PCF8574\_I2C\_HANDLER@{PCF8574\_I2C\_HANDLER}!pcf8574.h@{pcf8574.h}}
+\doxysubsubsection{\texorpdfstring{PCF8574\_I2C\_HANDLER}{PCF8574\_I2C\_HANDLER}}
+{\footnotesize\ttfamily \#define PCF8574\+\_\+\+I2\+C\+\_\+\+HANDLER~\mbox{\hyperlink{i2c_8h_ac379bcc152d860f08b1279fd3e232295}{hi2c2}}}
+
+
+
+Definition at line \mbox{\hyperlink{pcf8574_8h_source_l00013}{13}} of file \mbox{\hyperlink{pcf8574_8h_source}{pcf8574.\+h}}.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{pcf8574_8h_aa35596e8e898426a066c74eb86266837}\label{pcf8574_8h_aa35596e8e898426a066c74eb86266837}} 
+\index{pcf8574.h@{pcf8574.h}!pcf8574\_clr@{pcf8574\_clr}}
+\index{pcf8574\_clr@{pcf8574\_clr}!pcf8574.h@{pcf8574.h}}
+\doxysubsubsection{\texorpdfstring{pcf8574\_clr()}{pcf8574\_clr()}}
+{\footnotesize\ttfamily void pcf8574\+\_\+clr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{pcf8574_8c_source_l00067}{67}} of file \mbox{\hyperlink{pcf8574_8c_source}{pcf8574.\+c}}.
+
+\mbox{\Hypertarget{pcf8574_8h_ad7a2ce201ada868604cc706faf280eb1}\label{pcf8574_8h_ad7a2ce201ada868604cc706faf280eb1}} 
+\index{pcf8574.h@{pcf8574.h}!pcf8574\_cursor@{pcf8574\_cursor}}
+\index{pcf8574\_cursor@{pcf8574\_cursor}!pcf8574.h@{pcf8574.h}}
+\doxysubsubsection{\texorpdfstring{pcf8574\_cursor()}{pcf8574\_cursor()}}
+{\footnotesize\ttfamily void pcf8574\+\_\+cursor (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{row,  }\item[{uint8\+\_\+t}]{col }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{pcf8574_8c_source_l00076}{76}} of file \mbox{\hyperlink{pcf8574_8c_source}{pcf8574.\+c}}.
+
+\mbox{\Hypertarget{pcf8574_8h_aa66e90a23f82feabb60b63dd39299ad6}\label{pcf8574_8h_aa66e90a23f82feabb60b63dd39299ad6}} 
+\index{pcf8574.h@{pcf8574.h}!pcf8574\_init@{pcf8574\_init}}
+\index{pcf8574\_init@{pcf8574\_init}!pcf8574.h@{pcf8574.h}}
+\doxysubsubsection{\texorpdfstring{pcf8574\_init()}{pcf8574\_init()}}
+{\footnotesize\ttfamily void pcf8574\+\_\+init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{pcf8574_8c_source_l00135}{135}} of file \mbox{\hyperlink{pcf8574_8c_source}{pcf8574.\+c}}.
+
+\mbox{\Hypertarget{pcf8574_8h_a1a112ccb22e4f631614b4d4df1553949}\label{pcf8574_8h_a1a112ccb22e4f631614b4d4df1553949}} 
+\index{pcf8574.h@{pcf8574.h}!pcf8574\_send\_cmd@{pcf8574\_send\_cmd}}
+\index{pcf8574\_send\_cmd@{pcf8574\_send\_cmd}!pcf8574.h@{pcf8574.h}}
+\doxysubsubsection{\texorpdfstring{pcf8574\_send\_cmd()}{pcf8574\_send\_cmd()}}
+{\footnotesize\ttfamily void pcf8574\+\_\+send\+\_\+cmd (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{cmd }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{pcf8574_8c_source_l00032}{32}} of file \mbox{\hyperlink{pcf8574_8c_source}{pcf8574.\+c}}.
+
+\mbox{\Hypertarget{pcf8574_8h_a4b069190c7f6000df4fe9e8c214b0e17}\label{pcf8574_8h_a4b069190c7f6000df4fe9e8c214b0e17}} 
+\index{pcf8574.h@{pcf8574.h}!pcf8574\_send\_data@{pcf8574\_send\_data}}
+\index{pcf8574\_send\_data@{pcf8574\_send\_data}!pcf8574.h@{pcf8574.h}}
+\doxysubsubsection{\texorpdfstring{pcf8574\_send\_data()}{pcf8574\_send\_data()}}
+{\footnotesize\ttfamily void pcf8574\+\_\+send\+\_\+data (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{cmd }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{pcf8574_8c_source_l00054}{54}} of file \mbox{\hyperlink{pcf8574_8c_source}{pcf8574.\+c}}.
+
+\mbox{\Hypertarget{pcf8574_8h_ae44610b0b8ca4116e813b60957cb8852}\label{pcf8574_8h_ae44610b0b8ca4116e813b60957cb8852}} 
+\index{pcf8574.h@{pcf8574.h}!pcf8574\_send\_float@{pcf8574\_send\_float}}
+\index{pcf8574\_send\_float@{pcf8574\_send\_float}!pcf8574.h@{pcf8574.h}}
+\doxysubsubsection{\texorpdfstring{pcf8574\_send\_float()}{pcf8574\_send\_float()}}
+{\footnotesize\ttfamily void pcf8574\+\_\+send\+\_\+float (\begin{DoxyParamCaption}\item[{double}]{f }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{pcf8574_8c_source_l00102}{102}} of file \mbox{\hyperlink{pcf8574_8c_source}{pcf8574.\+c}}.
+
+\mbox{\Hypertarget{pcf8574_8h_a06fa8d95b31275734b484344375014a9}\label{pcf8574_8h_a06fa8d95b31275734b484344375014a9}} 
+\index{pcf8574.h@{pcf8574.h}!pcf8574\_send\_integer@{pcf8574\_send\_integer}}
+\index{pcf8574\_send\_integer@{pcf8574\_send\_integer}!pcf8574.h@{pcf8574.h}}
+\doxysubsubsection{\texorpdfstring{pcf8574\_send\_integer()}{pcf8574\_send\_integer()}}
+{\footnotesize\ttfamily void pcf8574\+\_\+send\+\_\+integer (\begin{DoxyParamCaption}\item[{int32\+\_\+t}]{i }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{pcf8574_8c_source_l00109}{109}} of file \mbox{\hyperlink{pcf8574_8c_source}{pcf8574.\+c}}.
+
+\mbox{\Hypertarget{pcf8574_8h_a80c7fedc95b28a8c4711b846eec74901}\label{pcf8574_8h_a80c7fedc95b28a8c4711b846eec74901}} 
+\index{pcf8574.h@{pcf8574.h}!pcf8574\_send\_string@{pcf8574\_send\_string}}
+\index{pcf8574\_send\_string@{pcf8574\_send\_string}!pcf8574.h@{pcf8574.h}}
+\doxysubsubsection{\texorpdfstring{pcf8574\_send\_string()}{pcf8574\_send\_string()}}
+{\footnotesize\ttfamily void pcf8574\+\_\+send\+\_\+string (\begin{DoxyParamCaption}\item[{char $\ast$}]{str }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{pcf8574_8c_source_l00096}{96}} of file \mbox{\hyperlink{pcf8574_8c_source}{pcf8574.\+c}}.
+
+\mbox{\Hypertarget{pcf8574_8h_a54c9ca1eefab91724d90b1372ce3447b}\label{pcf8574_8h_a54c9ca1eefab91724d90b1372ce3447b}} 
+\index{pcf8574.h@{pcf8574.h}!pcf8574\_test@{pcf8574\_test}}
+\index{pcf8574\_test@{pcf8574\_test}!pcf8574.h@{pcf8574.h}}
+\doxysubsubsection{\texorpdfstring{pcf8574\_test()}{pcf8574\_test()}}
+{\footnotesize\ttfamily void pcf8574\+\_\+test (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{pcf8574_8c_source_l00116}{116}} of file \mbox{\hyperlink{pcf8574_8c_source}{pcf8574.\+c}}.
+

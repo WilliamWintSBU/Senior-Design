@@ -1,0 +1,109 @@
+\hypertarget{tsc_8c_source}{}\doxysection{tsc.\+c}
+\label{tsc_8c_source}\index{Core/Src/tsc.c@{Core/Src/tsc.c}}
+\mbox{\hyperlink{tsc_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00001}00001\ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ Header\ */}}
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00019}00019\ \textcolor{comment}{/*\ USER\ CODE\ END\ Header\ */}}
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00020}00020\ \textcolor{comment}{/*\ Includes\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00021}00021\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{tsc_8h}{tsc.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00023}00023\ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ 0\ */}}
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00025}00025\ \textcolor{comment}{/*\ USER\ CODE\ END\ 0\ */}}
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00027}\mbox{\hyperlink{tsc_8h_a899fab719d80961a63b5fb70ad4aa6ab}{00027}}\ TSC\_HandleTypeDef\ \mbox{\hyperlink{tsc_8c_a899fab719d80961a63b5fb70ad4aa6ab}{htsc}};}
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00029}00029\ \textcolor{comment}{/*\ TSC\ init\ function\ */}}
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00030}\mbox{\hyperlink{tsc_8h_ab8f5b6f679b228152e65fa25bcfae24f}{00030}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{tsc_8c_ab8f5b6f679b228152e65fa25bcfae24f}{MX\_TSC\_Init}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00031}00031\ \{}
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00033}00033\ \ \ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ TSC\_Init\ 0\ */}}
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00035}00035\ \ \ \textcolor{comment}{/*\ USER\ CODE\ END\ TSC\_Init\ 0\ */}}
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00037}00037\ \ \ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ TSC\_Init\ 1\ */}}
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00039}00039\ \ \ \textcolor{comment}{/*\ USER\ CODE\ END\ TSC\_Init\ 1\ */}}
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00043}00043\ \ \ \mbox{\hyperlink{tsc_8c_a899fab719d80961a63b5fb70ad4aa6ab}{htsc}}.Instance\ =\ TSC;}
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00044}00044\ \ \ \mbox{\hyperlink{tsc_8c_a899fab719d80961a63b5fb70ad4aa6ab}{htsc}}.Init.CTPulseHighLength\ =\ TSC\_CTPH\_2CYCLES;}
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00045}00045\ \ \ \mbox{\hyperlink{tsc_8c_a899fab719d80961a63b5fb70ad4aa6ab}{htsc}}.Init.CTPulseLowLength\ =\ TSC\_CTPL\_2CYCLES;}
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00046}00046\ \ \ \mbox{\hyperlink{tsc_8c_a899fab719d80961a63b5fb70ad4aa6ab}{htsc}}.Init.SpreadSpectrum\ =\ DISABLE;}
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00047}00047\ \ \ \mbox{\hyperlink{tsc_8c_a899fab719d80961a63b5fb70ad4aa6ab}{htsc}}.Init.SpreadSpectrumDeviation\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00048}00048\ \ \ \mbox{\hyperlink{tsc_8c_a899fab719d80961a63b5fb70ad4aa6ab}{htsc}}.Init.SpreadSpectrumPrescaler\ =\ TSC\_SS\_PRESC\_DIV1;}
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00049}00049\ \ \ \mbox{\hyperlink{tsc_8c_a899fab719d80961a63b5fb70ad4aa6ab}{htsc}}.Init.PulseGeneratorPrescaler\ =\ TSC\_PG\_PRESC\_DIV4;}
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00050}00050\ \ \ \mbox{\hyperlink{tsc_8c_a899fab719d80961a63b5fb70ad4aa6ab}{htsc}}.Init.MaxCountValue\ =\ TSC\_MCV\_8191;}
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00051}00051\ \ \ \mbox{\hyperlink{tsc_8c_a899fab719d80961a63b5fb70ad4aa6ab}{htsc}}.Init.IODefaultMode\ =\ TSC\_IODEF\_OUT\_PP\_LOW;}
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00052}00052\ \ \ \mbox{\hyperlink{tsc_8c_a899fab719d80961a63b5fb70ad4aa6ab}{htsc}}.Init.SynchroPinPolarity\ =\ TSC\_SYNC\_POLARITY\_FALLING;}
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00053}00053\ \ \ \mbox{\hyperlink{tsc_8c_a899fab719d80961a63b5fb70ad4aa6ab}{htsc}}.Init.AcquisitionMode\ =\ TSC\_ACQ\_MODE\_NORMAL;}
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00054}00054\ \ \ \mbox{\hyperlink{tsc_8c_a899fab719d80961a63b5fb70ad4aa6ab}{htsc}}.Init.MaxCountInterrupt\ =\ DISABLE;}
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00055}00055\ \ \ \mbox{\hyperlink{tsc_8c_a899fab719d80961a63b5fb70ad4aa6ab}{htsc}}.Init.ChannelIOs\ =\ TSC\_GROUP2\_IO3;}
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00056}00056\ \ \ \mbox{\hyperlink{tsc_8c_a899fab719d80961a63b5fb70ad4aa6ab}{htsc}}.Init.ShieldIOs\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00057}00057\ \ \ \mbox{\hyperlink{tsc_8c_a899fab719d80961a63b5fb70ad4aa6ab}{htsc}}.Init.SamplingIOs\ =\ TSC\_GROUP2\_IO4;}
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00058}00058\ \ \ \textcolor{keywordflow}{if}\ (HAL\_TSC\_Init(\&\mbox{\hyperlink{tsc_8c_a899fab719d80961a63b5fb70ad4aa6ab}{htsc}})\ !=\ HAL\_OK)}
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00059}00059\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00060}00060\ \ \ \ \ \mbox{\hyperlink{main_8h_a1730ffe1e560465665eb47d9264826f9}{Error\_Handler}}();}
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00061}00061\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00062}00062\ \ \ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ TSC\_Init\ 2\ */}}
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00064}00064\ \ \ \textcolor{comment}{/*\ USER\ CODE\ END\ TSC\_Init\ 2\ */}}
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00066}00066\ \}}
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00068}\mbox{\hyperlink{tsc_8c_a33a8ff29ddb6c279e55c261338f618be}{00068}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{tsc_8c_a33a8ff29ddb6c279e55c261338f618be}{HAL\_TSC\_MspInit}}(TSC\_HandleTypeDef*\ tscHandle)}
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00069}00069\ \{}
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00071}00071\ \ \ GPIO\_InitTypeDef\ GPIO\_InitStruct\ =\ \{0\};}
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00072}00072\ \ \ \textcolor{keywordflow}{if}(tscHandle-\/>Instance==TSC)}
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00073}00073\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00074}00074\ \ \ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ TSC\_MspInit\ 0\ */}}
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00076}00076\ \ \ \textcolor{comment}{/*\ USER\ CODE\ END\ TSC\_MspInit\ 0\ */}}
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00077}00077\ \ \ \ \ \textcolor{comment}{/*\ TSC\ clock\ enable\ */}}
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00078}00078\ \ \ \ \ \_\_HAL\_RCC\_TSC\_CLK\_ENABLE();}
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00079}00079\ }
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00080}00080\ \ \ \ \ \_\_HAL\_RCC\_GPIOA\_CLK\_ENABLE();}
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00085}00085\ \ \ \ \ GPIO\_InitStruct.Pin\ =\ GPIO\_PIN\_6;}
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00086}00086\ \ \ \ \ GPIO\_InitStruct.Mode\ =\ GPIO\_MODE\_AF\_PP;}
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00087}00087\ \ \ \ \ GPIO\_InitStruct.Pull\ =\ GPIO\_NOPULL;}
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00088}00088\ \ \ \ \ GPIO\_InitStruct.Speed\ =\ GPIO\_SPEED\_FREQ\_LOW;}
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00089}00089\ \ \ \ \ GPIO\_InitStruct.Alternate\ =\ GPIO\_AF3\_TSC;}
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00090}00090\ \ \ \ \ HAL\_GPIO\_Init(GPIOA,\ \&GPIO\_InitStruct);}
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00092}00092\ \ \ \ \ GPIO\_InitStruct.Pin\ =\ GPIO\_PIN\_7;}
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00093}00093\ \ \ \ \ GPIO\_InitStruct.Mode\ =\ GPIO\_MODE\_AF\_OD;}
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00094}00094\ \ \ \ \ GPIO\_InitStruct.Pull\ =\ GPIO\_NOPULL;}
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00095}00095\ \ \ \ \ GPIO\_InitStruct.Speed\ =\ GPIO\_SPEED\_FREQ\_LOW;}
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00096}00096\ \ \ \ \ GPIO\_InitStruct.Alternate\ =\ GPIO\_AF3\_TSC;}
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00097}00097\ \ \ \ \ HAL\_GPIO\_Init(GPIOA,\ \&GPIO\_InitStruct);}
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00098}00098\ }
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00099}00099\ \ \ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ TSC\_MspInit\ 1\ */}}
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00101}00101\ \ \ \textcolor{comment}{/*\ USER\ CODE\ END\ TSC\_MspInit\ 1\ */}}
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00102}00102\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00103}00103\ \}}
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00104}00104\ }
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00105}\mbox{\hyperlink{tsc_8c_ae968710c28a213c2571dbe8226823052}{00105}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{tsc_8c_ae968710c28a213c2571dbe8226823052}{HAL\_TSC\_MspDeInit}}(TSC\_HandleTypeDef*\ tscHandle)}
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00106}00106\ \{}
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00107}00107\ }
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00108}00108\ \ \ \textcolor{keywordflow}{if}(tscHandle-\/>Instance==TSC)}
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00109}00109\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00110}00110\ \ \ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ TSC\_MspDeInit\ 0\ */}}
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00111}00111\ }
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00112}00112\ \ \ \textcolor{comment}{/*\ USER\ CODE\ END\ TSC\_MspDeInit\ 0\ */}}
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00113}00113\ \ \ \ \ \textcolor{comment}{/*\ Peripheral\ clock\ disable\ */}}
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00114}00114\ \ \ \ \ \_\_HAL\_RCC\_TSC\_CLK\_DISABLE();}
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00115}00115\ }
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00120}00120\ \ \ \ \ HAL\_GPIO\_DeInit(GPIOA,\ GPIO\_PIN\_6|GPIO\_PIN\_7);}
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00121}00121\ }
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00122}00122\ \ \ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ TSC\_MspDeInit\ 1\ */}}
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00123}00123\ }
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00124}00124\ \ \ \textcolor{comment}{/*\ USER\ CODE\ END\ TSC\_MspDeInit\ 1\ */}}
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00125}00125\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00126}00126\ \}}
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00127}00127\ }
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00128}00128\ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ 1\ */}}
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00129}00129\ }
+\DoxyCodeLine{\Hypertarget{tsc_8c_source_l00130}00130\ \textcolor{comment}{/*\ USER\ CODE\ END\ 1\ */}}
+
+\end{DoxyCode}

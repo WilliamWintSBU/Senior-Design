@@ -16,21 +16,22 @@
 #define ADS1115_ADDRESS 0b1001000;
 #define HALL_SENSITIVITY 600.0 / 625.0 // sensitivity of current sensor in A/mV
 
-//vikash
+// macros for vikash's code
 #define TIMCLOCK  48000000
 #define PRESCALAR  48
 
 // redeclare external global variables so that my functions can see them
-extern UART_HandleTypeDef huart3;
-extern UART_HandleTypeDef huart1;
-extern ADC_HandleTypeDef hadc;
-extern I2C_HandleTypeDef hi2c1;
+extern UART_HandleTypeDef huart3; // for gps
+extern UART_HandleTypeDef huart1; // for lora
+extern ADC_HandleTypeDef hadc;	  // for internal ADC channels
+extern I2C_HandleTypeDef hi2c1;   //  for ADS1115
+
 
 // redeclare public globals
 extern float rpm;
 extern uint16_t readValue;
 
-// define custom struct for gps global variables
+/// @brief custom struct for gps global variables
 struct gps_struct
 	{
 		enum {read , write} buffStateFlag;
@@ -43,7 +44,7 @@ struct gps_struct
 
 	};
 
-/* custom struct to hold all variables for a hall effect current sensor */
+/** @brief custom struct to hold all variables for a hall effect current sensor */
 struct hall_struct
 {
 	float rawVoltage;
@@ -51,12 +52,7 @@ struct hall_struct
 	float offsetVoltage;
 };
 
-struct lora_struct
-	{
-		enum {tx , canSend } buff_state;
-		int index;
-		char buff[256];
-	};
+
 
 // declare functions
 void extern setup();

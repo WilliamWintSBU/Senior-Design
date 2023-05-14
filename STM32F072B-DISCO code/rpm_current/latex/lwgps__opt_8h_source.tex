@@ -1,0 +1,104 @@
+\hypertarget{lwgps__opt_8h_source}{}\doxysection{lwgps\+\_\+opt.\+h}
+\label{lwgps__opt_8h_source}\index{Core/Inc/lwgps/lwgps\_opt.h@{Core/Inc/lwgps/lwgps\_opt.h}}
+\mbox{\hyperlink{lwgps__opt_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00006}00006\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00007}00007\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2023\ Tilen\ MAJERLE}}
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00008}00008\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00009}00009\ \textcolor{comment}{\ *\ Permission\ is\ hereby\ granted,\ free\ of\ charge,\ to\ any\ person}}
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00010}00010\ \textcolor{comment}{\ *\ obtaining\ a\ copy\ of\ this\ software\ and\ associated\ documentation}}
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00011}00011\ \textcolor{comment}{\ *\ files\ (the\ "{}Software"{}),\ to\ deal\ in\ the\ Software\ without\ restriction,}}
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00012}00012\ \textcolor{comment}{\ *\ including\ without\ limitation\ the\ rights\ to\ use,\ copy,\ modify,\ merge,}}
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00013}00013\ \textcolor{comment}{\ *\ publish,\ distribute,\ sublicense,\ and/or\ sell\ copies\ of\ the\ Software,}}
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00014}00014\ \textcolor{comment}{\ *\ and\ to\ permit\ persons\ to\ whom\ the\ Software\ is\ furnished\ to\ do\ so,}}
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00015}00015\ \textcolor{comment}{\ *\ subject\ to\ the\ following\ conditions:}}
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00016}00016\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00017}00017\ \textcolor{comment}{\ *\ The\ above\ copyright\ notice\ and\ this\ permission\ notice\ shall\ be}}
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00018}00018\ \textcolor{comment}{\ *\ included\ in\ all\ copies\ or\ substantial\ portions\ of\ the\ Software.}}
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00019}00019\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00020}00020\ \textcolor{comment}{\ *\ THE\ SOFTWARE\ IS\ PROVIDED\ "{}AS\ IS"{},\ WITHOUT\ WARRANTY\ OF\ ANY\ KIND,}}
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00021}00021\ \textcolor{comment}{\ *\ EXPRESS\ OR\ IMPLIED,\ INCLUDING\ BUT\ NOT\ LIMITED\ TO\ THE\ WARRANTIES}}
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00022}00022\ \textcolor{comment}{\ *\ OF\ MERCHANTABILITY,\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE}}
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00023}00023\ \textcolor{comment}{\ *\ AND\ NONINFRINGEMENT.\ IN\ NO\ EVENT\ SHALL\ THE\ AUTHORS\ OR\ COPYRIGHT}}
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00024}00024\ \textcolor{comment}{\ *\ HOLDERS\ BE\ LIABLE\ FOR\ ANY\ CLAIM,\ DAMAGES\ OR\ OTHER\ LIABILITY,}}
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00025}00025\ \textcolor{comment}{\ *\ WHETHER\ IN\ AN\ ACTION\ OF\ CONTRACT,\ TORT\ OR\ OTHERWISE,\ ARISING}}
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00026}00026\ \textcolor{comment}{\ *\ FROM,\ OUT\ OF\ OR\ IN\ CONNECTION\ WITH\ THE\ SOFTWARE\ OR\ THE\ USE\ OR}}
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00027}00027\ \textcolor{comment}{\ *\ OTHER\ DEALINGS\ IN\ THE\ SOFTWARE.}}
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00028}00028\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00029}00029\ \textcolor{comment}{\ *\ This\ file\ is\ part\ of\ LwGPS\ -\/\ Lightweight\ GPS\ NMEA\ parser\ library.}}
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00030}00030\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00031}00031\ \textcolor{comment}{\ *\ Author:\ \ \ \ \ \ \ \ \ \ Tilen\ MAJERLE\ <tilen@majerle.eu>}}
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00032}00032\ \textcolor{comment}{\ *\ Version:\ \ \ \ \ \ \ \ \ \$2.1.0\$}}
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00033}00033\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00034}00034\ \textcolor{preprocessor}{\#ifndef\ LWGPS\_OPT\_HDR\_H}}
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00035}00035\ \textcolor{preprocessor}{\#define\ LWGPS\_OPT\_HDR\_H}}
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00037}00037\ \textcolor{comment}{/*\ Uncomment\ to\ ignore\ user\ options\ (or\ set\ macro\ in\ compiler\ flags)\ */}}
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00038}00038\ \textcolor{comment}{/*\ \#define\ LWGPS\_IGNORE\_USER\_OPTS\ */}}
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00040}00040\ \textcolor{comment}{/*\ Include\ application\ options\ */}}
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00041}00041\ \textcolor{preprocessor}{\#ifndef\ LWGPS\_IGNORE\_USER\_OPTS}}
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00042}00042\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{lwgps__opts_8h}{lwgps\_opts.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00043}00043\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ LWGPS\_IGNORE\_USER\_OPTS\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00045}00045\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00046}00046\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00047}00047\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_\_cplusplus\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00061}00061\ \textcolor{preprocessor}{\#ifndef\ LWGPS\_CFG\_DOUBLE}}
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00062}\mbox{\hyperlink{group___l_w_g_p_s___o_p_t_ga0fc7807db100b4183d9c93ed06bede35}{00062}}\ \textcolor{preprocessor}{\#define\ LWGPS\_CFG\_DOUBLE\ 1}}
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00063}00063\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00071}00071\ \textcolor{preprocessor}{\#ifndef\ LWGPS\_CFG\_STATUS}}
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00072}\mbox{\hyperlink{group___l_w_g_p_s___o_p_t_ga9c77abde9a09218d5590e0ccd962ac03}{00072}}\ \textcolor{preprocessor}{\#define\ LWGPS\_CFG\_STATUS\ 0}}
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00073}00073\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00082}00082\ \textcolor{preprocessor}{\#ifndef\ LWGPS\_CFG\_STATEMENT\_GPGGA}}
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00083}\mbox{\hyperlink{group___l_w_g_p_s___o_p_t_gaa8f481b5c8ade448056ecd7e73014c57}{00083}}\ \textcolor{preprocessor}{\#define\ LWGPS\_CFG\_STATEMENT\_GPGGA\ 1}}
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00084}00084\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00094}00094\ \textcolor{preprocessor}{\#ifndef\ LWGPS\_CFG\_STATEMENT\_GPGSA}}
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00095}\mbox{\hyperlink{group___l_w_g_p_s___o_p_t_ga31405b60636d0ab820754ec6af250d19}{00095}}\ \textcolor{preprocessor}{\#define\ LWGPS\_CFG\_STATEMENT\_GPGSA\ 1}}
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00096}00096\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00107}00107\ \textcolor{preprocessor}{\#ifndef\ LWGPS\_CFG\_STATEMENT\_GPRMC}}
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00108}\mbox{\hyperlink{group___l_w_g_p_s___o_p_t_ga3d44255f7998842d847d496b7881aec9}{00108}}\ \textcolor{preprocessor}{\#define\ LWGPS\_CFG\_STATEMENT\_GPRMC\ 1}}
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00109}00109\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00110}00110\ }
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00118}00118\ \textcolor{preprocessor}{\#ifndef\ LWGPS\_CFG\_STATEMENT\_GPGSV}}
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00119}\mbox{\hyperlink{group___l_w_g_p_s___o_p_t_ga54e82946507f265a5e0995809ae1f12f}{00119}}\ \textcolor{preprocessor}{\#define\ LWGPS\_CFG\_STATEMENT\_GPGSV\ 1}}
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00120}00120\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00121}00121\ }
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00128}00128\ \textcolor{preprocessor}{\#ifndef\ LWGPS\_CFG\_STATEMENT\_GPGSV\_SAT\_DET}}
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00129}\mbox{\hyperlink{group___l_w_g_p_s___o_p_t_gae1ff2be9b19706df2a3446e66d19289b}{00129}}\ \textcolor{preprocessor}{\#define\ LWGPS\_CFG\_STATEMENT\_GPGSV\_SAT\_DET\ 0}}
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00130}00130\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00131}00131\ }
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00139}00139\ \textcolor{preprocessor}{\#ifndef\ LWGPS\_CFG\_STATEMENT\_PUBX}}
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00140}\mbox{\hyperlink{group___l_w_g_p_s___o_p_t_ga8f9c932990413c21e75f23371b7f99df}{00140}}\ \textcolor{preprocessor}{\#define\ LWGPS\_CFG\_STATEMENT\_PUBX\ 0}}
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00141}00141\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00142}00142\ }
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00157}00157\ \textcolor{preprocessor}{\#ifndef\ LWGPS\_CFG\_STATEMENT\_PUBX\_TIME}}
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00158}\mbox{\hyperlink{group___l_w_g_p_s___o_p_t_gab03cf2353e374da31244847d39575d44}{00158}}\ \textcolor{preprocessor}{\#define\ LWGPS\_CFG\_STATEMENT\_PUBX\_TIME\ 0}}
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00159}00159\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00160}00160\ }
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00166}00166\ \textcolor{preprocessor}{\#ifndef\ LWGPS\_CFG\_CRC}}
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00167}\mbox{\hyperlink{group___l_w_g_p_s___o_p_t_ga12fa5fc178d68ef7e833133b08c933ed}{00167}}\ \textcolor{preprocessor}{\#define\ LWGPS\_CFG\_CRC\ 1}}
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00168}00168\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00169}00169\ }
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00175}00175\ \textcolor{preprocessor}{\#ifndef\ LWESP\_CFG\_DISTANCE\_BEARING}}
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00176}\mbox{\hyperlink{group___l_w_g_p_s___o_p_t_ga703bd1d6ed324bdf50da8190c87b6930}{00176}}\ \textcolor{preprocessor}{\#define\ LWESP\_CFG\_DISTANCE\_BEARING\ \ 1}}
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00177}00177\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00178}00178\ }
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00179}00179\ \textcolor{comment}{/*\ Guard\ against\ accidental\ parser\ breakage\ */}}
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00180}00180\ \textcolor{preprocessor}{\#if\ LWGPS\_CFG\_STATEMENT\_PUBX\_TIME\ \&\&\ !LWGPS\_CFG\_STATEMENT\_PUBX}}
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00181}00181\ \textcolor{preprocessor}{\#error\ LWGPS\_CFG\_STATEMENT\_PUBX\ must\ be\ enabled\ when\ enabling\ LWGPS\_CFG\_STATEMENT\_PUBX\_TIME}}
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00182}00182\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ LWGPS\_CFG\_STATEMENT\_PUBX\_TIME\ \&\&\ !LWGPS\_CFG\_STATEMENT\_PUBX\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00183}00183\ }
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00188}00188\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00189}00189\ \}}
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00190}00190\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_\_cplusplus\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00191}00191\ }
+\DoxyCodeLine{\Hypertarget{lwgps__opt_8h_source_l00192}00192\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ LWGPS\_OPT\_HDR\_H\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

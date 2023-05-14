@@ -1,0 +1,64 @@
+\hypertarget{_m_a_x31865_8h}{}\doxysection{Core/\+Src/\+MAX31865.h File Reference}
+\label{_m_a_x31865_8h}\index{Core/Src/MAX31865.h@{Core/Src/MAX31865.h}}
+{\ttfamily \#include \char`\"{}gpio.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}spi.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_max31865__t}{Max31865\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_m_a_x31865_8h_a7af0698160523a69eee213637c8c3ce0}{Max31865\+\_\+init}} (\mbox{\hyperlink{struct_max31865__t}{Max31865\+\_\+t}} $\ast$max31865, SPI\+\_\+\+Handle\+Type\+Def $\ast$spi, GPIO\+\_\+\+Type\+Def $\ast$cs\+\_\+gpio, uint16\+\_\+t cs\+\_\+pin, uint8\+\_\+t numwires, uint8\+\_\+t filter\+Hz)
+\item 
+bool \mbox{\hyperlink{_m_a_x31865_8h_a16213618890e307f757c658fd64226c2}{Max31865\+\_\+read\+TempC}} (\mbox{\hyperlink{struct_max31865__t}{Max31865\+\_\+t}} $\ast$max31865, float $\ast$read\+Temp)
+\item 
+bool \mbox{\hyperlink{_m_a_x31865_8h_a99d07f2cc1fcc073a889e28b323d16e4}{Max31865\+\_\+read\+TempF}} (\mbox{\hyperlink{struct_max31865__t}{Max31865\+\_\+t}} $\ast$max31865, float $\ast$read\+Temp)
+\item 
+float \mbox{\hyperlink{_m_a_x31865_8h_ad7de685bbd61fb2dd020ad9a15380149}{Max31865\+\_\+\+Filter}} (float new\+Input, float last\+Output, float efective\+Factor)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_m_a_x31865_8h_ad7de685bbd61fb2dd020ad9a15380149}\label{_m_a_x31865_8h_ad7de685bbd61fb2dd020ad9a15380149}} 
+\index{MAX31865.h@{MAX31865.h}!Max31865\_Filter@{Max31865\_Filter}}
+\index{Max31865\_Filter@{Max31865\_Filter}!MAX31865.h@{MAX31865.h}}
+\doxysubsubsection{\texorpdfstring{Max31865\_Filter()}{Max31865\_Filter()}}
+{\footnotesize\ttfamily float Max31865\+\_\+\+Filter (\begin{DoxyParamCaption}\item[{float}]{new\+Input,  }\item[{float}]{last\+Output,  }\item[{float}]{efective\+Factor }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_m_a_x31865_8c_source_l00228}{228}} of file \mbox{\hyperlink{_m_a_x31865_8c_source}{MAX31865.\+c}}.
+
+\mbox{\Hypertarget{_m_a_x31865_8h_a7af0698160523a69eee213637c8c3ce0}\label{_m_a_x31865_8h_a7af0698160523a69eee213637c8c3ce0}} 
+\index{MAX31865.h@{MAX31865.h}!Max31865\_init@{Max31865\_init}}
+\index{Max31865\_init@{Max31865\_init}!MAX31865.h@{MAX31865.h}}
+\doxysubsubsection{\texorpdfstring{Max31865\_init()}{Max31865\_init()}}
+{\footnotesize\ttfamily void Max31865\+\_\+init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_max31865__t}{Max31865\+\_\+t}} $\ast$}]{max31865,  }\item[{SPI\+\_\+\+Handle\+Type\+Def $\ast$}]{spi,  }\item[{GPIO\+\_\+\+Type\+Def $\ast$}]{cs\+\_\+gpio,  }\item[{uint16\+\_\+t}]{cs\+\_\+pin,  }\item[{uint8\+\_\+t}]{numwires,  }\item[{uint8\+\_\+t}]{filter\+Hz }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_m_a_x31865_8c_source_l00158}{158}} of file \mbox{\hyperlink{_m_a_x31865_8c_source}{MAX31865.\+c}}.
+
+\mbox{\Hypertarget{_m_a_x31865_8h_a16213618890e307f757c658fd64226c2}\label{_m_a_x31865_8h_a16213618890e307f757c658fd64226c2}} 
+\index{MAX31865.h@{MAX31865.h}!Max31865\_readTempC@{Max31865\_readTempC}}
+\index{Max31865\_readTempC@{Max31865\_readTempC}!MAX31865.h@{MAX31865.h}}
+\doxysubsubsection{\texorpdfstring{Max31865\_readTempC()}{Max31865\_readTempC()}}
+{\footnotesize\ttfamily bool Max31865\+\_\+read\+TempC (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_max31865__t}{Max31865\+\_\+t}} $\ast$}]{max31865,  }\item[{float $\ast$}]{read\+Temp }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_m_a_x31865_8c_source_l00175}{175}} of file \mbox{\hyperlink{_m_a_x31865_8c_source}{MAX31865.\+c}}.
+
+\mbox{\Hypertarget{_m_a_x31865_8h_a99d07f2cc1fcc073a889e28b323d16e4}\label{_m_a_x31865_8h_a99d07f2cc1fcc073a889e28b323d16e4}} 
+\index{MAX31865.h@{MAX31865.h}!Max31865\_readTempF@{Max31865\_readTempF}}
+\index{Max31865\_readTempF@{Max31865\_readTempF}!MAX31865.h@{MAX31865.h}}
+\doxysubsubsection{\texorpdfstring{Max31865\_readTempF()}{Max31865\_readTempF()}}
+{\footnotesize\ttfamily bool Max31865\+\_\+read\+TempF (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_max31865__t}{Max31865\+\_\+t}} $\ast$}]{max31865,  }\item[{float $\ast$}]{read\+Temp }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{_m_a_x31865_8c_source_l00221}{221}} of file \mbox{\hyperlink{_m_a_x31865_8c_source}{MAX31865.\+c}}.
+

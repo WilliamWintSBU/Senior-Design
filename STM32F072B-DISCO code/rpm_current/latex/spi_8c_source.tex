@@ -1,0 +1,100 @@
+\hypertarget{spi_8c_source}{}\doxysection{spi.\+c}
+\label{spi_8c_source}\index{Core/Src/spi.c@{Core/Src/spi.c}}
+\mbox{\hyperlink{spi_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{spi_8c_source_l00001}00001\ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ Header\ */}}
+\DoxyCodeLine{\Hypertarget{spi_8c_source_l00019}00019\ \textcolor{comment}{/*\ USER\ CODE\ END\ Header\ */}}
+\DoxyCodeLine{\Hypertarget{spi_8c_source_l00020}00020\ \textcolor{comment}{/*\ Includes\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{spi_8c_source_l00021}00021\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{spi_8h}{spi.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{spi_8c_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{spi_8c_source_l00023}00023\ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ 0\ */}}
+\DoxyCodeLine{\Hypertarget{spi_8c_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{spi_8c_source_l00025}00025\ \textcolor{comment}{/*\ USER\ CODE\ END\ 0\ */}}
+\DoxyCodeLine{\Hypertarget{spi_8c_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{spi_8c_source_l00027}\mbox{\hyperlink{spi_8h_ab9da65f935e805137e2eb4e18c5ab224}{00027}}\ SPI\_HandleTypeDef\ \mbox{\hyperlink{spi_8c_ab9da65f935e805137e2eb4e18c5ab224}{hspi2}};}
+\DoxyCodeLine{\Hypertarget{spi_8c_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{spi_8c_source_l00029}00029\ \textcolor{comment}{/*\ SPI2\ init\ function\ */}}
+\DoxyCodeLine{\Hypertarget{spi_8c_source_l00030}\mbox{\hyperlink{spi_8h_aea85daa666c03d85fd59edef711ebb08}{00030}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{spi_8c_aea85daa666c03d85fd59edef711ebb08}{MX\_SPI2\_Init}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{spi_8c_source_l00031}00031\ \{}
+\DoxyCodeLine{\Hypertarget{spi_8c_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{spi_8c_source_l00033}00033\ \ \ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ SPI2\_Init\ 0\ */}}
+\DoxyCodeLine{\Hypertarget{spi_8c_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{spi_8c_source_l00035}00035\ \ \ \textcolor{comment}{/*\ USER\ CODE\ END\ SPI2\_Init\ 0\ */}}
+\DoxyCodeLine{\Hypertarget{spi_8c_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{spi_8c_source_l00037}00037\ \ \ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ SPI2\_Init\ 1\ */}}
+\DoxyCodeLine{\Hypertarget{spi_8c_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{spi_8c_source_l00039}00039\ \ \ \textcolor{comment}{/*\ USER\ CODE\ END\ SPI2\_Init\ 1\ */}}
+\DoxyCodeLine{\Hypertarget{spi_8c_source_l00040}00040\ \ \ \mbox{\hyperlink{spi_8c_ab9da65f935e805137e2eb4e18c5ab224}{hspi2}}.Instance\ =\ SPI2;}
+\DoxyCodeLine{\Hypertarget{spi_8c_source_l00041}00041\ \ \ \mbox{\hyperlink{spi_8c_ab9da65f935e805137e2eb4e18c5ab224}{hspi2}}.Init.Mode\ =\ SPI\_MODE\_MASTER;}
+\DoxyCodeLine{\Hypertarget{spi_8c_source_l00042}00042\ \ \ \mbox{\hyperlink{spi_8c_ab9da65f935e805137e2eb4e18c5ab224}{hspi2}}.Init.Direction\ =\ SPI\_DIRECTION\_2LINES;}
+\DoxyCodeLine{\Hypertarget{spi_8c_source_l00043}00043\ \ \ \mbox{\hyperlink{spi_8c_ab9da65f935e805137e2eb4e18c5ab224}{hspi2}}.Init.DataSize\ =\ SPI\_DATASIZE\_4BIT;}
+\DoxyCodeLine{\Hypertarget{spi_8c_source_l00044}00044\ \ \ \mbox{\hyperlink{spi_8c_ab9da65f935e805137e2eb4e18c5ab224}{hspi2}}.Init.CLKPolarity\ =\ SPI\_POLARITY\_LOW;}
+\DoxyCodeLine{\Hypertarget{spi_8c_source_l00045}00045\ \ \ \mbox{\hyperlink{spi_8c_ab9da65f935e805137e2eb4e18c5ab224}{hspi2}}.Init.CLKPhase\ =\ SPI\_PHASE\_1EDGE;}
+\DoxyCodeLine{\Hypertarget{spi_8c_source_l00046}00046\ \ \ \mbox{\hyperlink{spi_8c_ab9da65f935e805137e2eb4e18c5ab224}{hspi2}}.Init.NSS\ =\ SPI\_NSS\_SOFT;}
+\DoxyCodeLine{\Hypertarget{spi_8c_source_l00047}00047\ \ \ \mbox{\hyperlink{spi_8c_ab9da65f935e805137e2eb4e18c5ab224}{hspi2}}.Init.BaudRatePrescaler\ =\ SPI\_BAUDRATEPRESCALER\_4;}
+\DoxyCodeLine{\Hypertarget{spi_8c_source_l00048}00048\ \ \ \mbox{\hyperlink{spi_8c_ab9da65f935e805137e2eb4e18c5ab224}{hspi2}}.Init.FirstBit\ =\ SPI\_FIRSTBIT\_MSB;}
+\DoxyCodeLine{\Hypertarget{spi_8c_source_l00049}00049\ \ \ \mbox{\hyperlink{spi_8c_ab9da65f935e805137e2eb4e18c5ab224}{hspi2}}.Init.TIMode\ =\ SPI\_TIMODE\_DISABLE;}
+\DoxyCodeLine{\Hypertarget{spi_8c_source_l00050}00050\ \ \ \mbox{\hyperlink{spi_8c_ab9da65f935e805137e2eb4e18c5ab224}{hspi2}}.Init.CRCCalculation\ =\ SPI\_CRCCALCULATION\_DISABLE;}
+\DoxyCodeLine{\Hypertarget{spi_8c_source_l00051}00051\ \ \ \mbox{\hyperlink{spi_8c_ab9da65f935e805137e2eb4e18c5ab224}{hspi2}}.Init.CRCPolynomial\ =\ 7;}
+\DoxyCodeLine{\Hypertarget{spi_8c_source_l00052}00052\ \ \ \mbox{\hyperlink{spi_8c_ab9da65f935e805137e2eb4e18c5ab224}{hspi2}}.Init.CRCLength\ =\ SPI\_CRC\_LENGTH\_DATASIZE;}
+\DoxyCodeLine{\Hypertarget{spi_8c_source_l00053}00053\ \ \ \mbox{\hyperlink{spi_8c_ab9da65f935e805137e2eb4e18c5ab224}{hspi2}}.Init.NSSPMode\ =\ SPI\_NSS\_PULSE\_ENABLE;}
+\DoxyCodeLine{\Hypertarget{spi_8c_source_l00054}00054\ \ \ \textcolor{keywordflow}{if}\ (HAL\_SPI\_Init(\&\mbox{\hyperlink{spi_8c_ab9da65f935e805137e2eb4e18c5ab224}{hspi2}})\ !=\ HAL\_OK)}
+\DoxyCodeLine{\Hypertarget{spi_8c_source_l00055}00055\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{spi_8c_source_l00056}00056\ \ \ \ \ \mbox{\hyperlink{main_8h_a1730ffe1e560465665eb47d9264826f9}{Error\_Handler}}();}
+\DoxyCodeLine{\Hypertarget{spi_8c_source_l00057}00057\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{spi_8c_source_l00058}00058\ \ \ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ SPI2\_Init\ 2\ */}}
+\DoxyCodeLine{\Hypertarget{spi_8c_source_l00059}00059\ }
+\DoxyCodeLine{\Hypertarget{spi_8c_source_l00060}00060\ \ \ \textcolor{comment}{/*\ USER\ CODE\ END\ SPI2\_Init\ 2\ */}}
+\DoxyCodeLine{\Hypertarget{spi_8c_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{spi_8c_source_l00062}00062\ \}}
+\DoxyCodeLine{\Hypertarget{spi_8c_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{spi_8c_source_l00064}\mbox{\hyperlink{spi_8c_a8e1dadd744299fa6f8bca0e1bcbd2c00}{00064}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{spi_8c_a8e1dadd744299fa6f8bca0e1bcbd2c00}{HAL\_SPI\_MspInit}}(SPI\_HandleTypeDef*\ spiHandle)}
+\DoxyCodeLine{\Hypertarget{spi_8c_source_l00065}00065\ \{}
+\DoxyCodeLine{\Hypertarget{spi_8c_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{spi_8c_source_l00067}00067\ \ \ GPIO\_InitTypeDef\ GPIO\_InitStruct\ =\ \{0\};}
+\DoxyCodeLine{\Hypertarget{spi_8c_source_l00068}00068\ \ \ \textcolor{keywordflow}{if}(spiHandle-\/>Instance==SPI2)}
+\DoxyCodeLine{\Hypertarget{spi_8c_source_l00069}00069\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{spi_8c_source_l00070}00070\ \ \ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ SPI2\_MspInit\ 0\ */}}
+\DoxyCodeLine{\Hypertarget{spi_8c_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{spi_8c_source_l00072}00072\ \ \ \textcolor{comment}{/*\ USER\ CODE\ END\ SPI2\_MspInit\ 0\ */}}
+\DoxyCodeLine{\Hypertarget{spi_8c_source_l00073}00073\ \ \ \ \ \textcolor{comment}{/*\ SPI2\ clock\ enable\ */}}
+\DoxyCodeLine{\Hypertarget{spi_8c_source_l00074}00074\ \ \ \ \ \_\_HAL\_RCC\_SPI2\_CLK\_ENABLE();}
+\DoxyCodeLine{\Hypertarget{spi_8c_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{spi_8c_source_l00076}00076\ \ \ \ \ \_\_HAL\_RCC\_GPIOB\_CLK\_ENABLE();}
+\DoxyCodeLine{\Hypertarget{spi_8c_source_l00082}00082\ \ \ \ \ GPIO\_InitStruct.Pin\ =\ \mbox{\hyperlink{main_8h_a0a08807d0439d0c0be1e939c261a3b19}{SPI2\_SCK\_Pin}}|\mbox{\hyperlink{main_8h_a94851857f991ef23dd71b378f79cc2ec}{SPI2\_MISO\_Pin}}|\mbox{\hyperlink{main_8h_a6df018270a39d5ee3a2066599cc7e34d}{SPI2\_MOSI\_Pin}};}
+\DoxyCodeLine{\Hypertarget{spi_8c_source_l00083}00083\ \ \ \ \ GPIO\_InitStruct.Mode\ =\ GPIO\_MODE\_AF\_PP;}
+\DoxyCodeLine{\Hypertarget{spi_8c_source_l00084}00084\ \ \ \ \ GPIO\_InitStruct.Pull\ =\ GPIO\_NOPULL;}
+\DoxyCodeLine{\Hypertarget{spi_8c_source_l00085}00085\ \ \ \ \ GPIO\_InitStruct.Speed\ =\ GPIO\_SPEED\_FREQ\_HIGH;}
+\DoxyCodeLine{\Hypertarget{spi_8c_source_l00086}00086\ \ \ \ \ GPIO\_InitStruct.Alternate\ =\ GPIO\_AF0\_SPI2;}
+\DoxyCodeLine{\Hypertarget{spi_8c_source_l00087}00087\ \ \ \ \ HAL\_GPIO\_Init(GPIOB,\ \&GPIO\_InitStruct);}
+\DoxyCodeLine{\Hypertarget{spi_8c_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{spi_8c_source_l00089}00089\ \ \ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ SPI2\_MspInit\ 1\ */}}
+\DoxyCodeLine{\Hypertarget{spi_8c_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{spi_8c_source_l00091}00091\ \ \ \textcolor{comment}{/*\ USER\ CODE\ END\ SPI2\_MspInit\ 1\ */}}
+\DoxyCodeLine{\Hypertarget{spi_8c_source_l00092}00092\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{spi_8c_source_l00093}00093\ \}}
+\DoxyCodeLine{\Hypertarget{spi_8c_source_l00094}00094\ }
+\DoxyCodeLine{\Hypertarget{spi_8c_source_l00095}\mbox{\hyperlink{spi_8c_af9af6cae4cb9386b709196d3a3ab4f78}{00095}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{spi_8c_af9af6cae4cb9386b709196d3a3ab4f78}{HAL\_SPI\_MspDeInit}}(SPI\_HandleTypeDef*\ spiHandle)}
+\DoxyCodeLine{\Hypertarget{spi_8c_source_l00096}00096\ \{}
+\DoxyCodeLine{\Hypertarget{spi_8c_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{spi_8c_source_l00098}00098\ \ \ \textcolor{keywordflow}{if}(spiHandle-\/>Instance==SPI2)}
+\DoxyCodeLine{\Hypertarget{spi_8c_source_l00099}00099\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{spi_8c_source_l00100}00100\ \ \ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ SPI2\_MspDeInit\ 0\ */}}
+\DoxyCodeLine{\Hypertarget{spi_8c_source_l00101}00101\ }
+\DoxyCodeLine{\Hypertarget{spi_8c_source_l00102}00102\ \ \ \textcolor{comment}{/*\ USER\ CODE\ END\ SPI2\_MspDeInit\ 0\ */}}
+\DoxyCodeLine{\Hypertarget{spi_8c_source_l00103}00103\ \ \ \ \ \textcolor{comment}{/*\ Peripheral\ clock\ disable\ */}}
+\DoxyCodeLine{\Hypertarget{spi_8c_source_l00104}00104\ \ \ \ \ \_\_HAL\_RCC\_SPI2\_CLK\_DISABLE();}
+\DoxyCodeLine{\Hypertarget{spi_8c_source_l00105}00105\ }
+\DoxyCodeLine{\Hypertarget{spi_8c_source_l00111}00111\ \ \ \ \ HAL\_GPIO\_DeInit(GPIOB,\ \mbox{\hyperlink{main_8h_a0a08807d0439d0c0be1e939c261a3b19}{SPI2\_SCK\_Pin}}|\mbox{\hyperlink{main_8h_a94851857f991ef23dd71b378f79cc2ec}{SPI2\_MISO\_Pin}}|\mbox{\hyperlink{main_8h_a6df018270a39d5ee3a2066599cc7e34d}{SPI2\_MOSI\_Pin}});}
+\DoxyCodeLine{\Hypertarget{spi_8c_source_l00112}00112\ }
+\DoxyCodeLine{\Hypertarget{spi_8c_source_l00113}00113\ \ \ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ SPI2\_MspDeInit\ 1\ */}}
+\DoxyCodeLine{\Hypertarget{spi_8c_source_l00114}00114\ }
+\DoxyCodeLine{\Hypertarget{spi_8c_source_l00115}00115\ \ \ \textcolor{comment}{/*\ USER\ CODE\ END\ SPI2\_MspDeInit\ 1\ */}}
+\DoxyCodeLine{\Hypertarget{spi_8c_source_l00116}00116\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{spi_8c_source_l00117}00117\ \}}
+\DoxyCodeLine{\Hypertarget{spi_8c_source_l00118}00118\ }
+\DoxyCodeLine{\Hypertarget{spi_8c_source_l00119}00119\ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ 1\ */}}
+\DoxyCodeLine{\Hypertarget{spi_8c_source_l00120}00120\ }
+\DoxyCodeLine{\Hypertarget{spi_8c_source_l00121}00121\ \textcolor{comment}{/*\ USER\ CODE\ END\ 1\ */}}
+
+\end{DoxyCode}

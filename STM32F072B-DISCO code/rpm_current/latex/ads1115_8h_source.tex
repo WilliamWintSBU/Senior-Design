@@ -1,0 +1,91 @@
+\hypertarget{ads1115_8h_source}{}\doxysection{ads1115.\+h}
+\label{ads1115_8h_source}\index{Core/Inc/ads1115.h@{Core/Inc/ads1115.h}}
+\mbox{\hyperlink{ads1115_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{ads1115_8h_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{ads1115_8h_source_l00002}00002\ \textcolor{comment}{\ *\ Library\ Name:\ \ \ \ ADS1115\ STM32\ Single-\/Ended,\ Single-\/Shot,\ PGA\ \&\ Data\ Rate\ Enabled\ HAL\ Library}}
+\DoxyCodeLine{\Hypertarget{ads1115_8h_source_l00003}00003\ \textcolor{comment}{\ *\ Written\ By:\ \ \ \ \ \ Ahmet\ Batuhan\ Günaltay}}
+\DoxyCodeLine{\Hypertarget{ads1115_8h_source_l00004}00004\ \textcolor{comment}{\ *\ Date\ Written:\ \ \ \ 02/04/2021\ (DD/MM/YYYY)}}
+\DoxyCodeLine{\Hypertarget{ads1115_8h_source_l00005}00005\ \textcolor{comment}{\ *\ Last\ Modified:\ \ \ 03/04/2021\ (DD/MM/YYYY)\ (see\ below)}}
+\DoxyCodeLine{\Hypertarget{ads1115_8h_source_l00006}00006\ \textcolor{comment}{\ *\ Description:\ \ \ \ \ STM32F4\ HAL-\/Based\ ADS1115\ Library}}
+\DoxyCodeLine{\Hypertarget{ads1115_8h_source_l00007}00007\ \textcolor{comment}{\ *\ References:}}
+\DoxyCodeLine{\Hypertarget{ads1115_8h_source_l00008}00008\ \textcolor{comment}{\ *\ \ -\/\ https://www.ti.com/lit/gpn/ADS1113\ [Datasheet]}}
+\DoxyCodeLine{\Hypertarget{ads1115_8h_source_l00009}00009\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{ads1115_8h_source_l00010}00010\ \textcolor{comment}{\ *\ Copyright\ (C)\ 2021\ -\/\ Ahmet\ Batuhan\ Günaltay}}
+\DoxyCodeLine{\Hypertarget{ads1115_8h_source_l00011}00011\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{ads1115_8h_source_l00012}00012\ \textcolor{comment}{\ \ \ \ This\ software\ library\ is\ free\ software:\ you\ can\ redistribute\ it\ and/or\ modify}}
+\DoxyCodeLine{\Hypertarget{ads1115_8h_source_l00013}00013\ \textcolor{comment}{\ \ \ \ it\ under\ the\ terms\ of\ the\ GNU\ General\ Public\ License\ as\ published\ by}}
+\DoxyCodeLine{\Hypertarget{ads1115_8h_source_l00014}00014\ \textcolor{comment}{\ \ \ \ the\ Free\ Software\ Foundation,\ either\ version\ 3\ of\ the\ License,\ or}}
+\DoxyCodeLine{\Hypertarget{ads1115_8h_source_l00015}00015\ \textcolor{comment}{\ \ \ \ (at\ your\ option)\ any\ later\ version.}}
+\DoxyCodeLine{\Hypertarget{ads1115_8h_source_l00016}00016\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{ads1115_8h_source_l00017}00017\ \textcolor{comment}{\ \ \ \ This\ software\ library\ is\ distributed\ in\ the\ hope\ that\ it\ will\ be\ useful,}}
+\DoxyCodeLine{\Hypertarget{ads1115_8h_source_l00018}00018\ \textcolor{comment}{\ \ \ \ but\ WITHOUT\ ANY\ WARRANTY;\ without\ even\ the\ implied\ warranty\ of}}
+\DoxyCodeLine{\Hypertarget{ads1115_8h_source_l00019}00019\ \textcolor{comment}{\ \ \ \ MERCHANTABILITY\ or\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE.\ \ See\ the}}
+\DoxyCodeLine{\Hypertarget{ads1115_8h_source_l00020}00020\ \textcolor{comment}{\ \ \ \ GNU\ General\ Public\ License\ for\ more\ details.}}
+\DoxyCodeLine{\Hypertarget{ads1115_8h_source_l00021}00021\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{ads1115_8h_source_l00022}00022\ \textcolor{comment}{\ \ \ \ You\ should\ have\ received\ a\ copy\ of\ the\ GNU\ General\ Public\ License}}
+\DoxyCodeLine{\Hypertarget{ads1115_8h_source_l00023}00023\ \textcolor{comment}{\ \ \ \ along\ with\ this\ program.\ \ If\ not,\ see\ <https://www.gnu.org/licenses/>.}}
+\DoxyCodeLine{\Hypertarget{ads1115_8h_source_l00024}00024\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{ads1115_8h_source_l00025}00025\ \textcolor{comment}{\ *\ \ */}}
+\DoxyCodeLine{\Hypertarget{ads1115_8h_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{ads1115_8h_source_l00027}00027\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{ads1115_8h_source_l00028}00028\ \textcolor{comment}{\ *\ Library\ modified\ by\ William\ Winters\ in\ Spring\ of\ 2023}}
+\DoxyCodeLine{\Hypertarget{ads1115_8h_source_l00029}00029\ \textcolor{comment}{\ *\ to\ add\ differential\ read\ functionality}}
+\DoxyCodeLine{\Hypertarget{ads1115_8h_source_l00030}00030\ \textcolor{comment}{\ *\ Modifications\ released\ under\ same\ license\ as\ above}}
+\DoxyCodeLine{\Hypertarget{ads1115_8h_source_l00031}00031\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{ads1115_8h_source_l00032}00032\ \textcolor{comment}{\ *\ */}}
+\DoxyCodeLine{\Hypertarget{ads1115_8h_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{ads1115_8h_source_l00034}00034\ \textcolor{comment}{/*\ Definitions\ */}}
+\DoxyCodeLine{\Hypertarget{ads1115_8h_source_l00035}\mbox{\hyperlink{ads1115_8h_a186f86d413bfc9a0b10a263563ae36c9}{00035}}\ \textcolor{preprocessor}{\#define\ ADS1115\_OS\ (0b1\ <<\ 7)\ }\textcolor{comment}{//\ Default}}
+\DoxyCodeLine{\Hypertarget{ads1115_8h_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{ads1115_8h_source_l00037}\mbox{\hyperlink{ads1115_8h_ad76dbdc476c07b26c8c1d7ecb157adaf}{00037}}\ \textcolor{preprocessor}{\#define\ ADS1115\_MUX\_AIN0\ (0b100\ <<\ 4)\ \ \ \ \ \ \ }\textcolor{comment}{//\ Analog\ input\ 1}}
+\DoxyCodeLine{\Hypertarget{ads1115_8h_source_l00038}\mbox{\hyperlink{ads1115_8h_a084841df97af4a166cb4e431b29bd7a9}{00038}}\ \textcolor{preprocessor}{\#define\ ADS1115\_MUX\_AIN1\ (0b101\ <<\ 4)\ \ \ \ \ \ \ }\textcolor{comment}{//\ Analog\ input\ 2}}
+\DoxyCodeLine{\Hypertarget{ads1115_8h_source_l00039}\mbox{\hyperlink{ads1115_8h_a069ff0c9cbfbc8e0509253ba75418ce8}{00039}}\ \textcolor{preprocessor}{\#define\ ADS1115\_MUX\_AIN2\ (0b110\ <<\ 4)\ \ \ \ \ \ \ }\textcolor{comment}{//\ Analog\ input\ 3}}
+\DoxyCodeLine{\Hypertarget{ads1115_8h_source_l00040}\mbox{\hyperlink{ads1115_8h_a900c8e7e834d55e7b8fb6548c81883f3}{00040}}\ \textcolor{preprocessor}{\#define\ ADS1115\_MUX\_AIN3\ (0b111\ <<\ 4)\ \ \ \ \ \ \ }\textcolor{comment}{//\ Analog\ input\ 4}}
+\DoxyCodeLine{\Hypertarget{ads1115_8h_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{ads1115_8h_source_l00042}00042\ \textcolor{comment}{//added\ by\ WW\ 2023}}
+\DoxyCodeLine{\Hypertarget{ads1115_8h_source_l00043}\mbox{\hyperlink{ads1115_8h_adc2ed1597f0d082666bc60d58af7ebb1}{00043}}\ \textcolor{preprocessor}{\#define\ ADS1115\_MUX\_AIN0\_AIN1\ (0b000\ <<\ 4)\ \ }\textcolor{comment}{//\ Differential\ input\ (Vin\ =\ AIN0\ -\/\ AIN1)}}
+\DoxyCodeLine{\Hypertarget{ads1115_8h_source_l00044}\mbox{\hyperlink{ads1115_8h_a3dcc1ccba7cb74724d1a506df362a989}{00044}}\ \textcolor{preprocessor}{\#define\ ADS1115\_MUX\_AIN0\_AIN3\ (0b001\ <<\ 4)\ \ }\textcolor{comment}{//\ Differential\ input\ (Vin\ =\ AIN0\ -\/\ AIN3)}}
+\DoxyCodeLine{\Hypertarget{ads1115_8h_source_l00045}\mbox{\hyperlink{ads1115_8h_aac86c5f4331b7f5a43406cdfd053e5ad}{00045}}\ \textcolor{preprocessor}{\#define\ ADS1115\_MUX\_AIN1\_AIN3\ (0b010\ <<\ 4)\ \ }\textcolor{comment}{//\ Differential\ input\ (Vin\ =\ AIN1\ -\/\ AIN3)}}
+\DoxyCodeLine{\Hypertarget{ads1115_8h_source_l00046}\mbox{\hyperlink{ads1115_8h_ac0111dc9cb02d303cb896ed8650b7a48}{00046}}\ \textcolor{preprocessor}{\#define\ ADS1115\_MUX\_AIN2\_AIN3\ (0b011\ <<\ 4)\ \ }\textcolor{comment}{//\ Differential\ input\ (Vin\ =\ AIN2\ -\/\ AIN3)}}
+\DoxyCodeLine{\Hypertarget{ads1115_8h_source_l00047}00047\ \textcolor{comment}{//end\ additions}}
+\DoxyCodeLine{\Hypertarget{ads1115_8h_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{ads1115_8h_source_l00049}\mbox{\hyperlink{ads1115_8h_af2cf337f8fcc9f063a4b794bfa951eaa}{00049}}\ \textcolor{preprocessor}{\#define\ ADS1115\_PGA\_TWOTHIRDS\ \ \ (0b000\ <<\ 1)\ \ \ \ \ \ \ \ }\textcolor{comment}{//\ 2/3x\ Gain\ \ \ \ -\/-\/\ 0.1875\ mV\ by\ one\ bit\ \ \ \ \ MAX:\ +-\/\ VDD\ +\ 0.3V}}
+\DoxyCodeLine{\Hypertarget{ads1115_8h_source_l00050}\mbox{\hyperlink{ads1115_8h_a0523e77f04717febf51975090749d2c0}{00050}}\ \textcolor{preprocessor}{\#define\ ADS1115\_PGA\_ONE\ \ \ \ \ \ \ \ \ (0b001\ <<\ 1)\ \ \ \ \ \ \ \ }\textcolor{comment}{//\ 1x\ Gain\ \ \ \ \ \ -\/-\/\ 0.125\ mV\ by\ one\ bit\ \ \ \ \ \ MAX:\ +-\/\ VDD\ +\ 0.3V}}
+\DoxyCodeLine{\Hypertarget{ads1115_8h_source_l00051}\mbox{\hyperlink{ads1115_8h_a7bd6fbb85c8ee9989056e2eadc435fd6}{00051}}\ \textcolor{preprocessor}{\#define\ ADS1115\_PGA\_TWO\ \ \ \ \ \ \ \ \ (0b010\ <<\ 1)\ \ \ \ \ \ \ \ }\textcolor{comment}{//\ 2x\ Gain\ \ \ \ \ \ -\/-\/\ 0.0625\ mV\ by\ one\ bit\ \ \ \ \ MAX:\ +-\/\ 2.048\ V}}
+\DoxyCodeLine{\Hypertarget{ads1115_8h_source_l00052}\mbox{\hyperlink{ads1115_8h_a7b4abbfeb11693f37c8c81c22d10dbf9}{00052}}\ \textcolor{preprocessor}{\#define\ ADS1115\_PGA\_FOUR\ \ \ \ \ \ \ \ (0b011\ <<\ 1)\ \ \ \ \ \ \ \ }\textcolor{comment}{//\ 4x\ Gain\ \ \ \ \ \ -\/-\/\ 0.03125\ mV\ by\ one\ bit\ \ \ \ MAX:\ +-\/\ 1.024\ V}}
+\DoxyCodeLine{\Hypertarget{ads1115_8h_source_l00053}\mbox{\hyperlink{ads1115_8h_a863636259462cc4368b9ac5f69d2b896}{00053}}\ \textcolor{preprocessor}{\#define\ ADS1115\_PGA\_EIGHT\ \ \ \ \ \ \ (0b100\ <<\ 1)\ \ \ \ \ \ \ \ }\textcolor{comment}{//\ 8x\ Gain\ \ \ \ \ \ -\/-\/\ 0.015625\ mV\ by\ one\ bit\ \ \ MAX:\ +-\/\ 0.512\ V}}
+\DoxyCodeLine{\Hypertarget{ads1115_8h_source_l00054}\mbox{\hyperlink{ads1115_8h_a10fdd5ebb8a6be0ea3926894f28e13c8}{00054}}\ \textcolor{preprocessor}{\#define\ ADS1115\_PGA\_SIXTEEN\ \ \ \ \ (0b111\ <<\ 1)\ \ \ \ \ \ \ \ }\textcolor{comment}{//\ 16x\ Gain\ \ \ \ \ -\/-\/\ 0.0078125\ mV\ by\ one\ bit\ \ MAX:\ +-\/\ 0.256\ V}}
+\DoxyCodeLine{\Hypertarget{ads1115_8h_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{ads1115_8h_source_l00056}\mbox{\hyperlink{ads1115_8h_aa783c061de6cbe80dfba84e9daab2a27}{00056}}\ \textcolor{preprocessor}{\#define\ ADS1115\_MODE\ (0b1)\ }\textcolor{comment}{//\ Default}}
+\DoxyCodeLine{\Hypertarget{ads1115_8h_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{ads1115_8h_source_l00058}\mbox{\hyperlink{ads1115_8h_ae5e8036cd50dc61b4ec0f4ebd6c73193}{00058}}\ \textcolor{preprocessor}{\#define\ ADS1115\_DATA\_RATE\_8\ \ \ \ \ (0b000\ <<\ 5)\ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ 8SPS}}
+\DoxyCodeLine{\Hypertarget{ads1115_8h_source_l00059}\mbox{\hyperlink{ads1115_8h_a44bdcefd1465f710d10e94e75becfd30}{00059}}\ \textcolor{preprocessor}{\#define\ ADS1115\_DATA\_RATE\_16\ \ \ \ (0b001\ <<\ 5)\ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ 16SPS}}
+\DoxyCodeLine{\Hypertarget{ads1115_8h_source_l00060}\mbox{\hyperlink{ads1115_8h_ab0753d6657a301233c282e2f539d1c33}{00060}}\ \textcolor{preprocessor}{\#define\ ADS1115\_DATA\_RATE\_32\ \ \ \ (0b010\ <<\ 5)\ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ 32SPS}}
+\DoxyCodeLine{\Hypertarget{ads1115_8h_source_l00061}\mbox{\hyperlink{ads1115_8h_a1fd02a71e98bc7d769324677f5f56128}{00061}}\ \textcolor{preprocessor}{\#define\ ADS1115\_DATA\_RATE\_64\ \ \ \ (0b011\ <<\ 5)\ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ 64SPS}}
+\DoxyCodeLine{\Hypertarget{ads1115_8h_source_l00062}\mbox{\hyperlink{ads1115_8h_a5f04733fd41167c9e31232a21b0d6c25}{00062}}\ \textcolor{preprocessor}{\#define\ ADS1115\_DATA\_RATE\_128\ \ \ (0b100\ <<\ 5)\ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ 128SPS}}
+\DoxyCodeLine{\Hypertarget{ads1115_8h_source_l00063}\mbox{\hyperlink{ads1115_8h_a52a49544b67d9dabbb08d326b93dab88}{00063}}\ \textcolor{preprocessor}{\#define\ ADS1115\_DATA\_RATE\_250\ \ \ (0b101\ <<\ 5)\ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ 250SPS}}
+\DoxyCodeLine{\Hypertarget{ads1115_8h_source_l00064}\mbox{\hyperlink{ads1115_8h_a5cd52198e74b0473b739505a1ecd2535}{00064}}\ \textcolor{preprocessor}{\#define\ ADS1115\_DATA\_RATE\_475\ \ \ (0b110\ <<\ 5)\ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ 475SPS}}
+\DoxyCodeLine{\Hypertarget{ads1115_8h_source_l00065}\mbox{\hyperlink{ads1115_8h_acc521e91cb85e43a3432cc5aa70043fa}{00065}}\ \textcolor{preprocessor}{\#define\ ADS1115\_DATA\_RATE\_860\ \ \ (0b111\ <<\ 5)\ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{//\ 860SPS}}
+\DoxyCodeLine{\Hypertarget{ads1115_8h_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{ads1115_8h_source_l00067}\mbox{\hyperlink{ads1115_8h_ad722e16431305ce92a4efc7c061ddc7b}{00067}}\ \textcolor{preprocessor}{\#define\ ADS1115\_COMP\_MODE\ \ \ (0b0\ <<\ 4)\ }\textcolor{comment}{//\ Default}}
+\DoxyCodeLine{\Hypertarget{ads1115_8h_source_l00068}\mbox{\hyperlink{ads1115_8h_ad2232b30ece1a1f5bfbf8a55217e3e2c}{00068}}\ \textcolor{preprocessor}{\#define\ ADS1115\_COMP\_POL\ \ \ \ (0b0\ <<\ 3)\ }\textcolor{comment}{//\ Default}}
+\DoxyCodeLine{\Hypertarget{ads1115_8h_source_l00069}\mbox{\hyperlink{ads1115_8h_ad6439a5f36449ef355a3a1220b726946}{00069}}\ \textcolor{preprocessor}{\#define\ ADS1115\_COMP\_LAT\ \ \ \ (0b0\ <<\ 2)\ }\textcolor{comment}{//\ Default}}
+\DoxyCodeLine{\Hypertarget{ads1115_8h_source_l00070}\mbox{\hyperlink{ads1115_8h_a4f20b25599f011f334267ec0be2e2e63}{00070}}\ \textcolor{preprocessor}{\#define\ ADS1115\_COMP\_QUE\ \ \ \ (0b11)\ \ \ \ \ }\textcolor{comment}{//\ Default}}
+\DoxyCodeLine{\Hypertarget{ads1115_8h_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{ads1115_8h_source_l00072}00072\ \textcolor{comment}{/*\ ADS1115\ register\ configurations\ */}}
+\DoxyCodeLine{\Hypertarget{ads1115_8h_source_l00073}\mbox{\hyperlink{ads1115_8h_a69f3aa661f3475281903eb75d44a61f0}{00073}}\ \textcolor{preprocessor}{\#define\ ADS1115\_CONVER\_REG\ 0x0}}
+\DoxyCodeLine{\Hypertarget{ads1115_8h_source_l00074}\mbox{\hyperlink{ads1115_8h_a7d549b6f88906327d3b990dba78dd71e}{00074}}\ \textcolor{preprocessor}{\#define\ ADS1115\_CONFIG\_REG\ 0x1}}
+\DoxyCodeLine{\Hypertarget{ads1115_8h_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{ads1115_8h_source_l00076}00076\ \textcolor{comment}{/*\ TIMEOUT\ */}}
+\DoxyCodeLine{\Hypertarget{ads1115_8h_source_l00077}\mbox{\hyperlink{ads1115_8h_a2a051bea5e3398ca2bc9c8b869875051}{00077}}\ \textcolor{preprocessor}{\#define\ ADS1115\_TIMEOUT\ 1\ }\textcolor{comment}{//\ Timeout\ for\ HAL\ I2C\ functions.}}
+\DoxyCodeLine{\Hypertarget{ads1115_8h_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{ads1115_8h_source_l00079}00079\ \textcolor{comment}{/*\ Function\ prototypes.\ */}}
+\DoxyCodeLine{\Hypertarget{ads1115_8h_source_l00080}00080\ HAL\_StatusTypeDef\ \mbox{\hyperlink{ads1115_8h_a67052e36b856806aa4c2b53802d557d4}{ADS1115\_Init}}(I2C\_HandleTypeDef\ *handler,\ uint16\_t\ setDataRate,\ uint16\_t\ setPGA);}
+\DoxyCodeLine{\Hypertarget{ads1115_8h_source_l00081}00081\ HAL\_StatusTypeDef\ \mbox{\hyperlink{ads1115_8h_a044eb864a349393a1666537b4e5f35af}{ADS1115\_readSingleEnded}}(uint16\_t\ muxPort,\ \textcolor{keywordtype}{float}\ *voltage);}
+\DoxyCodeLine{\Hypertarget{ads1115_8h_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{ads1115_8h_source_l00083}00083\ \textcolor{comment}{//added\ by\ WW\ 2023}}
+\DoxyCodeLine{\Hypertarget{ads1115_8h_source_l00084}00084\ HAL\_StatusTypeDef\ \mbox{\hyperlink{ads1115_8h_aeec6c2ea094d21a583046bdbe4d2b540}{ADS1115\_read}}(uint16\_t\ muxPort,\ \textcolor{keywordtype}{float}\ *voltage);\ \textcolor{comment}{//\ alias\ function\ with\ different\ name}}
+\DoxyCodeLine{\Hypertarget{ads1115_8h_source_l00085}00085\ \textcolor{comment}{//end\ additions}}
+
+\end{DoxyCode}

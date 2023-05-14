@@ -1,0 +1,53 @@
+\hypertarget{_m_a_x31865_8h_source}{}\doxysection{MAX31865.\+h}
+\label{_m_a_x31865_8h_source}\index{Core/Src/MAX31865.h@{Core/Src/MAX31865.h}}
+\mbox{\hyperlink{_m_a_x31865_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_m_a_x31865_8h_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ \_MAX31865\_H}}
+\DoxyCodeLine{\Hypertarget{_m_a_x31865_8h_source_l00002}00002\ \textcolor{preprocessor}{\#define\ \_MAX31865\_H}}
+\DoxyCodeLine{\Hypertarget{_m_a_x31865_8h_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_m_a_x31865_8h_source_l00004}00004\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{_m_a_x31865_8h_source_l00005}00005\ \textcolor{comment}{\ \ Author:\ \ \ \ \ Nima\ Askari}}
+\DoxyCodeLine{\Hypertarget{_m_a_x31865_8h_source_l00006}00006\ \textcolor{comment}{\ \ WebSite:\ \ \ \ http://www.github.com/NimaLTD}}
+\DoxyCodeLine{\Hypertarget{_m_a_x31865_8h_source_l00007}00007\ \textcolor{comment}{\ \ Instagram:\ \ http://instagram.com/github.NimaLTD}}
+\DoxyCodeLine{\Hypertarget{_m_a_x31865_8h_source_l00008}00008\ \textcolor{comment}{\ \ Youtube:\ \ \ \ https://www.youtube.com/channel/UCUhY7qY1klJm1d2kulr9ckw}}
+\DoxyCodeLine{\Hypertarget{_m_a_x31865_8h_source_l00009}00009\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_m_a_x31865_8h_source_l00010}00010\ \textcolor{comment}{\ \ Version:\ \ \ \ 1.0.0}}
+\DoxyCodeLine{\Hypertarget{_m_a_x31865_8h_source_l00011}00011\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_m_a_x31865_8h_source_l00012}00012\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_m_a_x31865_8h_source_l00013}00013\ \textcolor{comment}{\ \ Reversion\ History:}}
+\DoxyCodeLine{\Hypertarget{_m_a_x31865_8h_source_l00014}00014\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_m_a_x31865_8h_source_l00015}00015\ \textcolor{comment}{\ \ (1.0.0)}}
+\DoxyCodeLine{\Hypertarget{_m_a_x31865_8h_source_l00016}00016\ \textcolor{comment}{\ \ First\ Release.}}
+\DoxyCodeLine{\Hypertarget{_m_a_x31865_8h_source_l00017}00017\ \textcolor{comment}{*/}}
+\DoxyCodeLine{\Hypertarget{_m_a_x31865_8h_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{_m_a_x31865_8h_source_l00019}00019\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{_m_a_x31865_8h_source_l00020}00020\ \ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{\Hypertarget{_m_a_x31865_8h_source_l00021}00021\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_m_a_x31865_8h_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{_m_a_x31865_8h_source_l00023}00023\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{gpio_8h}{gpio.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_m_a_x31865_8h_source_l00024}00024\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{spi_8h}{spi.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_m_a_x31865_8h_source_l00025}00025\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{\Hypertarget{_m_a_x31865_8h_source_l00026}00026\ \textcolor{comment}{//\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#}}
+\DoxyCodeLine{\Hypertarget{_m_a_x31865_8h_source_l00027}\mbox{\hyperlink{struct_max31865__t}{00027}}\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{\Hypertarget{_m_a_x31865_8h_source_l00028}00028\ \{}
+\DoxyCodeLine{\Hypertarget{_m_a_x31865_8h_source_l00029}\mbox{\hyperlink{struct_max31865__t_a3d9666873753a23e3300bf9e5d04367d}{00029}}\ \ \ GPIO\_TypeDef\ \ \ \ \ \ *\mbox{\hyperlink{struct_max31865__t_a3d9666873753a23e3300bf9e5d04367d}{cs\_gpio}};}
+\DoxyCodeLine{\Hypertarget{_m_a_x31865_8h_source_l00030}\mbox{\hyperlink{struct_max31865__t_a408c428a011f9736a729e624f5cceb3c}{00030}}\ \ \ uint16\_t\ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_max31865__t_a408c428a011f9736a729e624f5cceb3c}{cs\_pin}};}
+\DoxyCodeLine{\Hypertarget{_m_a_x31865_8h_source_l00031}\mbox{\hyperlink{struct_max31865__t_a06909907ded69cbc00db1f401a90f8ee}{00031}}\ \ \ SPI\_HandleTypeDef\ *\mbox{\hyperlink{struct_max31865__t_a06909907ded69cbc00db1f401a90f8ee}{spi}};}
+\DoxyCodeLine{\Hypertarget{_m_a_x31865_8h_source_l00032}\mbox{\hyperlink{struct_max31865__t_a92435efb84d6814afd444fd462802e9c}{00032}}\ \ \ uint8\_t\ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_max31865__t_a92435efb84d6814afd444fd462802e9c}{lock}};}
+\DoxyCodeLine{\Hypertarget{_m_a_x31865_8h_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_m_a_x31865_8h_source_l00034}00034\ \}\mbox{\hyperlink{struct_max31865__t}{Max31865\_t}};}
+\DoxyCodeLine{\Hypertarget{_m_a_x31865_8h_source_l00035}00035\ \textcolor{comment}{//\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#}}
+\DoxyCodeLine{\Hypertarget{_m_a_x31865_8h_source_l00036}00036\ \textcolor{keywordtype}{void}\ \ \mbox{\hyperlink{_m_a_x31865_8h_a7af0698160523a69eee213637c8c3ce0}{Max31865\_init}}(\mbox{\hyperlink{struct_max31865__t}{Max31865\_t}}\ *max31865,SPI\_HandleTypeDef\ *spi,GPIO\_TypeDef\ \ *cs\_gpio,uint16\_t\ cs\_pin,uint8\_t\ \ numwires,\ uint8\_t\ filterHz);}
+\DoxyCodeLine{\Hypertarget{_m_a_x31865_8h_source_l00037}00037\ \textcolor{keywordtype}{bool}\ \ \mbox{\hyperlink{_m_a_x31865_8h_a16213618890e307f757c658fd64226c2}{Max31865\_readTempC}}(\mbox{\hyperlink{struct_max31865__t}{Max31865\_t}}\ *max31865,\textcolor{keywordtype}{float}\ *readTemp);}
+\DoxyCodeLine{\Hypertarget{_m_a_x31865_8h_source_l00038}00038\ \textcolor{keywordtype}{bool}\ \ \mbox{\hyperlink{_m_a_x31865_8h_a99d07f2cc1fcc073a889e28b323d16e4}{Max31865\_readTempF}}(\mbox{\hyperlink{struct_max31865__t}{Max31865\_t}}\ *max31865,\textcolor{keywordtype}{float}\ *readTemp);}
+\DoxyCodeLine{\Hypertarget{_m_a_x31865_8h_source_l00039}00039\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{_m_a_x31865_8h_ad7de685bbd61fb2dd020ad9a15380149}{Max31865\_Filter}}(\textcolor{keywordtype}{float}\ \ newInput,\ \textcolor{keywordtype}{float}\ lastOutput,\ \textcolor{keywordtype}{float}\ efectiveFactor);}
+\DoxyCodeLine{\Hypertarget{_m_a_x31865_8h_source_l00040}00040\ \textcolor{comment}{//\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#\#}}
+\DoxyCodeLine{\Hypertarget{_m_a_x31865_8h_source_l00041}00041\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{_m_a_x31865_8h_source_l00042}00042\ \}}
+\DoxyCodeLine{\Hypertarget{_m_a_x31865_8h_source_l00043}00043\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{_m_a_x31865_8h_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{_m_a_x31865_8h_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{_m_a_x31865_8h_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{_m_a_x31865_8h_source_l00047}00047\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

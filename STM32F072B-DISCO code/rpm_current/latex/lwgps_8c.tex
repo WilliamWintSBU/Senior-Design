@@ -1,0 +1,203 @@
+\hypertarget{lwgps_8c}{}\doxysection{Core/\+Src/lwgps.c File Reference}
+\label{lwgps_8c}\index{Core/Src/lwgps.c@{Core/Src/lwgps.c}}
+
+
+GPS main file.  
+
+
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}lwgps/lwgps.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{lwgps_8c_a7dd6e58c3f0255963921d1821312730c}{FLT}}(x)~((\mbox{\hyperlink{group___l_w_g_p_s_ga0e01296c9b3162a56da030716e5902c8}{lwgps\+\_\+float\+\_\+t}})(x))
+\item 
+\#define \mbox{\hyperlink{lwgps_8c_a7e4ee9c3bd27adf748463cdf60f8bb70}{D2R}}(x)~\mbox{\hyperlink{lwgps_8c_a7dd6e58c3f0255963921d1821312730c}{FLT}}(\mbox{\hyperlink{lwgps_8c_a7dd6e58c3f0255963921d1821312730c}{FLT}}(x) $\ast$ \mbox{\hyperlink{lwgps_8c_a7dd6e58c3f0255963921d1821312730c}{FLT}}(0.\+01745329251994))
+\item 
+\#define \mbox{\hyperlink{lwgps_8c_a8a8a5aa3f3116c08bf730f74ddcbd43d}{R2D}}(x)~\mbox{\hyperlink{lwgps_8c_a7dd6e58c3f0255963921d1821312730c}{FLT}}(\mbox{\hyperlink{lwgps_8c_a7dd6e58c3f0255963921d1821312730c}{FLT}}(x) $\ast$ \mbox{\hyperlink{lwgps_8c_a7dd6e58c3f0255963921d1821312730c}{FLT}}(57.\+29577951308232))
+\item 
+\#define \mbox{\hyperlink{lwgps_8c_aacdf1719d113d68a71127426f7c730cd}{EARTH\+\_\+\+RADIUS}}~\mbox{\hyperlink{lwgps_8c_a7dd6e58c3f0255963921d1821312730c}{FLT}}(6371.\+0)
+\item 
+\#define \mbox{\hyperlink{lwgps_8c_a709287e6eb623ad6808d15e6d1af58da}{CRC\+\_\+\+ADD}}(\+\_\+gh,  ch)
+\item 
+\#define \mbox{\hyperlink{lwgps_8c_aeaa66637e51f6fd7fd903e5f6edec6be}{TERM\+\_\+\+ADD}}(\+\_\+gh,  ch)
+\item 
+\#define \mbox{\hyperlink{lwgps_8c_af964ef4d2eb1caa86514ddf311c405af}{TERM\+\_\+\+NEXT}}(\+\_\+gh)
+\item 
+\#define \mbox{\hyperlink{lwgps_8c_adec2ba65e6cb7fb779d82795a60775f8}{CIN}}(x)~((x) $>$= \textquotesingle{}0\textquotesingle{} \&\& (x) $<$= \textquotesingle{}9\textquotesingle{})
+\item 
+\#define \mbox{\hyperlink{lwgps_8c_af3d05c7e8a41c073bb4bb003754946cc}{CIHN}}(x)~(((x) $>$= \textquotesingle{}0\textquotesingle{} \&\& (x) $<$= \textquotesingle{}9\textquotesingle{}) $\vert$$\vert$ ((x) $>$= \textquotesingle{}a\textquotesingle{} \&\& (x) $<$= \textquotesingle{}f\textquotesingle{}) $\vert$$\vert$ ((x) $>$= \textquotesingle{}A\textquotesingle{} \&\& (x) $<$= \textquotesingle{}F\textquotesingle{}))
+\item 
+\#define \mbox{\hyperlink{lwgps_8c_a833e8959c66e297f27262f8d97c208d9}{CTN}}(x)~((x) -\/ \textquotesingle{}0\textquotesingle{})
+\item 
+\#define \mbox{\hyperlink{lwgps_8c_a9f034bcc7fb7bfe5deb9392ceba41fae}{CHTN}}(x)
+\item 
+\#define \mbox{\hyperlink{lwgps_8c_a3d698e4689eaad17eb10a9a72a195d73}{prv\+\_\+check\+\_\+crc}}(\+\_\+gh)~(1)
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{group___l_w_g_p_s_gaf69993c7ad6cb474707f86d4d986d87f}{lwgps\+\_\+init}} (\mbox{\hyperlink{structlwgps__t}{lwgps\+\_\+t}} $\ast$gh)
+\begin{DoxyCompactList}\small\item\em Init GPS handle. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group___l_w_g_p_s_gaf169c4cd93a4c22c976c9f17b69055a0}{lwgps\+\_\+process}} (\mbox{\hyperlink{structlwgps__t}{lwgps\+\_\+t}} $\ast$gh, const void $\ast$data, size\+\_\+t len)
+\begin{DoxyCompactList}\small\item\em Process NMEA data from GPS receiver. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group___l_w_g_p_s_ga0e01296c9b3162a56da030716e5902c8}{lwgps\+\_\+float\+\_\+t}} \mbox{\hyperlink{group___l_w_g_p_s_gacb9e55ca2fc668510c417a180c99abe7}{lwgps\+\_\+to\+\_\+speed}} (\mbox{\hyperlink{group___l_w_g_p_s_ga0e01296c9b3162a56da030716e5902c8}{lwgps\+\_\+float\+\_\+t}} sik, \mbox{\hyperlink{group___l_w_g_p_s_ga8028585ea87281677e6add0512bb8c92}{lwgps\+\_\+speed\+\_\+t}} ts)
+\begin{DoxyCompactList}\small\item\em Convert NMEA GPS speed (in knots = nautical mile per hour) to different speed format. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+GPS main file. 
+
+
+
+Definition in file \mbox{\hyperlink{lwgps_8c_source}{lwgps.\+c}}.
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{lwgps_8c_a9f034bcc7fb7bfe5deb9392ceba41fae}\label{lwgps_8c_a9f034bcc7fb7bfe5deb9392ceba41fae}} 
+\index{lwgps.c@{lwgps.c}!CHTN@{CHTN}}
+\index{CHTN@{CHTN}!lwgps.c@{lwgps.c}}
+\doxysubsubsection{\texorpdfstring{CHTN}{CHTN}}
+{\footnotesize\ttfamily \#define CHTN(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ (((x)\ >=\ \textcolor{charliteral}{'0'}\ \&\&\ (x)\ <=\ \textcolor{charliteral}{'9'})\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ ?\ ((x)\ -\/\ \textcolor{charliteral}{'0'})\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ :\ (((x)\ >=\ \textcolor{charliteral}{'a'}\ \&\&\ (x)\ <=\ \textcolor{charliteral}{'z'})\ ?\ ((x)\ -\/\ \textcolor{charliteral}{'a'}\ +\ 10)\ :\ (((x)\ >=\ \textcolor{charliteral}{'A'}\ \&\&\ (x)\ <=\ \textcolor{charliteral}{'Z'})\ ?\ ((x)\ -\/\ \textcolor{charliteral}{'A'}\ +\ 10)\ :\ 0)))}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{lwgps_8c_source_l00067}{67}} of file \mbox{\hyperlink{lwgps_8c_source}{lwgps.\+c}}.
+
+\mbox{\Hypertarget{lwgps_8c_af3d05c7e8a41c073bb4bb003754946cc}\label{lwgps_8c_af3d05c7e8a41c073bb4bb003754946cc}} 
+\index{lwgps.c@{lwgps.c}!CIHN@{CIHN}}
+\index{CIHN@{CIHN}!lwgps.c@{lwgps.c}}
+\doxysubsubsection{\texorpdfstring{CIHN}{CIHN}}
+{\footnotesize\ttfamily \#define CIHN(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~(((x) $>$= \textquotesingle{}0\textquotesingle{} \&\& (x) $<$= \textquotesingle{}9\textquotesingle{}) $\vert$$\vert$ ((x) $>$= \textquotesingle{}a\textquotesingle{} \&\& (x) $<$= \textquotesingle{}f\textquotesingle{}) $\vert$$\vert$ ((x) $>$= \textquotesingle{}A\textquotesingle{} \&\& (x) $<$= \textquotesingle{}F\textquotesingle{}))}
+
+
+
+Definition at line \mbox{\hyperlink{lwgps_8c_source_l00065}{65}} of file \mbox{\hyperlink{lwgps_8c_source}{lwgps.\+c}}.
+
+\mbox{\Hypertarget{lwgps_8c_adec2ba65e6cb7fb779d82795a60775f8}\label{lwgps_8c_adec2ba65e6cb7fb779d82795a60775f8}} 
+\index{lwgps.c@{lwgps.c}!CIN@{CIN}}
+\index{CIN@{CIN}!lwgps.c@{lwgps.c}}
+\doxysubsubsection{\texorpdfstring{CIN}{CIN}}
+{\footnotesize\ttfamily \#define CIN(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~((x) $>$= \textquotesingle{}0\textquotesingle{} \&\& (x) $<$= \textquotesingle{}9\textquotesingle{})}
+
+
+
+Definition at line \mbox{\hyperlink{lwgps_8c_source_l00064}{64}} of file \mbox{\hyperlink{lwgps_8c_source}{lwgps.\+c}}.
+
+\mbox{\Hypertarget{lwgps_8c_a709287e6eb623ad6808d15e6d1af58da}\label{lwgps_8c_a709287e6eb623ad6808d15e6d1af58da}} 
+\index{lwgps.c@{lwgps.c}!CRC\_ADD@{CRC\_ADD}}
+\index{CRC\_ADD@{CRC\_ADD}!lwgps.c@{lwgps.c}}
+\doxysubsubsection{\texorpdfstring{CRC\_ADD}{CRC\_ADD}}
+{\footnotesize\ttfamily \#define CRC\+\_\+\+ADD(\begin{DoxyParamCaption}\item[{}]{\+\_\+gh,  }\item[{}]{ch }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{lwgps_8c_source_l00049}{49}} of file \mbox{\hyperlink{lwgps_8c_source}{lwgps.\+c}}.
+
+\mbox{\Hypertarget{lwgps_8c_a833e8959c66e297f27262f8d97c208d9}\label{lwgps_8c_a833e8959c66e297f27262f8d97c208d9}} 
+\index{lwgps.c@{lwgps.c}!CTN@{CTN}}
+\index{CTN@{CTN}!lwgps.c@{lwgps.c}}
+\doxysubsubsection{\texorpdfstring{CTN}{CTN}}
+{\footnotesize\ttfamily \#define CTN(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~((x) -\/ \textquotesingle{}0\textquotesingle{})}
+
+
+
+Definition at line \mbox{\hyperlink{lwgps_8c_source_l00066}{66}} of file \mbox{\hyperlink{lwgps_8c_source}{lwgps.\+c}}.
+
+\mbox{\Hypertarget{lwgps_8c_a7e4ee9c3bd27adf748463cdf60f8bb70}\label{lwgps_8c_a7e4ee9c3bd27adf748463cdf60f8bb70}} 
+\index{lwgps.c@{lwgps.c}!D2R@{D2R}}
+\index{D2R@{D2R}!lwgps.c@{lwgps.c}}
+\doxysubsubsection{\texorpdfstring{D2R}{D2R}}
+{\footnotesize\ttfamily \#define D2R(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~\mbox{\hyperlink{lwgps_8c_a7dd6e58c3f0255963921d1821312730c}{FLT}}(\mbox{\hyperlink{lwgps_8c_a7dd6e58c3f0255963921d1821312730c}{FLT}}(x) $\ast$ \mbox{\hyperlink{lwgps_8c_a7dd6e58c3f0255963921d1821312730c}{FLT}}(0.\+01745329251994))}
+
+Degrees to radians 
+
+Definition at line \mbox{\hyperlink{lwgps_8c_source_l00042}{42}} of file \mbox{\hyperlink{lwgps_8c_source}{lwgps.\+c}}.
+
+\mbox{\Hypertarget{lwgps_8c_aacdf1719d113d68a71127426f7c730cd}\label{lwgps_8c_aacdf1719d113d68a71127426f7c730cd}} 
+\index{lwgps.c@{lwgps.c}!EARTH\_RADIUS@{EARTH\_RADIUS}}
+\index{EARTH\_RADIUS@{EARTH\_RADIUS}!lwgps.c@{lwgps.c}}
+\doxysubsubsection{\texorpdfstring{EARTH\_RADIUS}{EARTH\_RADIUS}}
+{\footnotesize\ttfamily \#define EARTH\+\_\+\+RADIUS~\mbox{\hyperlink{lwgps_8c_a7dd6e58c3f0255963921d1821312730c}{FLT}}(6371.\+0)}
+
+Earth radius in units of kilometers 
+
+Definition at line \mbox{\hyperlink{lwgps_8c_source_l00044}{44}} of file \mbox{\hyperlink{lwgps_8c_source}{lwgps.\+c}}.
+
+\mbox{\Hypertarget{lwgps_8c_a7dd6e58c3f0255963921d1821312730c}\label{lwgps_8c_a7dd6e58c3f0255963921d1821312730c}} 
+\index{lwgps.c@{lwgps.c}!FLT@{FLT}}
+\index{FLT@{FLT}!lwgps.c@{lwgps.c}}
+\doxysubsubsection{\texorpdfstring{FLT}{FLT}}
+{\footnotesize\ttfamily \#define FLT(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~((\mbox{\hyperlink{group___l_w_g_p_s_ga0e01296c9b3162a56da030716e5902c8}{lwgps\+\_\+float\+\_\+t}})(x))}
+
+
+
+Definition at line \mbox{\hyperlink{lwgps_8c_source_l00041}{41}} of file \mbox{\hyperlink{lwgps_8c_source}{lwgps.\+c}}.
+
+\mbox{\Hypertarget{lwgps_8c_a3d698e4689eaad17eb10a9a72a195d73}\label{lwgps_8c_a3d698e4689eaad17eb10a9a72a195d73}} 
+\index{lwgps.c@{lwgps.c}!prv\_check\_crc@{prv\_check\_crc}}
+\index{prv\_check\_crc@{prv\_check\_crc}!lwgps.c@{lwgps.c}}
+\doxysubsubsection{\texorpdfstring{prv\_check\_crc}{prv\_check\_crc}}
+{\footnotesize\ttfamily \#define prv\+\_\+check\+\_\+crc(\begin{DoxyParamCaption}\item[{}]{\+\_\+gh }\end{DoxyParamCaption})~(1)}
+
+
+
+Definition at line \mbox{\hyperlink{lwgps_8c_source_l00386}{386}} of file \mbox{\hyperlink{lwgps_8c_source}{lwgps.\+c}}.
+
+\mbox{\Hypertarget{lwgps_8c_a8a8a5aa3f3116c08bf730f74ddcbd43d}\label{lwgps_8c_a8a8a5aa3f3116c08bf730f74ddcbd43d}} 
+\index{lwgps.c@{lwgps.c}!R2D@{R2D}}
+\index{R2D@{R2D}!lwgps.c@{lwgps.c}}
+\doxysubsubsection{\texorpdfstring{R2D}{R2D}}
+{\footnotesize\ttfamily \#define R2D(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~\mbox{\hyperlink{lwgps_8c_a7dd6e58c3f0255963921d1821312730c}{FLT}}(\mbox{\hyperlink{lwgps_8c_a7dd6e58c3f0255963921d1821312730c}{FLT}}(x) $\ast$ \mbox{\hyperlink{lwgps_8c_a7dd6e58c3f0255963921d1821312730c}{FLT}}(57.\+29577951308232))}
+
+Radians to degrees 
+
+Definition at line \mbox{\hyperlink{lwgps_8c_source_l00043}{43}} of file \mbox{\hyperlink{lwgps_8c_source}{lwgps.\+c}}.
+
+\mbox{\Hypertarget{lwgps_8c_aeaa66637e51f6fd7fd903e5f6edec6be}\label{lwgps_8c_aeaa66637e51f6fd7fd903e5f6edec6be}} 
+\index{lwgps.c@{lwgps.c}!TERM\_ADD@{TERM\_ADD}}
+\index{TERM\_ADD@{TERM\_ADD}!lwgps.c@{lwgps.c}}
+\doxysubsubsection{\texorpdfstring{TERM\_ADD}{TERM\_ADD}}
+{\footnotesize\ttfamily \#define TERM\+\_\+\+ADD(\begin{DoxyParamCaption}\item[{}]{\+\_\+gh,  }\item[{}]{ch }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{do}\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ if\ ((\_gh)-\/>p.term\_pos\ <\ (\textcolor{keyword}{sizeof}((\_gh)-\/>p.term\_str)\ -\/\ 1))\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ (\_gh)-\/>p.term\_str[(\_gh)-\/>p.term\_pos]\ =\ (ch);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ (\_gh)-\/>p.term\_str[++(\_gh)-\/>p.term\_pos]\ =\ 0;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \}\ \textcolor{keywordflow}{while}\ (0)}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{lwgps_8c_source_l00051}{51}} of file \mbox{\hyperlink{lwgps_8c_source}{lwgps.\+c}}.
+
+\mbox{\Hypertarget{lwgps_8c_af964ef4d2eb1caa86514ddf311c405af}\label{lwgps_8c_af964ef4d2eb1caa86514ddf311c405af}} 
+\index{lwgps.c@{lwgps.c}!TERM\_NEXT@{TERM\_NEXT}}
+\index{TERM\_NEXT@{TERM\_NEXT}!lwgps.c@{lwgps.c}}
+\doxysubsubsection{\texorpdfstring{TERM\_NEXT}{TERM\_NEXT}}
+{\footnotesize\ttfamily \#define TERM\+\_\+\+NEXT(\begin{DoxyParamCaption}\item[{}]{\+\_\+gh }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{do}\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ (\_gh)-\/>p.term\_str[((\_gh)-\/>p.term\_pos\ =\ 0)]\ =\ 0;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ ++(\_gh)-\/>p.term\_num;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \}\ \textcolor{keywordflow}{while}\ (0)}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{lwgps_8c_source_l00058}{58}} of file \mbox{\hyperlink{lwgps_8c_source}{lwgps.\+c}}.
+

@@ -60,8 +60,8 @@ all: main-build
 main-build: rpm_current.elf secondary-outputs
 
 # Tool invocations
-rpm_current.elf rpm_current.map: $(OBJS) $(USER_OBJS) C:\Users\willi\Documents\My\ Files\School\Spring\ 2023\Senior\ Design\rpm_current\STM32F072RBTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "rpm_current.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m0 -T"C:\Users\willi\Documents\My Files\School\Spring 2023\Senior Design\rpm_current\STM32F072RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="rpm_current.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+rpm_current.elf rpm_current.map: $(OBJS) $(USER_OBJS) C:\Users\willi\Documents\GitHub\Senior-Design\STM32F072B-DISCO\ code\rpm_current\STM32F072RBTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "rpm_current.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m0 -T"C:\Users\willi\Documents\GitHub\Senior-Design\STM32F072B-DISCO code\rpm_current\STM32F072RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="rpm_current.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

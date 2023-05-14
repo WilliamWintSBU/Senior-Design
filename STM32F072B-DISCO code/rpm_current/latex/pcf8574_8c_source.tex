@@ -1,0 +1,160 @@
+\hypertarget{pcf8574_8c_source}{}\doxysection{pcf8574.\+c}
+\label{pcf8574_8c_source}\index{Core/Src/pcf8574.c@{Core/Src/pcf8574.c}}
+\mbox{\hyperlink{pcf8574_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00001}00001\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00002}00002\ \textcolor{comment}{\ *\ downloaded\ from\ https://github.com/v0idv0id/PCF8574-\/HD44780-\/LCD}}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00003}00003\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00004}00004\ \textcolor{comment}{\ *\ under\ MIT\ license:}}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00005}00005\ \textcolor{comment}{\ *\ MIT\ License}}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00006}00006\ \textcolor{comment}{Copyright\ (c)\ 2020\ MJW}}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00007}00007\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00008}00008\ \textcolor{comment}{Permission\ is\ hereby\ granted,\ free\ of\ charge,\ to\ any\ person\ obtaining\ a\ copy}}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00009}00009\ \textcolor{comment}{of\ this\ software\ and\ associated\ documentation\ files\ (the\ "{}Software"{}),\ to\ deal}}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00010}00010\ \textcolor{comment}{in\ the\ Software\ without\ restriction,\ including\ without\ limitation\ the\ rights}}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00011}00011\ \textcolor{comment}{to\ use,\ copy,\ modify,\ merge,\ publish,\ distribute,\ sublicense,\ and/or\ sell}}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00012}00012\ \textcolor{comment}{copies\ of\ the\ Software,\ and\ to\ permit\ persons\ to\ whom\ the\ Software\ is}}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00013}00013\ \textcolor{comment}{furnished\ to\ do\ so,\ subject\ to\ the\ following\ conditions:}}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00014}00014\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00015}00015\ \textcolor{comment}{The\ above\ copyright\ notice\ and\ this\ permission\ notice\ shall\ be\ included\ in\ all}}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00016}00016\ \textcolor{comment}{copies\ or\ substantial\ portions\ of\ the\ Software.}}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00017}00017\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00018}00018\ \textcolor{comment}{THE\ SOFTWARE\ IS\ PROVIDED\ "{}AS\ IS"{},\ WITHOUT\ WARRANTY\ OF\ ANY\ KIND,\ EXPRESS\ OR}}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00019}00019\ \textcolor{comment}{IMPLIED,\ INCLUDING\ BUT\ NOT\ LIMITED\ TO\ THE\ WARRANTIES\ OF\ MERCHANTABILITY,}}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00020}00020\ \textcolor{comment}{FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE\ AND\ NONINFRINGEMENT.\ IN\ NO\ EVENT\ SHALL\ THE}}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00021}00021\ \textcolor{comment}{AUTHORS\ OR\ COPYRIGHT\ HOLDERS\ BE\ LIABLE\ FOR\ ANY\ CLAIM,\ DAMAGES\ OR\ OTHER}}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00022}00022\ \textcolor{comment}{LIABILITY,\ WHETHER\ IN\ AN\ ACTION\ OF\ CONTRACT,\ TORT\ OR\ OTHERWISE,\ ARISING\ FROM,}}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00023}00023\ \textcolor{comment}{OUT\ OF\ OR\ IN\ CONNECTION\ WITH\ THE\ SOFTWARE\ OR\ THE\ USE\ OR\ OTHER\ DEALINGS\ IN\ THE}}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00024}00024\ \textcolor{comment}{SOFTWARE.}}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00025}00025\ \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00026}00026\ \textcolor{comment}{*\ above\ added\ by\ William\ Winters\ to\ show\ where\ he\ got\ this\ from.}}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00027}00027\ \textcolor{comment}{*\ Modifications\ have\ been\ made\ to\ allow\ use\ of\ a\ 20x4\ character\ lcd.}}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00028}00028\ \textcolor{comment}{\ *\ */}}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00030}00030\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{pcf8574_8h}{pcf8574.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00032}\mbox{\hyperlink{pcf8574_8h_a1a112ccb22e4f631614b4d4df1553949}{00032}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{pcf8574_8c_a1a112ccb22e4f631614b4d4df1553949}{pcf8574\_send\_cmd}}(uint8\_t\ cmd)}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00033}00033\ \{}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00034}00034\ \ \ \ \ \textcolor{comment}{//\ EXAMPLE}}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00035}00035\ \ \ \ \ \textcolor{comment}{//\ cmd\ =\ 1101\ 1010\ =\ 0xDA}}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00036}00036\ \ \ \ \ \textcolor{comment}{//\ du\ \ =\ 1101\ 0000\ =\ 0xD0}}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00037}00037\ \ \ \ \ \textcolor{comment}{//\ dl\ \ =\ 1010\ 0000\ =\ 0xA0}}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00038}00038\ \ \ \ \ \textcolor{comment}{//\ d[0]=\ 1101\ 1100\ =\ 0xDC}}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00039}00039\ \ \ \ \ \textcolor{comment}{//\ d[1]=\ 1101\ 1000\ =\ 0xD8}}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00040}00040\ \ \ \ \ \textcolor{comment}{//\ d[2]=\ 1010\ 1100\ =\ 0xAC}}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00041}00041\ \ \ \ \ \textcolor{comment}{//\ d[3]=\ 1010\ 1000\ =\ 0xA8}}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00043}00043\ \ \ \ \ uint8\_t\ du,\ dl;}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00044}00044\ \ \ \ \ uint8\_t\ data[4];}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00045}00045\ \ \ \ \ du\ =\ cmd\ \&\ 0xf0;\ \textcolor{comment}{//\ \&\ 0b1111\ 0000}}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00046}00046\ \ \ \ \ dl\ =\ (cmd\ <<\ 4)\ \&\ 0xf0;}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00047}00047\ \ \ \ \ data[0]\ =\ du\ |\ 0x0C;\ \textcolor{comment}{//\ |\ 0b0000\ 1100}}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00048}00048\ \ \ \ \ data[1]\ =\ du\ |\ 0x08;\ \textcolor{comment}{//\ |\ 0b0000\ 1000}}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00049}00049\ \ \ \ \ data[2]\ =\ dl\ |\ 0x0C;\ \textcolor{comment}{//\ |\ 0b0000\ 1100}}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00050}00050\ \ \ \ \ data[3]\ =\ dl\ |\ 0x08;\ \textcolor{comment}{//\ |\ 0b0000\ 1000}}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00051}00051\ \ \ \ \ HAL\_I2C\_Master\_Transmit(\&\mbox{\hyperlink{pcf8574_8h_a2c95c2e5ba86350835f6a4907bd08d87}{PCF8574\_I2C\_HANDLER}},\ \mbox{\hyperlink{pcf8574_8h_a615635d9f97355bf6e4fe7b4a1dc9bf9}{PCF8574\_I2C\_ADDRESS}},\ data,\ \textcolor{keyword}{sizeof}(data),\ 0xf);}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00052}00052\ \}}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00054}\mbox{\hyperlink{pcf8574_8h_a4b069190c7f6000df4fe9e8c214b0e17}{00054}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{pcf8574_8c_a4b069190c7f6000df4fe9e8c214b0e17}{pcf8574\_send\_data}}(uint8\_t\ cmd)}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00055}00055\ \{}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00056}00056\ \ \ \ \ uint8\_t\ du,\ dl;}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00057}00057\ \ \ \ \ uint8\_t\ data[4];}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00058}00058\ \ \ \ \ du\ =\ cmd\ \&\ 0xf0;}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00059}00059\ \ \ \ \ dl\ =\ (cmd\ <<\ 4)\ \&\ 0xf0;}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00060}00060\ \ \ \ \ data[0]\ =\ du\ |\ 0x0D;\ \textcolor{comment}{//\ |\ 0b0000\ 1101}}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00061}00061\ \ \ \ \ data[1]\ =\ du\ |\ 0x09;\ \textcolor{comment}{//\ |\ 0b0000\ 1001}}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00062}00062\ \ \ \ \ data[2]\ =\ dl\ |\ 0x0D;\ \textcolor{comment}{//\ |\ 0b0000\ 1101}}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00063}00063\ \ \ \ \ data[3]\ =\ dl\ |\ 0x09;\ \textcolor{comment}{//\ |\ 0b0000\ 1001}}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00064}00064\ \ \ \ \ HAL\_I2C\_Master\_Transmit(\&\mbox{\hyperlink{pcf8574_8h_a2c95c2e5ba86350835f6a4907bd08d87}{PCF8574\_I2C\_HANDLER}},\ \mbox{\hyperlink{pcf8574_8h_a615635d9f97355bf6e4fe7b4a1dc9bf9}{PCF8574\_I2C\_ADDRESS}},\ data,\ \textcolor{keyword}{sizeof}(data),\ 0xf);}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00065}00065\ \}}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00067}\mbox{\hyperlink{pcf8574_8h_aa35596e8e898426a066c74eb86266837}{00067}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{pcf8574_8c_aa35596e8e898426a066c74eb86266837}{pcf8574\_clr}}()}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00068}00068\ \{}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00069}00069\ \ \ \ \ \mbox{\hyperlink{pcf8574_8c_a1a112ccb22e4f631614b4d4df1553949}{pcf8574\_send\_cmd}}(0x80);}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00070}00070\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 80;\ i++)}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00071}00071\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00072}00072\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{pcf8574_8c_a4b069190c7f6000df4fe9e8c214b0e17}{pcf8574\_send\_data}}(0x20);}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00073}00073\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00074}00074\ \}}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00076}\mbox{\hyperlink{pcf8574_8h_ad7a2ce201ada868604cc706faf280eb1}{00076}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{pcf8574_8c_ad7a2ce201ada868604cc706faf280eb1}{pcf8574\_cursor}}(uint8\_t\ row,\ uint8\_t\ col)}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00077}00077\ \{}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00078}00078\ \ \ \ \ \textcolor{keywordflow}{switch}\ (row)}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00079}00079\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00080}00080\ \ \ \ \ \textcolor{keywordflow}{case}\ 0:}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00081}00081\ \ \ \ \ \ \ \ \ col\ |=\ 0x80;}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00082}00082\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00083}00083\ \ \ \ \ \textcolor{keywordflow}{case}\ 1:}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00084}00084\ \ \ \ \ \ \ \ \ col\ |=\ 0x80\ |\ 0x40;}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00085}00085\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00086}00086\ \ \ \ \ \textcolor{keywordflow}{case}\ 2:}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00087}00087\ \ \ \ \ \ \ \ \ \ \ \ \ col\ |=\ 0x80\ |\ 0x14;}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00088}00088\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00089}00089\ \ \ \ \ \textcolor{keywordflow}{case}\ 3:}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ col\ |=\ 0x80\ |\ 0x54;}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00091}00091\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00092}00092\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00093}00093\ \ \ \ \ \mbox{\hyperlink{pcf8574_8c_a1a112ccb22e4f631614b4d4df1553949}{pcf8574\_send\_cmd}}(col);}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00094}00094\ \}}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00096}\mbox{\hyperlink{pcf8574_8h_a80c7fedc95b28a8c4711b846eec74901}{00096}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{pcf8574_8c_a80c7fedc95b28a8c4711b846eec74901}{pcf8574\_send\_string}}(\textcolor{keywordtype}{char}\ *str)}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00097}00097\ \{}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00098}00098\ \ \ \ \ \textcolor{keywordflow}{while}\ (*str)}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00099}00099\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{pcf8574_8c_a4b069190c7f6000df4fe9e8c214b0e17}{pcf8574\_send\_data}}(*str++);}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00100}00100\ \}}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00101}00101\ }
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00102}\mbox{\hyperlink{pcf8574_8h_ae44610b0b8ca4116e813b60957cb8852}{00102}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{pcf8574_8c_ae44610b0b8ca4116e813b60957cb8852}{pcf8574\_send\_float}}(\textcolor{keywordtype}{double}\ f)}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00103}00103\ \{}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00104}00104\ \ \ \ \ \textcolor{keywordtype}{char}\ str[20];}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00105}00105\ \ \ \ \ sprintf(str,\ \textcolor{stringliteral}{"{}\%f"{}},\ f);}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00106}00106\ \ \ \ \ \mbox{\hyperlink{pcf8574_8c_a80c7fedc95b28a8c4711b846eec74901}{pcf8574\_send\_string}}(str);}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00107}00107\ \}}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00108}00108\ }
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00109}\mbox{\hyperlink{pcf8574_8h_a06fa8d95b31275734b484344375014a9}{00109}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{pcf8574_8c_a06fa8d95b31275734b484344375014a9}{pcf8574\_send\_integer}}(int32\_t\ i)}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00110}00110\ \{}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00111}00111\ \ \ \ \ \textcolor{keywordtype}{char}\ str[20];}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00112}00112\ \ \ \ \ sprintf(str,\ \textcolor{stringliteral}{"{}\%li"{}},\ i);}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00113}00113\ \ \ \ \ \mbox{\hyperlink{pcf8574_8c_a80c7fedc95b28a8c4711b846eec74901}{pcf8574\_send\_string}}(str);}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00114}00114\ \}}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00115}00115\ }
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00116}\mbox{\hyperlink{pcf8574_8h_a54c9ca1eefab91724d90b1372ce3447b}{00116}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{pcf8574_8c_a54c9ca1eefab91724d90b1372ce3447b}{pcf8574\_test}}()}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00117}00117\ \{}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00118}00118\ \ \ \ \ \textcolor{keywordtype}{int}\ col=0,\ row=0;}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00119}00119\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 255;\ i++)}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00120}00120\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00121}00121\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{pcf8574_8c_ad7a2ce201ada868604cc706faf280eb1}{pcf8574\_cursor}}(row,\ col);}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00122}00122\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{pcf8574_8c_a4b069190c7f6000df4fe9e8c214b0e17}{pcf8574\_send\_data}}(i\ +\ 48);}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00123}00123\ \ \ \ \ \ \ \ \ col++;}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00124}00124\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (col\ >\ 15)}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00125}00125\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00126}00126\ \ \ \ \ \ \ \ \ \ \ \ \ row++;}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00127}00127\ \ \ \ \ \ \ \ \ \ \ \ \ col\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00128}00128\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00129}00129\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (row\ >\ 1)}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00130}00130\ \ \ \ \ \ \ \ \ \ \ \ \ row\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00131}00131\ \ \ \ \ \ \ \ \ HAL\_Delay(50);}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00132}00132\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00133}00133\ \}}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00134}00134\ }
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00135}\mbox{\hyperlink{pcf8574_8h_aa66e90a23f82feabb60b63dd39299ad6}{00135}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{pcf8574_8c_aa66e90a23f82feabb60b63dd39299ad6}{pcf8574\_init}}()}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00136}00136\ \{}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00137}00137\ \ \ \ \ \textcolor{keywordflow}{for}\ (uint8\_t\ i\ =\ 0;\ i\ <\ 3;\ i++)}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00138}00138\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00139}00139\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{pcf8574_8c_a1a112ccb22e4f631614b4d4df1553949}{pcf8574\_send\_cmd}}(0x03);\ \textcolor{comment}{//\ init\ sequence}}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00140}00140\ \ \ \ \ \ \ \ \ HAL\_Delay(5);}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00141}00141\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00142}00142\ \ \ \ \ \mbox{\hyperlink{pcf8574_8c_a1a112ccb22e4f631614b4d4df1553949}{pcf8574\_send\_cmd}}(0x02);\ \textcolor{comment}{//\ 4-\/bit\ mode}}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00143}00143\ \ \ \ \ HAL\_Delay(100);}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00144}00144\ \ \ \ \ \mbox{\hyperlink{pcf8574_8c_a1a112ccb22e4f631614b4d4df1553949}{pcf8574\_send\_cmd}}(0x28);\ \textcolor{comment}{//\ 2\ rows,\ 5x7\ points}}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00145}00145\ \ \ \ \ HAL\_Delay(1);}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00146}00146\ \ \ \ \ \mbox{\hyperlink{pcf8574_8c_a1a112ccb22e4f631614b4d4df1553949}{pcf8574\_send\_cmd}}(0x01);\ \textcolor{comment}{//\ clear}}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00147}00147\ \ \ \ \ HAL\_Delay(2);}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00148}00148\ \ \ \ \ \mbox{\hyperlink{pcf8574_8c_a1a112ccb22e4f631614b4d4df1553949}{pcf8574\_send\_cmd}}(0x06);\ \textcolor{comment}{//\ entry\ mode}}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00149}00149\ \ \ \ \ HAL\_Delay(1);}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00150}00150\ \ \ \ \ \textcolor{comment}{//pcf8574\_send\_cmd(0x08);\ //\ disp=off\ ,\ cur=off,\ blink=off}}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00151}00151\ \ \ \ \ \mbox{\hyperlink{pcf8574_8c_a1a112ccb22e4f631614b4d4df1553949}{pcf8574\_send\_cmd}}(0x0C);\ \textcolor{comment}{//\ disp=on\ ,\ cur=off,\ blink=off}}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00152}00152\ \ \ \ \ \textcolor{comment}{//pcf8574\_send\_cmd(0x0E);\ //\ disp=on\ ,\ cur=on,\ blink=off}}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00153}00153\ \ \ \ \ \textcolor{comment}{//pcf8574\_send\_cmd(0x0F);\ //\ disp=on\ ,\ cur=on,\ blink=on}}
+\DoxyCodeLine{\Hypertarget{pcf8574_8c_source_l00154}00154\ \}}
+
+\end{DoxyCode}

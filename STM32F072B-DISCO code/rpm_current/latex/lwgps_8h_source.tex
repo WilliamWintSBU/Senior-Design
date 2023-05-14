@@ -1,0 +1,253 @@
+\hypertarget{lwgps_8h_source}{}\doxysection{lwgps.\+h}
+\label{lwgps_8h_source}\index{Core/Inc/lwgps/lwgps.h@{Core/Inc/lwgps/lwgps.h}}
+\mbox{\hyperlink{lwgps_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00006}00006\ \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00007}00007\ \textcolor{comment}{\ *\ Copyright\ (c)\ 2023\ Tilen\ MAJERLE}}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00008}00008\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00009}00009\ \textcolor{comment}{\ *\ Permission\ is\ hereby\ granted,\ free\ of\ charge,\ to\ any\ person}}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00010}00010\ \textcolor{comment}{\ *\ obtaining\ a\ copy\ of\ this\ software\ and\ associated\ documentation}}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00011}00011\ \textcolor{comment}{\ *\ files\ (the\ "{}Software"{}),\ to\ deal\ in\ the\ Software\ without\ restriction,}}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00012}00012\ \textcolor{comment}{\ *\ including\ without\ limitation\ the\ rights\ to\ use,\ copy,\ modify,\ merge,}}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00013}00013\ \textcolor{comment}{\ *\ publish,\ distribute,\ sublicense,\ and/or\ sell\ copies\ of\ the\ Software,}}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00014}00014\ \textcolor{comment}{\ *\ and\ to\ permit\ persons\ to\ whom\ the\ Software\ is\ furnished\ to\ do\ so,}}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00015}00015\ \textcolor{comment}{\ *\ subject\ to\ the\ following\ conditions:}}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00016}00016\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00017}00017\ \textcolor{comment}{\ *\ The\ above\ copyright\ notice\ and\ this\ permission\ notice\ shall\ be}}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00018}00018\ \textcolor{comment}{\ *\ included\ in\ all\ copies\ or\ substantial\ portions\ of\ the\ Software.}}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00019}00019\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00020}00020\ \textcolor{comment}{\ *\ THE\ SOFTWARE\ IS\ PROVIDED\ "{}AS\ IS"{},\ WITHOUT\ WARRANTY\ OF\ ANY\ KIND,}}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00021}00021\ \textcolor{comment}{\ *\ EXPRESS\ OR\ IMPLIED,\ INCLUDING\ BUT\ NOT\ LIMITED\ TO\ THE\ WARRANTIES}}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00022}00022\ \textcolor{comment}{\ *\ OF\ MERCHANTABILITY,\ FITNESS\ FOR\ A\ PARTICULAR\ PURPOSE}}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00023}00023\ \textcolor{comment}{\ *\ AND\ NONINFRINGEMENT.\ IN\ NO\ EVENT\ SHALL\ THE\ AUTHORS\ OR\ COPYRIGHT}}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00024}00024\ \textcolor{comment}{\ *\ HOLDERS\ BE\ LIABLE\ FOR\ ANY\ CLAIM,\ DAMAGES\ OR\ OTHER\ LIABILITY,}}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00025}00025\ \textcolor{comment}{\ *\ WHETHER\ IN\ AN\ ACTION\ OF\ CONTRACT,\ TORT\ OR\ OTHERWISE,\ ARISING}}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00026}00026\ \textcolor{comment}{\ *\ FROM,\ OUT\ OF\ OR\ IN\ CONNECTION\ WITH\ THE\ SOFTWARE\ OR\ THE\ USE\ OR}}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00027}00027\ \textcolor{comment}{\ *\ OTHER\ DEALINGS\ IN\ THE\ SOFTWARE.}}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00028}00028\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00029}00029\ \textcolor{comment}{\ *\ This\ file\ is\ part\ of\ LwGPS\ -\/\ Lightweight\ GPS\ NMEA\ parser\ library.}}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00030}00030\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00031}00031\ \textcolor{comment}{\ *\ Author:\ \ \ \ \ \ \ \ \ \ Tilen\ MAJERLE\ <tilen@majerle.eu>}}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00032}00032\ \textcolor{comment}{\ *\ Version:\ \ \ \ \ \ \ \ \ v2.1.0}}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00033}00033\ \textcolor{comment}{\ */}}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00034}00034\ \textcolor{preprocessor}{\#ifndef\ LWGPS\_HDR\_H}}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00035}00035\ \textcolor{preprocessor}{\#define\ LWGPS\_HDR\_H}}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00037}00037\ \textcolor{preprocessor}{\#include\ <limits.h>}}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00038}00038\ \textcolor{preprocessor}{\#include\ <stddef.h>}}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00039}00039\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00040}00040\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{lwgps__opt_8h}{lwgps/lwgps\_opt.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00042}00042\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00043}00043\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00044}00044\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_\_cplusplus\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00056}00056\ \textcolor{preprocessor}{\#if\ LWGPS\_CFG\_DOUBLE\ ||\ \_\_DOXYGEN\_\_}}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00057}00057\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{group___l_w_g_p_s_ga0e01296c9b3162a56da030716e5902c8}{lwgps\_float\_t}};}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00058}00058\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00059}\mbox{\hyperlink{group___l_w_g_p_s_ga0e01296c9b3162a56da030716e5902c8}{00059}}\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{float}\ \mbox{\hyperlink{group___l_w_g_p_s_ga0e01296c9b3162a56da030716e5902c8}{lwgps\_float\_t}};}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00060}00060\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00065}\mbox{\hyperlink{structlwgps__sat__t}{00065}}\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00066}\mbox{\hyperlink{structlwgps__sat__t_abea371f9030e15a5d2a4c181576833d8}{00066}}\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structlwgps__sat__t_abea371f9030e15a5d2a4c181576833d8}{num}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00067}\mbox{\hyperlink{structlwgps__sat__t_a6d7a4b9b0886071bff76c053efe6e137}{00067}}\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structlwgps__sat__t_a6d7a4b9b0886071bff76c053efe6e137}{elevation}};\ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00068}\mbox{\hyperlink{structlwgps__sat__t_a8fd35e8be4be764b7348654149e78ed4}{00068}}\ \ \ \ \ uint16\_t\ \mbox{\hyperlink{structlwgps__sat__t_a8fd35e8be4be764b7348654149e78ed4}{azimuth}};\ \ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00069}\mbox{\hyperlink{structlwgps__sat__t_a11be3c6f2d5194542e5d1733cbc7ac76}{00069}}\ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structlwgps__sat__t_a11be3c6f2d5194542e5d1733cbc7ac76}{snr}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00070}00070\ \}\ \mbox{\hyperlink{structlwgps__sat__t}{lwgps\_sat\_t}};}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00075}\mbox{\hyperlink{group___l_w_g_p_s_gabab85c279fb364e161ba08aaf8a14284}{00075}}\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00076}\mbox{\hyperlink{group___l_w_g_p_s_ggabab85c279fb364e161ba08aaf8a14284abde6113d898001338feb65fd66c6a202}{00076}}\ \ \ \ \ \mbox{\hyperlink{group___l_w_g_p_s_ggabab85c279fb364e161ba08aaf8a14284abde6113d898001338feb65fd66c6a202}{STAT\_UNKNOWN}}\ =\ 0,\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00077}\mbox{\hyperlink{group___l_w_g_p_s_ggabab85c279fb364e161ba08aaf8a14284abdbe20e8d57472a78f7475f6b6bbe824}{00077}}\ \ \ \ \ \mbox{\hyperlink{group___l_w_g_p_s_ggabab85c279fb364e161ba08aaf8a14284abdbe20e8d57472a78f7475f6b6bbe824}{STAT\_GGA}}\ =\ 1,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00078}\mbox{\hyperlink{group___l_w_g_p_s_ggabab85c279fb364e161ba08aaf8a14284ad118c8a518c0a17caa66b0840b4fd3a4}{00078}}\ \ \ \ \ \mbox{\hyperlink{group___l_w_g_p_s_ggabab85c279fb364e161ba08aaf8a14284ad118c8a518c0a17caa66b0840b4fd3a4}{STAT\_GSA}}\ =\ 2,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00079}\mbox{\hyperlink{group___l_w_g_p_s_ggabab85c279fb364e161ba08aaf8a14284a0f6523feb25eb37cf2dccb4db9c919bd}{00079}}\ \ \ \ \ \mbox{\hyperlink{group___l_w_g_p_s_ggabab85c279fb364e161ba08aaf8a14284a0f6523feb25eb37cf2dccb4db9c919bd}{STAT\_GSV}}\ =\ 3,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00080}\mbox{\hyperlink{group___l_w_g_p_s_ggabab85c279fb364e161ba08aaf8a14284a76d6b8c5fa017a36997f576a98c4c542}{00080}}\ \ \ \ \ \mbox{\hyperlink{group___l_w_g_p_s_ggabab85c279fb364e161ba08aaf8a14284a76d6b8c5fa017a36997f576a98c4c542}{STAT\_RMC}}\ =\ 4,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00081}\mbox{\hyperlink{group___l_w_g_p_s_ggabab85c279fb364e161ba08aaf8a14284a0f9b13471fd992020d7d3ec5f0679355}{00081}}\ \ \ \ \ \mbox{\hyperlink{group___l_w_g_p_s_ggabab85c279fb364e161ba08aaf8a14284a0f9b13471fd992020d7d3ec5f0679355}{STAT\_UBX}}\ =\ 5,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00082}\mbox{\hyperlink{group___l_w_g_p_s_ggabab85c279fb364e161ba08aaf8a14284acf09eca3c1673f7f55c7463cf728cfca}{00082}}\ \ \ \ \ \mbox{\hyperlink{group___l_w_g_p_s_ggabab85c279fb364e161ba08aaf8a14284acf09eca3c1673f7f55c7463cf728cfca}{STAT\_UBX\_TIME}}\ =\ 6,\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00083}00083\ \ \ \ \ \mbox{\hyperlink{group___l_w_g_p_s_ggabab85c279fb364e161ba08aaf8a14284a4a96f2283467bd7821167ac9bf1c8119}{STAT\_CHECKSUM\_FAIL}}\ =\ UINT8\_MAX\ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00084}\mbox{\hyperlink{group___l_w_g_p_s_ggabab85c279fb364e161ba08aaf8a14284a4a96f2283467bd7821167ac9bf1c8119}{00084}}\ \}\ \mbox{\hyperlink{group___l_w_g_p_s_gabab85c279fb364e161ba08aaf8a14284}{lwgps\_statement\_t}};}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00089}\mbox{\hyperlink{structlwgps__t}{00089}}\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00090}00090\ \textcolor{preprocessor}{\#if\ LWGPS\_CFG\_STATEMENT\_GPGGA\ ||\ \_\_DOXYGEN\_\_}}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00091}00091\ \ \ \ \ \textcolor{comment}{/*\ Information\ related\ to\ GPGGA\ statement\ */}}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00092}00092\ \ \ \ \ \mbox{\hyperlink{group___l_w_g_p_s_ga0e01296c9b3162a56da030716e5902c8}{lwgps\_float\_t}}\ latitude;\ \ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00093}00093\ \ \ \ \ \mbox{\hyperlink{group___l_w_g_p_s_ga0e01296c9b3162a56da030716e5902c8}{lwgps\_float\_t}}\ longitude;\ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00094}00094\ \ \ \ \ \mbox{\hyperlink{group___l_w_g_p_s_ga0e01296c9b3162a56da030716e5902c8}{lwgps\_float\_t}}\ altitude;\ \ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00095}00095\ \ \ \ \ \mbox{\hyperlink{group___l_w_g_p_s_ga0e01296c9b3162a56da030716e5902c8}{lwgps\_float\_t}}\ geo\_sep;\ \ \ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00096}00096\ \ \ \ \ uint8\_t\ sats\_in\_use;\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00097}00097\ \ \ \ \ uint8\_t\ fix;\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00098}00098\ \ \ \ \ uint8\_t\ hours;\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00099}00099\ \ \ \ \ uint8\_t\ minutes;\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00100}00100\ \ \ \ \ uint8\_t\ seconds;\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00101}00101\ \textcolor{preprocessor}{\#endif\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ LWGPS\_CFG\_STATEMENT\_GPGGA\ ||\ \_\_DOXYGEN\_\_\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00102}00102\ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00103}00103\ \textcolor{preprocessor}{\#if\ LWGPS\_CFG\_STATEMENT\_GPGSA\ ||\ \_\_DOXYGEN\_\_}}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00104}00104\ \ \ \ \ \textcolor{comment}{/*\ Information\ related\ to\ GPGSA\ statement\ */}}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00105}00105\ \ \ \ \ \mbox{\hyperlink{group___l_w_g_p_s_ga0e01296c9b3162a56da030716e5902c8}{lwgps\_float\_t}}\ dop\_h;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00106}00106\ \ \ \ \ \mbox{\hyperlink{group___l_w_g_p_s_ga0e01296c9b3162a56da030716e5902c8}{lwgps\_float\_t}}\ dop\_v;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00107}00107\ \ \ \ \ \mbox{\hyperlink{group___l_w_g_p_s_ga0e01296c9b3162a56da030716e5902c8}{lwgps\_float\_t}}\ dop\_p;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00108}00108\ \ \ \ \ uint8\_t\ fix\_mode;\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00109}00109\ \ \ \ \ uint8\_t\ satellites\_ids[12];\ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00110}00110\ \textcolor{preprocessor}{\#endif\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ LWGPS\_CFG\_STATEMENT\_GPGSA\ ||\ \_\_DOXYGEN\_\_\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00111}00111\ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00112}00112\ \textcolor{preprocessor}{\#if\ LWGPS\_CFG\_STATEMENT\_GPGSV\ ||\ \_\_DOXYGEN\_\_}}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00113}00113\ \ \ \ \ \textcolor{comment}{/*\ Information\ related\ to\ GPGSV\ statement\ */}}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00114}00114\ \ \ \ \ uint8\_t\ sats\_in\_view;\ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00115}00115\ \textcolor{preprocessor}{\#if\ LWGPS\_CFG\_STATEMENT\_GPGSV\_SAT\_DET\ ||\ \_\_DOXYGEN\_\_}}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00116}00116\ \ \ \ \ \mbox{\hyperlink{structlwgps__sat__t}{lwgps\_sat\_t}}\ sats\_in\_view\_desc[12];}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00117}00117\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ LWGPS\_CFG\_STATEMENT\_GPGSV\_SAT\_DET\ ||\ \_\_DOXYGEN\_\_\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00118}00118\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ LWGPS\_CFG\_STATEMENT\_GPGSV\ ||\ \_\_DOXYGEN\_\_\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00119}00119\ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00120}00120\ \textcolor{preprocessor}{\#if\ LWGPS\_CFG\_STATEMENT\_GPRMC\ ||\ \_\_DOXYGEN\_\_}}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00121}00121\ \ \ \ \ \textcolor{comment}{/*\ Information\ related\ to\ GPRMC\ statement\ */}}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00122}00122\ \ \ \ \ uint8\_t\ is\_valid;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00123}00123\ \ \ \ \ \mbox{\hyperlink{group___l_w_g_p_s_ga0e01296c9b3162a56da030716e5902c8}{lwgps\_float\_t}}\ speed;\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00124}00124\ \ \ \ \ \mbox{\hyperlink{group___l_w_g_p_s_ga0e01296c9b3162a56da030716e5902c8}{lwgps\_float\_t}}\ course;\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00125}00125\ \ \ \ \ \mbox{\hyperlink{group___l_w_g_p_s_ga0e01296c9b3162a56da030716e5902c8}{lwgps\_float\_t}}\ variation;\ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00126}00126\ \ \ \ \ uint8\_t\ date;\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00127}00127\ \ \ \ \ uint8\_t\ month;\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00128}00128\ \ \ \ \ uint8\_t\ year;\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00129}00129\ \textcolor{preprocessor}{\#endif\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ LWGPS\_CFG\_STATEMENT\_GPRMC\ ||\ \_\_DOXYGEN\_\_\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00130}00130\ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00131}00131\ \textcolor{preprocessor}{\#if\ LWGPS\_CFG\_STATEMENT\_PUBX\_TIME\ ||\ \_\_DOXYGEN\_\_}}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00132}00132\ \textcolor{preprocessor}{\#if\ !LWGPS\_CFG\_STATEMENT\_GPGGA\ \&\&\ !\_\_DOXYGEN\_\_}}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00133}00133\ \ \ \ \ \textcolor{comment}{/*\ rely\ on\ time\ fields\ from\ GPGGA\ if\ possible\ */}}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00134}00134\ \ \ \ \ uint8\_t\ hours;}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00135}00135\ \ \ \ \ uint8\_t\ minutes;}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00136}00136\ \ \ \ \ uint8\_t\ seconds;}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00137}00137\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ !LWGPS\_CFG\_STATEMENT\_GPGGA\ \&\&\ !\_\_DOXYGEN\_\_\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00138}00138\ \textcolor{preprocessor}{\#if\ !LWGPS\_CFG\_STATEMENT\_GPRMC\ \&\&\ !\_\_DOXYGEN\_\_}}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00139}00139\ \ \ \ \ \textcolor{comment}{/*\ rely\ on\ date\ fields\ from\ GPRMC\ if\ possible\ */}}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00140}00140\ \ \ \ \ uint8\_t\ date;}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00141}00141\ \ \ \ \ uint8\_t\ month;}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00142}00142\ \ \ \ \ uint8\_t\ year;}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00143}00143\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ !LWGPS\_CFG\_STATEMENT\_GPRMC\ \&\&\ !\_\_DOXYGEN\_\_\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00144}00144\ \ \ \ \ \textcolor{comment}{/*\ fields\ only\ available\ in\ PUBX\_TIME\ */}}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00145}00145\ \ \ \ \ \mbox{\hyperlink{group___l_w_g_p_s_ga0e01296c9b3162a56da030716e5902c8}{lwgps\_float\_t}}\ utc\_tow;\ \ \ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00146}00146\ \ \ \ \ uint16\_t\ utc\_wk;\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00147}00147\ \ \ \ \ uint8\_t\ leap\_sec;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00148}00148\ \ \ \ \ uint32\_t\ clk\_bias;\ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00149}00149\ \ \ \ \ \mbox{\hyperlink{group___l_w_g_p_s_ga0e01296c9b3162a56da030716e5902c8}{lwgps\_float\_t}}\ clk\_drift;\ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00150}00150\ \ \ \ \ uint32\_t\ tp\_gran;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00151}00151\ \textcolor{preprocessor}{\#endif\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ LWGPS\_CFG\_STATEMENT\_PUBX\_TIME\ ||\ \_\_DOXYGEN\_\_\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00152}00152\ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00153}00153\ \textcolor{preprocessor}{\#if\ !\_\_DOXYGEN\_\_}}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00154}00154\ \ \ \ \ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00155}\mbox{\hyperlink{structlwgps__t_af0a0d8ffdf231f5ff58d3a8aa6725983}{00155}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group___l_w_g_p_s_gabab85c279fb364e161ba08aaf8a14284}{lwgps\_statement\_t}}\ \mbox{\hyperlink{structlwgps__t_af0a0d8ffdf231f5ff58d3a8aa6725983}{stat}};\ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00156}\mbox{\hyperlink{structlwgps__t_ae21c3829b38844c590d24e649525a2dc}{00156}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ term\_str[13];\ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00157}\mbox{\hyperlink{structlwgps__t_a1fdb57bd189d6a15778b50cd29e3d695}{00157}}\ \ \ \ \ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structlwgps__t_a1fdb57bd189d6a15778b50cd29e3d695}{term\_pos}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00158}\mbox{\hyperlink{structlwgps__t_a8a962fe759ffe972d4c91a3a79ad331c}{00158}}\ \ \ \ \ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structlwgps__t_a8a962fe759ffe972d4c91a3a79ad331c}{term\_num}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00160}\mbox{\hyperlink{structlwgps__t_acbefe770ce24afa349da65bfa0be56aa}{00160}}\ \ \ \ \ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structlwgps__t_acbefe770ce24afa349da65bfa0be56aa}{star}};\ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00162}00162\ \textcolor{preprocessor}{\#if\ LWGPS\_CFG\_CRC}}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00163}00163\ \ \ \ \ \ \ \ \ uint8\_t\ crc\_calc;\ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00164}00164\ \textcolor{preprocessor}{\#endif\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ LWGPS\_CFG\_CRC\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00165}00165\ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00166}00166\ \ \ \ \ \ \ \ \ \textcolor{keyword}{union\ }\{}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00167}\mbox{\hyperlink{structlwgps__t_aff7b59f569ec689a7580bd6911daafd5}{00167}}\ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ \mbox{\hyperlink{structlwgps__t_aff7b59f569ec689a7580bd6911daafd5}{dummy}};\ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00168}00168\ \textcolor{preprocessor}{\#if\ LWGPS\_CFG\_STATEMENT\_GPGGA}}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00169}00169\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00170}00170\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group___l_w_g_p_s_ga0e01296c9b3162a56da030716e5902c8}{lwgps\_float\_t}}\ latitude;\ \ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00171}00171\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group___l_w_g_p_s_ga0e01296c9b3162a56da030716e5902c8}{lwgps\_float\_t}}\ longitude;\ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00172}00172\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group___l_w_g_p_s_ga0e01296c9b3162a56da030716e5902c8}{lwgps\_float\_t}}\ altitude;\ \ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00173}00173\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group___l_w_g_p_s_ga0e01296c9b3162a56da030716e5902c8}{lwgps\_float\_t}}\ geo\_sep;\ \ \ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00174}00174\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ sats\_in\_use;\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00175}00175\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ fix;\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00176}00176\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ hours;\ \ \ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00177}00177\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ minutes;\ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00178}00178\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ seconds;\ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00179}00179\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ gga;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00180}00180\ \textcolor{preprocessor}{\#endif\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ LWGPS\_CFG\_STATEMENT\_GPGGA\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00181}00181\ \textcolor{preprocessor}{\#if\ LWGPS\_CFG\_STATEMENT\_GPGSA}}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00182}00182\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00183}00183\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group___l_w_g_p_s_ga0e01296c9b3162a56da030716e5902c8}{lwgps\_float\_t}}\ dop\_h;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00184}00184\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group___l_w_g_p_s_ga0e01296c9b3162a56da030716e5902c8}{lwgps\_float\_t}}\ dop\_v;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00185}00185\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group___l_w_g_p_s_ga0e01296c9b3162a56da030716e5902c8}{lwgps\_float\_t}}\ dop\_p;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00186}00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ fix\_mode;\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00187}00187\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ satellites\_ids[12];\ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00188}00188\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ gsa;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00189}00189\ \textcolor{preprocessor}{\#endif\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ LWGPS\_CFG\_STATEMENT\_GPGSA\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00190}00190\ \textcolor{preprocessor}{\#if\ LWGPS\_CFG\_STATEMENT\_GPGSV}}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00191}00191\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00192}00192\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ sats\_in\_view;\ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00193}00193\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ stat\_num;\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00194}00194\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ gsv;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00195}00195\ \textcolor{preprocessor}{\#endif\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ LWGPS\_CFG\_STATEMENT\_GPGSV\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00196}00196\ \textcolor{preprocessor}{\#if\ LWGPS\_CFG\_STATEMENT\_GPRMC}}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00197}00197\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00198}00198\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ is\_valid;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00199}00199\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ date;\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00200}00200\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ month;\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00201}00201\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ year;\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00202}00202\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group___l_w_g_p_s_ga0e01296c9b3162a56da030716e5902c8}{lwgps\_float\_t}}\ speed;\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00203}00203\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group___l_w_g_p_s_ga0e01296c9b3162a56da030716e5902c8}{lwgps\_float\_t}}\ course;\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00204}00204\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group___l_w_g_p_s_ga0e01296c9b3162a56da030716e5902c8}{lwgps\_float\_t}}\ variation;\ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00205}00205\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ rmc;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00206}00206\ \textcolor{preprocessor}{\#endif\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ LWGPS\_CFG\_STATEMENT\_GPRMC\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00207}00207\ \textcolor{preprocessor}{\#if\ LWGPS\_CFG\_STATEMENT\_PUBX\_TIME}}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00208}00208\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00209}00209\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ hours;\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00210}00210\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ minutes;\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00211}00211\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ seconds;\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00212}00212\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ date;\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00213}00213\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ month;\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00214}00214\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ year;\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00215}00215\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group___l_w_g_p_s_ga0e01296c9b3162a56da030716e5902c8}{lwgps\_float\_t}}\ utc\_tow;\ \ \ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00216}00216\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint16\_t\ utc\_wk;\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00217}00217\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ leap\_sec;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00218}00218\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ clk\_bias;\ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00219}00219\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group___l_w_g_p_s_ga0e01296c9b3162a56da030716e5902c8}{lwgps\_float\_t}}\ clk\_drift;\ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00220}00220\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ tp\_gran;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00221}00221\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ time;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00222}00222\ \textcolor{preprocessor}{\#endif\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ LWGPS\_CFG\_STATEMENT\_PUBX\_TIME\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00223}\mbox{\hyperlink{structlwgps__t_a766558304b56abeea2c89b726885646c}{00223}}\ \ \ \ \ \ \ \ \ \}\ data;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00224}\mbox{\hyperlink{structlwgps__t_a6bbebbf08cf210522c54b9ef80307131}{00224}}\ \ \ \ \ \}\ p;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00225}00225\ \textcolor{preprocessor}{\#endif\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ !\_\_DOXYGEN\_\_\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00226}00226\ \}\ \mbox{\hyperlink{structlwgps__t}{lwgps\_t}};}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00227}00227\ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00231}\mbox{\hyperlink{group___l_w_g_p_s_ga8028585ea87281677e6add0512bb8c92}{00231}}\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00232}00232\ \ \ \ \ \textcolor{comment}{/*\ Metric\ values\ */}}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00233}\mbox{\hyperlink{group___l_w_g_p_s_gga8028585ea87281677e6add0512bb8c92a3566494895057382f83db729189bd0f3}{00233}}\ \ \ \ \ \mbox{\hyperlink{group___l_w_g_p_s_gga8028585ea87281677e6add0512bb8c92a3566494895057382f83db729189bd0f3}{lwgps\_speed\_kps}},\ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00234}\mbox{\hyperlink{group___l_w_g_p_s_gga8028585ea87281677e6add0512bb8c92a9cd1df0627d56561a74b1a321d9efc87}{00234}}\ \ \ \ \ \mbox{\hyperlink{group___l_w_g_p_s_gga8028585ea87281677e6add0512bb8c92a9cd1df0627d56561a74b1a321d9efc87}{lwgps\_speed\_kph}},\ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00235}\mbox{\hyperlink{group___l_w_g_p_s_gga8028585ea87281677e6add0512bb8c92a1d06853ea210e56a82bc17d2e88cf724}{00235}}\ \ \ \ \ \mbox{\hyperlink{group___l_w_g_p_s_gga8028585ea87281677e6add0512bb8c92a1d06853ea210e56a82bc17d2e88cf724}{lwgps\_speed\_mps}},\ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00236}\mbox{\hyperlink{group___l_w_g_p_s_gga8028585ea87281677e6add0512bb8c92a1c7ef2c720bc6783695dca518269eee3}{00236}}\ \ \ \ \ \mbox{\hyperlink{group___l_w_g_p_s_gga8028585ea87281677e6add0512bb8c92a1c7ef2c720bc6783695dca518269eee3}{lwgps\_speed\_mpm}},\ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00238}00238\ \ \ \ \ \textcolor{comment}{/*\ Imperial\ values\ */}}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00239}\mbox{\hyperlink{group___l_w_g_p_s_gga8028585ea87281677e6add0512bb8c92a4e13223246b72a00f12e8ffa83b11c67}{00239}}\ \ \ \ \ \mbox{\hyperlink{group___l_w_g_p_s_gga8028585ea87281677e6add0512bb8c92a4e13223246b72a00f12e8ffa83b11c67}{lwgps\_speed\_mips}},\ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00240}\mbox{\hyperlink{group___l_w_g_p_s_gga8028585ea87281677e6add0512bb8c92a3cede1dc92b738cef62f7c7047f58b73}{00240}}\ \ \ \ \ \mbox{\hyperlink{group___l_w_g_p_s_gga8028585ea87281677e6add0512bb8c92a3cede1dc92b738cef62f7c7047f58b73}{lwgps\_speed\_mph}},\ \ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00241}\mbox{\hyperlink{group___l_w_g_p_s_gga8028585ea87281677e6add0512bb8c92a16a71a6fa9346084637a5a62caa9115b}{00241}}\ \ \ \ \ \mbox{\hyperlink{group___l_w_g_p_s_gga8028585ea87281677e6add0512bb8c92a16a71a6fa9346084637a5a62caa9115b}{lwgps\_speed\_fps}},\ \ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00242}\mbox{\hyperlink{group___l_w_g_p_s_gga8028585ea87281677e6add0512bb8c92ab36e5a0bfb8cc6910219817e0615a341}{00242}}\ \ \ \ \ \mbox{\hyperlink{group___l_w_g_p_s_gga8028585ea87281677e6add0512bb8c92ab36e5a0bfb8cc6910219817e0615a341}{lwgps\_speed\_fpm}},\ \ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00244}00244\ \ \ \ \ \textcolor{comment}{/*\ Optimized\ for\ runners/joggers\ */}}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00245}\mbox{\hyperlink{group___l_w_g_p_s_gga8028585ea87281677e6add0512bb8c92afd6dacc16526f2823a84c97a9fc147e6}{00245}}\ \ \ \ \ \mbox{\hyperlink{group___l_w_g_p_s_gga8028585ea87281677e6add0512bb8c92afd6dacc16526f2823a84c97a9fc147e6}{lwgps\_speed\_mpk}},\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00246}\mbox{\hyperlink{group___l_w_g_p_s_gga8028585ea87281677e6add0512bb8c92a79b776832821701e07e744bc5a01c0a9}{00246}}\ \ \ \ \ \mbox{\hyperlink{group___l_w_g_p_s_gga8028585ea87281677e6add0512bb8c92a79b776832821701e07e744bc5a01c0a9}{lwgps\_speed\_spk}},\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00247}\mbox{\hyperlink{group___l_w_g_p_s_gga8028585ea87281677e6add0512bb8c92a98eae2eba4bb581bfadc1ff2e7384298}{00247}}\ \ \ \ \ \mbox{\hyperlink{group___l_w_g_p_s_gga8028585ea87281677e6add0512bb8c92a98eae2eba4bb581bfadc1ff2e7384298}{lwgps\_speed\_sp100m}},\ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00248}\mbox{\hyperlink{group___l_w_g_p_s_gga8028585ea87281677e6add0512bb8c92ab9ecb54bcde4fda74d483b4f0242c19d}{00248}}\ \ \ \ \ \mbox{\hyperlink{group___l_w_g_p_s_gga8028585ea87281677e6add0512bb8c92ab9ecb54bcde4fda74d483b4f0242c19d}{lwgps\_speed\_mipm}},\ \ \ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00249}\mbox{\hyperlink{group___l_w_g_p_s_gga8028585ea87281677e6add0512bb8c92ae38b3a84c0b375edd407b800f6ac57fa}{00249}}\ \ \ \ \ \mbox{\hyperlink{group___l_w_g_p_s_gga8028585ea87281677e6add0512bb8c92ae38b3a84c0b375edd407b800f6ac57fa}{lwgps\_speed\_spm}},\ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00250}\mbox{\hyperlink{group___l_w_g_p_s_gga8028585ea87281677e6add0512bb8c92a9bfd0475f51cdf0f2a2921ed9f30dec8}{00250}}\ \ \ \ \ \mbox{\hyperlink{group___l_w_g_p_s_gga8028585ea87281677e6add0512bb8c92a9bfd0475f51cdf0f2a2921ed9f30dec8}{lwgps\_speed\_sp100y}},\ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00252}00252\ \ \ \ \ \textcolor{comment}{/*\ Nautical\ values\ */}}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00253}\mbox{\hyperlink{group___l_w_g_p_s_gga8028585ea87281677e6add0512bb8c92aab8e16004c58202291efa3566de9f04c}{00253}}\ \ \ \ \ \mbox{\hyperlink{group___l_w_g_p_s_gga8028585ea87281677e6add0512bb8c92aab8e16004c58202291efa3566de9f04c}{lwgps\_speed\_smph}},\ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00254}00254\ \}\ \mbox{\hyperlink{group___l_w_g_p_s_ga8028585ea87281677e6add0512bb8c92}{lwgps\_speed\_t}};}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00255}00255\ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00260}\mbox{\hyperlink{group___l_w_g_p_s_gaa4373288016a287f47bb79ebbbc1a90a}{00260}}\ \textcolor{keyword}{typedef}\ void\ (*\mbox{\hyperlink{group___l_w_g_p_s_gaa4373288016a287f47bb79ebbbc1a90a}{lwgps\_process\_fn}})(\mbox{\hyperlink{group___l_w_g_p_s_gabab85c279fb364e161ba08aaf8a14284}{lwgps\_statement\_t}}\ res);}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00261}00261\ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00268}00268\ \textcolor{preprocessor}{\#if\ LWGPS\_CFG\_STATEMENT\_GPRMC\ ||\ \_\_DOXYGEN\_\_}}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00269}00269\ \textcolor{preprocessor}{\#define\ lwgps\_is\_valid(\_gh)\ ((\_gh)-\/>is\_valid)}}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00270}00270\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00271}\mbox{\hyperlink{group___l_w_g_p_s_ga455538f2d4ddfc2739ed30bac8c3af32}{00271}}\ \textcolor{preprocessor}{\#define\ lwgps\_is\_valid(\_gh)\ (0)}}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00272}00272\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ LWGPS\_CFG\_STATEMENT\_GPRMC\ ||\ \_\_DOXYGEN\_\_\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00273}00273\ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00274}00274\ uint8\_t\ \mbox{\hyperlink{group___l_w_g_p_s_gaf69993c7ad6cb474707f86d4d986d87f}{lwgps\_init}}(\mbox{\hyperlink{structlwgps__t}{lwgps\_t}}*\ gh);}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00275}00275\ \textcolor{preprocessor}{\#if\ LWGPS\_CFG\_STATUS\ ||\ \_\_DOXYGEN\_\_}}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00276}00276\ uint8\_t\ \mbox{\hyperlink{group___l_w_g_p_s_gaf169c4cd93a4c22c976c9f17b69055a0}{lwgps\_process}}(\mbox{\hyperlink{structlwgps__t}{lwgps\_t}}*\ gh,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*\ data,\ \textcolor{keywordtype}{size\_t}\ len,\ \mbox{\hyperlink{group___l_w_g_p_s_gaa4373288016a287f47bb79ebbbc1a90a}{lwgps\_process\_fn}}\ evt\_fn);}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00277}00277\ \textcolor{preprocessor}{\#else\ \ }\textcolor{comment}{/*\ LWGPS\_CFG\_STATUS\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00278}00278\ uint8\_t\ \mbox{\hyperlink{group___l_w_g_p_s_gaf169c4cd93a4c22c976c9f17b69055a0}{lwgps\_process}}(\mbox{\hyperlink{structlwgps__t}{lwgps\_t}}*\ gh,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{void}*\ data,\ \textcolor{keywordtype}{size\_t}\ len);}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00279}00279\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ !LWGPS\_CFG\_STATUS\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00280}\mbox{\hyperlink{group___l_w_g_p_s_ga547ed9d1fcff169ef72060f3e70b29f4}{00280}}\ uint8\_t\ \mbox{\hyperlink{group___l_w_g_p_s_ga547ed9d1fcff169ef72060f3e70b29f4}{lwgps\_distance\_bearing}}(\mbox{\hyperlink{group___l_w_g_p_s_ga0e01296c9b3162a56da030716e5902c8}{lwgps\_float\_t}}\ las,\ \mbox{\hyperlink{group___l_w_g_p_s_ga0e01296c9b3162a56da030716e5902c8}{lwgps\_float\_t}}\ los,\ \mbox{\hyperlink{group___l_w_g_p_s_ga0e01296c9b3162a56da030716e5902c8}{lwgps\_float\_t}}\ lae,\ \mbox{\hyperlink{group___l_w_g_p_s_ga0e01296c9b3162a56da030716e5902c8}{lwgps\_float\_t}}\ loe,}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00281}00281\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group___l_w_g_p_s_ga0e01296c9b3162a56da030716e5902c8}{lwgps\_float\_t}}*\ d,\ \mbox{\hyperlink{group___l_w_g_p_s_ga0e01296c9b3162a56da030716e5902c8}{lwgps\_float\_t}}*\ b);}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00282}00282\ \mbox{\hyperlink{group___l_w_g_p_s_ga0e01296c9b3162a56da030716e5902c8}{lwgps\_float\_t}}\ \mbox{\hyperlink{group___l_w_g_p_s_gacb9e55ca2fc668510c417a180c99abe7}{lwgps\_to\_speed}}(\mbox{\hyperlink{group___l_w_g_p_s_ga0e01296c9b3162a56da030716e5902c8}{lwgps\_float\_t}}\ sik,\ \mbox{\hyperlink{group___l_w_g_p_s_ga8028585ea87281677e6add0512bb8c92}{lwgps\_speed\_t}}\ ts);}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00283}00283\ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00288}00288\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00289}00289\ \}}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00290}00290\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_\_cplusplus\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00291}00291\ }
+\DoxyCodeLine{\Hypertarget{lwgps_8h_source_l00292}00292\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ LWGPS\_HDR\_H\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

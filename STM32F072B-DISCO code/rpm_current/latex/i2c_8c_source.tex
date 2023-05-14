@@ -1,0 +1,183 @@
+\hypertarget{i2c_8c_source}{}\doxysection{i2c.\+c}
+\label{i2c_8c_source}\index{Core/Src/i2c.c@{Core/Src/i2c.c}}
+\mbox{\hyperlink{i2c_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00001}00001\ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ Header\ */}}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00019}00019\ \textcolor{comment}{/*\ USER\ CODE\ END\ Header\ */}}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00020}00020\ \textcolor{comment}{/*\ Includes\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00021}00021\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{i2c_8h}{i2c.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00023}00023\ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ 0\ */}}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00025}00025\ \textcolor{comment}{/*\ USER\ CODE\ END\ 0\ */}}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00027}\mbox{\hyperlink{i2c_8h_af7b2c26e44dadaaa798a5c3d82914ba7}{00027}}\ I2C\_HandleTypeDef\ \mbox{\hyperlink{i2c_8c_af7b2c26e44dadaaa798a5c3d82914ba7}{hi2c1}};}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00028}\mbox{\hyperlink{i2c_8h_ac379bcc152d860f08b1279fd3e232295}{00028}}\ I2C\_HandleTypeDef\ \mbox{\hyperlink{i2c_8c_ac379bcc152d860f08b1279fd3e232295}{hi2c2}};}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00030}00030\ \textcolor{comment}{/*\ I2C1\ init\ function\ */}}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00031}\mbox{\hyperlink{i2c_8h_ada6e763cfa4108a8d24cd27b75f2f489}{00031}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{i2c_8c_ada6e763cfa4108a8d24cd27b75f2f489}{MX\_I2C1\_Init}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00032}00032\ \{}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00034}00034\ \ \ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ I2C1\_Init\ 0\ */}}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00036}00036\ \ \ \textcolor{comment}{/*\ USER\ CODE\ END\ I2C1\_Init\ 0\ */}}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00038}00038\ \ \ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ I2C1\_Init\ 1\ */}}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00040}00040\ \ \ \textcolor{comment}{/*\ USER\ CODE\ END\ I2C1\_Init\ 1\ */}}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00041}00041\ \ \ \mbox{\hyperlink{i2c_8c_af7b2c26e44dadaaa798a5c3d82914ba7}{hi2c1}}.Instance\ =\ I2C1;}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00042}00042\ \ \ \mbox{\hyperlink{i2c_8c_af7b2c26e44dadaaa798a5c3d82914ba7}{hi2c1}}.Init.Timing\ =\ 0x2000090E;}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00043}00043\ \ \ \mbox{\hyperlink{i2c_8c_af7b2c26e44dadaaa798a5c3d82914ba7}{hi2c1}}.Init.OwnAddress1\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00044}00044\ \ \ \mbox{\hyperlink{i2c_8c_af7b2c26e44dadaaa798a5c3d82914ba7}{hi2c1}}.Init.AddressingMode\ =\ I2C\_ADDRESSINGMODE\_7BIT;}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00045}00045\ \ \ \mbox{\hyperlink{i2c_8c_af7b2c26e44dadaaa798a5c3d82914ba7}{hi2c1}}.Init.DualAddressMode\ =\ I2C\_DUALADDRESS\_DISABLE;}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00046}00046\ \ \ \mbox{\hyperlink{i2c_8c_af7b2c26e44dadaaa798a5c3d82914ba7}{hi2c1}}.Init.OwnAddress2\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00047}00047\ \ \ \mbox{\hyperlink{i2c_8c_af7b2c26e44dadaaa798a5c3d82914ba7}{hi2c1}}.Init.OwnAddress2Masks\ =\ I2C\_OA2\_NOMASK;}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00048}00048\ \ \ \mbox{\hyperlink{i2c_8c_af7b2c26e44dadaaa798a5c3d82914ba7}{hi2c1}}.Init.GeneralCallMode\ =\ I2C\_GENERALCALL\_DISABLE;}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00049}00049\ \ \ \mbox{\hyperlink{i2c_8c_af7b2c26e44dadaaa798a5c3d82914ba7}{hi2c1}}.Init.NoStretchMode\ =\ I2C\_NOSTRETCH\_DISABLE;}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00050}00050\ \ \ \textcolor{keywordflow}{if}\ (HAL\_I2C\_Init(\&\mbox{\hyperlink{i2c_8c_af7b2c26e44dadaaa798a5c3d82914ba7}{hi2c1}})\ !=\ HAL\_OK)}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00051}00051\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00052}00052\ \ \ \ \ \mbox{\hyperlink{main_8h_a1730ffe1e560465665eb47d9264826f9}{Error\_Handler}}();}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00053}00053\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00057}00057\ \ \ \textcolor{keywordflow}{if}\ (HAL\_I2CEx\_ConfigAnalogFilter(\&\mbox{\hyperlink{i2c_8c_af7b2c26e44dadaaa798a5c3d82914ba7}{hi2c1}},\ I2C\_ANALOGFILTER\_ENABLE)\ !=\ HAL\_OK)}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00058}00058\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00059}00059\ \ \ \ \ \mbox{\hyperlink{main_8h_a1730ffe1e560465665eb47d9264826f9}{Error\_Handler}}();}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00060}00060\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00064}00064\ \ \ \textcolor{keywordflow}{if}\ (HAL\_I2CEx\_ConfigDigitalFilter(\&\mbox{\hyperlink{i2c_8c_af7b2c26e44dadaaa798a5c3d82914ba7}{hi2c1}},\ 0)\ !=\ HAL\_OK)}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00065}00065\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00066}00066\ \ \ \ \ \mbox{\hyperlink{main_8h_a1730ffe1e560465665eb47d9264826f9}{Error\_Handler}}();}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00067}00067\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00068}00068\ \ \ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ I2C1\_Init\ 2\ */}}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00070}00070\ \ \ \textcolor{comment}{/*\ USER\ CODE\ END\ I2C1\_Init\ 2\ */}}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00072}00072\ \}}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00073}00073\ \textcolor{comment}{/*\ I2C2\ init\ function\ */}}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00074}\mbox{\hyperlink{i2c_8h_a021114cd02d4beb0b256095cfbd088b2}{00074}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{i2c_8c_a021114cd02d4beb0b256095cfbd088b2}{MX\_I2C2\_Init}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00075}00075\ \{}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00077}00077\ \ \ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ I2C2\_Init\ 0\ */}}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00079}00079\ \ \ \textcolor{comment}{/*\ USER\ CODE\ END\ I2C2\_Init\ 0\ */}}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00081}00081\ \ \ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ I2C2\_Init\ 1\ */}}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00083}00083\ \ \ \textcolor{comment}{/*\ USER\ CODE\ END\ I2C2\_Init\ 1\ */}}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00084}00084\ \ \ \mbox{\hyperlink{i2c_8c_ac379bcc152d860f08b1279fd3e232295}{hi2c2}}.Instance\ =\ I2C2;}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00085}00085\ \ \ \mbox{\hyperlink{i2c_8c_ac379bcc152d860f08b1279fd3e232295}{hi2c2}}.Init.Timing\ =\ 0x20303E5D;}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00086}00086\ \ \ \mbox{\hyperlink{i2c_8c_ac379bcc152d860f08b1279fd3e232295}{hi2c2}}.Init.OwnAddress1\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00087}00087\ \ \ \mbox{\hyperlink{i2c_8c_ac379bcc152d860f08b1279fd3e232295}{hi2c2}}.Init.AddressingMode\ =\ I2C\_ADDRESSINGMODE\_7BIT;}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00088}00088\ \ \ \mbox{\hyperlink{i2c_8c_ac379bcc152d860f08b1279fd3e232295}{hi2c2}}.Init.DualAddressMode\ =\ I2C\_DUALADDRESS\_DISABLE;}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00089}00089\ \ \ \mbox{\hyperlink{i2c_8c_ac379bcc152d860f08b1279fd3e232295}{hi2c2}}.Init.OwnAddress2\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00090}00090\ \ \ \mbox{\hyperlink{i2c_8c_ac379bcc152d860f08b1279fd3e232295}{hi2c2}}.Init.OwnAddress2Masks\ =\ I2C\_OA2\_NOMASK;}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00091}00091\ \ \ \mbox{\hyperlink{i2c_8c_ac379bcc152d860f08b1279fd3e232295}{hi2c2}}.Init.GeneralCallMode\ =\ I2C\_GENERALCALL\_DISABLE;}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00092}00092\ \ \ \mbox{\hyperlink{i2c_8c_ac379bcc152d860f08b1279fd3e232295}{hi2c2}}.Init.NoStretchMode\ =\ I2C\_NOSTRETCH\_DISABLE;}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00093}00093\ \ \ \textcolor{keywordflow}{if}\ (HAL\_I2C\_Init(\&\mbox{\hyperlink{i2c_8c_ac379bcc152d860f08b1279fd3e232295}{hi2c2}})\ !=\ HAL\_OK)}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00094}00094\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00095}00095\ \ \ \ \ \mbox{\hyperlink{main_8h_a1730ffe1e560465665eb47d9264826f9}{Error\_Handler}}();}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00096}00096\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00100}00100\ \ \ \textcolor{keywordflow}{if}\ (HAL\_I2CEx\_ConfigAnalogFilter(\&\mbox{\hyperlink{i2c_8c_ac379bcc152d860f08b1279fd3e232295}{hi2c2}},\ I2C\_ANALOGFILTER\_ENABLE)\ !=\ HAL\_OK)}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00101}00101\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00102}00102\ \ \ \ \ \mbox{\hyperlink{main_8h_a1730ffe1e560465665eb47d9264826f9}{Error\_Handler}}();}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00103}00103\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00104}00104\ }
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00107}00107\ \ \ \textcolor{keywordflow}{if}\ (HAL\_I2CEx\_ConfigDigitalFilter(\&\mbox{\hyperlink{i2c_8c_ac379bcc152d860f08b1279fd3e232295}{hi2c2}},\ 0)\ !=\ HAL\_OK)}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00108}00108\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00109}00109\ \ \ \ \ \mbox{\hyperlink{main_8h_a1730ffe1e560465665eb47d9264826f9}{Error\_Handler}}();}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00110}00110\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00111}00111\ \ \ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ I2C2\_Init\ 2\ */}}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00112}00112\ }
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00113}00113\ \ \ \textcolor{comment}{/*\ USER\ CODE\ END\ I2C2\_Init\ 2\ */}}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00114}00114\ }
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00115}00115\ \}}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00116}00116\ }
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00117}\mbox{\hyperlink{i2c_8c_a08b1eb7b7be5b94395127e2a33b1b67e}{00117}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{i2c_8c_a08b1eb7b7be5b94395127e2a33b1b67e}{HAL\_I2C\_MspInit}}(I2C\_HandleTypeDef*\ i2cHandle)}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00118}00118\ \{}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00119}00119\ }
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00120}00120\ \ \ GPIO\_InitTypeDef\ GPIO\_InitStruct\ =\ \{0\};}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00121}00121\ \ \ \textcolor{keywordflow}{if}(i2cHandle-\/>Instance==I2C1)}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00122}00122\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00123}00123\ \ \ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ I2C1\_MspInit\ 0\ */}}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00124}00124\ }
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00125}00125\ \ \ \textcolor{comment}{/*\ USER\ CODE\ END\ I2C1\_MspInit\ 0\ */}}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00126}00126\ }
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00127}00127\ \ \ \ \ \_\_HAL\_RCC\_GPIOB\_CLK\_ENABLE();}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00132}00132\ \ \ \ \ GPIO\_InitStruct.Pin\ =\ GPIO\_PIN\_6|GPIO\_PIN\_7;}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00133}00133\ \ \ \ \ GPIO\_InitStruct.Mode\ =\ GPIO\_MODE\_AF\_OD;}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00134}00134\ \ \ \ \ GPIO\_InitStruct.Pull\ =\ GPIO\_NOPULL;}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00135}00135\ \ \ \ \ GPIO\_InitStruct.Speed\ =\ GPIO\_SPEED\_FREQ\_HIGH;}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00136}00136\ \ \ \ \ GPIO\_InitStruct.Alternate\ =\ GPIO\_AF1\_I2C1;}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00137}00137\ \ \ \ \ HAL\_GPIO\_Init(GPIOB,\ \&GPIO\_InitStruct);}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00138}00138\ }
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00139}00139\ \ \ \ \ \textcolor{comment}{/*\ I2C1\ clock\ enable\ */}}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00140}00140\ \ \ \ \ \_\_HAL\_RCC\_I2C1\_CLK\_ENABLE();}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00141}00141\ \ \ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ I2C1\_MspInit\ 1\ */}}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00142}00142\ }
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00143}00143\ \ \ \textcolor{comment}{/*\ USER\ CODE\ END\ I2C1\_MspInit\ 1\ */}}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00144}00144\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00145}00145\ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(i2cHandle-\/>Instance==I2C2)}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00146}00146\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00147}00147\ \ \ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ I2C2\_MspInit\ 0\ */}}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00148}00148\ }
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00149}00149\ \ \ \textcolor{comment}{/*\ USER\ CODE\ END\ I2C2\_MspInit\ 0\ */}}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00150}00150\ }
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00151}00151\ \ \ \ \ \_\_HAL\_RCC\_GPIOB\_CLK\_ENABLE();}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00156}00156\ \ \ \ \ GPIO\_InitStruct.Pin\ =\ GPIO\_PIN\_10|GPIO\_PIN\_11;}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00157}00157\ \ \ \ \ GPIO\_InitStruct.Mode\ =\ GPIO\_MODE\_AF\_OD;}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00158}00158\ \ \ \ \ GPIO\_InitStruct.Pull\ =\ GPIO\_NOPULL;}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00159}00159\ \ \ \ \ GPIO\_InitStruct.Speed\ =\ GPIO\_SPEED\_FREQ\_HIGH;}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00160}00160\ \ \ \ \ GPIO\_InitStruct.Alternate\ =\ GPIO\_AF1\_I2C2;}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00161}00161\ \ \ \ \ HAL\_GPIO\_Init(GPIOB,\ \&GPIO\_InitStruct);}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00162}00162\ }
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00163}00163\ \ \ \ \ \textcolor{comment}{/*\ I2C2\ clock\ enable\ */}}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00164}00164\ \ \ \ \ \_\_HAL\_RCC\_I2C2\_CLK\_ENABLE();}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00165}00165\ \ \ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ I2C2\_MspInit\ 1\ */}}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00166}00166\ }
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00167}00167\ \ \ \textcolor{comment}{/*\ USER\ CODE\ END\ I2C2\_MspInit\ 1\ */}}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00168}00168\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00169}00169\ \}}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00170}00170\ }
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00171}\mbox{\hyperlink{i2c_8c_adaa17249f3d5001ad363c736df31c593}{00171}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{i2c_8c_adaa17249f3d5001ad363c736df31c593}{HAL\_I2C\_MspDeInit}}(I2C\_HandleTypeDef*\ i2cHandle)}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00172}00172\ \{}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00173}00173\ }
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00174}00174\ \ \ \textcolor{keywordflow}{if}(i2cHandle-\/>Instance==I2C1)}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00175}00175\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00176}00176\ \ \ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ I2C1\_MspDeInit\ 0\ */}}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00177}00177\ }
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00178}00178\ \ \ \textcolor{comment}{/*\ USER\ CODE\ END\ I2C1\_MspDeInit\ 0\ */}}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00179}00179\ \ \ \ \ \textcolor{comment}{/*\ Peripheral\ clock\ disable\ */}}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00180}00180\ \ \ \ \ \_\_HAL\_RCC\_I2C1\_CLK\_DISABLE();}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00181}00181\ }
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00186}00186\ \ \ \ \ HAL\_GPIO\_DeInit(GPIOB,\ GPIO\_PIN\_6);}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00187}00187\ }
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00188}00188\ \ \ \ \ HAL\_GPIO\_DeInit(GPIOB,\ GPIO\_PIN\_7);}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00189}00189\ }
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00190}00190\ \ \ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ I2C1\_MspDeInit\ 1\ */}}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00191}00191\ }
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00192}00192\ \ \ \textcolor{comment}{/*\ USER\ CODE\ END\ I2C1\_MspDeInit\ 1\ */}}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00193}00193\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00194}00194\ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(i2cHandle-\/>Instance==I2C2)}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00195}00195\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00196}00196\ \ \ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ I2C2\_MspDeInit\ 0\ */}}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00197}00197\ }
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00198}00198\ \ \ \textcolor{comment}{/*\ USER\ CODE\ END\ I2C2\_MspDeInit\ 0\ */}}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00199}00199\ \ \ \ \ \textcolor{comment}{/*\ Peripheral\ clock\ disable\ */}}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00200}00200\ \ \ \ \ \_\_HAL\_RCC\_I2C2\_CLK\_DISABLE();}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00201}00201\ }
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00206}00206\ \ \ \ \ HAL\_GPIO\_DeInit(GPIOB,\ GPIO\_PIN\_10);}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00207}00207\ }
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00208}00208\ \ \ \ \ HAL\_GPIO\_DeInit(GPIOB,\ GPIO\_PIN\_11);}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00209}00209\ }
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00210}00210\ \ \ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ I2C2\_MspDeInit\ 1\ */}}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00211}00211\ }
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00212}00212\ \ \ \textcolor{comment}{/*\ USER\ CODE\ END\ I2C2\_MspDeInit\ 1\ */}}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00213}00213\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00214}00214\ \}}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00215}00215\ }
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00216}00216\ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ 1\ */}}
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00217}00217\ }
+\DoxyCodeLine{\Hypertarget{i2c_8c_source_l00218}00218\ \textcolor{comment}{/*\ USER\ CODE\ END\ 1\ */}}
+
+\end{DoxyCode}

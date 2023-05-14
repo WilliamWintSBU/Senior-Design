@@ -1,0 +1,422 @@
+\hypertarget{ads1115_8h}{}\doxysection{Core/\+Inc/ads1115.h File Reference}
+\label{ads1115_8h}\index{Core/Inc/ads1115.h@{Core/Inc/ads1115.h}}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{ads1115_8h_a186f86d413bfc9a0b10a263563ae36c9}{ADS1115\+\_\+\+OS}}~(0b1 $<$$<$ 7)
+\item 
+\#define \mbox{\hyperlink{ads1115_8h_ad76dbdc476c07b26c8c1d7ecb157adaf}{ADS1115\+\_\+\+MUX\+\_\+\+AIN0}}~(0b100 $<$$<$ 4)
+\item 
+\#define \mbox{\hyperlink{ads1115_8h_a084841df97af4a166cb4e431b29bd7a9}{ADS1115\+\_\+\+MUX\+\_\+\+AIN1}}~(0b101 $<$$<$ 4)
+\item 
+\#define \mbox{\hyperlink{ads1115_8h_a069ff0c9cbfbc8e0509253ba75418ce8}{ADS1115\+\_\+\+MUX\+\_\+\+AIN2}}~(0b110 $<$$<$ 4)
+\item 
+\#define \mbox{\hyperlink{ads1115_8h_a900c8e7e834d55e7b8fb6548c81883f3}{ADS1115\+\_\+\+MUX\+\_\+\+AIN3}}~(0b111 $<$$<$ 4)
+\item 
+\#define \mbox{\hyperlink{ads1115_8h_adc2ed1597f0d082666bc60d58af7ebb1}{ADS1115\+\_\+\+MUX\+\_\+\+AIN0\+\_\+\+AIN1}}~(0b000 $<$$<$ 4)
+\item 
+\#define \mbox{\hyperlink{ads1115_8h_a3dcc1ccba7cb74724d1a506df362a989}{ADS1115\+\_\+\+MUX\+\_\+\+AIN0\+\_\+\+AIN3}}~(0b001 $<$$<$ 4)
+\item 
+\#define \mbox{\hyperlink{ads1115_8h_aac86c5f4331b7f5a43406cdfd053e5ad}{ADS1115\+\_\+\+MUX\+\_\+\+AIN1\+\_\+\+AIN3}}~(0b010 $<$$<$ 4)
+\item 
+\#define \mbox{\hyperlink{ads1115_8h_ac0111dc9cb02d303cb896ed8650b7a48}{ADS1115\+\_\+\+MUX\+\_\+\+AIN2\+\_\+\+AIN3}}~(0b011 $<$$<$ 4)
+\item 
+\#define \mbox{\hyperlink{ads1115_8h_af2cf337f8fcc9f063a4b794bfa951eaa}{ADS1115\+\_\+\+PGA\+\_\+\+TWOTHIRDS}}~(0b000 $<$$<$ 1)
+\item 
+\#define \mbox{\hyperlink{ads1115_8h_a0523e77f04717febf51975090749d2c0}{ADS1115\+\_\+\+PGA\+\_\+\+ONE}}~(0b001 $<$$<$ 1)
+\item 
+\#define \mbox{\hyperlink{ads1115_8h_a7bd6fbb85c8ee9989056e2eadc435fd6}{ADS1115\+\_\+\+PGA\+\_\+\+TWO}}~(0b010 $<$$<$ 1)
+\item 
+\#define \mbox{\hyperlink{ads1115_8h_a7b4abbfeb11693f37c8c81c22d10dbf9}{ADS1115\+\_\+\+PGA\+\_\+\+FOUR}}~(0b011 $<$$<$ 1)
+\item 
+\#define \mbox{\hyperlink{ads1115_8h_a863636259462cc4368b9ac5f69d2b896}{ADS1115\+\_\+\+PGA\+\_\+\+EIGHT}}~(0b100 $<$$<$ 1)
+\item 
+\#define \mbox{\hyperlink{ads1115_8h_a10fdd5ebb8a6be0ea3926894f28e13c8}{ADS1115\+\_\+\+PGA\+\_\+\+SIXTEEN}}~(0b111 $<$$<$ 1)
+\item 
+\#define \mbox{\hyperlink{ads1115_8h_aa783c061de6cbe80dfba84e9daab2a27}{ADS1115\+\_\+\+MODE}}~(0b1)
+\item 
+\#define \mbox{\hyperlink{ads1115_8h_ae5e8036cd50dc61b4ec0f4ebd6c73193}{ADS1115\+\_\+\+DATA\+\_\+\+RATE\+\_\+8}}~(0b000 $<$$<$ 5)
+\item 
+\#define \mbox{\hyperlink{ads1115_8h_a44bdcefd1465f710d10e94e75becfd30}{ADS1115\+\_\+\+DATA\+\_\+\+RATE\+\_\+16}}~(0b001 $<$$<$ 5)
+\item 
+\#define \mbox{\hyperlink{ads1115_8h_ab0753d6657a301233c282e2f539d1c33}{ADS1115\+\_\+\+DATA\+\_\+\+RATE\+\_\+32}}~(0b010 $<$$<$ 5)
+\item 
+\#define \mbox{\hyperlink{ads1115_8h_a1fd02a71e98bc7d769324677f5f56128}{ADS1115\+\_\+\+DATA\+\_\+\+RATE\+\_\+64}}~(0b011 $<$$<$ 5)
+\item 
+\#define \mbox{\hyperlink{ads1115_8h_a5f04733fd41167c9e31232a21b0d6c25}{ADS1115\+\_\+\+DATA\+\_\+\+RATE\+\_\+128}}~(0b100 $<$$<$ 5)
+\item 
+\#define \mbox{\hyperlink{ads1115_8h_a52a49544b67d9dabbb08d326b93dab88}{ADS1115\+\_\+\+DATA\+\_\+\+RATE\+\_\+250}}~(0b101 $<$$<$ 5)
+\item 
+\#define \mbox{\hyperlink{ads1115_8h_a5cd52198e74b0473b739505a1ecd2535}{ADS1115\+\_\+\+DATA\+\_\+\+RATE\+\_\+475}}~(0b110 $<$$<$ 5)
+\item 
+\#define \mbox{\hyperlink{ads1115_8h_acc521e91cb85e43a3432cc5aa70043fa}{ADS1115\+\_\+\+DATA\+\_\+\+RATE\+\_\+860}}~(0b111 $<$$<$ 5)
+\item 
+\#define \mbox{\hyperlink{ads1115_8h_ad722e16431305ce92a4efc7c061ddc7b}{ADS1115\+\_\+\+COMP\+\_\+\+MODE}}~(0b0 $<$$<$ 4)
+\item 
+\#define \mbox{\hyperlink{ads1115_8h_ad2232b30ece1a1f5bfbf8a55217e3e2c}{ADS1115\+\_\+\+COMP\+\_\+\+POL}}~(0b0 $<$$<$ 3)
+\item 
+\#define \mbox{\hyperlink{ads1115_8h_ad6439a5f36449ef355a3a1220b726946}{ADS1115\+\_\+\+COMP\+\_\+\+LAT}}~(0b0 $<$$<$ 2)
+\item 
+\#define \mbox{\hyperlink{ads1115_8h_a4f20b25599f011f334267ec0be2e2e63}{ADS1115\+\_\+\+COMP\+\_\+\+QUE}}~(0b11)
+\item 
+\#define \mbox{\hyperlink{ads1115_8h_a69f3aa661f3475281903eb75d44a61f0}{ADS1115\+\_\+\+CONVER\+\_\+\+REG}}~0x0
+\item 
+\#define \mbox{\hyperlink{ads1115_8h_a7d549b6f88906327d3b990dba78dd71e}{ADS1115\+\_\+\+CONFIG\+\_\+\+REG}}~0x1
+\item 
+\#define \mbox{\hyperlink{ads1115_8h_a2a051bea5e3398ca2bc9c8b869875051}{ADS1115\+\_\+\+TIMEOUT}}~1
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+HAL\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{ads1115_8h_a67052e36b856806aa4c2b53802d557d4}{ADS1115\+\_\+\+Init}} (I2\+C\+\_\+\+Handle\+Type\+Def $\ast$handler, uint16\+\_\+t set\+Data\+Rate, uint16\+\_\+t set\+PGA)
+\item 
+HAL\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{ads1115_8h_a044eb864a349393a1666537b4e5f35af}{ADS1115\+\_\+read\+Single\+Ended}} (uint16\+\_\+t mux\+Port, float $\ast$voltage)
+\item 
+HAL\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{ads1115_8h_aeec6c2ea094d21a583046bdbe4d2b540}{ADS1115\+\_\+read}} (uint16\+\_\+t mux\+Port, float $\ast$voltage)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{ads1115_8h_ad6439a5f36449ef355a3a1220b726946}\label{ads1115_8h_ad6439a5f36449ef355a3a1220b726946}} 
+\index{ads1115.h@{ads1115.h}!ADS1115\_COMP\_LAT@{ADS1115\_COMP\_LAT}}
+\index{ADS1115\_COMP\_LAT@{ADS1115\_COMP\_LAT}!ads1115.h@{ads1115.h}}
+\doxysubsubsection{\texorpdfstring{ADS1115\_COMP\_LAT}{ADS1115\_COMP\_LAT}}
+{\footnotesize\ttfamily \#define ADS1115\+\_\+\+COMP\+\_\+\+LAT~(0b0 $<$$<$ 2)}
+
+
+
+Definition at line \mbox{\hyperlink{ads1115_8h_source_l00069}{69}} of file \mbox{\hyperlink{ads1115_8h_source}{ads1115.\+h}}.
+
+\mbox{\Hypertarget{ads1115_8h_ad722e16431305ce92a4efc7c061ddc7b}\label{ads1115_8h_ad722e16431305ce92a4efc7c061ddc7b}} 
+\index{ads1115.h@{ads1115.h}!ADS1115\_COMP\_MODE@{ADS1115\_COMP\_MODE}}
+\index{ADS1115\_COMP\_MODE@{ADS1115\_COMP\_MODE}!ads1115.h@{ads1115.h}}
+\doxysubsubsection{\texorpdfstring{ADS1115\_COMP\_MODE}{ADS1115\_COMP\_MODE}}
+{\footnotesize\ttfamily \#define ADS1115\+\_\+\+COMP\+\_\+\+MODE~(0b0 $<$$<$ 4)}
+
+
+
+Definition at line \mbox{\hyperlink{ads1115_8h_source_l00067}{67}} of file \mbox{\hyperlink{ads1115_8h_source}{ads1115.\+h}}.
+
+\mbox{\Hypertarget{ads1115_8h_ad2232b30ece1a1f5bfbf8a55217e3e2c}\label{ads1115_8h_ad2232b30ece1a1f5bfbf8a55217e3e2c}} 
+\index{ads1115.h@{ads1115.h}!ADS1115\_COMP\_POL@{ADS1115\_COMP\_POL}}
+\index{ADS1115\_COMP\_POL@{ADS1115\_COMP\_POL}!ads1115.h@{ads1115.h}}
+\doxysubsubsection{\texorpdfstring{ADS1115\_COMP\_POL}{ADS1115\_COMP\_POL}}
+{\footnotesize\ttfamily \#define ADS1115\+\_\+\+COMP\+\_\+\+POL~(0b0 $<$$<$ 3)}
+
+
+
+Definition at line \mbox{\hyperlink{ads1115_8h_source_l00068}{68}} of file \mbox{\hyperlink{ads1115_8h_source}{ads1115.\+h}}.
+
+\mbox{\Hypertarget{ads1115_8h_a4f20b25599f011f334267ec0be2e2e63}\label{ads1115_8h_a4f20b25599f011f334267ec0be2e2e63}} 
+\index{ads1115.h@{ads1115.h}!ADS1115\_COMP\_QUE@{ADS1115\_COMP\_QUE}}
+\index{ADS1115\_COMP\_QUE@{ADS1115\_COMP\_QUE}!ads1115.h@{ads1115.h}}
+\doxysubsubsection{\texorpdfstring{ADS1115\_COMP\_QUE}{ADS1115\_COMP\_QUE}}
+{\footnotesize\ttfamily \#define ADS1115\+\_\+\+COMP\+\_\+\+QUE~(0b11)}
+
+
+
+Definition at line \mbox{\hyperlink{ads1115_8h_source_l00070}{70}} of file \mbox{\hyperlink{ads1115_8h_source}{ads1115.\+h}}.
+
+\mbox{\Hypertarget{ads1115_8h_a7d549b6f88906327d3b990dba78dd71e}\label{ads1115_8h_a7d549b6f88906327d3b990dba78dd71e}} 
+\index{ads1115.h@{ads1115.h}!ADS1115\_CONFIG\_REG@{ADS1115\_CONFIG\_REG}}
+\index{ADS1115\_CONFIG\_REG@{ADS1115\_CONFIG\_REG}!ads1115.h@{ads1115.h}}
+\doxysubsubsection{\texorpdfstring{ADS1115\_CONFIG\_REG}{ADS1115\_CONFIG\_REG}}
+{\footnotesize\ttfamily \#define ADS1115\+\_\+\+CONFIG\+\_\+\+REG~0x1}
+
+
+
+Definition at line \mbox{\hyperlink{ads1115_8h_source_l00074}{74}} of file \mbox{\hyperlink{ads1115_8h_source}{ads1115.\+h}}.
+
+\mbox{\Hypertarget{ads1115_8h_a69f3aa661f3475281903eb75d44a61f0}\label{ads1115_8h_a69f3aa661f3475281903eb75d44a61f0}} 
+\index{ads1115.h@{ads1115.h}!ADS1115\_CONVER\_REG@{ADS1115\_CONVER\_REG}}
+\index{ADS1115\_CONVER\_REG@{ADS1115\_CONVER\_REG}!ads1115.h@{ads1115.h}}
+\doxysubsubsection{\texorpdfstring{ADS1115\_CONVER\_REG}{ADS1115\_CONVER\_REG}}
+{\footnotesize\ttfamily \#define ADS1115\+\_\+\+CONVER\+\_\+\+REG~0x0}
+
+
+
+Definition at line \mbox{\hyperlink{ads1115_8h_source_l00073}{73}} of file \mbox{\hyperlink{ads1115_8h_source}{ads1115.\+h}}.
+
+\mbox{\Hypertarget{ads1115_8h_a5f04733fd41167c9e31232a21b0d6c25}\label{ads1115_8h_a5f04733fd41167c9e31232a21b0d6c25}} 
+\index{ads1115.h@{ads1115.h}!ADS1115\_DATA\_RATE\_128@{ADS1115\_DATA\_RATE\_128}}
+\index{ADS1115\_DATA\_RATE\_128@{ADS1115\_DATA\_RATE\_128}!ads1115.h@{ads1115.h}}
+\doxysubsubsection{\texorpdfstring{ADS1115\_DATA\_RATE\_128}{ADS1115\_DATA\_RATE\_128}}
+{\footnotesize\ttfamily \#define ADS1115\+\_\+\+DATA\+\_\+\+RATE\+\_\+128~(0b100 $<$$<$ 5)}
+
+
+
+Definition at line \mbox{\hyperlink{ads1115_8h_source_l00062}{62}} of file \mbox{\hyperlink{ads1115_8h_source}{ads1115.\+h}}.
+
+\mbox{\Hypertarget{ads1115_8h_a44bdcefd1465f710d10e94e75becfd30}\label{ads1115_8h_a44bdcefd1465f710d10e94e75becfd30}} 
+\index{ads1115.h@{ads1115.h}!ADS1115\_DATA\_RATE\_16@{ADS1115\_DATA\_RATE\_16}}
+\index{ADS1115\_DATA\_RATE\_16@{ADS1115\_DATA\_RATE\_16}!ads1115.h@{ads1115.h}}
+\doxysubsubsection{\texorpdfstring{ADS1115\_DATA\_RATE\_16}{ADS1115\_DATA\_RATE\_16}}
+{\footnotesize\ttfamily \#define ADS1115\+\_\+\+DATA\+\_\+\+RATE\+\_\+16~(0b001 $<$$<$ 5)}
+
+
+
+Definition at line \mbox{\hyperlink{ads1115_8h_source_l00059}{59}} of file \mbox{\hyperlink{ads1115_8h_source}{ads1115.\+h}}.
+
+\mbox{\Hypertarget{ads1115_8h_a52a49544b67d9dabbb08d326b93dab88}\label{ads1115_8h_a52a49544b67d9dabbb08d326b93dab88}} 
+\index{ads1115.h@{ads1115.h}!ADS1115\_DATA\_RATE\_250@{ADS1115\_DATA\_RATE\_250}}
+\index{ADS1115\_DATA\_RATE\_250@{ADS1115\_DATA\_RATE\_250}!ads1115.h@{ads1115.h}}
+\doxysubsubsection{\texorpdfstring{ADS1115\_DATA\_RATE\_250}{ADS1115\_DATA\_RATE\_250}}
+{\footnotesize\ttfamily \#define ADS1115\+\_\+\+DATA\+\_\+\+RATE\+\_\+250~(0b101 $<$$<$ 5)}
+
+
+
+Definition at line \mbox{\hyperlink{ads1115_8h_source_l00063}{63}} of file \mbox{\hyperlink{ads1115_8h_source}{ads1115.\+h}}.
+
+\mbox{\Hypertarget{ads1115_8h_ab0753d6657a301233c282e2f539d1c33}\label{ads1115_8h_ab0753d6657a301233c282e2f539d1c33}} 
+\index{ads1115.h@{ads1115.h}!ADS1115\_DATA\_RATE\_32@{ADS1115\_DATA\_RATE\_32}}
+\index{ADS1115\_DATA\_RATE\_32@{ADS1115\_DATA\_RATE\_32}!ads1115.h@{ads1115.h}}
+\doxysubsubsection{\texorpdfstring{ADS1115\_DATA\_RATE\_32}{ADS1115\_DATA\_RATE\_32}}
+{\footnotesize\ttfamily \#define ADS1115\+\_\+\+DATA\+\_\+\+RATE\+\_\+32~(0b010 $<$$<$ 5)}
+
+
+
+Definition at line \mbox{\hyperlink{ads1115_8h_source_l00060}{60}} of file \mbox{\hyperlink{ads1115_8h_source}{ads1115.\+h}}.
+
+\mbox{\Hypertarget{ads1115_8h_a5cd52198e74b0473b739505a1ecd2535}\label{ads1115_8h_a5cd52198e74b0473b739505a1ecd2535}} 
+\index{ads1115.h@{ads1115.h}!ADS1115\_DATA\_RATE\_475@{ADS1115\_DATA\_RATE\_475}}
+\index{ADS1115\_DATA\_RATE\_475@{ADS1115\_DATA\_RATE\_475}!ads1115.h@{ads1115.h}}
+\doxysubsubsection{\texorpdfstring{ADS1115\_DATA\_RATE\_475}{ADS1115\_DATA\_RATE\_475}}
+{\footnotesize\ttfamily \#define ADS1115\+\_\+\+DATA\+\_\+\+RATE\+\_\+475~(0b110 $<$$<$ 5)}
+
+
+
+Definition at line \mbox{\hyperlink{ads1115_8h_source_l00064}{64}} of file \mbox{\hyperlink{ads1115_8h_source}{ads1115.\+h}}.
+
+\mbox{\Hypertarget{ads1115_8h_a1fd02a71e98bc7d769324677f5f56128}\label{ads1115_8h_a1fd02a71e98bc7d769324677f5f56128}} 
+\index{ads1115.h@{ads1115.h}!ADS1115\_DATA\_RATE\_64@{ADS1115\_DATA\_RATE\_64}}
+\index{ADS1115\_DATA\_RATE\_64@{ADS1115\_DATA\_RATE\_64}!ads1115.h@{ads1115.h}}
+\doxysubsubsection{\texorpdfstring{ADS1115\_DATA\_RATE\_64}{ADS1115\_DATA\_RATE\_64}}
+{\footnotesize\ttfamily \#define ADS1115\+\_\+\+DATA\+\_\+\+RATE\+\_\+64~(0b011 $<$$<$ 5)}
+
+
+
+Definition at line \mbox{\hyperlink{ads1115_8h_source_l00061}{61}} of file \mbox{\hyperlink{ads1115_8h_source}{ads1115.\+h}}.
+
+\mbox{\Hypertarget{ads1115_8h_ae5e8036cd50dc61b4ec0f4ebd6c73193}\label{ads1115_8h_ae5e8036cd50dc61b4ec0f4ebd6c73193}} 
+\index{ads1115.h@{ads1115.h}!ADS1115\_DATA\_RATE\_8@{ADS1115\_DATA\_RATE\_8}}
+\index{ADS1115\_DATA\_RATE\_8@{ADS1115\_DATA\_RATE\_8}!ads1115.h@{ads1115.h}}
+\doxysubsubsection{\texorpdfstring{ADS1115\_DATA\_RATE\_8}{ADS1115\_DATA\_RATE\_8}}
+{\footnotesize\ttfamily \#define ADS1115\+\_\+\+DATA\+\_\+\+RATE\+\_\+8~(0b000 $<$$<$ 5)}
+
+
+
+Definition at line \mbox{\hyperlink{ads1115_8h_source_l00058}{58}} of file \mbox{\hyperlink{ads1115_8h_source}{ads1115.\+h}}.
+
+\mbox{\Hypertarget{ads1115_8h_acc521e91cb85e43a3432cc5aa70043fa}\label{ads1115_8h_acc521e91cb85e43a3432cc5aa70043fa}} 
+\index{ads1115.h@{ads1115.h}!ADS1115\_DATA\_RATE\_860@{ADS1115\_DATA\_RATE\_860}}
+\index{ADS1115\_DATA\_RATE\_860@{ADS1115\_DATA\_RATE\_860}!ads1115.h@{ads1115.h}}
+\doxysubsubsection{\texorpdfstring{ADS1115\_DATA\_RATE\_860}{ADS1115\_DATA\_RATE\_860}}
+{\footnotesize\ttfamily \#define ADS1115\+\_\+\+DATA\+\_\+\+RATE\+\_\+860~(0b111 $<$$<$ 5)}
+
+
+
+Definition at line \mbox{\hyperlink{ads1115_8h_source_l00065}{65}} of file \mbox{\hyperlink{ads1115_8h_source}{ads1115.\+h}}.
+
+\mbox{\Hypertarget{ads1115_8h_aa783c061de6cbe80dfba84e9daab2a27}\label{ads1115_8h_aa783c061de6cbe80dfba84e9daab2a27}} 
+\index{ads1115.h@{ads1115.h}!ADS1115\_MODE@{ADS1115\_MODE}}
+\index{ADS1115\_MODE@{ADS1115\_MODE}!ads1115.h@{ads1115.h}}
+\doxysubsubsection{\texorpdfstring{ADS1115\_MODE}{ADS1115\_MODE}}
+{\footnotesize\ttfamily \#define ADS1115\+\_\+\+MODE~(0b1)}
+
+
+
+Definition at line \mbox{\hyperlink{ads1115_8h_source_l00056}{56}} of file \mbox{\hyperlink{ads1115_8h_source}{ads1115.\+h}}.
+
+\mbox{\Hypertarget{ads1115_8h_ad76dbdc476c07b26c8c1d7ecb157adaf}\label{ads1115_8h_ad76dbdc476c07b26c8c1d7ecb157adaf}} 
+\index{ads1115.h@{ads1115.h}!ADS1115\_MUX\_AIN0@{ADS1115\_MUX\_AIN0}}
+\index{ADS1115\_MUX\_AIN0@{ADS1115\_MUX\_AIN0}!ads1115.h@{ads1115.h}}
+\doxysubsubsection{\texorpdfstring{ADS1115\_MUX\_AIN0}{ADS1115\_MUX\_AIN0}}
+{\footnotesize\ttfamily \#define ADS1115\+\_\+\+MUX\+\_\+\+AIN0~(0b100 $<$$<$ 4)}
+
+
+
+Definition at line \mbox{\hyperlink{ads1115_8h_source_l00037}{37}} of file \mbox{\hyperlink{ads1115_8h_source}{ads1115.\+h}}.
+
+\mbox{\Hypertarget{ads1115_8h_adc2ed1597f0d082666bc60d58af7ebb1}\label{ads1115_8h_adc2ed1597f0d082666bc60d58af7ebb1}} 
+\index{ads1115.h@{ads1115.h}!ADS1115\_MUX\_AIN0\_AIN1@{ADS1115\_MUX\_AIN0\_AIN1}}
+\index{ADS1115\_MUX\_AIN0\_AIN1@{ADS1115\_MUX\_AIN0\_AIN1}!ads1115.h@{ads1115.h}}
+\doxysubsubsection{\texorpdfstring{ADS1115\_MUX\_AIN0\_AIN1}{ADS1115\_MUX\_AIN0\_AIN1}}
+{\footnotesize\ttfamily \#define ADS1115\+\_\+\+MUX\+\_\+\+AIN0\+\_\+\+AIN1~(0b000 $<$$<$ 4)}
+
+
+
+Definition at line \mbox{\hyperlink{ads1115_8h_source_l00043}{43}} of file \mbox{\hyperlink{ads1115_8h_source}{ads1115.\+h}}.
+
+\mbox{\Hypertarget{ads1115_8h_a3dcc1ccba7cb74724d1a506df362a989}\label{ads1115_8h_a3dcc1ccba7cb74724d1a506df362a989}} 
+\index{ads1115.h@{ads1115.h}!ADS1115\_MUX\_AIN0\_AIN3@{ADS1115\_MUX\_AIN0\_AIN3}}
+\index{ADS1115\_MUX\_AIN0\_AIN3@{ADS1115\_MUX\_AIN0\_AIN3}!ads1115.h@{ads1115.h}}
+\doxysubsubsection{\texorpdfstring{ADS1115\_MUX\_AIN0\_AIN3}{ADS1115\_MUX\_AIN0\_AIN3}}
+{\footnotesize\ttfamily \#define ADS1115\+\_\+\+MUX\+\_\+\+AIN0\+\_\+\+AIN3~(0b001 $<$$<$ 4)}
+
+
+
+Definition at line \mbox{\hyperlink{ads1115_8h_source_l00044}{44}} of file \mbox{\hyperlink{ads1115_8h_source}{ads1115.\+h}}.
+
+\mbox{\Hypertarget{ads1115_8h_a084841df97af4a166cb4e431b29bd7a9}\label{ads1115_8h_a084841df97af4a166cb4e431b29bd7a9}} 
+\index{ads1115.h@{ads1115.h}!ADS1115\_MUX\_AIN1@{ADS1115\_MUX\_AIN1}}
+\index{ADS1115\_MUX\_AIN1@{ADS1115\_MUX\_AIN1}!ads1115.h@{ads1115.h}}
+\doxysubsubsection{\texorpdfstring{ADS1115\_MUX\_AIN1}{ADS1115\_MUX\_AIN1}}
+{\footnotesize\ttfamily \#define ADS1115\+\_\+\+MUX\+\_\+\+AIN1~(0b101 $<$$<$ 4)}
+
+
+
+Definition at line \mbox{\hyperlink{ads1115_8h_source_l00038}{38}} of file \mbox{\hyperlink{ads1115_8h_source}{ads1115.\+h}}.
+
+\mbox{\Hypertarget{ads1115_8h_aac86c5f4331b7f5a43406cdfd053e5ad}\label{ads1115_8h_aac86c5f4331b7f5a43406cdfd053e5ad}} 
+\index{ads1115.h@{ads1115.h}!ADS1115\_MUX\_AIN1\_AIN3@{ADS1115\_MUX\_AIN1\_AIN3}}
+\index{ADS1115\_MUX\_AIN1\_AIN3@{ADS1115\_MUX\_AIN1\_AIN3}!ads1115.h@{ads1115.h}}
+\doxysubsubsection{\texorpdfstring{ADS1115\_MUX\_AIN1\_AIN3}{ADS1115\_MUX\_AIN1\_AIN3}}
+{\footnotesize\ttfamily \#define ADS1115\+\_\+\+MUX\+\_\+\+AIN1\+\_\+\+AIN3~(0b010 $<$$<$ 4)}
+
+
+
+Definition at line \mbox{\hyperlink{ads1115_8h_source_l00045}{45}} of file \mbox{\hyperlink{ads1115_8h_source}{ads1115.\+h}}.
+
+\mbox{\Hypertarget{ads1115_8h_a069ff0c9cbfbc8e0509253ba75418ce8}\label{ads1115_8h_a069ff0c9cbfbc8e0509253ba75418ce8}} 
+\index{ads1115.h@{ads1115.h}!ADS1115\_MUX\_AIN2@{ADS1115\_MUX\_AIN2}}
+\index{ADS1115\_MUX\_AIN2@{ADS1115\_MUX\_AIN2}!ads1115.h@{ads1115.h}}
+\doxysubsubsection{\texorpdfstring{ADS1115\_MUX\_AIN2}{ADS1115\_MUX\_AIN2}}
+{\footnotesize\ttfamily \#define ADS1115\+\_\+\+MUX\+\_\+\+AIN2~(0b110 $<$$<$ 4)}
+
+
+
+Definition at line \mbox{\hyperlink{ads1115_8h_source_l00039}{39}} of file \mbox{\hyperlink{ads1115_8h_source}{ads1115.\+h}}.
+
+\mbox{\Hypertarget{ads1115_8h_ac0111dc9cb02d303cb896ed8650b7a48}\label{ads1115_8h_ac0111dc9cb02d303cb896ed8650b7a48}} 
+\index{ads1115.h@{ads1115.h}!ADS1115\_MUX\_AIN2\_AIN3@{ADS1115\_MUX\_AIN2\_AIN3}}
+\index{ADS1115\_MUX\_AIN2\_AIN3@{ADS1115\_MUX\_AIN2\_AIN3}!ads1115.h@{ads1115.h}}
+\doxysubsubsection{\texorpdfstring{ADS1115\_MUX\_AIN2\_AIN3}{ADS1115\_MUX\_AIN2\_AIN3}}
+{\footnotesize\ttfamily \#define ADS1115\+\_\+\+MUX\+\_\+\+AIN2\+\_\+\+AIN3~(0b011 $<$$<$ 4)}
+
+
+
+Definition at line \mbox{\hyperlink{ads1115_8h_source_l00046}{46}} of file \mbox{\hyperlink{ads1115_8h_source}{ads1115.\+h}}.
+
+\mbox{\Hypertarget{ads1115_8h_a900c8e7e834d55e7b8fb6548c81883f3}\label{ads1115_8h_a900c8e7e834d55e7b8fb6548c81883f3}} 
+\index{ads1115.h@{ads1115.h}!ADS1115\_MUX\_AIN3@{ADS1115\_MUX\_AIN3}}
+\index{ADS1115\_MUX\_AIN3@{ADS1115\_MUX\_AIN3}!ads1115.h@{ads1115.h}}
+\doxysubsubsection{\texorpdfstring{ADS1115\_MUX\_AIN3}{ADS1115\_MUX\_AIN3}}
+{\footnotesize\ttfamily \#define ADS1115\+\_\+\+MUX\+\_\+\+AIN3~(0b111 $<$$<$ 4)}
+
+
+
+Definition at line \mbox{\hyperlink{ads1115_8h_source_l00040}{40}} of file \mbox{\hyperlink{ads1115_8h_source}{ads1115.\+h}}.
+
+\mbox{\Hypertarget{ads1115_8h_a186f86d413bfc9a0b10a263563ae36c9}\label{ads1115_8h_a186f86d413bfc9a0b10a263563ae36c9}} 
+\index{ads1115.h@{ads1115.h}!ADS1115\_OS@{ADS1115\_OS}}
+\index{ADS1115\_OS@{ADS1115\_OS}!ads1115.h@{ads1115.h}}
+\doxysubsubsection{\texorpdfstring{ADS1115\_OS}{ADS1115\_OS}}
+{\footnotesize\ttfamily \#define ADS1115\+\_\+\+OS~(0b1 $<$$<$ 7)}
+
+
+
+Definition at line \mbox{\hyperlink{ads1115_8h_source_l00035}{35}} of file \mbox{\hyperlink{ads1115_8h_source}{ads1115.\+h}}.
+
+\mbox{\Hypertarget{ads1115_8h_a863636259462cc4368b9ac5f69d2b896}\label{ads1115_8h_a863636259462cc4368b9ac5f69d2b896}} 
+\index{ads1115.h@{ads1115.h}!ADS1115\_PGA\_EIGHT@{ADS1115\_PGA\_EIGHT}}
+\index{ADS1115\_PGA\_EIGHT@{ADS1115\_PGA\_EIGHT}!ads1115.h@{ads1115.h}}
+\doxysubsubsection{\texorpdfstring{ADS1115\_PGA\_EIGHT}{ADS1115\_PGA\_EIGHT}}
+{\footnotesize\ttfamily \#define ADS1115\+\_\+\+PGA\+\_\+\+EIGHT~(0b100 $<$$<$ 1)}
+
+
+
+Definition at line \mbox{\hyperlink{ads1115_8h_source_l00053}{53}} of file \mbox{\hyperlink{ads1115_8h_source}{ads1115.\+h}}.
+
+\mbox{\Hypertarget{ads1115_8h_a7b4abbfeb11693f37c8c81c22d10dbf9}\label{ads1115_8h_a7b4abbfeb11693f37c8c81c22d10dbf9}} 
+\index{ads1115.h@{ads1115.h}!ADS1115\_PGA\_FOUR@{ADS1115\_PGA\_FOUR}}
+\index{ADS1115\_PGA\_FOUR@{ADS1115\_PGA\_FOUR}!ads1115.h@{ads1115.h}}
+\doxysubsubsection{\texorpdfstring{ADS1115\_PGA\_FOUR}{ADS1115\_PGA\_FOUR}}
+{\footnotesize\ttfamily \#define ADS1115\+\_\+\+PGA\+\_\+\+FOUR~(0b011 $<$$<$ 1)}
+
+
+
+Definition at line \mbox{\hyperlink{ads1115_8h_source_l00052}{52}} of file \mbox{\hyperlink{ads1115_8h_source}{ads1115.\+h}}.
+
+\mbox{\Hypertarget{ads1115_8h_a0523e77f04717febf51975090749d2c0}\label{ads1115_8h_a0523e77f04717febf51975090749d2c0}} 
+\index{ads1115.h@{ads1115.h}!ADS1115\_PGA\_ONE@{ADS1115\_PGA\_ONE}}
+\index{ADS1115\_PGA\_ONE@{ADS1115\_PGA\_ONE}!ads1115.h@{ads1115.h}}
+\doxysubsubsection{\texorpdfstring{ADS1115\_PGA\_ONE}{ADS1115\_PGA\_ONE}}
+{\footnotesize\ttfamily \#define ADS1115\+\_\+\+PGA\+\_\+\+ONE~(0b001 $<$$<$ 1)}
+
+
+
+Definition at line \mbox{\hyperlink{ads1115_8h_source_l00050}{50}} of file \mbox{\hyperlink{ads1115_8h_source}{ads1115.\+h}}.
+
+\mbox{\Hypertarget{ads1115_8h_a10fdd5ebb8a6be0ea3926894f28e13c8}\label{ads1115_8h_a10fdd5ebb8a6be0ea3926894f28e13c8}} 
+\index{ads1115.h@{ads1115.h}!ADS1115\_PGA\_SIXTEEN@{ADS1115\_PGA\_SIXTEEN}}
+\index{ADS1115\_PGA\_SIXTEEN@{ADS1115\_PGA\_SIXTEEN}!ads1115.h@{ads1115.h}}
+\doxysubsubsection{\texorpdfstring{ADS1115\_PGA\_SIXTEEN}{ADS1115\_PGA\_SIXTEEN}}
+{\footnotesize\ttfamily \#define ADS1115\+\_\+\+PGA\+\_\+\+SIXTEEN~(0b111 $<$$<$ 1)}
+
+
+
+Definition at line \mbox{\hyperlink{ads1115_8h_source_l00054}{54}} of file \mbox{\hyperlink{ads1115_8h_source}{ads1115.\+h}}.
+
+\mbox{\Hypertarget{ads1115_8h_a7bd6fbb85c8ee9989056e2eadc435fd6}\label{ads1115_8h_a7bd6fbb85c8ee9989056e2eadc435fd6}} 
+\index{ads1115.h@{ads1115.h}!ADS1115\_PGA\_TWO@{ADS1115\_PGA\_TWO}}
+\index{ADS1115\_PGA\_TWO@{ADS1115\_PGA\_TWO}!ads1115.h@{ads1115.h}}
+\doxysubsubsection{\texorpdfstring{ADS1115\_PGA\_TWO}{ADS1115\_PGA\_TWO}}
+{\footnotesize\ttfamily \#define ADS1115\+\_\+\+PGA\+\_\+\+TWO~(0b010 $<$$<$ 1)}
+
+
+
+Definition at line \mbox{\hyperlink{ads1115_8h_source_l00051}{51}} of file \mbox{\hyperlink{ads1115_8h_source}{ads1115.\+h}}.
+
+\mbox{\Hypertarget{ads1115_8h_af2cf337f8fcc9f063a4b794bfa951eaa}\label{ads1115_8h_af2cf337f8fcc9f063a4b794bfa951eaa}} 
+\index{ads1115.h@{ads1115.h}!ADS1115\_PGA\_TWOTHIRDS@{ADS1115\_PGA\_TWOTHIRDS}}
+\index{ADS1115\_PGA\_TWOTHIRDS@{ADS1115\_PGA\_TWOTHIRDS}!ads1115.h@{ads1115.h}}
+\doxysubsubsection{\texorpdfstring{ADS1115\_PGA\_TWOTHIRDS}{ADS1115\_PGA\_TWOTHIRDS}}
+{\footnotesize\ttfamily \#define ADS1115\+\_\+\+PGA\+\_\+\+TWOTHIRDS~(0b000 $<$$<$ 1)}
+
+
+
+Definition at line \mbox{\hyperlink{ads1115_8h_source_l00049}{49}} of file \mbox{\hyperlink{ads1115_8h_source}{ads1115.\+h}}.
+
+\mbox{\Hypertarget{ads1115_8h_a2a051bea5e3398ca2bc9c8b869875051}\label{ads1115_8h_a2a051bea5e3398ca2bc9c8b869875051}} 
+\index{ads1115.h@{ads1115.h}!ADS1115\_TIMEOUT@{ADS1115\_TIMEOUT}}
+\index{ADS1115\_TIMEOUT@{ADS1115\_TIMEOUT}!ads1115.h@{ads1115.h}}
+\doxysubsubsection{\texorpdfstring{ADS1115\_TIMEOUT}{ADS1115\_TIMEOUT}}
+{\footnotesize\ttfamily \#define ADS1115\+\_\+\+TIMEOUT~1}
+
+
+
+Definition at line \mbox{\hyperlink{ads1115_8h_source_l00077}{77}} of file \mbox{\hyperlink{ads1115_8h_source}{ads1115.\+h}}.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{ads1115_8h_a67052e36b856806aa4c2b53802d557d4}\label{ads1115_8h_a67052e36b856806aa4c2b53802d557d4}} 
+\index{ads1115.h@{ads1115.h}!ADS1115\_Init@{ADS1115\_Init}}
+\index{ADS1115\_Init@{ADS1115\_Init}!ads1115.h@{ads1115.h}}
+\doxysubsubsection{\texorpdfstring{ADS1115\_Init()}{ADS1115\_Init()}}
+{\footnotesize\ttfamily HAL\+\_\+\+Status\+Type\+Def ADS1115\+\_\+\+Init (\begin{DoxyParamCaption}\item[{I2\+C\+\_\+\+Handle\+Type\+Def $\ast$}]{handler,  }\item[{uint16\+\_\+t}]{set\+Data\+Rate,  }\item[{uint16\+\_\+t}]{set\+PGA }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{ads1115_8c_source_l00066}{66}} of file \mbox{\hyperlink{ads1115_8c_source}{ads1115.\+c}}.
+
+\mbox{\Hypertarget{ads1115_8h_aeec6c2ea094d21a583046bdbe4d2b540}\label{ads1115_8h_aeec6c2ea094d21a583046bdbe4d2b540}} 
+\index{ads1115.h@{ads1115.h}!ADS1115\_read@{ADS1115\_read}}
+\index{ADS1115\_read@{ADS1115\_read}!ads1115.h@{ads1115.h}}
+\doxysubsubsection{\texorpdfstring{ADS1115\_read()}{ADS1115\_read()}}
+{\footnotesize\ttfamily HAL\+\_\+\+Status\+Type\+Def ADS1115\+\_\+read (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{mux\+Port,  }\item[{float $\ast$}]{voltage }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{ads1115_8c_source_l00138}{138}} of file \mbox{\hyperlink{ads1115_8c_source}{ads1115.\+c}}.
+
+\mbox{\Hypertarget{ads1115_8h_a044eb864a349393a1666537b4e5f35af}\label{ads1115_8h_a044eb864a349393a1666537b4e5f35af}} 
+\index{ads1115.h@{ads1115.h}!ADS1115\_readSingleEnded@{ADS1115\_readSingleEnded}}
+\index{ADS1115\_readSingleEnded@{ADS1115\_readSingleEnded}!ads1115.h@{ads1115.h}}
+\doxysubsubsection{\texorpdfstring{ADS1115\_readSingleEnded()}{ADS1115\_readSingleEnded()}}
+{\footnotesize\ttfamily HAL\+\_\+\+Status\+Type\+Def ADS1115\+\_\+read\+Single\+Ended (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{mux\+Port,  }\item[{float $\ast$}]{voltage }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{ads1115_8c_source_l00112}{112}} of file \mbox{\hyperlink{ads1115_8c_source}{ads1115.\+c}}.
+

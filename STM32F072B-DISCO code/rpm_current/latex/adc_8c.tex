@@ -1,0 +1,90 @@
+\hypertarget{adc_8c}{}\doxysection{Core/\+Src/adc.c File Reference}
+\label{adc_8c}\index{Core/Src/adc.c@{Core/Src/adc.c}}
+
+
+This file provides code for the configuration of the ADC instances.  
+
+
+{\ttfamily \#include \char`\"{}adc.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{adc_8c_aca7f21e220653e353491bceced7c5df3}{MX\+\_\+\+ADC\+\_\+\+Init}} (void)
+\item 
+void \mbox{\hyperlink{adc_8c_ac3139540667c403c5dfd37a99c610b1c}{HAL\+\_\+\+ADC\+\_\+\+Msp\+Init}} (ADC\+\_\+\+Handle\+Type\+Def $\ast$adc\+Handle)
+\item 
+void \mbox{\hyperlink{adc_8c_a3f61f2c2af0f122f81a87af8ad7b4360}{HAL\+\_\+\+ADC\+\_\+\+Msp\+De\+Init}} (ADC\+\_\+\+Handle\+Type\+Def $\ast$adc\+Handle)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+ADC\+\_\+\+Handle\+Type\+Def \mbox{\hyperlink{adc_8c_a62fcafba91cf315db7e0e0c8f22c656f}{hadc}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file provides code for the configuration of the ADC instances. 
+
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+Copyright (c) 2023 STMicroelectronics. All rights reserved.
+
+This software is licensed under terms that can be found in the LICENSE file in the root directory of this software component. If no LICENSE file comes with this software, it is provided AS-\/\+IS. 
+
+Definition in file \mbox{\hyperlink{adc_8c_source}{adc.\+c}}.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{adc_8c_a3f61f2c2af0f122f81a87af8ad7b4360}\label{adc_8c_a3f61f2c2af0f122f81a87af8ad7b4360}} 
+\index{adc.c@{adc.c}!HAL\_ADC\_MspDeInit@{HAL\_ADC\_MspDeInit}}
+\index{HAL\_ADC\_MspDeInit@{HAL\_ADC\_MspDeInit}!adc.c@{adc.c}}
+\doxysubsubsection{\texorpdfstring{HAL\_ADC\_MspDeInit()}{HAL\_ADC\_MspDeInit()}}
+{\footnotesize\ttfamily void HAL\+\_\+\+ADC\+\_\+\+Msp\+De\+Init (\begin{DoxyParamCaption}\item[{ADC\+\_\+\+Handle\+Type\+Def $\ast$}]{adc\+Handle }\end{DoxyParamCaption})}
+
+ADC GPIO Configuration PA0 -\/-\/-\/---\texorpdfstring{$>$}{>} ADC\+\_\+\+IN0 PA1 -\/-\/-\/---\texorpdfstring{$>$}{>} ADC\+\_\+\+IN1 PA2 -\/-\/-\/---\texorpdfstring{$>$}{>} ADC\+\_\+\+IN2 PA3 -\/-\/-\/---\texorpdfstring{$>$}{>} ADC\+\_\+\+IN3
+
+Definition at line \mbox{\hyperlink{adc_8c_source_l00133}{133}} of file \mbox{\hyperlink{adc_8c_source}{adc.\+c}}.
+
+\mbox{\Hypertarget{adc_8c_ac3139540667c403c5dfd37a99c610b1c}\label{adc_8c_ac3139540667c403c5dfd37a99c610b1c}} 
+\index{adc.c@{adc.c}!HAL\_ADC\_MspInit@{HAL\_ADC\_MspInit}}
+\index{HAL\_ADC\_MspInit@{HAL\_ADC\_MspInit}!adc.c@{adc.c}}
+\doxysubsubsection{\texorpdfstring{HAL\_ADC\_MspInit()}{HAL\_ADC\_MspInit()}}
+{\footnotesize\ttfamily void HAL\+\_\+\+ADC\+\_\+\+Msp\+Init (\begin{DoxyParamCaption}\item[{ADC\+\_\+\+Handle\+Type\+Def $\ast$}]{adc\+Handle }\end{DoxyParamCaption})}
+
+ADC GPIO Configuration PA0 -\/-\/-\/---\texorpdfstring{$>$}{>} ADC\+\_\+\+IN0 PA1 -\/-\/-\/---\texorpdfstring{$>$}{>} ADC\+\_\+\+IN1 PA2 -\/-\/-\/---\texorpdfstring{$>$}{>} ADC\+\_\+\+IN2 PA3 -\/-\/-\/---\texorpdfstring{$>$}{>} ADC\+\_\+\+IN3
+
+Definition at line \mbox{\hyperlink{adc_8c_source_l00103}{103}} of file \mbox{\hyperlink{adc_8c_source}{adc.\+c}}.
+
+\mbox{\Hypertarget{adc_8c_aca7f21e220653e353491bceced7c5df3}\label{adc_8c_aca7f21e220653e353491bceced7c5df3}} 
+\index{adc.c@{adc.c}!MX\_ADC\_Init@{MX\_ADC\_Init}}
+\index{MX\_ADC\_Init@{MX\_ADC\_Init}!adc.c@{adc.c}}
+\doxysubsubsection{\texorpdfstring{MX\_ADC\_Init()}{MX\_ADC\_Init()}}
+{\footnotesize\ttfamily void MX\+\_\+\+ADC\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Configure the global features of the ADC (Clock, Resolution, Data Alignment and number of conversion)
+
+Configure for the selected ADC regular channel to be converted.
+
+Configure for the selected ADC regular channel to be converted.
+
+Configure for the selected ADC regular channel to be converted.
+
+Configure for the selected ADC regular channel to be converted.
+
+Definition at line \mbox{\hyperlink{adc_8c_source_l00030}{30}} of file \mbox{\hyperlink{adc_8c_source}{adc.\+c}}.
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{adc_8c_a62fcafba91cf315db7e0e0c8f22c656f}\label{adc_8c_a62fcafba91cf315db7e0e0c8f22c656f}} 
+\index{adc.c@{adc.c}!hadc@{hadc}}
+\index{hadc@{hadc}!adc.c@{adc.c}}
+\doxysubsubsection{\texorpdfstring{hadc}{hadc}}
+{\footnotesize\ttfamily ADC\+\_\+\+Handle\+Type\+Def hadc}
+
+
+
+Definition at line \mbox{\hyperlink{adc_8c_source_l00027}{27}} of file \mbox{\hyperlink{adc_8c_source}{adc.\+c}}.
+
