@@ -1,0 +1,113 @@
+\hypertarget{group___r_c_c___p_l_l___configuration}{}\doxysection{PLL Configuration}
+\label{group___r_c_c___p_l_l___configuration}\index{PLL Configuration@{PLL Configuration}}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___r_c_c___p_l_l___configuration_gaaf196a2df41b0bcbc32745c2b218e696}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+PLL\+\_\+\+ENABLE}}()~\mbox{\hyperlink{group___exported__macros_ga26474f43799fbade9cf300e21dd3a91a}{SET\+\_\+\+BIT}}(\mbox{\hyperlink{group___peripheral__declaration_ga74944438a086975793d26ae48d5882d4}{RCC}}-\/$>$CR, \mbox{\hyperlink{group___peripheral___registers___bits___definition_gad0e73d5b0a4883e074d40029b49ee47e}{RCC\+\_\+\+CR\+\_\+\+PLLON}})
+\begin{DoxyCompactList}\small\item\em Macro to enable the main PLL. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_c_c___p_l_l___configuration_ga718a6afcb1492cc2796be78445a7d5ab}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+PLL\+\_\+\+DISABLE}}()~\mbox{\hyperlink{group___exported__macros_ga133aae6fc0d41bffab39ab223a7001de}{CLEAR\+\_\+\+BIT}}(\mbox{\hyperlink{group___peripheral__declaration_ga74944438a086975793d26ae48d5882d4}{RCC}}-\/$>$CR, \mbox{\hyperlink{group___peripheral___registers___bits___definition_gad0e73d5b0a4883e074d40029b49ee47e}{RCC\+\_\+\+CR\+\_\+\+PLLON}})
+\begin{DoxyCompactList}\small\item\em Macro to disable the main PLL. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_c_c___p_l_l___configuration_gada29b788cc3bffb6438d6beef9c2b6f5}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+PLL\+\_\+\+CONFIG}}(\+\_\+\+\_\+\+RCC\+\_\+\+PLLSOURCE\+\_\+\+\_\+,  \+\_\+\+\_\+\+PREDIV\+\_\+\+\_\+,  \+\_\+\+\_\+\+PLLMUL\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Macro to configure the PLL clock source, multiplication and division factors. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_c_c___p_l_l___configuration_ga3ea1390f8124e2b3b8d53e95541d6e53}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+GET\+\_\+\+PLL\+\_\+\+OSCSOURCE}}()~((uint32\+\_\+t)(\mbox{\hyperlink{group___exported__macros_ga822bb1bb9710d5f2fa6396b84e583c33}{READ\+\_\+\+BIT}}(\mbox{\hyperlink{group___peripheral__declaration_ga74944438a086975793d26ae48d5882d4}{RCC}}-\/$>$CFGR, \mbox{\hyperlink{group___peripheral___registers___bits___definition_gaba4a5dbbd286f07a97f5aa6e6f3f6a57}{RCC\+\_\+\+CFGR\+\_\+\+PLLSRC}})))
+\begin{DoxyCompactList}\small\item\em Get oscillator clock selected as PLL input clock. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+~\newline
+ 
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group___r_c_c___p_l_l___configuration_ga3ea1390f8124e2b3b8d53e95541d6e53}\label{group___r_c_c___p_l_l___configuration_ga3ea1390f8124e2b3b8d53e95541d6e53}} 
+\index{PLL Configuration@{PLL Configuration}!\_\_HAL\_RCC\_GET\_PLL\_OSCSOURCE@{\_\_HAL\_RCC\_GET\_PLL\_OSCSOURCE}}
+\index{\_\_HAL\_RCC\_GET\_PLL\_OSCSOURCE@{\_\_HAL\_RCC\_GET\_PLL\_OSCSOURCE}!PLL Configuration@{PLL Configuration}}
+\doxysubsubsection{\texorpdfstring{\_\_HAL\_RCC\_GET\_PLL\_OSCSOURCE}{\_\_HAL\_RCC\_GET\_PLL\_OSCSOURCE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+GET\+\_\+\+PLL\+\_\+\+OSCSOURCE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~((uint32\+\_\+t)(\mbox{\hyperlink{group___exported__macros_ga822bb1bb9710d5f2fa6396b84e583c33}{READ\+\_\+\+BIT}}(\mbox{\hyperlink{group___peripheral__declaration_ga74944438a086975793d26ae48d5882d4}{RCC}}-\/$>$CFGR, \mbox{\hyperlink{group___peripheral___registers___bits___definition_gaba4a5dbbd286f07a97f5aa6e6f3f6a57}{RCC\+\_\+\+CFGR\+\_\+\+PLLSRC}})))}
+
+
+
+Get oscillator clock selected as PLL input clock. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em The} & clock source used for PLL entry. The returned value can be one of the following\+: \begin{DoxyItemize}
+\item \mbox{\hyperlink{group___r_c_c___p_l_l___clock___source_ga197cea7fe5c2db26fe7fcdb0f99dd4d7}{RCC\+\_\+\+PLLSOURCE\+\_\+\+HSE}} HSE oscillator clock selected as PLL input clock \end{DoxyItemize}
+\\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__rcc_8h_source_l01260}{1260}} of file \mbox{\hyperlink{stm32f0xx__hal__rcc_8h_source}{stm32f0xx\+\_\+hal\+\_\+rcc.\+h}}.
+
+\mbox{\Hypertarget{group___r_c_c___p_l_l___configuration_gada29b788cc3bffb6438d6beef9c2b6f5}\label{group___r_c_c___p_l_l___configuration_gada29b788cc3bffb6438d6beef9c2b6f5}} 
+\index{PLL Configuration@{PLL Configuration}!\_\_HAL\_RCC\_PLL\_CONFIG@{\_\_HAL\_RCC\_PLL\_CONFIG}}
+\index{\_\_HAL\_RCC\_PLL\_CONFIG@{\_\_HAL\_RCC\_PLL\_CONFIG}!PLL Configuration@{PLL Configuration}}
+\doxysubsubsection{\texorpdfstring{\_\_HAL\_RCC\_PLL\_CONFIG}{\_\_HAL\_RCC\_PLL\_CONFIG}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+PLL\+\_\+\+CONFIG(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+RCC\+\_\+\+PLLSOURCE\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+PREDIV\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+\_\+\+PLLMUL\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{do}\ \{\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ MODIFY\_REG(\mbox{\hyperlink{group___peripheral__declaration_ga74944438a086975793d26ae48d5882d4}{RCC}}-\/>CFGR2,\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga022892b6d0e4ee671b82e7f6552b0074}{RCC\_CFGR2\_PREDIV}},\ (\_\_PREDIV\_\_));\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ MODIFY\_REG(\mbox{\hyperlink{group___peripheral__declaration_ga74944438a086975793d26ae48d5882d4}{RCC}}-\/>CFGR,\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga538fd5df8d890696483a0e901d739309}{RCC\_CFGR\_PLLMUL}}\ |\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_gaba4a5dbbd286f07a97f5aa6e6f3f6a57}{RCC\_CFGR\_PLLSRC}},\ (uint32\_t)((\_\_PLLMUL\_\_)|(\_\_RCC\_PLLSOURCE\_\_)));\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{while}(0U)}
+
+\end{DoxyCode}
+
+
+Macro to configure the PLL clock source, multiplication and division factors. 
+
+\begin{DoxyNote}{Note}
+This function must be used only when the main PLL is disabled.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+RCC\+\_\+\+PLLSOURCE\+\_\+\+\_\+} & specifies the PLL entry clock source. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item \mbox{\hyperlink{group___r_c_c___p_l_l___clock___source_ga0e07703f1ccb3d60f8a47a2dc631c218}{RCC\+\_\+\+PLLSOURCE\+\_\+\+HSI}} HSI oscillator clock selected as PLL clock entry \item \mbox{\hyperlink{group___r_c_c___p_l_l___clock___source_ga197cea7fe5c2db26fe7fcdb0f99dd4d7}{RCC\+\_\+\+PLLSOURCE\+\_\+\+HSE}} HSE oscillator clock selected as PLL clock entry \end{DoxyItemize}
+\\
+\hline
+{\em \+\_\+\+\_\+\+PLLMUL\+\_\+\+\_\+} & specifies the multiplication factor for PLL VCO output clock This parameter can be one of the following values\+: This parameter must be a number between RCC\+\_\+\+PLL\+\_\+\+MUL2 and RCC\+\_\+\+PLL\+\_\+\+MUL16. \\
+\hline
+{\em \+\_\+\+\_\+\+PREDIV\+\_\+\+\_\+} & specifies the predivider factor for PLL VCO input clock This parameter must be a number between RCC\+\_\+\+PREDIV\+\_\+\+DIV1 and RCC\+\_\+\+PREDIV\+\_\+\+DIV16. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__rcc_8h_source_l01248}{1248}} of file \mbox{\hyperlink{stm32f0xx__hal__rcc_8h_source}{stm32f0xx\+\_\+hal\+\_\+rcc.\+h}}.
+
+\mbox{\Hypertarget{group___r_c_c___p_l_l___configuration_ga718a6afcb1492cc2796be78445a7d5ab}\label{group___r_c_c___p_l_l___configuration_ga718a6afcb1492cc2796be78445a7d5ab}} 
+\index{PLL Configuration@{PLL Configuration}!\_\_HAL\_RCC\_PLL\_DISABLE@{\_\_HAL\_RCC\_PLL\_DISABLE}}
+\index{\_\_HAL\_RCC\_PLL\_DISABLE@{\_\_HAL\_RCC\_PLL\_DISABLE}!PLL Configuration@{PLL Configuration}}
+\doxysubsubsection{\texorpdfstring{\_\_HAL\_RCC\_PLL\_DISABLE}{\_\_HAL\_RCC\_PLL\_DISABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+PLL\+\_\+\+DISABLE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~\mbox{\hyperlink{group___exported__macros_ga133aae6fc0d41bffab39ab223a7001de}{CLEAR\+\_\+\+BIT}}(\mbox{\hyperlink{group___peripheral__declaration_ga74944438a086975793d26ae48d5882d4}{RCC}}-\/$>$CR, \mbox{\hyperlink{group___peripheral___registers___bits___definition_gad0e73d5b0a4883e074d40029b49ee47e}{RCC\+\_\+\+CR\+\_\+\+PLLON}})}
+
+
+
+Macro to disable the main PLL. 
+
+\begin{DoxyNote}{Note}
+The main PLL can not be disabled if it is used as system clock source 
+\end{DoxyNote}
+
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__rcc_8h_source_l01232}{1232}} of file \mbox{\hyperlink{stm32f0xx__hal__rcc_8h_source}{stm32f0xx\+\_\+hal\+\_\+rcc.\+h}}.
+
+\mbox{\Hypertarget{group___r_c_c___p_l_l___configuration_gaaf196a2df41b0bcbc32745c2b218e696}\label{group___r_c_c___p_l_l___configuration_gaaf196a2df41b0bcbc32745c2b218e696}} 
+\index{PLL Configuration@{PLL Configuration}!\_\_HAL\_RCC\_PLL\_ENABLE@{\_\_HAL\_RCC\_PLL\_ENABLE}}
+\index{\_\_HAL\_RCC\_PLL\_ENABLE@{\_\_HAL\_RCC\_PLL\_ENABLE}!PLL Configuration@{PLL Configuration}}
+\doxysubsubsection{\texorpdfstring{\_\_HAL\_RCC\_PLL\_ENABLE}{\_\_HAL\_RCC\_PLL\_ENABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+PLL\+\_\+\+ENABLE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~\mbox{\hyperlink{group___exported__macros_ga26474f43799fbade9cf300e21dd3a91a}{SET\+\_\+\+BIT}}(\mbox{\hyperlink{group___peripheral__declaration_ga74944438a086975793d26ae48d5882d4}{RCC}}-\/$>$CR, \mbox{\hyperlink{group___peripheral___registers___bits___definition_gad0e73d5b0a4883e074d40029b49ee47e}{RCC\+\_\+\+CR\+\_\+\+PLLON}})}
+
+
+
+Macro to enable the main PLL. 
+
+\begin{DoxyNote}{Note}
+After enabling the main PLL, the application software should wait on PLLRDY flag to be set indicating that PLL clock is stable and can be used as system clock source. 
+
+The main PLL is disabled by hardware when entering STOP and STANDBY modes. 
+\end{DoxyNote}
+
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__rcc_8h_source_l01227}{1227}} of file \mbox{\hyperlink{stm32f0xx__hal__rcc_8h_source}{stm32f0xx\+\_\+hal\+\_\+rcc.\+h}}.
+

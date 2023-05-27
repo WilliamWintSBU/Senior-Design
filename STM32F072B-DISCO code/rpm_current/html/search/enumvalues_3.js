@@ -1,13 +1,8 @@
 var searchData=
 [
-  ['seen_24_0',['seen$',['../structgps__struct.html#abc6126af1d45847bc59afa0aa3216b04a9d0b67c0d37523efd89afe813f467b53',1,'gps_struct']]],
-  ['seennewline_1',['seenNewline',['../structgps__struct.html#abc6126af1d45847bc59afa0aa3216b04a5478e0c6758c05d0cf8959e1ea04e6d9',1,'gps_struct']]],
-  ['stat_5fchecksum_5ffail_2',['STAT_CHECKSUM_FAIL',['../group___l_w_g_p_s.html#ggabab85c279fb364e161ba08aaf8a14284a4a96f2283467bd7821167ac9bf1c8119',1,'lwgps.h']]],
-  ['stat_5fgga_3',['STAT_GGA',['../group___l_w_g_p_s.html#ggabab85c279fb364e161ba08aaf8a14284abdbe20e8d57472a78f7475f6b6bbe824',1,'lwgps.h']]],
-  ['stat_5fgsa_4',['STAT_GSA',['../group___l_w_g_p_s.html#ggabab85c279fb364e161ba08aaf8a14284ad118c8a518c0a17caa66b0840b4fd3a4',1,'lwgps.h']]],
-  ['stat_5fgsv_5',['STAT_GSV',['../group___l_w_g_p_s.html#ggabab85c279fb364e161ba08aaf8a14284a0f6523feb25eb37cf2dccb4db9c919bd',1,'lwgps.h']]],
-  ['stat_5frmc_6',['STAT_RMC',['../group___l_w_g_p_s.html#ggabab85c279fb364e161ba08aaf8a14284a76d6b8c5fa017a36997f576a98c4c542',1,'lwgps.h']]],
-  ['stat_5fubx_7',['STAT_UBX',['../group___l_w_g_p_s.html#ggabab85c279fb364e161ba08aaf8a14284a0f9b13471fd992020d7d3ec5f0679355',1,'lwgps.h']]],
-  ['stat_5fubx_5ftime_8',['STAT_UBX_TIME',['../group___l_w_g_p_s.html#ggabab85c279fb364e161ba08aaf8a14284acf09eca3c1673f7f55c7463cf728cfca',1,'lwgps.h']]],
-  ['stat_5funknown_9',['STAT_UNKNOWN',['../group___l_w_g_p_s.html#ggabab85c279fb364e161ba08aaf8a14284abde6113d898001338feb65fd66c6a202',1,'lwgps.h']]]
+  ['enable_0',['ENABLE',['../group___exported__types.html#ggac9a7e9a35d2513ec15c3b537aaa4fba1a7d46875fa3ebd2c34d2756950eda83bf',1,'stm32f0xx.h']]],
+  ['error_1',['ERROR',['../group___exported__types.html#gga8333b96c67f83cba354b3407fcbb6ee8a2fd6f336d08340583bd620a7f5694c90',1,'stm32f0xx.h']]],
+  ['exti0_5f1_5firqn_2',['EXTI0_1_IRQn',['../group___peripheral__interrupt__number__definition.html#gga7e1129cd8a196f4284d41db3e82ad5c8aa192e935e6b7fc8089fc612477bf3a79',1,'stm32f072xb.h']]],
+  ['exti2_5f3_5firqn_3',['EXTI2_3_IRQn',['../group___peripheral__interrupt__number__definition.html#gga7e1129cd8a196f4284d41db3e82ad5c8a78602dc46ee54b2c1f3e6f0ef8f59e5f',1,'stm32f072xb.h']]],
+  ['exti4_5f15_5firqn_4',['EXTI4_15_IRQn',['../group___peripheral__interrupt__number__definition.html#gga7e1129cd8a196f4284d41db3e82ad5c8aec19518b6dd2358a8b78c2aa29e5d462',1,'stm32f072xb.h']]]
 ];

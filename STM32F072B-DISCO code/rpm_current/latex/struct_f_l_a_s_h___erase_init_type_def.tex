@@ -1,0 +1,65 @@
+\hypertarget{struct_f_l_a_s_h___erase_init_type_def}{}\doxysection{FLASH\+\_\+\+Erase\+Init\+Type\+Def Struct Reference}
+\label{struct_f_l_a_s_h___erase_init_type_def}\index{FLASH\_EraseInitTypeDef@{FLASH\_EraseInitTypeDef}}
+
+
+FLASH Erase structure definition.  
+
+
+
+
+{\ttfamily \#include $<$stm32f0xx\+\_\+hal\+\_\+flash\+\_\+ex.\+h$>$}
+
+\doxysubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_f_l_a_s_h___erase_init_type_def_ae2154c09320f3ef7feb8f4a84e9ac17b}{Type\+Erase}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_f_l_a_s_h___erase_init_type_def_ac0d6c69c326b962d7748bf477c235b00}{Page\+Address}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_f_l_a_s_h___erase_init_type_def_a883b193a78c63e993f1d70102eac64b3}{Nb\+Pages}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+FLASH Erase structure definition. 
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__flash__ex_8h_source_l00088}{88}} of file \mbox{\hyperlink{stm32f0xx__hal__flash__ex_8h_source}{stm32f0xx\+\_\+hal\+\_\+flash\+\_\+ex.\+h}}.
+
+
+
+\doxysubsection{Field Documentation}
+\mbox{\Hypertarget{struct_f_l_a_s_h___erase_init_type_def_a883b193a78c63e993f1d70102eac64b3}\label{struct_f_l_a_s_h___erase_init_type_def_a883b193a78c63e993f1d70102eac64b3}} 
+\index{FLASH\_EraseInitTypeDef@{FLASH\_EraseInitTypeDef}!NbPages@{NbPages}}
+\index{NbPages@{NbPages}!FLASH\_EraseInitTypeDef@{FLASH\_EraseInitTypeDef}}
+\doxysubsubsection{\texorpdfstring{NbPages}{NbPages}}
+{\footnotesize\ttfamily uint32\+\_\+t Nb\+Pages}
+
+Nb\+Pages\+: Number of pagess to be erased. This parameter must be a value between Min\+\_\+\+Data = 1 and Max\+\_\+\+Data = (max number of pages -\/ value of initial page) 
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__flash__ex_8h_source_l00096}{96}} of file \mbox{\hyperlink{stm32f0xx__hal__flash__ex_8h_source}{stm32f0xx\+\_\+hal\+\_\+flash\+\_\+ex.\+h}}.
+
+\mbox{\Hypertarget{struct_f_l_a_s_h___erase_init_type_def_ac0d6c69c326b962d7748bf477c235b00}\label{struct_f_l_a_s_h___erase_init_type_def_ac0d6c69c326b962d7748bf477c235b00}} 
+\index{FLASH\_EraseInitTypeDef@{FLASH\_EraseInitTypeDef}!PageAddress@{PageAddress}}
+\index{PageAddress@{PageAddress}!FLASH\_EraseInitTypeDef@{FLASH\_EraseInitTypeDef}}
+\doxysubsubsection{\texorpdfstring{PageAddress}{PageAddress}}
+{\footnotesize\ttfamily uint32\+\_\+t Page\+Address}
+
+Page\+Adress\+: Initial FLASH page address to erase when mass erase is disabled This parameter must be a number between Min\+\_\+\+Data = FLASH\+\_\+\+BASE and Max\+\_\+\+Data = FLASH\+\_\+\+BANK1\+\_\+\+END 
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__flash__ex_8h_source_l00093}{93}} of file \mbox{\hyperlink{stm32f0xx__hal__flash__ex_8h_source}{stm32f0xx\+\_\+hal\+\_\+flash\+\_\+ex.\+h}}.
+
+\mbox{\Hypertarget{struct_f_l_a_s_h___erase_init_type_def_ae2154c09320f3ef7feb8f4a84e9ac17b}\label{struct_f_l_a_s_h___erase_init_type_def_ae2154c09320f3ef7feb8f4a84e9ac17b}} 
+\index{FLASH\_EraseInitTypeDef@{FLASH\_EraseInitTypeDef}!TypeErase@{TypeErase}}
+\index{TypeErase@{TypeErase}!FLASH\_EraseInitTypeDef@{FLASH\_EraseInitTypeDef}}
+\doxysubsubsection{\texorpdfstring{TypeErase}{TypeErase}}
+{\footnotesize\ttfamily uint32\+\_\+t Type\+Erase}
+
+Type\+Erase\+: Mass erase or page erase. This parameter can be a value of \mbox{\hyperlink{group___f_l_a_s_h_ex___type___erase}{FLASH Type Erase}} 
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__flash__ex_8h_source_l00090}{90}} of file \mbox{\hyperlink{stm32f0xx__hal__flash__ex_8h_source}{stm32f0xx\+\_\+hal\+\_\+flash\+\_\+ex.\+h}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Drivers/\+STM32\+F0xx\+\_\+\+HAL\+\_\+\+Driver/\+Inc/\mbox{\hyperlink{stm32f0xx__hal__flash__ex_8h}{stm32f0xx\+\_\+hal\+\_\+flash\+\_\+ex.\+h}}\end{DoxyCompactItemize}

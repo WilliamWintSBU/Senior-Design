@@ -1,0 +1,703 @@
+\hypertarget{stm32f0xx__ll__usb_8c_source}{}\doxysection{stm32f0xx\+\_\+ll\+\_\+usb.\+c}
+\label{stm32f0xx__ll__usb_8c_source}\index{Drivers/STM32F0xx\_HAL\_Driver/Src/stm32f0xx\_ll\_usb.c@{Drivers/STM32F0xx\_HAL\_Driver/Src/stm32f0xx\_ll\_usb.c}}
+\mbox{\hyperlink{stm32f0xx__ll__usb_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00041}00041\ \textcolor{comment}{/*\ Includes\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00042}00042\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{stm32f0xx__hal_8h}{stm32f0xx\_hal.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00048}00048\ \textcolor{preprocessor}{\#if\ defined\ (HAL\_PCD\_MODULE\_ENABLED)\ ||\ defined\ (HAL\_HCD\_MODULE\_ENABLED)}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00049}00049\ \textcolor{preprocessor}{\#if\ defined\ (USB)}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00050}00050\ \textcolor{comment}{/*\ Private\ typedef\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00051}00051\ \textcolor{comment}{/*\ Private\ define\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00052}00052\ \textcolor{comment}{/*\ Private\ macro\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00053}00053\ \textcolor{comment}{/*\ Private\ variables\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00054}00054\ \textcolor{comment}{/*\ Private\ function\ prototypes\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00055}00055\ \textcolor{comment}{/*\ Private\ functions\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00064}00064\ \mbox{\hyperlink{stm32f0xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ USB\_CoreInit(\mbox{\hyperlink{struct_u_s_b___type_def}{USB\_TypeDef}}\ *USBx,\ USB\_CfgTypeDef\ cfg)}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00065}00065\ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00066}00066\ \ \ \textcolor{comment}{/*\ Prevent\ unused\ argument(s)\ compilation\ warning\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00067}00067\ \ \ \mbox{\hyperlink{stm32f0xx__hal__def_8h_a6bc306171da085f4c7df2c66d2ff8e47}{UNUSED}}(USBx);}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00068}00068\ \ \ \mbox{\hyperlink{stm32f0xx__hal__def_8h_a6bc306171da085f4c7df2c66d2ff8e47}{UNUSED}}(cfg);}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00070}00070\ \ \ \textcolor{comment}{/*\ NOTE\ :\ -\/\ This\ function\ is\ not\ required\ by\ USB\ Device\ FS\ peripheral,\ it\ is\ used}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00071}00071\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ only\ by\ USB\ OTG\ FS\ peripheral.}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00072}00072\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ -\/\ This\ function\ is\ added\ to\ ensure\ compatibility\ across\ platforms.}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00073}00073\ \textcolor{comment}{\ \ \ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00075}00075\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{stm32f0xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478fa6eb724a07061d89a4a2052744e5a3632}{HAL\_OK}};}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00076}00076\ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00077}00077\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00084}00084\ \mbox{\hyperlink{stm32f0xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ USB\_EnableGlobalInt(\mbox{\hyperlink{struct_u_s_b___type_def}{USB\_TypeDef}}\ *USBx)}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00085}00085\ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00086}00086\ \ \ uint32\_t\ winterruptmask;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00088}00088\ \ \ \textcolor{comment}{/*\ Clear\ pending\ interrupts\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00089}00089\ \ \ USBx-\/>\mbox{\hyperlink{struct_u_s_b___type_def_a54fc7329a9549448d56b50bcca73bab4}{ISTR}}\ =\ 0U;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00091}00091\ \ \ \textcolor{comment}{/*\ Set\ winterruptmask\ variable\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00092}00092\ \ \ winterruptmask\ =\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_gaf00ba2990a5f24fb0e05802d82f24abc}{USB\_CNTR\_CTRM}}\ \ |\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_gaa88ca8d955846272e2541b8e13f29343}{USB\_CNTR\_WKUPM}}\ |}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga0ae46eb0e83618bc7267543b7e6beaea}{USB\_CNTR\_SUSPM}}\ |\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_gaa5f7187f084256a9445a3cac84b11cb5}{USB\_CNTR\_ERRM}}\ |}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group___peripheral___registers___bits___definition_gae21d26a7822bae0b6cc512782a75d44e}{USB\_CNTR\_SOFM}}\ |\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga71fe7bddc1d39bf24e1bca420210f31c}{USB\_CNTR\_ESOFM}}\ |}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga4542414ab68ac0a722f9f3853b5c7a84}{USB\_CNTR\_RESETM}}\ |\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga32604e5f0d7fbce212bd68b368ac9bbd}{USB\_CNTR\_L1REQM}};}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00097}00097\ \ \ \textcolor{comment}{/*\ Set\ interrupt\ mask\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00098}00098\ \ \ USBx-\/>\mbox{\hyperlink{struct_u_s_b___type_def_a532529aa4c809b7e6881ce081f55c37b}{CNTR}}\ =\ (uint16\_t)winterruptmask;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00100}00100\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{stm32f0xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478fa6eb724a07061d89a4a2052744e5a3632}{HAL\_OK}};}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00101}00101\ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00102}00102\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00109}00109\ \mbox{\hyperlink{stm32f0xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ USB\_DisableGlobalInt(\mbox{\hyperlink{struct_u_s_b___type_def}{USB\_TypeDef}}\ *USBx)}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00110}00110\ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00111}00111\ \ \ uint32\_t\ winterruptmask;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00112}00112\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00113}00113\ \ \ \textcolor{comment}{/*\ Set\ winterruptmask\ variable\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00114}00114\ \ \ winterruptmask\ =\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_gaf00ba2990a5f24fb0e05802d82f24abc}{USB\_CNTR\_CTRM}}\ \ |\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_gaa88ca8d955846272e2541b8e13f29343}{USB\_CNTR\_WKUPM}}\ |}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga0ae46eb0e83618bc7267543b7e6beaea}{USB\_CNTR\_SUSPM}}\ |\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_gaa5f7187f084256a9445a3cac84b11cb5}{USB\_CNTR\_ERRM}}\ |}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group___peripheral___registers___bits___definition_gae21d26a7822bae0b6cc512782a75d44e}{USB\_CNTR\_SOFM}}\ |\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga71fe7bddc1d39bf24e1bca420210f31c}{USB\_CNTR\_ESOFM}}\ |}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00117}00117\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga4542414ab68ac0a722f9f3853b5c7a84}{USB\_CNTR\_RESETM}}\ |\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga32604e5f0d7fbce212bd68b368ac9bbd}{USB\_CNTR\_L1REQM}};}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00118}00118\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00119}00119\ \ \ \textcolor{comment}{/*\ Clear\ interrupt\ mask\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00120}00120\ \ \ USBx-\/>\mbox{\hyperlink{struct_u_s_b___type_def_a532529aa4c809b7e6881ce081f55c37b}{CNTR}}\ \&=\ (uint16\_t)(\string~winterruptmask);}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00121}00121\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00122}00122\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{stm32f0xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478fa6eb724a07061d89a4a2052744e5a3632}{HAL\_OK}};}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00123}00123\ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00124}00124\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00133}00133\ \mbox{\hyperlink{stm32f0xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ USB\_SetCurrentMode(\mbox{\hyperlink{struct_u_s_b___type_def}{USB\_TypeDef}}\ *USBx,\ USB\_ModeTypeDef\ mode)}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00134}00134\ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00135}00135\ \ \ \textcolor{comment}{/*\ Prevent\ unused\ argument(s)\ compilation\ warning\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00136}00136\ \ \ \mbox{\hyperlink{stm32f0xx__hal__def_8h_a6bc306171da085f4c7df2c66d2ff8e47}{UNUSED}}(USBx);}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00137}00137\ \ \ \mbox{\hyperlink{stm32f0xx__hal__def_8h_a6bc306171da085f4c7df2c66d2ff8e47}{UNUSED}}(mode);}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00138}00138\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00139}00139\ \ \ \textcolor{comment}{/*\ NOTE\ :\ -\/\ This\ function\ is\ not\ required\ by\ USB\ Device\ FS\ peripheral,\ it\ is\ used}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00140}00140\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ only\ by\ USB\ OTG\ FS\ peripheral.}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00141}00141\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ -\/\ This\ function\ is\ added\ to\ ensure\ compatibility\ across\ platforms.}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00142}00142\ \textcolor{comment}{\ \ \ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00143}00143\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{stm32f0xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478fa6eb724a07061d89a4a2052744e5a3632}{HAL\_OK}};}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00144}00144\ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00145}00145\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00154}00154\ \mbox{\hyperlink{stm32f0xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ USB\_DevInit(\mbox{\hyperlink{struct_u_s_b___type_def}{USB\_TypeDef}}\ *USBx,\ USB\_CfgTypeDef\ cfg)}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00155}00155\ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00156}00156\ \ \ \textcolor{comment}{/*\ Prevent\ unused\ argument(s)\ compilation\ warning\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00157}00157\ \ \ \mbox{\hyperlink{stm32f0xx__hal__def_8h_a6bc306171da085f4c7df2c66d2ff8e47}{UNUSED}}(cfg);}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00158}00158\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00159}00159\ \ \ \textcolor{comment}{/*\ Init\ Device\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00160}00160\ \ \ \textcolor{comment}{/*\ CNTR\_FRES\ =\ 1\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00161}00161\ \ \ USBx-\/>\mbox{\hyperlink{struct_u_s_b___type_def_a532529aa4c809b7e6881ce081f55c37b}{CNTR}}\ =\ (uint16\_t)\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga36c68275445560edf0ccb7aa76bc769f}{USB\_CNTR\_FRES}};}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00162}00162\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00163}00163\ \ \ \textcolor{comment}{/*\ CNTR\_FRES\ =\ 0\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00164}00164\ \ \ USBx-\/>\mbox{\hyperlink{struct_u_s_b___type_def_a532529aa4c809b7e6881ce081f55c37b}{CNTR}}\ =\ 0U;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00165}00165\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00166}00166\ \ \ \textcolor{comment}{/*\ Clear\ pending\ interrupts\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00167}00167\ \ \ USBx-\/>\mbox{\hyperlink{struct_u_s_b___type_def_a54fc7329a9549448d56b50bcca73bab4}{ISTR}}\ =\ 0U;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00168}00168\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00169}00169\ \ \ \textcolor{comment}{/*Set\ Btable\ Address*/}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00170}00170\ \ \ USBx-\/>\mbox{\hyperlink{struct_u_s_b___type_def_a045130eb8c2d3eb353a4417f24f34f46}{BTABLE}}\ =\ BTABLE\_ADDRESS;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00171}00171\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00172}00172\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{stm32f0xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478fa6eb724a07061d89a4a2052744e5a3632}{HAL\_OK}};}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00173}00173\ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00174}00174\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00175}00175\ \textcolor{preprocessor}{\#if\ defined\ (HAL\_PCD\_MODULE\_ENABLED)}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00182}00182\ \mbox{\hyperlink{stm32f0xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ USB\_ActivateEndpoint(\mbox{\hyperlink{struct_u_s_b___type_def}{USB\_TypeDef}}\ *USBx,\ USB\_EPTypeDef\ *ep)}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00183}00183\ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00184}00184\ \ \ \mbox{\hyperlink{stm32f0xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ ret\ =\ \mbox{\hyperlink{stm32f0xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478fa6eb724a07061d89a4a2052744e5a3632}{HAL\_OK}};}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00185}00185\ \ \ uint16\_t\ wEpRegVal;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00186}00186\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00187}00187\ \ \ wEpRegVal\ =\ PCD\_GET\_ENDPOINT(USBx,\ ep-\/>num)\ \&\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_gad9ff2c3f4fa5acd6a659160054dd5cde}{USB\_EP\_T\_MASK}};}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00188}00188\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00189}00189\ \ \ \textcolor{comment}{/*\ initialize\ Endpoint\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00190}00190\ \ \ \textcolor{keywordflow}{switch}\ (ep-\/>type)}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00191}00191\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00192}00192\ \ \ \ \ \textcolor{keywordflow}{case}\ EP\_TYPE\_CTRL:}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00193}00193\ \ \ \ \ \ \ wEpRegVal\ |=\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_gac0c33c0c20c57a68596e55b00a6302b7}{USB\_EP\_CONTROL}};}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00194}00194\ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00195}00195\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00196}00196\ \ \ \ \ \textcolor{keywordflow}{case}\ EP\_TYPE\_BULK:}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00197}00197\ \ \ \ \ \ \ wEpRegVal\ |=\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga4bb6534247e1a0ac44e2eeb5b3a6934f}{USB\_EP\_BULK}};}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00198}00198\ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00199}00199\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00200}00200\ \ \ \ \ \textcolor{keywordflow}{case}\ EP\_TYPE\_INTR:}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00201}00201\ \ \ \ \ \ \ wEpRegVal\ |=\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_gaf51a3af3807dd55e340c1ddbc3f2d352}{USB\_EP\_INTERRUPT}};}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00202}00202\ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00203}00203\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00204}00204\ \ \ \ \ \textcolor{keywordflow}{case}\ EP\_TYPE\_ISOC:}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00205}00205\ \ \ \ \ \ \ wEpRegVal\ |=\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_gaa2defbb9d8ba5374954dfcd55afdc45b}{USB\_EP\_ISOCHRONOUS}};}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00206}00206\ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00207}00207\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00208}00208\ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00209}00209\ \ \ \ \ \ \ ret\ =\ \mbox{\hyperlink{stm32f0xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478fa5a04e395e501e4e400172c610478c4a4}{HAL\_ERROR}};}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00210}00210\ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00211}00211\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00212}00212\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00213}00213\ \ \ PCD\_SET\_ENDPOINT(USBx,\ ep-\/>num,\ (wEpRegVal\ |\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_gaab6cc205ecfc51c2fbc530ee90fe2f0d}{USB\_EP\_CTR\_RX}}\ |\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga6975fe92ee5c652bc0665b04e2eff07e}{USB\_EP\_CTR\_TX}}));}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00214}00214\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00215}00215\ \ \ PCD\_SET\_EP\_ADDRESS(USBx,\ ep-\/>num,\ ep-\/>num);}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00216}00216\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00217}00217\ \ \ \textcolor{keywordflow}{if}\ (ep-\/>doublebuffer\ ==\ 0U)}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00218}00218\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00219}00219\ \ \ \ \ \textcolor{keywordflow}{if}\ (ep-\/>is\_in\ !=\ 0U)}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00220}00220\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00221}00221\ \ \ \ \ \ \ \textcolor{comment}{/*Set\ the\ endpoint\ Transmit\ buffer\ address\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00222}00222\ \ \ \ \ \ \ PCD\_SET\_EP\_TX\_ADDRESS(USBx,\ ep-\/>num,\ ep-\/>pmaadress);}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00223}00223\ \ \ \ \ \ \ PCD\_CLEAR\_TX\_DTOG(USBx,\ ep-\/>num);}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00224}00224\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00225}00225\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ep-\/>type\ !=\ EP\_TYPE\_ISOC)}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00226}00226\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00227}00227\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Configure\ NAK\ status\ for\ the\ Endpoint\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00228}00228\ \ \ \ \ \ \ \ \ PCD\_SET\_EP\_TX\_STATUS(USBx,\ ep-\/>num,\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_gad2329b1b850bdfb41318ddd4bebd4950}{USB\_EP\_TX\_NAK}});}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00229}00229\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00230}00230\ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00231}00231\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00232}00232\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Configure\ TX\ Endpoint\ to\ disabled\ state\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00233}00233\ \ \ \ \ \ \ \ \ PCD\_SET\_EP\_TX\_STATUS(USBx,\ ep-\/>num,\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga8d0f23898f2be6e6b63e855adbbbfcb2}{USB\_EP\_TX\_DIS}});}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00234}00234\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00235}00235\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00236}00236\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00237}00237\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00238}00238\ \ \ \ \ \ \ \textcolor{comment}{/*\ Set\ the\ endpoint\ Receive\ buffer\ address\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00239}00239\ \ \ \ \ \ \ PCD\_SET\_EP\_RX\_ADDRESS(USBx,\ ep-\/>num,\ ep-\/>pmaadress);}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00240}00240\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00241}00241\ \ \ \ \ \ \ \textcolor{comment}{/*\ Set\ the\ endpoint\ Receive\ buffer\ counter\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00242}00242\ \ \ \ \ \ \ PCD\_SET\_EP\_RX\_CNT(USBx,\ ep-\/>num,\ ep-\/>maxpacket);}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00243}00243\ \ \ \ \ \ \ PCD\_CLEAR\_RX\_DTOG(USBx,\ ep-\/>num);}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00244}00244\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00245}00245\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ep-\/>num\ ==\ 0U)}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00246}00246\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00247}00247\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Configure\ VALID\ status\ for\ EP0\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00248}00248\ \ \ \ \ \ \ \ \ PCD\_SET\_EP\_RX\_STATUS(USBx,\ ep-\/>num,\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_gaad864bbce320889427dd9d96c0efcabf}{USB\_EP\_RX\_VALID}});}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00249}00249\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00250}00250\ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00251}00251\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00252}00252\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Configure\ NAK\ status\ for\ OUT\ Endpoint\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00253}00253\ \ \ \ \ \ \ \ \ PCD\_SET\_EP\_RX\_STATUS(USBx,\ ep-\/>num,\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_gab2c3fbf5e0967184721faa13308967d9}{USB\_EP\_RX\_NAK}});}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00254}00254\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00255}00255\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00256}00256\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00257}00257\ \textcolor{preprocessor}{\#if\ (USE\_USB\_DOUBLE\_BUFFER\ ==\ 1U)}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00258}00258\ \ \ \textcolor{comment}{/*\ Double\ Buffer\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00259}00259\ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00260}00260\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00261}00261\ \ \ \ \ \textcolor{keywordflow}{if}\ (ep-\/>type\ ==\ EP\_TYPE\_BULK)}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00262}00262\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00263}00263\ \ \ \ \ \ \ \textcolor{comment}{/*\ Set\ bulk\ endpoint\ as\ double\ buffered\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00264}00264\ \ \ \ \ \ \ PCD\_SET\_BULK\_EP\_DBUF(USBx,\ ep-\/>num);}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00265}00265\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00266}00266\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00267}00267\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00268}00268\ \ \ \ \ \ \ \textcolor{comment}{/*\ Set\ the\ ISOC\ endpoint\ in\ double\ buffer\ mode\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00269}00269\ \ \ \ \ \ \ PCD\_CLEAR\_EP\_KIND(USBx,\ ep-\/>num);}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00270}00270\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00271}00271\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00272}00272\ \ \ \ \ \textcolor{comment}{/*\ Set\ buffer\ address\ for\ double\ buffered\ mode\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00273}00273\ \ \ \ \ PCD\_SET\_EP\_DBUF\_ADDR(USBx,\ ep-\/>num,\ ep-\/>pmaaddr0,\ ep-\/>pmaaddr1);}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00274}00274\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00275}00275\ \ \ \ \ \textcolor{keywordflow}{if}\ (ep-\/>is\_in\ ==\ 0U)}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00276}00276\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00277}00277\ \ \ \ \ \ \ \textcolor{comment}{/*\ Clear\ the\ data\ toggle\ bits\ for\ the\ endpoint\ IN/OUT\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00278}00278\ \ \ \ \ \ \ PCD\_CLEAR\_RX\_DTOG(USBx,\ ep-\/>num);}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00279}00279\ \ \ \ \ \ \ PCD\_CLEAR\_TX\_DTOG(USBx,\ ep-\/>num);}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00280}00280\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00281}00281\ \ \ \ \ \ \ PCD\_SET\_EP\_RX\_STATUS(USBx,\ ep-\/>num,\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_gaad864bbce320889427dd9d96c0efcabf}{USB\_EP\_RX\_VALID}});}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00282}00282\ \ \ \ \ \ \ PCD\_SET\_EP\_TX\_STATUS(USBx,\ ep-\/>num,\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga8d0f23898f2be6e6b63e855adbbbfcb2}{USB\_EP\_TX\_DIS}});}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00283}00283\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00284}00284\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00285}00285\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00286}00286\ \ \ \ \ \ \ \textcolor{comment}{/*\ Clear\ the\ data\ toggle\ bits\ for\ the\ endpoint\ IN/OUT\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00287}00287\ \ \ \ \ \ \ PCD\_CLEAR\_RX\_DTOG(USBx,\ ep-\/>num);}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00288}00288\ \ \ \ \ \ \ PCD\_CLEAR\_TX\_DTOG(USBx,\ ep-\/>num);}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00289}00289\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00290}00290\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ep-\/>type\ !=\ EP\_TYPE\_ISOC)}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00291}00291\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00292}00292\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Configure\ NAK\ status\ for\ the\ Endpoint\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00293}00293\ \ \ \ \ \ \ \ \ PCD\_SET\_EP\_TX\_STATUS(USBx,\ ep-\/>num,\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_gad2329b1b850bdfb41318ddd4bebd4950}{USB\_EP\_TX\_NAK}});}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00294}00294\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00295}00295\ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00296}00296\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00297}00297\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Configure\ TX\ Endpoint\ to\ disabled\ state\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00298}00298\ \ \ \ \ \ \ \ \ PCD\_SET\_EP\_TX\_STATUS(USBx,\ ep-\/>num,\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga8d0f23898f2be6e6b63e855adbbbfcb2}{USB\_EP\_TX\_DIS}});}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00299}00299\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00300}00300\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00301}00301\ \ \ \ \ \ \ PCD\_SET\_EP\_RX\_STATUS(USBx,\ ep-\/>num,\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_gafe3c8c80d9b7e43cdc4cf73a689e469c}{USB\_EP\_RX\_DIS}});}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00302}00302\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00303}00303\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00304}00304\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ (USE\_USB\_DOUBLE\_BUFFER\ ==\ 1U)\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00305}00305\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00306}00306\ \ \ \textcolor{keywordflow}{return}\ ret;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00307}00307\ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00308}00308\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00315}00315\ \mbox{\hyperlink{stm32f0xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ USB\_DeactivateEndpoint(\mbox{\hyperlink{struct_u_s_b___type_def}{USB\_TypeDef}}\ *USBx,\ USB\_EPTypeDef\ *ep)}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00316}00316\ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00317}00317\ \ \ \textcolor{keywordflow}{if}\ (ep-\/>doublebuffer\ ==\ 0U)}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00318}00318\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00319}00319\ \ \ \ \ \textcolor{keywordflow}{if}\ (ep-\/>is\_in\ !=\ 0U)}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00320}00320\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00321}00321\ \ \ \ \ \ \ PCD\_CLEAR\_TX\_DTOG(USBx,\ ep-\/>num);}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00322}00322\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00323}00323\ \ \ \ \ \ \ \textcolor{comment}{/*\ Configure\ DISABLE\ status\ for\ the\ Endpoint\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00324}00324\ \ \ \ \ \ \ PCD\_SET\_EP\_TX\_STATUS(USBx,\ ep-\/>num,\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga8d0f23898f2be6e6b63e855adbbbfcb2}{USB\_EP\_TX\_DIS}});}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00325}00325\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00326}00326\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00327}00327\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00328}00328\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00329}00329\ \ \ \ \ \ \ PCD\_CLEAR\_RX\_DTOG(USBx,\ ep-\/>num);}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00330}00330\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00331}00331\ \ \ \ \ \ \ \textcolor{comment}{/*\ Configure\ DISABLE\ status\ for\ the\ Endpoint\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00332}00332\ \ \ \ \ \ \ PCD\_SET\_EP\_RX\_STATUS(USBx,\ ep-\/>num,\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_gafe3c8c80d9b7e43cdc4cf73a689e469c}{USB\_EP\_RX\_DIS}});}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00333}00333\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00334}00334\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00335}00335\ \textcolor{preprocessor}{\#if\ (USE\_USB\_DOUBLE\_BUFFER\ ==\ 1U)}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00336}00336\ \ \ \textcolor{comment}{/*\ Double\ Buffer\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00337}00337\ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00338}00338\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00339}00339\ \ \ \ \ \textcolor{keywordflow}{if}\ (ep-\/>is\_in\ ==\ 0U)}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00340}00340\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00341}00341\ \ \ \ \ \ \ \textcolor{comment}{/*\ Clear\ the\ data\ toggle\ bits\ for\ the\ endpoint\ IN/OUT*/}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00342}00342\ \ \ \ \ \ \ PCD\_CLEAR\_RX\_DTOG(USBx,\ ep-\/>num);}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00343}00343\ \ \ \ \ \ \ PCD\_CLEAR\_TX\_DTOG(USBx,\ ep-\/>num);}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00344}00344\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00345}00345\ \ \ \ \ \ \ \textcolor{comment}{/*\ Reset\ value\ of\ the\ data\ toggle\ bits\ for\ the\ endpoint\ out*/}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00346}00346\ \ \ \ \ \ \ PCD\_TX\_DTOG(USBx,\ ep-\/>num);}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00347}00347\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00348}00348\ \ \ \ \ \ \ PCD\_SET\_EP\_RX\_STATUS(USBx,\ ep-\/>num,\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_gafe3c8c80d9b7e43cdc4cf73a689e469c}{USB\_EP\_RX\_DIS}});}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00349}00349\ \ \ \ \ \ \ PCD\_SET\_EP\_TX\_STATUS(USBx,\ ep-\/>num,\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga8d0f23898f2be6e6b63e855adbbbfcb2}{USB\_EP\_TX\_DIS}});}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00350}00350\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00351}00351\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00352}00352\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00353}00353\ \ \ \ \ \ \ \textcolor{comment}{/*\ Clear\ the\ data\ toggle\ bits\ for\ the\ endpoint\ IN/OUT*/}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00354}00354\ \ \ \ \ \ \ PCD\_CLEAR\_RX\_DTOG(USBx,\ ep-\/>num);}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00355}00355\ \ \ \ \ \ \ PCD\_CLEAR\_TX\_DTOG(USBx,\ ep-\/>num);}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00356}00356\ \ \ \ \ \ \ PCD\_RX\_DTOG(USBx,\ ep-\/>num);}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00357}00357\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00358}00358\ \ \ \ \ \ \ \textcolor{comment}{/*\ Configure\ DISABLE\ status\ for\ the\ Endpoint*/}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00359}00359\ \ \ \ \ \ \ PCD\_SET\_EP\_TX\_STATUS(USBx,\ ep-\/>num,\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga8d0f23898f2be6e6b63e855adbbbfcb2}{USB\_EP\_TX\_DIS}});}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00360}00360\ \ \ \ \ \ \ PCD\_SET\_EP\_RX\_STATUS(USBx,\ ep-\/>num,\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_gafe3c8c80d9b7e43cdc4cf73a689e469c}{USB\_EP\_RX\_DIS}});}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00361}00361\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00362}00362\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00363}00363\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ (USE\_USB\_DOUBLE\_BUFFER\ ==\ 1U)\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00364}00364\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00365}00365\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{stm32f0xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478fa6eb724a07061d89a4a2052744e5a3632}{HAL\_OK}};}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00366}00366\ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00367}00367\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00374}00374\ \mbox{\hyperlink{stm32f0xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ USB\_EPStartXfer(\mbox{\hyperlink{struct_u_s_b___type_def}{USB\_TypeDef}}\ *USBx,\ USB\_EPTypeDef\ *ep)}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00375}00375\ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00376}00376\ \ \ uint32\_t\ len;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00377}00377\ \textcolor{preprocessor}{\#if\ (USE\_USB\_DOUBLE\_BUFFER\ ==\ 1U)}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00378}00378\ \ \ uint16\_t\ pmabuffer;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00379}00379\ \ \ uint16\_t\ wEPVal;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00380}00380\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ (USE\_USB\_DOUBLE\_BUFFER\ ==\ 1U)\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00381}00381\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00382}00382\ \ \ \textcolor{comment}{/*\ IN\ endpoint\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00383}00383\ \ \ \textcolor{keywordflow}{if}\ (ep-\/>is\_in\ ==\ 1U)}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00384}00384\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00385}00385\ \ \ \ \ \textcolor{comment}{/*Multi\ packet\ transfer*/}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00386}00386\ \ \ \ \ \textcolor{keywordflow}{if}\ (ep-\/>xfer\_len\ >\ ep-\/>maxpacket)}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00387}00387\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00388}00388\ \ \ \ \ \ \ len\ =\ ep-\/>maxpacket;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00389}00389\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00390}00390\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00391}00391\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00392}00392\ \ \ \ \ \ \ len\ =\ ep-\/>xfer\_len;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00393}00393\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00394}00394\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00395}00395\ \ \ \ \ \textcolor{comment}{/*\ configure\ and\ validate\ Tx\ endpoint\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00396}00396\ \ \ \ \ \textcolor{keywordflow}{if}\ (ep-\/>doublebuffer\ ==\ 0U)}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00397}00397\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00398}00398\ \ \ \ \ \ \ USB\_WritePMA(USBx,\ ep-\/>xfer\_buff,\ ep-\/>pmaadress,\ (uint16\_t)len);}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00399}00399\ \ \ \ \ \ \ PCD\_SET\_EP\_TX\_CNT(USBx,\ ep-\/>num,\ len);}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00400}00400\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00401}00401\ \textcolor{preprocessor}{\#if\ (USE\_USB\_DOUBLE\_BUFFER\ ==\ 1U)}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00402}00402\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00403}00403\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00404}00404\ \ \ \ \ \ \ \textcolor{comment}{/*\ double\ buffer\ bulk\ management\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00405}00405\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ep-\/>type\ ==\ EP\_TYPE\_BULK)}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00406}00406\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00407}00407\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ep-\/>xfer\_len\_db\ >\ ep-\/>maxpacket)}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00408}00408\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00409}00409\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ enable\ double\ buffer\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00410}00410\ \ \ \ \ \ \ \ \ \ \ PCD\_SET\_BULK\_EP\_DBUF(USBx,\ ep-\/>num);}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00411}00411\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00412}00412\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ each\ Time\ to\ write\ in\ PMA\ xfer\_len\_db\ will\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00413}00413\ \ \ \ \ \ \ \ \ \ \ ep-\/>xfer\_len\_db\ -\/=\ len;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00414}00414\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00415}00415\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Fill\ the\ two\ first\ buffer\ in\ the\ Buffer0\ \&\ Buffer1\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00416}00416\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((PCD\_GET\_ENDPOINT(USBx,\ ep-\/>num)\ \&\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga08898338fa030d2b0ba781ba718b9e6f}{USB\_EP\_DTOG\_TX}})\ !=\ 0U)}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00417}00417\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00418}00418\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Set\ the\ Double\ buffer\ counter\ for\ pmabuffer1\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00419}00419\ \ \ \ \ \ \ \ \ \ \ \ \ PCD\_SET\_EP\_DBUF1\_CNT(USBx,\ ep-\/>num,\ ep-\/>is\_in,\ len);}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00420}00420\ \ \ \ \ \ \ \ \ \ \ \ \ pmabuffer\ =\ ep-\/>pmaaddr1;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00421}00421\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00422}00422\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Write\ the\ user\ buffer\ to\ USB\ PMA\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00423}00423\ \ \ \ \ \ \ \ \ \ \ \ \ USB\_WritePMA(USBx,\ ep-\/>xfer\_buff,\ pmabuffer,\ (uint16\_t)len);}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00424}00424\ \ \ \ \ \ \ \ \ \ \ \ \ ep-\/>xfer\_buff\ +=\ len;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00425}00425\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00426}00426\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ep-\/>xfer\_len\_db\ >\ ep-\/>maxpacket)}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00427}00427\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00428}00428\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ep-\/>xfer\_len\_db\ -\/=\ len;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00429}00429\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00430}00430\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00431}00431\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00432}00432\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ len\ =\ ep-\/>xfer\_len\_db;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00433}00433\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ep-\/>xfer\_len\_db\ =\ 0U;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00434}00434\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00435}00435\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00436}00436\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Set\ the\ Double\ buffer\ counter\ for\ pmabuffer0\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00437}00437\ \ \ \ \ \ \ \ \ \ \ \ \ PCD\_SET\_EP\_DBUF0\_CNT(USBx,\ ep-\/>num,\ ep-\/>is\_in,\ len);}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00438}00438\ \ \ \ \ \ \ \ \ \ \ \ \ pmabuffer\ =\ ep-\/>pmaaddr0;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00439}00439\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00440}00440\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Write\ the\ user\ buffer\ to\ USB\ PMA\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00441}00441\ \ \ \ \ \ \ \ \ \ \ \ \ USB\_WritePMA(USBx,\ ep-\/>xfer\_buff,\ pmabuffer,\ (uint16\_t)len);}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00442}00442\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00443}00443\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00444}00444\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00445}00445\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Set\ the\ Double\ buffer\ counter\ for\ pmabuffer0\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00446}00446\ \ \ \ \ \ \ \ \ \ \ \ \ PCD\_SET\_EP\_DBUF0\_CNT(USBx,\ ep-\/>num,\ ep-\/>is\_in,\ len);}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00447}00447\ \ \ \ \ \ \ \ \ \ \ \ \ pmabuffer\ =\ ep-\/>pmaaddr0;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00448}00448\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00449}00449\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Write\ the\ user\ buffer\ to\ USB\ PMA\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00450}00450\ \ \ \ \ \ \ \ \ \ \ \ \ USB\_WritePMA(USBx,\ ep-\/>xfer\_buff,\ pmabuffer,\ (uint16\_t)len);}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00451}00451\ \ \ \ \ \ \ \ \ \ \ \ \ ep-\/>xfer\_buff\ +=\ len;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00452}00452\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00453}00453\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ep-\/>xfer\_len\_db\ >\ ep-\/>maxpacket)}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00454}00454\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00455}00455\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ep-\/>xfer\_len\_db\ -\/=\ len;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00456}00456\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00457}00457\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00458}00458\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00459}00459\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ len\ =\ ep-\/>xfer\_len\_db;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00460}00460\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ep-\/>xfer\_len\_db\ =\ 0U;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00461}00461\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00462}00462\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00463}00463\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Set\ the\ Double\ buffer\ counter\ for\ pmabuffer1\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00464}00464\ \ \ \ \ \ \ \ \ \ \ \ \ PCD\_SET\_EP\_DBUF1\_CNT(USBx,\ ep-\/>num,\ ep-\/>is\_in,\ len);}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00465}00465\ \ \ \ \ \ \ \ \ \ \ \ \ pmabuffer\ =\ ep-\/>pmaaddr1;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00466}00466\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00467}00467\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Write\ the\ user\ buffer\ to\ USB\ PMA\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00468}00468\ \ \ \ \ \ \ \ \ \ \ \ \ USB\_WritePMA(USBx,\ ep-\/>xfer\_buff,\ pmabuffer,\ (uint16\_t)len);}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00469}00469\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00470}00470\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00471}00471\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ auto\ Switch\ to\ single\ buffer\ mode\ when\ transfer\ <Mps\ no\ need\ to\ manage\ in\ double\ buffer\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00472}00472\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00473}00473\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00474}00474\ \ \ \ \ \ \ \ \ \ \ len\ =\ ep-\/>xfer\_len\_db;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00475}00475\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00476}00476\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ disable\ double\ buffer\ mode\ for\ Bulk\ endpoint\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00477}00477\ \ \ \ \ \ \ \ \ \ \ PCD\_CLEAR\_BULK\_EP\_DBUF(USBx,\ ep-\/>num);}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00478}00478\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00479}00479\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Set\ Tx\ count\ with\ nbre\ of\ byte\ to\ be\ transmitted\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00480}00480\ \ \ \ \ \ \ \ \ \ \ PCD\_SET\_EP\_TX\_CNT(USBx,\ ep-\/>num,\ len);}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00481}00481\ \ \ \ \ \ \ \ \ \ \ pmabuffer\ =\ ep-\/>pmaaddr0;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00482}00482\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00483}00483\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Write\ the\ user\ buffer\ to\ USB\ PMA\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00484}00484\ \ \ \ \ \ \ \ \ \ \ USB\_WritePMA(USBx,\ ep-\/>xfer\_buff,\ pmabuffer,\ (uint16\_t)len);}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00485}00485\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00486}00486\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00487}00487\ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{comment}{/*\ manage\ isochronous\ double\ buffer\ IN\ mode\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00488}00488\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00489}00489\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ each\ Time\ to\ write\ in\ PMA\ xfer\_len\_db\ will\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00490}00490\ \ \ \ \ \ \ \ \ ep-\/>xfer\_len\_db\ -\/=\ len;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00491}00491\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00492}00492\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Fill\ the\ data\ buffer\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00493}00493\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((PCD\_GET\_ENDPOINT(USBx,\ ep-\/>num)\ \&\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga08898338fa030d2b0ba781ba718b9e6f}{USB\_EP\_DTOG\_TX}})\ !=\ 0U)}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00494}00494\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00495}00495\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Set\ the\ Double\ buffer\ counter\ for\ pmabuffer1\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00496}00496\ \ \ \ \ \ \ \ \ \ \ PCD\_SET\_EP\_DBUF1\_CNT(USBx,\ ep-\/>num,\ ep-\/>is\_in,\ len);}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00497}00497\ \ \ \ \ \ \ \ \ \ \ pmabuffer\ =\ ep-\/>pmaaddr1;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00498}00498\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00499}00499\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Write\ the\ user\ buffer\ to\ USB\ PMA\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00500}00500\ \ \ \ \ \ \ \ \ \ \ USB\_WritePMA(USBx,\ ep-\/>xfer\_buff,\ pmabuffer,\ (uint16\_t)len);}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00501}00501\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00502}00502\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00503}00503\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00504}00504\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Set\ the\ Double\ buffer\ counter\ for\ pmabuffer0\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00505}00505\ \ \ \ \ \ \ \ \ \ \ PCD\_SET\_EP\_DBUF0\_CNT(USBx,\ ep-\/>num,\ ep-\/>is\_in,\ len);}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00506}00506\ \ \ \ \ \ \ \ \ \ \ pmabuffer\ =\ ep-\/>pmaaddr0;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00507}00507\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00508}00508\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Write\ the\ user\ buffer\ to\ USB\ PMA\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00509}00509\ \ \ \ \ \ \ \ \ \ \ USB\_WritePMA(USBx,\ ep-\/>xfer\_buff,\ pmabuffer,\ (uint16\_t)len);}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00510}00510\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00511}00511\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00512}00512\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00513}00513\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ (USE\_USB\_DOUBLE\_BUFFER\ ==\ 1U)\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00514}00514\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00515}00515\ \ \ \ \ PCD\_SET\_EP\_TX\_STATUS(USBx,\ ep-\/>num,\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga11a9ddeb7f81251b6f2d0925276c6a70}{USB\_EP\_TX\_VALID}});}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00516}00516\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00517}00517\ \ \ \textcolor{keywordflow}{else}\ \textcolor{comment}{/*\ OUT\ endpoint\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00518}00518\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00519}00519\ \ \ \ \ \textcolor{keywordflow}{if}\ (ep-\/>doublebuffer\ ==\ 0U)}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00520}00520\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00521}00521\ \ \ \ \ \ \ \textcolor{comment}{/*\ Multi\ packet\ transfer\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00522}00522\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ep-\/>xfer\_len\ >\ ep-\/>maxpacket)}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00523}00523\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00524}00524\ \ \ \ \ \ \ \ \ len\ =\ ep-\/>maxpacket;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00525}00525\ \ \ \ \ \ \ \ \ ep-\/>xfer\_len\ -\/=\ len;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00526}00526\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00527}00527\ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00528}00528\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00529}00529\ \ \ \ \ \ \ \ \ len\ =\ ep-\/>xfer\_len;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00530}00530\ \ \ \ \ \ \ \ \ ep-\/>xfer\_len\ =\ 0U;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00531}00531\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00532}00532\ \ \ \ \ \ \ \textcolor{comment}{/*\ configure\ and\ validate\ Rx\ endpoint\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00533}00533\ \ \ \ \ \ \ PCD\_SET\_EP\_RX\_CNT(USBx,\ ep-\/>num,\ len);}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00534}00534\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00535}00535\ \textcolor{preprocessor}{\#if\ (USE\_USB\_DOUBLE\_BUFFER\ ==\ 1U)}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00536}00536\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00537}00537\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00538}00538\ \ \ \ \ \ \ \textcolor{comment}{/*\ First\ Transfer\ Coming\ From\ HAL\_PCD\_EP\_Receive\ \&\ From\ ISR\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00539}00539\ \ \ \ \ \ \ \textcolor{comment}{/*\ Set\ the\ Double\ buffer\ counter\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00540}00540\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ep-\/>type\ ==\ EP\_TYPE\_BULK)}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00541}00541\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00542}00542\ \ \ \ \ \ \ \ \ PCD\_SET\_EP\_DBUF\_CNT(USBx,\ ep-\/>num,\ ep-\/>is\_in,\ ep-\/>maxpacket);}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00543}00543\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00544}00544\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Coming\ from\ ISR\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00545}00545\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ep-\/>xfer\_count\ !=\ 0U)}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00546}00546\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00547}00547\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ update\ last\ value\ to\ check\ if\ there\ is\ blocking\ state\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00548}00548\ \ \ \ \ \ \ \ \ \ \ wEPVal\ =\ PCD\_GET\_ENDPOINT(USBx,\ ep-\/>num);}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00549}00549\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00550}00550\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*Blocking\ State\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00551}00551\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((((wEPVal\ \&\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga9d536830ca5bf3f9c1cdf462cce190a8}{USB\_EP\_DTOG\_RX}})\ !=\ 0U)\ \&\&\ ((wEPVal\ \&\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga08898338fa030d2b0ba781ba718b9e6f}{USB\_EP\_DTOG\_TX}})\ !=\ 0U))\ ||}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00552}00552\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((wEPVal\ \&\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga9d536830ca5bf3f9c1cdf462cce190a8}{USB\_EP\_DTOG\_RX}})\ ==\ 0U)\ \&\&\ ((wEPVal\ \&\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga08898338fa030d2b0ba781ba718b9e6f}{USB\_EP\_DTOG\_TX}})\ ==\ 0U)))}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00553}00553\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00554}00554\ \ \ \ \ \ \ \ \ \ \ \ \ PCD\_FREE\_USER\_BUFFER(USBx,\ ep-\/>num,\ 0U);}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00555}00555\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00556}00556\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00557}00557\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00558}00558\ \ \ \ \ \ \ \textcolor{comment}{/*\ iso\ out\ double\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00559}00559\ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (ep-\/>type\ ==\ EP\_TYPE\_ISOC)}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00560}00560\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00561}00561\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Multi\ packet\ transfer\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00562}00562\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ep-\/>xfer\_len\ >\ ep-\/>maxpacket)}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00563}00563\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00564}00564\ \ \ \ \ \ \ \ \ \ \ len\ =\ ep-\/>maxpacket;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00565}00565\ \ \ \ \ \ \ \ \ \ \ ep-\/>xfer\_len\ -\/=\ len;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00566}00566\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00567}00567\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00568}00568\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00569}00569\ \ \ \ \ \ \ \ \ \ \ len\ =\ ep-\/>xfer\_len;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00570}00570\ \ \ \ \ \ \ \ \ \ \ ep-\/>xfer\_len\ =\ 0U;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00571}00571\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00572}00572\ \ \ \ \ \ \ \ \ PCD\_SET\_EP\_DBUF\_CNT(USBx,\ ep-\/>num,\ ep-\/>is\_in,\ len);}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00573}00573\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00574}00574\ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00575}00575\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00576}00576\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{stm32f0xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478fa5a04e395e501e4e400172c610478c4a4}{HAL\_ERROR}};}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00577}00577\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00578}00578\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00579}00579\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ (USE\_USB\_DOUBLE\_BUFFER\ ==\ 1U)\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00580}00580\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00581}00581\ \ \ \ \ PCD\_SET\_EP\_RX\_STATUS(USBx,\ ep-\/>num,\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_gaad864bbce320889427dd9d96c0efcabf}{USB\_EP\_RX\_VALID}});}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00582}00582\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00583}00583\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00584}00584\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{stm32f0xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478fa6eb724a07061d89a4a2052744e5a3632}{HAL\_OK}};}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00585}00585\ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00586}00586\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00587}00587\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00594}00594\ \mbox{\hyperlink{stm32f0xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ USB\_EPSetStall(\mbox{\hyperlink{struct_u_s_b___type_def}{USB\_TypeDef}}\ *USBx,\ USB\_EPTypeDef\ *ep)}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00595}00595\ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00596}00596\ \ \ \textcolor{keywordflow}{if}\ (ep-\/>is\_in\ !=\ 0U)}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00597}00597\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00598}00598\ \ \ \ \ PCD\_SET\_EP\_TX\_STATUS(USBx,\ ep-\/>num,\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_gab289fb344cf4105d80d942e2816206bc}{USB\_EP\_TX\_STALL}});}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00599}00599\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00600}00600\ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00601}00601\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00602}00602\ \ \ \ \ PCD\_SET\_EP\_RX\_STATUS(USBx,\ ep-\/>num,\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga4cc6c48637bea26ef78fc17d30be5ba6}{USB\_EP\_RX\_STALL}});}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00603}00603\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00604}00604\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00605}00605\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{stm32f0xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478fa6eb724a07061d89a4a2052744e5a3632}{HAL\_OK}};}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00606}00606\ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00607}00607\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00614}00614\ \mbox{\hyperlink{stm32f0xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ USB\_EPClearStall(\mbox{\hyperlink{struct_u_s_b___type_def}{USB\_TypeDef}}\ *USBx,\ USB\_EPTypeDef\ *ep)}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00615}00615\ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00616}00616\ \ \ \textcolor{keywordflow}{if}\ (ep-\/>doublebuffer\ ==\ 0U)}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00617}00617\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00618}00618\ \ \ \ \ \textcolor{keywordflow}{if}\ (ep-\/>is\_in\ !=\ 0U)}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00619}00619\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00620}00620\ \ \ \ \ \ \ PCD\_CLEAR\_TX\_DTOG(USBx,\ ep-\/>num);}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00621}00621\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00622}00622\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ep-\/>type\ !=\ EP\_TYPE\_ISOC)}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00623}00623\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00624}00624\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Configure\ NAK\ status\ for\ the\ Endpoint\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00625}00625\ \ \ \ \ \ \ \ \ PCD\_SET\_EP\_TX\_STATUS(USBx,\ ep-\/>num,\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_gad2329b1b850bdfb41318ddd4bebd4950}{USB\_EP\_TX\_NAK}});}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00626}00626\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00627}00627\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00628}00628\ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00629}00629\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00630}00630\ \ \ \ \ \ \ PCD\_CLEAR\_RX\_DTOG(USBx,\ ep-\/>num);}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00631}00631\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00632}00632\ \ \ \ \ \ \ \textcolor{comment}{/*\ Configure\ VALID\ status\ for\ the\ Endpoint\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00633}00633\ \ \ \ \ \ \ PCD\_SET\_EP\_RX\_STATUS(USBx,\ ep-\/>num,\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_gaad864bbce320889427dd9d96c0efcabf}{USB\_EP\_RX\_VALID}});}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00634}00634\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00635}00635\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00636}00636\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00637}00637\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{stm32f0xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478fa6eb724a07061d89a4a2052744e5a3632}{HAL\_OK}};}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00638}00638\ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00639}00639\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00646}00646\ \mbox{\hyperlink{stm32f0xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ USB\_EPStopXfer(\mbox{\hyperlink{struct_u_s_b___type_def}{USB\_TypeDef}}\ *USBx,\ USB\_EPTypeDef\ *ep)}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00647}00647\ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00648}00648\ \ \ \textcolor{comment}{/*\ IN\ endpoint\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00649}00649\ \ \ \textcolor{keywordflow}{if}\ (ep-\/>is\_in\ ==\ 1U)}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00650}00650\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00651}00651\ \ \ \ \ \textcolor{keywordflow}{if}\ (ep-\/>doublebuffer\ ==\ 0U)}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00652}00652\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00653}00653\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ep-\/>type\ !=\ EP\_TYPE\_ISOC)}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00654}00654\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00655}00655\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Configure\ NAK\ status\ for\ the\ Endpoint\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00656}00656\ \ \ \ \ \ \ \ \ PCD\_SET\_EP\_TX\_STATUS(USBx,\ ep-\/>num,\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_gad2329b1b850bdfb41318ddd4bebd4950}{USB\_EP\_TX\_NAK}});}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00657}00657\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00658}00658\ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00659}00659\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00660}00660\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Configure\ TX\ Endpoint\ to\ disabled\ state\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00661}00661\ \ \ \ \ \ \ \ \ PCD\_SET\_EP\_TX\_STATUS(USBx,\ ep-\/>num,\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga8d0f23898f2be6e6b63e855adbbbfcb2}{USB\_EP\_TX\_DIS}});}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00662}00662\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00663}00663\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00664}00664\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00665}00665\ \ \ \textcolor{keywordflow}{else}\ \textcolor{comment}{/*\ OUT\ endpoint\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00666}00666\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00667}00667\ \ \ \ \ \textcolor{keywordflow}{if}\ (ep-\/>doublebuffer\ ==\ 0U)}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00668}00668\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00669}00669\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (ep-\/>type\ !=\ EP\_TYPE\_ISOC)}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00670}00670\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00671}00671\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Configure\ NAK\ status\ for\ the\ Endpoint\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00672}00672\ \ \ \ \ \ \ \ \ PCD\_SET\_EP\_RX\_STATUS(USBx,\ ep-\/>num,\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_gab2c3fbf5e0967184721faa13308967d9}{USB\_EP\_RX\_NAK}});}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00673}00673\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00674}00674\ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00675}00675\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00676}00676\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Configure\ RX\ Endpoint\ to\ disabled\ state\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00677}00677\ \ \ \ \ \ \ \ \ PCD\_SET\_EP\_RX\_STATUS(USBx,\ ep-\/>num,\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_gafe3c8c80d9b7e43cdc4cf73a689e469c}{USB\_EP\_RX\_DIS}});}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00678}00678\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00679}00679\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00680}00680\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00681}00681\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00682}00682\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{stm32f0xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478fa6eb724a07061d89a4a2052744e5a3632}{HAL\_OK}};}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00683}00683\ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00684}00684\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ defined\ (HAL\_PCD\_MODULE\_ENABLED)\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00685}00685\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00691}00691\ \mbox{\hyperlink{stm32f0xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ USB\_StopDevice(\mbox{\hyperlink{struct_u_s_b___type_def}{USB\_TypeDef}}\ *USBx)}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00692}00692\ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00693}00693\ \ \ \textcolor{comment}{/*\ disable\ all\ interrupts\ and\ force\ USB\ reset\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00694}00694\ \ \ USBx-\/>\mbox{\hyperlink{struct_u_s_b___type_def_a532529aa4c809b7e6881ce081f55c37b}{CNTR}}\ =\ (uint16\_t)\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga36c68275445560edf0ccb7aa76bc769f}{USB\_CNTR\_FRES}};}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00695}00695\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00696}00696\ \ \ \textcolor{comment}{/*\ clear\ interrupt\ status\ register\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00697}00697\ \ \ USBx-\/>\mbox{\hyperlink{struct_u_s_b___type_def_a54fc7329a9549448d56b50bcca73bab4}{ISTR}}\ =\ 0U;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00698}00698\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00699}00699\ \ \ \textcolor{comment}{/*\ switch-\/off\ device\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00700}00700\ \ \ USBx-\/>\mbox{\hyperlink{struct_u_s_b___type_def_a532529aa4c809b7e6881ce081f55c37b}{CNTR}}\ =\ (uint16\_t)(\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga36c68275445560edf0ccb7aa76bc769f}{USB\_CNTR\_FRES}}\ |\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga2829af32a785e947b469b2bb0702ac8d}{USB\_CNTR\_PDWN}});}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00701}00701\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00702}00702\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{stm32f0xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478fa6eb724a07061d89a4a2052744e5a3632}{HAL\_OK}};}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00703}00703\ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00704}00704\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00712}00712\ \mbox{\hyperlink{stm32f0xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \ USB\_SetDevAddress(\mbox{\hyperlink{struct_u_s_b___type_def}{USB\_TypeDef}}\ *USBx,\ uint8\_t\ address)}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00713}00713\ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00714}00714\ \ \ \textcolor{keywordflow}{if}\ (address\ ==\ 0U)}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00715}00715\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00716}00716\ \ \ \ \ \textcolor{comment}{/*\ set\ device\ address\ and\ enable\ function\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00717}00717\ \ \ \ \ USBx-\/>\mbox{\hyperlink{struct_u_s_b___type_def_ae95ebb359f2974e0f25b27e488978922}{DADDR}}\ =\ (uint16\_t)\mbox{\hyperlink{group___peripheral___registers___bits___definition_gadf6ef86b3dba82f6bd83c6ae7d02645a}{USB\_DADDR\_EF}};}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00718}00718\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00719}00719\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00720}00720\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{stm32f0xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478fa6eb724a07061d89a4a2052744e5a3632}{HAL\_OK}};}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00721}00721\ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00722}00722\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00728}00728\ \mbox{\hyperlink{stm32f0xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \ USB\_DevConnect(\mbox{\hyperlink{struct_u_s_b___type_def}{USB\_TypeDef}}\ *USBx)}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00729}00729\ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00730}00730\ \ \ \textcolor{comment}{/*\ Enabling\ DP\ Pull-\/UP\ bit\ to\ Connect\ internal\ PU\ resistor\ on\ USB\ DP\ line\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00731}00731\ \ \ USBx-\/>\mbox{\hyperlink{struct_u_s_b___type_def_afa745ad72775fcf145e7637311dc2852}{BCDR}}\ |=\ (uint16\_t)\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga9ae5b8e24e1bcdcd1b4a5101c556d170}{USB\_BCDR\_DPPU}};}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00732}00732\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00733}00733\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{stm32f0xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478fa6eb724a07061d89a4a2052744e5a3632}{HAL\_OK}};}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00734}00734\ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00735}00735\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00741}00741\ \mbox{\hyperlink{stm32f0xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \ USB\_DevDisconnect(\mbox{\hyperlink{struct_u_s_b___type_def}{USB\_TypeDef}}\ *USBx)}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00742}00742\ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00743}00743\ \ \ \textcolor{comment}{/*\ Disable\ DP\ Pull-\/Up\ bit\ to\ disconnect\ the\ Internal\ PU\ resistor\ on\ USB\ DP\ line\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00744}00744\ \ \ USBx-\/>\mbox{\hyperlink{struct_u_s_b___type_def_afa745ad72775fcf145e7637311dc2852}{BCDR}}\ \&=\ (uint16\_t)(\string~(\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga9ae5b8e24e1bcdcd1b4a5101c556d170}{USB\_BCDR\_DPPU}}));}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00745}00745\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00746}00746\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{stm32f0xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478fa6eb724a07061d89a4a2052744e5a3632}{HAL\_OK}};}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00747}00747\ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00748}00748\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00754}00754\ uint32\_t\ USB\_ReadInterrupts(\mbox{\hyperlink{struct_u_s_b___type_def}{USB\_TypeDef}}\ *USBx)}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00755}00755\ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00756}00756\ \ \ uint32\_t\ tmpreg;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00757}00757\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00758}00758\ \ \ tmpreg\ =\ USBx-\/>\mbox{\hyperlink{struct_u_s_b___type_def_a54fc7329a9549448d56b50bcca73bab4}{ISTR}};}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00759}00759\ \ \ \textcolor{keywordflow}{return}\ tmpreg;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00760}00760\ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00761}00761\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00767}00767\ \mbox{\hyperlink{stm32f0xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ USB\_ActivateRemoteWakeup(\mbox{\hyperlink{struct_u_s_b___type_def}{USB\_TypeDef}}\ *USBx)}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00768}00768\ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00769}00769\ \ \ USBx-\/>\mbox{\hyperlink{struct_u_s_b___type_def_a532529aa4c809b7e6881ce081f55c37b}{CNTR}}\ |=\ (uint16\_t)\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga4dfc6611f4a04fd70dbe993d81d421e3}{USB\_CNTR\_RESUME}};}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00770}00770\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00771}00771\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{stm32f0xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478fa6eb724a07061d89a4a2052744e5a3632}{HAL\_OK}};}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00772}00772\ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00773}00773\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00779}00779\ \mbox{\hyperlink{stm32f0xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ USB\_DeActivateRemoteWakeup(\mbox{\hyperlink{struct_u_s_b___type_def}{USB\_TypeDef}}\ *USBx)}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00780}00780\ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00781}00781\ \ \ USBx-\/>\mbox{\hyperlink{struct_u_s_b___type_def_a532529aa4c809b7e6881ce081f55c37b}{CNTR}}\ \&=\ (uint16\_t)(\string~\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga4dfc6611f4a04fd70dbe993d81d421e3}{USB\_CNTR\_RESUME}});}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00782}00782\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00783}00783\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{stm32f0xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478fa6eb724a07061d89a4a2052744e5a3632}{HAL\_OK}};}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00784}00784\ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00785}00785\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00794}00794\ \textcolor{keywordtype}{void}\ USB\_WritePMA(\mbox{\hyperlink{struct_u_s_b___type_def}{USB\_TypeDef}}\ *USBx,\ uint8\_t\ *pbUsrBuf,\ uint16\_t\ wPMABufAddr,\ uint16\_t\ wNBytes)}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00795}00795\ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00796}00796\ \ \ uint32\_t\ n\ =\ ((uint32\_t)wNBytes\ +\ 1U)\ >>\ 1;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00797}00797\ \ \ uint32\_t\ BaseAddr\ =\ (uint32\_t)USBx;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00798}00798\ \ \ uint32\_t\ count;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00799}00799\ \ \ uint16\_t\ WrVal;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00800}00800\ \ \ \mbox{\hyperlink{core__armv8mbl_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ uint16\_t\ *pdwVal;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00801}00801\ \ \ uint8\_t\ *pBuf\ =\ pbUsrBuf;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00802}00802\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00803}00803\ \ \ pdwVal\ =\ (\mbox{\hyperlink{core__armv8mbl_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ uint16\_t\ *)(BaseAddr\ +\ 0x400U\ +\ ((uint32\_t)wPMABufAddr\ *\ PMA\_ACCESS));}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00804}00804\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00805}00805\ \ \ \textcolor{keywordflow}{for}\ (count\ =\ n;\ count\ !=\ 0U;\ count-\/-\/)}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00806}00806\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00807}00807\ \ \ \ \ WrVal\ =\ pBuf[0];}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00808}00808\ \ \ \ \ WrVal\ |=\ (uint16\_t)pBuf[1]\ <<\ 8;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00809}00809\ \ \ \ \ *pdwVal\ =\ (WrVal\ \&\ 0xFFFFU);}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00810}00810\ \ \ \ \ pdwVal++;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00811}00811\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00812}00812\ \textcolor{preprocessor}{\#if\ PMA\_ACCESS\ >\ 1U}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00813}00813\ \ \ \ \ pdwVal++;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00814}00814\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ PMA\_ACCESS\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00815}00815\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00816}00816\ \ \ \ \ pBuf++;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00817}00817\ \ \ \ \ pBuf++;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00818}00818\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00819}00819\ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00820}00820\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00829}00829\ \textcolor{keywordtype}{void}\ USB\_ReadPMA(\mbox{\hyperlink{struct_u_s_b___type_def}{USB\_TypeDef}}\ *USBx,\ uint8\_t\ *pbUsrBuf,\ uint16\_t\ wPMABufAddr,\ uint16\_t\ wNBytes)}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00830}00830\ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00831}00831\ \ \ uint32\_t\ n\ =\ (uint32\_t)wNBytes\ >>\ 1;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00832}00832\ \ \ uint32\_t\ BaseAddr\ =\ (uint32\_t)USBx;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00833}00833\ \ \ uint32\_t\ count;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00834}00834\ \ \ uint32\_t\ RdVal;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00835}00835\ \ \ \mbox{\hyperlink{core__armv8mbl_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ uint16\_t\ *pdwVal;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00836}00836\ \ \ uint8\_t\ *pBuf\ =\ pbUsrBuf;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00837}00837\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00838}00838\ \ \ pdwVal\ =\ (\mbox{\hyperlink{core__armv8mbl_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ uint16\_t\ *)(BaseAddr\ +\ 0x400U\ +\ ((uint32\_t)wPMABufAddr\ *\ PMA\_ACCESS));}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00839}00839\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00840}00840\ \ \ \textcolor{keywordflow}{for}\ (count\ =\ n;\ count\ !=\ 0U;\ count-\/-\/)}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00841}00841\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00842}00842\ \ \ \ \ RdVal\ =\ *(\mbox{\hyperlink{core__armv8mbl_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ uint16\_t\ *)pdwVal;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00843}00843\ \ \ \ \ pdwVal++;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00844}00844\ \ \ \ \ *pBuf\ =\ (uint8\_t)((RdVal\ >>\ 0)\ \&\ 0xFFU);}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00845}00845\ \ \ \ \ pBuf++;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00846}00846\ \ \ \ \ *pBuf\ =\ (uint8\_t)((RdVal\ >>\ 8)\ \&\ 0xFFU);}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00847}00847\ \ \ \ \ pBuf++;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00848}00848\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00849}00849\ \textcolor{preprocessor}{\#if\ PMA\_ACCESS\ >\ 1U}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00850}00850\ \ \ \ \ pdwVal++;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00851}00851\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ PMA\_ACCESS\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00852}00852\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00853}00853\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00854}00854\ \ \ \textcolor{keywordflow}{if}\ ((wNBytes\ \%\ 2U)\ !=\ 0U)}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00855}00855\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00856}00856\ \ \ \ \ RdVal\ =\ *pdwVal;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00857}00857\ \ \ \ \ *pBuf\ =\ (uint8\_t)((RdVal\ >>\ 0)\ \&\ 0xFFU);}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00858}00858\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00859}00859\ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00860}00860\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00861}00861\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00869}00869\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ defined\ (USB)\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00870}00870\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ defined\ (HAL\_PCD\_MODULE\_ENABLED)\ ||\ defined\ (HAL\_HCD\_MODULE\_ENABLED)\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__usb_8c_source_l00871}00871\ }
+
+\end{DoxyCode}

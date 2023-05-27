@@ -1,0 +1,817 @@
+\hypertarget{group___a_d_c___private___macros}{}\doxysection{ADC Private Macros}
+\label{group___a_d_c___private___macros}\index{ADC Private Macros@{ADC Private Macros}}
+\doxysubsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group___a_d_c__range__verification}{ADC range verification}}
+\item 
+\mbox{\hyperlink{group___a_d_c__regular__rank__verification}{ADC regular rank verification}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___a_d_c___private___macros_ga659ecd034552504fc163da87bad15ddc}{ADC\+\_\+\+ENABLING\+\_\+\+CONDITIONS}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Verification of hardware constraints before ADC can be enabled. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___a_d_c___private___macros_ga52dac43dfd7bb8d95df16b30d7567c3f}{ADC\+\_\+\+DISABLING\+\_\+\+CONDITIONS}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Verification of hardware constraints before ADC can be disabled. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___a_d_c___private___macros_gafe3a7a04ff078c62ae98b19403f696c7}{ADC\+\_\+\+IS\+\_\+\+ENABLE}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Verification of ADC state\+: enabled or disabled. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___a_d_c___private___macros_ga2ccb82ecf85d6c6d1ff2cdf9b6a82d2b}{ADC\+\_\+\+IS\+\_\+\+SOFTWARE\+\_\+\+START\+\_\+\+REGULAR}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~  (((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CFGR1 \& \mbox{\hyperlink{group___peripheral___registers___bits___definition_gafc48e957d935d791a767c763b9225832}{ADC\+\_\+\+CFGR1\+\_\+\+EXTEN}}) == \mbox{\hyperlink{group___exported__types_gga89136caac2e14c55151f527ac02daaffa589b7d94a3d91d145720e2fed0eb3a05}{RESET}})
+\begin{DoxyCompactList}\small\item\em Test if conversion trigger of regular group is software start or external trigger. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___a_d_c___private___macros_ga5df8ea820271c854b85617162b08c6d3}{ADC\+\_\+\+IS\+\_\+\+CONVERSION\+\_\+\+ONGOING\+\_\+\+REGULAR}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Check if no conversion on going on regular group. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___a_d_c___private___macros_gae2da95074db4dd0418c1dd1f13ad7970}{ADC\+\_\+\+GET\+\_\+\+RESOLUTION}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~  (((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CFGR1) \& \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga9d5676c559f66561a86e6236ba803f98}{ADC\+\_\+\+CFGR1\+\_\+\+RES}})
+\begin{DoxyCompactList}\small\item\em Returns resolution bits in CFGR1 register\+: RES\mbox{[}1\+:0\mbox{]}. Returned value is among parameters to \mbox{\hyperlink{group___a_d_c___resolution}{ADC Resolution}}. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___a_d_c___private___macros_ga2fcb55eda590a2037a99af8d594460b7}{ADC\+\_\+\+GET\+\_\+\+SAMPLINGTIME}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~  (((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$SMPR) \& \mbox{\hyperlink{group___peripheral___registers___bits___definition_gaceac2124a2a41388f9f5e5c2c310a27e}{ADC\+\_\+\+SMPR\+\_\+\+SMP}})
+\begin{DoxyCompactList}\small\item\em Returns ADC sample time bits in SMPR register\+: SMP\mbox{[}2\+:0\mbox{]}. Returned value is among parameters to \mbox{\hyperlink{group___a_d_c___resolution}{ADC Resolution}}. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___a_d_c___private___macros_gaaf93e91b164d4a220aae475eff82665f}{ADC\+\_\+\+STATE\+\_\+\+CLR\+\_\+\+SET}}~\mbox{\hyperlink{group___exported__macros_ga6553c99f510c3bab8cc0a91602053247}{MODIFY\+\_\+\+REG}}
+\begin{DoxyCompactList}\small\item\em Simultaneously clears and sets specific bits of the handle State. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___a_d_c___private___macros_gac7ab87a3ab932eed1b3ac5faad4e3aa9}{ADC\+\_\+\+CLEAR\+\_\+\+ERRORCODE}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~  ((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Error\+Code = \mbox{\hyperlink{group___a_d_c___error___code_ga93b4576d46ee0f8c53b7d69f39778e38}{HAL\+\_\+\+ADC\+\_\+\+ERROR\+\_\+\+NONE}})
+\begin{DoxyCompactList}\small\item\em Clear ADC error code (set it to error code\+: \char`\"{}no error\char`\"{}) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___a_d_c___private___macros_ga5d9a732e25a3c6fda616bd7095d0bcb6}{ADC\+\_\+\+CHSELR\+\_\+\+CHANNEL}}(\+\_\+\+CHANNEL\+\_\+)~  ( 1U $<$$<$ (\+\_\+\+CHANNEL\+\_\+))
+\begin{DoxyCompactList}\small\item\em Configure the channel number into channel selection register. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___a_d_c___private___macros_ga84692d85aac11c581274b17e74cabc08}{ADC\+\_\+\+SMPR\+\_\+\+SET}}(\+\_\+\+SAMPLETIME\+\_\+)~  ((\+\_\+\+SAMPLETIME\+\_\+) \& (\mbox{\hyperlink{group___peripheral___registers___bits___definition_gaceac2124a2a41388f9f5e5c2c310a27e}{ADC\+\_\+\+SMPR\+\_\+\+SMP}}))
+\begin{DoxyCompactList}\small\item\em Set the ADC\textquotesingle{}s sample time. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___a_d_c___private___macros_gaf14fd1def24bda245430287f2c7dbab7}{ADC\+\_\+\+CFGR\+\_\+\+AWDCH}}(\+\_\+\+CHANNEL\+\_\+)~  ((\+\_\+\+CHANNEL\+\_\+) $<$$<$ 26U)
+\begin{DoxyCompactList}\small\item\em Set the Analog Watchdog 1 channel. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___a_d_c___private___macros_gaa0ec9cb0b5d97ba2d8bfd4fdf1f2a398}{ADC\+\_\+\+CFGR1\+\_\+\+REG\+\_\+\+DISCCONTINUOUS}}(\+\_\+\+REG\+\_\+\+DISCONTINUOUS\+\_\+\+MODE\+\_\+)~  ((\+\_\+\+REG\+\_\+\+DISCONTINUOUS\+\_\+\+MODE\+\_\+) $<$$<$ 16U)
+\begin{DoxyCompactList}\small\item\em Enable ADC discontinuous conversion mode for regular group. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___a_d_c___private___macros_ga36993a7b32f5ec4f4163856f7ba8e8f0}{ADC\+\_\+\+CFGR1\+\_\+\+AUTOOFF}}(\+\_\+\+AUTOOFF\+\_\+)~  ((\+\_\+\+AUTOOFF\+\_\+) $<$$<$ 15U)
+\begin{DoxyCompactList}\small\item\em Enable the ADC auto off mode. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___a_d_c___private___macros_ga36fe17d7bad2f7445f201d318779051d}{ADC\+\_\+\+CFGR1\+\_\+\+AUTOWAIT}}(\+\_\+\+AUTOWAIT\+\_\+)~  ((\+\_\+\+AUTOWAIT\+\_\+) $<$$<$ 14U)
+\begin{DoxyCompactList}\small\item\em Enable the ADC auto delay mode. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___a_d_c___private___macros_gaa6d2333361167e3a510b2dd50f824a80}{ADC\+\_\+\+CFGR1\+\_\+\+CONTINUOUS}}(\+\_\+\+CONTINUOUS\+\_\+\+MODE\+\_\+)~  ((\+\_\+\+CONTINUOUS\+\_\+\+MODE\+\_\+) $<$$<$ 13U)
+\begin{DoxyCompactList}\small\item\em Enable ADC continuous conversion mode. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___a_d_c___private___macros_ga0e446f9c5ff062c2f138636c1ea639a1}{ADC\+\_\+\+CFGR1\+\_\+\+OVERRUN}}(\+\_\+\+OVERRUN\+\_\+\+MODE\+\_\+)
+\begin{DoxyCompactList}\small\item\em Enable ADC overrun mode. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___a_d_c___private___macros_gaf160864141810a124f506714b47446ca}{ADC\+\_\+\+SCANDIR}}(\+\_\+\+SCAN\+\_\+\+MODE\+\_\+)
+\begin{DoxyCompactList}\small\item\em Enable ADC scan mode to convert multiple ranks with sequencer. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___a_d_c___private___macros_ga06cee7979b56d2ad07f024f394522097}{ADC\+\_\+\+CFGR1\+\_\+\+DMACONTREQ}}(\+\_\+\+DMACONTREQ\+\_\+\+MODE\+\_\+)~  ((\+\_\+\+DMACONTREQ\+\_\+\+MODE\+\_\+) $<$$<$ 1U)
+\begin{DoxyCompactList}\small\item\em Enable the ADC DMA continuous request. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___a_d_c___private___macros_gaa93c21f107b7c38b524cd72b12ec18ac}{ADC\+\_\+\+TRX\+\_\+\+HIGHTHRESHOLD}}(\+\_\+\+Threshold\+\_\+)~  ((\+\_\+\+Threshold\+\_\+) $<$$<$ 16U)
+\begin{DoxyCompactList}\small\item\em Configure the analog watchdog high threshold into register TR. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___a_d_c___private___macros_ga6964dd348041232d34696fd535ad4450}{ADC\+\_\+\+AWD1\+THRESHOLD\+\_\+\+SHIFT\+\_\+\+RESOLUTION}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  \+\_\+\+Threshold\+\_\+)~  ((\+\_\+\+Threshold\+\_\+) $<$$<$ ((((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CFGR1 \& \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga9d5676c559f66561a86e6236ba803f98}{ADC\+\_\+\+CFGR1\+\_\+\+RES}}) $>$$>$ 3U)$\ast$2))
+\begin{DoxyCompactList}\small\item\em Shift the AWD threshold in function of the selected ADC resolution. Thresholds have to be left-\/aligned on bit 11, the LSB (right bits) are set to 0. If resolution 12 bits, no shift. If resolution 10 bits, shift of 2 ranks on the left. If resolution 8 bits, shift of 4 ranks on the left. If resolution 6 bits, shift of 6 ranks on the left. therefore, shift = (12 -\/ resolution) = 12 -\/ (12-\/ (((RES\mbox{[}1\+:0\mbox{]}) \texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>} 3)$\ast$2)) \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___a_d_c___private___macros_ga519de99233de22e355a7702a7dab2f06}{IS\+\_\+\+ADC\+\_\+\+CLOCKPRESCALER}}(ADC\+\_\+\+CLOCK)
+\item 
+\#define \mbox{\hyperlink{group___a_d_c___private___macros_ga346d83dd4af81b36a6dbd78c7bf2ff0a}{IS\+\_\+\+ADC\+\_\+\+RESOLUTION}}(RESOLUTION)
+\item 
+\#define \mbox{\hyperlink{group___a_d_c___private___macros_ga2903b620e3c61dc47ed8c0fbf4197801}{IS\+\_\+\+ADC\+\_\+\+DATA\+\_\+\+ALIGN}}(ALIGN)
+\item 
+\#define \mbox{\hyperlink{group___a_d_c___private___macros_gad86e7d7e94679a54f66e79b002f936f0}{IS\+\_\+\+ADC\+\_\+\+SCAN\+\_\+\+MODE}}(SCAN\+\_\+\+MODE)
+\item 
+\#define \mbox{\hyperlink{group___a_d_c___private___macros_gaa862868aea997c7a9e1c808faee75e6c}{IS\+\_\+\+ADC\+\_\+\+EXTTRIG\+\_\+\+EDGE}}(EDGE)
+\item 
+\#define \mbox{\hyperlink{group___a_d_c___private___macros_ga9e0a777b64cb66657c862021cd05ae64}{IS\+\_\+\+ADC\+\_\+\+EOC\+\_\+\+SELECTION}}(EOC\+\_\+\+SELECTION)
+\item 
+\#define \mbox{\hyperlink{group___a_d_c___private___macros_ga99e2ba194894e94fd851e3852dbbc4eb}{IS\+\_\+\+ADC\+\_\+\+OVERRUN}}(OVR)
+\item 
+\#define \mbox{\hyperlink{group___a_d_c___private___macros_gaa961c34cbbbfe877ec9ab52a12dcf79b}{IS\+\_\+\+ADC\+\_\+\+RANK}}(WATCHDOG)
+\item 
+\#define \mbox{\hyperlink{group___a_d_c___private___macros_ga30e0307fa009e1c383d3047b48e94644}{IS\+\_\+\+ADC\+\_\+\+SAMPLE\+\_\+\+TIME}}(TIME)
+\item 
+\#define \mbox{\hyperlink{group___a_d_c___private___macros_ga331ffc36ba5922efeff033f075e8174d}{IS\+\_\+\+ADC\+\_\+\+ANALOG\+\_\+\+WATCHDOG\+\_\+\+MODE}}(WATCHDOG)
+\item 
+\#define \mbox{\hyperlink{group___a_d_c___private___macros_ga26fd0ba397566ade5d960ff29bccbc31}{IS\+\_\+\+ADC\+\_\+\+EVENT\+\_\+\+TYPE}}(EVENT)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group___a_d_c___private___macros_ga6964dd348041232d34696fd535ad4450}\label{group___a_d_c___private___macros_ga6964dd348041232d34696fd535ad4450}} 
+\index{ADC Private Macros@{ADC Private Macros}!ADC\_AWD1THRESHOLD\_SHIFT\_RESOLUTION@{ADC\_AWD1THRESHOLD\_SHIFT\_RESOLUTION}}
+\index{ADC\_AWD1THRESHOLD\_SHIFT\_RESOLUTION@{ADC\_AWD1THRESHOLD\_SHIFT\_RESOLUTION}!ADC Private Macros@{ADC Private Macros}}
+\doxysubsubsection{\texorpdfstring{ADC\_AWD1THRESHOLD\_SHIFT\_RESOLUTION}{ADC\_AWD1THRESHOLD\_SHIFT\_RESOLUTION}}
+{\footnotesize\ttfamily \#define ADC\+\_\+\+AWD1\+THRESHOLD\+\_\+\+SHIFT\+\_\+\+RESOLUTION(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+,  }\item[{}]{\+\_\+\+Threshold\+\_\+ }\end{DoxyParamCaption})~  ((\+\_\+\+Threshold\+\_\+) $<$$<$ ((((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CFGR1 \& \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga9d5676c559f66561a86e6236ba803f98}{ADC\+\_\+\+CFGR1\+\_\+\+RES}}) $>$$>$ 3U)$\ast$2))}
+
+
+
+Shift the AWD threshold in function of the selected ADC resolution. Thresholds have to be left-\/aligned on bit 11, the LSB (right bits) are set to 0. If resolution 12 bits, no shift. If resolution 10 bits, shift of 2 ranks on the left. If resolution 8 bits, shift of 4 ranks on the left. If resolution 6 bits, shift of 6 ranks on the left. therefore, shift = (12 -\/ resolution) = 12 -\/ (12-\/ (((RES\mbox{[}1\+:0\mbox{]}) \texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>} 3)$\ast$2)) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+} & ADC handle \\
+\hline
+{\em \+\_\+\+Threshold\+\_\+} & Value to be shifted \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__adc_8h_source_l00837}{837}} of file \mbox{\hyperlink{stm32f0xx__hal__adc_8h_source}{stm32f0xx\+\_\+hal\+\_\+adc.\+h}}.
+
+\mbox{\Hypertarget{group___a_d_c___private___macros_ga36993a7b32f5ec4f4163856f7ba8e8f0}\label{group___a_d_c___private___macros_ga36993a7b32f5ec4f4163856f7ba8e8f0}} 
+\index{ADC Private Macros@{ADC Private Macros}!ADC\_CFGR1\_AUTOOFF@{ADC\_CFGR1\_AUTOOFF}}
+\index{ADC\_CFGR1\_AUTOOFF@{ADC\_CFGR1\_AUTOOFF}!ADC Private Macros@{ADC Private Macros}}
+\doxysubsubsection{\texorpdfstring{ADC\_CFGR1\_AUTOOFF}{ADC\_CFGR1\_AUTOOFF}}
+{\footnotesize\ttfamily \#define ADC\+\_\+\+CFGR1\+\_\+\+AUTOOFF(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+AUTOOFF\+\_\+ }\end{DoxyParamCaption})~  ((\+\_\+\+AUTOOFF\+\_\+) $<$$<$ 15U)}
+
+
+
+Enable the ADC auto off mode. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+AUTOOFF\+\_\+} & Auto off bit enable or disable. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__adc_8h_source_l00763}{763}} of file \mbox{\hyperlink{stm32f0xx__hal__adc_8h_source}{stm32f0xx\+\_\+hal\+\_\+adc.\+h}}.
+
+\mbox{\Hypertarget{group___a_d_c___private___macros_ga36fe17d7bad2f7445f201d318779051d}\label{group___a_d_c___private___macros_ga36fe17d7bad2f7445f201d318779051d}} 
+\index{ADC Private Macros@{ADC Private Macros}!ADC\_CFGR1\_AUTOWAIT@{ADC\_CFGR1\_AUTOWAIT}}
+\index{ADC\_CFGR1\_AUTOWAIT@{ADC\_CFGR1\_AUTOWAIT}!ADC Private Macros@{ADC Private Macros}}
+\doxysubsubsection{\texorpdfstring{ADC\_CFGR1\_AUTOWAIT}{ADC\_CFGR1\_AUTOWAIT}}
+{\footnotesize\ttfamily \#define ADC\+\_\+\+CFGR1\+\_\+\+AUTOWAIT(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+AUTOWAIT\+\_\+ }\end{DoxyParamCaption})~  ((\+\_\+\+AUTOWAIT\+\_\+) $<$$<$ 14U)}
+
+
+
+Enable the ADC auto delay mode. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+AUTOWAIT\+\_\+} & Auto delay bit enable or disable. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__adc_8h_source_l00771}{771}} of file \mbox{\hyperlink{stm32f0xx__hal__adc_8h_source}{stm32f0xx\+\_\+hal\+\_\+adc.\+h}}.
+
+\mbox{\Hypertarget{group___a_d_c___private___macros_gaa6d2333361167e3a510b2dd50f824a80}\label{group___a_d_c___private___macros_gaa6d2333361167e3a510b2dd50f824a80}} 
+\index{ADC Private Macros@{ADC Private Macros}!ADC\_CFGR1\_CONTINUOUS@{ADC\_CFGR1\_CONTINUOUS}}
+\index{ADC\_CFGR1\_CONTINUOUS@{ADC\_CFGR1\_CONTINUOUS}!ADC Private Macros@{ADC Private Macros}}
+\doxysubsubsection{\texorpdfstring{ADC\_CFGR1\_CONTINUOUS}{ADC\_CFGR1\_CONTINUOUS}}
+{\footnotesize\ttfamily \#define ADC\+\_\+\+CFGR1\+\_\+\+CONTINUOUS(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+CONTINUOUS\+\_\+\+MODE\+\_\+ }\end{DoxyParamCaption})~  ((\+\_\+\+CONTINUOUS\+\_\+\+MODE\+\_\+) $<$$<$ 13U)}
+
+
+
+Enable ADC continuous conversion mode. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+CONTINUOUS\+\_\+\+MODE\+\_\+} & Continuous mode. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__adc_8h_source_l00779}{779}} of file \mbox{\hyperlink{stm32f0xx__hal__adc_8h_source}{stm32f0xx\+\_\+hal\+\_\+adc.\+h}}.
+
+\mbox{\Hypertarget{group___a_d_c___private___macros_ga06cee7979b56d2ad07f024f394522097}\label{group___a_d_c___private___macros_ga06cee7979b56d2ad07f024f394522097}} 
+\index{ADC Private Macros@{ADC Private Macros}!ADC\_CFGR1\_DMACONTREQ@{ADC\_CFGR1\_DMACONTREQ}}
+\index{ADC\_CFGR1\_DMACONTREQ@{ADC\_CFGR1\_DMACONTREQ}!ADC Private Macros@{ADC Private Macros}}
+\doxysubsubsection{\texorpdfstring{ADC\_CFGR1\_DMACONTREQ}{ADC\_CFGR1\_DMACONTREQ}}
+{\footnotesize\ttfamily \#define ADC\+\_\+\+CFGR1\+\_\+\+DMACONTREQ(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+DMACONTREQ\+\_\+\+MODE\+\_\+ }\end{DoxyParamCaption})~  ((\+\_\+\+DMACONTREQ\+\_\+\+MODE\+\_\+) $<$$<$ 1U)}
+
+
+
+Enable the ADC DMA continuous request. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+DMACONTREQ\+\_\+\+MODE\+\_\+} & DMA continuous request mode. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__adc_8h_source_l00814}{814}} of file \mbox{\hyperlink{stm32f0xx__hal__adc_8h_source}{stm32f0xx\+\_\+hal\+\_\+adc.\+h}}.
+
+\mbox{\Hypertarget{group___a_d_c___private___macros_ga0e446f9c5ff062c2f138636c1ea639a1}\label{group___a_d_c___private___macros_ga0e446f9c5ff062c2f138636c1ea639a1}} 
+\index{ADC Private Macros@{ADC Private Macros}!ADC\_CFGR1\_OVERRUN@{ADC\_CFGR1\_OVERRUN}}
+\index{ADC\_CFGR1\_OVERRUN@{ADC\_CFGR1\_OVERRUN}!ADC Private Macros@{ADC Private Macros}}
+\doxysubsubsection{\texorpdfstring{ADC\_CFGR1\_OVERRUN}{ADC\_CFGR1\_OVERRUN}}
+{\footnotesize\ttfamily \#define ADC\+\_\+\+CFGR1\+\_\+\+OVERRUN(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+OVERRUN\+\_\+\+MODE\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ (\ (\ (\_OVERRUN\_MODE\_)\ !=\ (\mbox{\hyperlink{group___a_d_c___overrun_ga5e6fdbe9cab7436c3bf4551944c5c04d}{ADC\_OVR\_DATA\_PRESERVED}})\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ )?\ (\mbox{\hyperlink{group___peripheral___registers___bits___definition_gadbd980c2b24383afb370bfe69860064f}{ADC\_CFGR1\_OVRMOD}})\ :\ (0x00000000)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ )}
+
+\end{DoxyCode}
+
+
+Enable ADC overrun mode. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+OVERRUN\+\_\+\+MODE\+\_\+} & Overrun mode. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Overrun} & bit setting to be programmed into CFGR register \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__adc_8h_source_l00790}{790}} of file \mbox{\hyperlink{stm32f0xx__hal__adc_8h_source}{stm32f0xx\+\_\+hal\+\_\+adc.\+h}}.
+
+\mbox{\Hypertarget{group___a_d_c___private___macros_gaa0ec9cb0b5d97ba2d8bfd4fdf1f2a398}\label{group___a_d_c___private___macros_gaa0ec9cb0b5d97ba2d8bfd4fdf1f2a398}} 
+\index{ADC Private Macros@{ADC Private Macros}!ADC\_CFGR1\_REG\_DISCCONTINUOUS@{ADC\_CFGR1\_REG\_DISCCONTINUOUS}}
+\index{ADC\_CFGR1\_REG\_DISCCONTINUOUS@{ADC\_CFGR1\_REG\_DISCCONTINUOUS}!ADC Private Macros@{ADC Private Macros}}
+\doxysubsubsection{\texorpdfstring{ADC\_CFGR1\_REG\_DISCCONTINUOUS}{ADC\_CFGR1\_REG\_DISCCONTINUOUS}}
+{\footnotesize\ttfamily \#define ADC\+\_\+\+CFGR1\+\_\+\+REG\+\_\+\+DISCCONTINUOUS(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+REG\+\_\+\+DISCONTINUOUS\+\_\+\+MODE\+\_\+ }\end{DoxyParamCaption})~  ((\+\_\+\+REG\+\_\+\+DISCONTINUOUS\+\_\+\+MODE\+\_\+) $<$$<$ 16U)}
+
+
+
+Enable ADC discontinuous conversion mode for regular group. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+REG\+\_\+\+DISCONTINUOUS\+\_\+\+MODE\+\_\+} & Regular discontinuous mode. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__adc_8h_source_l00755}{755}} of file \mbox{\hyperlink{stm32f0xx__hal__adc_8h_source}{stm32f0xx\+\_\+hal\+\_\+adc.\+h}}.
+
+\mbox{\Hypertarget{group___a_d_c___private___macros_gaf14fd1def24bda245430287f2c7dbab7}\label{group___a_d_c___private___macros_gaf14fd1def24bda245430287f2c7dbab7}} 
+\index{ADC Private Macros@{ADC Private Macros}!ADC\_CFGR\_AWDCH@{ADC\_CFGR\_AWDCH}}
+\index{ADC\_CFGR\_AWDCH@{ADC\_CFGR\_AWDCH}!ADC Private Macros@{ADC Private Macros}}
+\doxysubsubsection{\texorpdfstring{ADC\_CFGR\_AWDCH}{ADC\_CFGR\_AWDCH}}
+{\footnotesize\ttfamily \#define ADC\+\_\+\+CFGR\+\_\+\+AWDCH(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+CHANNEL\+\_\+ }\end{DoxyParamCaption})~  ((\+\_\+\+CHANNEL\+\_\+) $<$$<$ 26U)}
+
+
+
+Set the Analog Watchdog 1 channel. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+CHANNEL\+\_\+} & channel to be monitored by Analog Watchdog 1. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__adc_8h_source_l00747}{747}} of file \mbox{\hyperlink{stm32f0xx__hal__adc_8h_source}{stm32f0xx\+\_\+hal\+\_\+adc.\+h}}.
+
+\mbox{\Hypertarget{group___a_d_c___private___macros_ga5d9a732e25a3c6fda616bd7095d0bcb6}\label{group___a_d_c___private___macros_ga5d9a732e25a3c6fda616bd7095d0bcb6}} 
+\index{ADC Private Macros@{ADC Private Macros}!ADC\_CHSELR\_CHANNEL@{ADC\_CHSELR\_CHANNEL}}
+\index{ADC\_CHSELR\_CHANNEL@{ADC\_CHSELR\_CHANNEL}!ADC Private Macros@{ADC Private Macros}}
+\doxysubsubsection{\texorpdfstring{ADC\_CHSELR\_CHANNEL}{ADC\_CHSELR\_CHANNEL}}
+{\footnotesize\ttfamily \#define ADC\+\_\+\+CHSELR\+\_\+\+CHANNEL(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+CHANNEL\+\_\+ }\end{DoxyParamCaption})~  ( 1U $<$$<$ (\+\_\+\+CHANNEL\+\_\+))}
+
+
+
+Configure the channel number into channel selection register. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+CHANNEL\+\_\+} & ADC Channel \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__adc_8h_source_l00726}{726}} of file \mbox{\hyperlink{stm32f0xx__hal__adc_8h_source}{stm32f0xx\+\_\+hal\+\_\+adc.\+h}}.
+
+\mbox{\Hypertarget{group___a_d_c___private___macros_gac7ab87a3ab932eed1b3ac5faad4e3aa9}\label{group___a_d_c___private___macros_gac7ab87a3ab932eed1b3ac5faad4e3aa9}} 
+\index{ADC Private Macros@{ADC Private Macros}!ADC\_CLEAR\_ERRORCODE@{ADC\_CLEAR\_ERRORCODE}}
+\index{ADC\_CLEAR\_ERRORCODE@{ADC\_CLEAR\_ERRORCODE}!ADC Private Macros@{ADC Private Macros}}
+\doxysubsubsection{\texorpdfstring{ADC\_CLEAR\_ERRORCODE}{ADC\_CLEAR\_ERRORCODE}}
+{\footnotesize\ttfamily \#define ADC\+\_\+\+CLEAR\+\_\+\+ERRORCODE(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+ }\end{DoxyParamCaption})~  ((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Error\+Code = \mbox{\hyperlink{group___a_d_c___error___code_ga93b4576d46ee0f8c53b7d69f39778e38}{HAL\+\_\+\+ADC\+\_\+\+ERROR\+\_\+\+NONE}})}
+
+
+
+Clear ADC error code (set it to error code\+: \char`\"{}no error\char`\"{}) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+} & ADC handle \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__adc_8h_source_l00695}{695}} of file \mbox{\hyperlink{stm32f0xx__hal__adc_8h_source}{stm32f0xx\+\_\+hal\+\_\+adc.\+h}}.
+
+\mbox{\Hypertarget{group___a_d_c___private___macros_ga52dac43dfd7bb8d95df16b30d7567c3f}\label{group___a_d_c___private___macros_ga52dac43dfd7bb8d95df16b30d7567c3f}} 
+\index{ADC Private Macros@{ADC Private Macros}!ADC\_DISABLING\_CONDITIONS@{ADC\_DISABLING\_CONDITIONS}}
+\index{ADC\_DISABLING\_CONDITIONS@{ADC\_DISABLING\_CONDITIONS}!ADC Private Macros@{ADC Private Macros}}
+\doxysubsubsection{\texorpdfstring{ADC\_DISABLING\_CONDITIONS}{ADC\_DISABLING\_CONDITIONS}}
+{\footnotesize\ttfamily \#define ADC\+\_\+\+DISABLING\+\_\+\+CONDITIONS(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ ((\ (\ ((\_\_HANDLE\_\_)-\/>Instance-\/>CR)\ \&\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ (\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga25021284fb6bfad3e8448edc6ef81218}{ADC\_CR\_ADSTART}}\ |\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga26fe09dfd6969dd95591942e80cc3d2b}{ADC\_CR\_ADEN}}))\ ==\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga26fe09dfd6969dd95591942e80cc3d2b}{ADC\_CR\_ADEN}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ )\ ?\ \mbox{\hyperlink{group___exported__types_gga89136caac2e14c55151f527ac02daaffab44c8101cc294c074709ec1b14211792}{SET}}\ :\ \mbox{\hyperlink{group___exported__types_gga89136caac2e14c55151f527ac02daaffa589b7d94a3d91d145720e2fed0eb3a05}{RESET}})}
+
+\end{DoxyCode}
+
+
+Verification of hardware constraints before ADC can be disabled. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+} & ADC handle \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em SET} & (ADC can be disabled) or RESET (ADC cannot be disabled) \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__adc_8h_source_l00626}{626}} of file \mbox{\hyperlink{stm32f0xx__hal__adc_8h_source}{stm32f0xx\+\_\+hal\+\_\+adc.\+h}}.
+
+\mbox{\Hypertarget{group___a_d_c___private___macros_ga659ecd034552504fc163da87bad15ddc}\label{group___a_d_c___private___macros_ga659ecd034552504fc163da87bad15ddc}} 
+\index{ADC Private Macros@{ADC Private Macros}!ADC\_ENABLING\_CONDITIONS@{ADC\_ENABLING\_CONDITIONS}}
+\index{ADC\_ENABLING\_CONDITIONS@{ADC\_ENABLING\_CONDITIONS}!ADC Private Macros@{ADC Private Macros}}
+\doxysubsubsection{\texorpdfstring{ADC\_ENABLING\_CONDITIONS}{ADC\_ENABLING\_CONDITIONS}}
+{\footnotesize\ttfamily \#define ADC\+\_\+\+ENABLING\+\_\+\+CONDITIONS(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ ((\ (\ ((\_\_HANDLE\_\_)-\/>Instance-\/>CR)\ \&\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ (\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga87c66f671af3241a20d7dfa2a048b40a}{ADC\_CR\_ADCAL}}\ |\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga56c924ba75bdb8b75aa9130b75effbe5}{ADC\_CR\_ADSTP}}\ |\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga25021284fb6bfad3e8448edc6ef81218}{ADC\_CR\_ADSTART}}\ |\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_gad99494f414a25f32a5f00ea39ea2150a}{ADC\_CR\_ADDIS}}\ |\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga26fe09dfd6969dd95591942e80cc3d2b}{ADC\_CR\_ADEN}})\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ )\ ==\ \mbox{\hyperlink{group___exported__types_gga89136caac2e14c55151f527ac02daaffa589b7d94a3d91d145720e2fed0eb3a05}{RESET}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ )\ ?\ \mbox{\hyperlink{group___exported__types_gga89136caac2e14c55151f527ac02daaffab44c8101cc294c074709ec1b14211792}{SET}}\ :\ \mbox{\hyperlink{group___exported__types_gga89136caac2e14c55151f527ac02daaffa589b7d94a3d91d145720e2fed0eb3a05}{RESET}})}
+
+\end{DoxyCode}
+
+
+Verification of hardware constraints before ADC can be enabled. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+} & ADC handle \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em SET} & (ADC can be enabled) or RESET (ADC cannot be enabled) \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__adc_8h_source_l00615}{615}} of file \mbox{\hyperlink{stm32f0xx__hal__adc_8h_source}{stm32f0xx\+\_\+hal\+\_\+adc.\+h}}.
+
+\mbox{\Hypertarget{group___a_d_c___private___macros_gae2da95074db4dd0418c1dd1f13ad7970}\label{group___a_d_c___private___macros_gae2da95074db4dd0418c1dd1f13ad7970}} 
+\index{ADC Private Macros@{ADC Private Macros}!ADC\_GET\_RESOLUTION@{ADC\_GET\_RESOLUTION}}
+\index{ADC\_GET\_RESOLUTION@{ADC\_GET\_RESOLUTION}!ADC Private Macros@{ADC Private Macros}}
+\doxysubsubsection{\texorpdfstring{ADC\_GET\_RESOLUTION}{ADC\_GET\_RESOLUTION}}
+{\footnotesize\ttfamily \#define ADC\+\_\+\+GET\+\_\+\+RESOLUTION(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+ }\end{DoxyParamCaption})~  (((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CFGR1) \& \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga9d5676c559f66561a86e6236ba803f98}{ADC\+\_\+\+CFGR1\+\_\+\+RES}})}
+
+
+
+Returns resolution bits in CFGR1 register\+: RES\mbox{[}1\+:0\mbox{]}. Returned value is among parameters to \mbox{\hyperlink{group___a_d_c___resolution}{ADC Resolution}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+} & ADC handle \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__adc_8h_source_l00669}{669}} of file \mbox{\hyperlink{stm32f0xx__hal__adc_8h_source}{stm32f0xx\+\_\+hal\+\_\+adc.\+h}}.
+
+\mbox{\Hypertarget{group___a_d_c___private___macros_ga2fcb55eda590a2037a99af8d594460b7}\label{group___a_d_c___private___macros_ga2fcb55eda590a2037a99af8d594460b7}} 
+\index{ADC Private Macros@{ADC Private Macros}!ADC\_GET\_SAMPLINGTIME@{ADC\_GET\_SAMPLINGTIME}}
+\index{ADC\_GET\_SAMPLINGTIME@{ADC\_GET\_SAMPLINGTIME}!ADC Private Macros@{ADC Private Macros}}
+\doxysubsubsection{\texorpdfstring{ADC\_GET\_SAMPLINGTIME}{ADC\_GET\_SAMPLINGTIME}}
+{\footnotesize\ttfamily \#define ADC\+\_\+\+GET\+\_\+\+SAMPLINGTIME(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+ }\end{DoxyParamCaption})~  (((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$SMPR) \& \mbox{\hyperlink{group___peripheral___registers___bits___definition_gaceac2124a2a41388f9f5e5c2c310a27e}{ADC\+\_\+\+SMPR\+\_\+\+SMP}})}
+
+
+
+Returns ADC sample time bits in SMPR register\+: SMP\mbox{[}2\+:0\mbox{]}. Returned value is among parameters to \mbox{\hyperlink{group___a_d_c___resolution}{ADC Resolution}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+} & ADC handle \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__adc_8h_source_l00678}{678}} of file \mbox{\hyperlink{stm32f0xx__hal__adc_8h_source}{stm32f0xx\+\_\+hal\+\_\+adc.\+h}}.
+
+\mbox{\Hypertarget{group___a_d_c___private___macros_ga5df8ea820271c854b85617162b08c6d3}\label{group___a_d_c___private___macros_ga5df8ea820271c854b85617162b08c6d3}} 
+\index{ADC Private Macros@{ADC Private Macros}!ADC\_IS\_CONVERSION\_ONGOING\_REGULAR@{ADC\_IS\_CONVERSION\_ONGOING\_REGULAR}}
+\index{ADC\_IS\_CONVERSION\_ONGOING\_REGULAR@{ADC\_IS\_CONVERSION\_ONGOING\_REGULAR}!ADC Private Macros@{ADC Private Macros}}
+\doxysubsubsection{\texorpdfstring{ADC\_IS\_CONVERSION\_ONGOING\_REGULAR}{ADC\_IS\_CONVERSION\_ONGOING\_REGULAR}}
+{\footnotesize\ttfamily \#define ADC\+\_\+\+IS\+\_\+\+CONVERSION\+\_\+\+ONGOING\+\_\+\+REGULAR(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ ((\ (((\_\_HANDLE\_\_)-\/>Instance-\/>CR)\ \&\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga25021284fb6bfad3e8448edc6ef81218}{ADC\_CR\_ADSTART}})\ ==\ \mbox{\hyperlink{group___exported__types_gga89136caac2e14c55151f527ac02daaffa589b7d94a3d91d145720e2fed0eb3a05}{RESET}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ )\ ?\ \mbox{\hyperlink{group___exported__types_gga89136caac2e14c55151f527ac02daaffa589b7d94a3d91d145720e2fed0eb3a05}{RESET}}\ :\ \mbox{\hyperlink{group___exported__types_gga89136caac2e14c55151f527ac02daaffab44c8101cc294c074709ec1b14211792}{SET}})}
+
+\end{DoxyCode}
+
+
+Check if no conversion on going on regular group. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+} & ADC handle \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em SET} & (conversion is on going) or RESET (no conversion is on going) \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__adc_8h_source_l00659}{659}} of file \mbox{\hyperlink{stm32f0xx__hal__adc_8h_source}{stm32f0xx\+\_\+hal\+\_\+adc.\+h}}.
+
+\mbox{\Hypertarget{group___a_d_c___private___macros_gafe3a7a04ff078c62ae98b19403f696c7}\label{group___a_d_c___private___macros_gafe3a7a04ff078c62ae98b19403f696c7}} 
+\index{ADC Private Macros@{ADC Private Macros}!ADC\_IS\_ENABLE@{ADC\_IS\_ENABLE}}
+\index{ADC\_IS\_ENABLE@{ADC\_IS\_ENABLE}!ADC Private Macros@{ADC Private Macros}}
+\doxysubsubsection{\texorpdfstring{ADC\_IS\_ENABLE}{ADC\_IS\_ENABLE}}
+{\footnotesize\ttfamily \#define ADC\+\_\+\+IS\+\_\+\+ENABLE(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ ((\ ((((\_\_HANDLE\_\_)-\/>Instance-\/>CR)\ \&\ (\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga26fe09dfd6969dd95591942e80cc3d2b}{ADC\_CR\_ADEN}}\ |\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_gad99494f414a25f32a5f00ea39ea2150a}{ADC\_CR\_ADDIS}}))\ ==\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga26fe09dfd6969dd95591942e80cc3d2b}{ADC\_CR\_ADEN}})\ \&\&\ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ (((((\_\_HANDLE\_\_)-\/>Instance-\/>ISR)\ \&\ \mbox{\hyperlink{group___a_d_c__flags__definition_gaf1a4a140115121cc0ec1f821d2c8c199}{ADC\_FLAG\_RDY}})\ ==\ \mbox{\hyperlink{group___a_d_c__flags__definition_gaf1a4a140115121cc0ec1f821d2c8c199}{ADC\_FLAG\_RDY}})\ \ \ \ \ \ \ \ \ \ ||\ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ ((((\_\_HANDLE\_\_)-\/>Instance-\/>CFGR1)\ \&\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga2ff56271bc473179a89b075fda664512}{ADC\_CFGR1\_AUTOFF}})\ ==\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga2ff56271bc473179a89b075fda664512}{ADC\_CFGR1\_AUTOFF}})\ \ )\ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ )\ ?\ \mbox{\hyperlink{group___exported__types_gga89136caac2e14c55151f527ac02daaffab44c8101cc294c074709ec1b14211792}{SET}}\ :\ \mbox{\hyperlink{group___exported__types_gga89136caac2e14c55151f527ac02daaffa589b7d94a3d91d145720e2fed0eb3a05}{RESET}})}
+
+\end{DoxyCode}
+
+
+Verification of ADC state\+: enabled or disabled. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+} & ADC handle \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em SET} & (ADC enabled) or RESET (ADC disabled) \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__adc_8h_source_l00639}{639}} of file \mbox{\hyperlink{stm32f0xx__hal__adc_8h_source}{stm32f0xx\+\_\+hal\+\_\+adc.\+h}}.
+
+\mbox{\Hypertarget{group___a_d_c___private___macros_ga2ccb82ecf85d6c6d1ff2cdf9b6a82d2b}\label{group___a_d_c___private___macros_ga2ccb82ecf85d6c6d1ff2cdf9b6a82d2b}} 
+\index{ADC Private Macros@{ADC Private Macros}!ADC\_IS\_SOFTWARE\_START\_REGULAR@{ADC\_IS\_SOFTWARE\_START\_REGULAR}}
+\index{ADC\_IS\_SOFTWARE\_START\_REGULAR@{ADC\_IS\_SOFTWARE\_START\_REGULAR}!ADC Private Macros@{ADC Private Macros}}
+\doxysubsubsection{\texorpdfstring{ADC\_IS\_SOFTWARE\_START\_REGULAR}{ADC\_IS\_SOFTWARE\_START\_REGULAR}}
+{\footnotesize\ttfamily \#define ADC\+\_\+\+IS\+\_\+\+SOFTWARE\+\_\+\+START\+\_\+\+REGULAR(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+ }\end{DoxyParamCaption})~  (((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$CFGR1 \& \mbox{\hyperlink{group___peripheral___registers___bits___definition_gafc48e957d935d791a767c763b9225832}{ADC\+\_\+\+CFGR1\+\_\+\+EXTEN}}) == \mbox{\hyperlink{group___exported__types_gga89136caac2e14c55151f527ac02daaffa589b7d94a3d91d145720e2fed0eb3a05}{RESET}})}
+
+
+
+Test if conversion trigger of regular group is software start or external trigger. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+} & ADC handle \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em SET} & (software start) or RESET (external trigger) \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__adc_8h_source_l00651}{651}} of file \mbox{\hyperlink{stm32f0xx__hal__adc_8h_source}{stm32f0xx\+\_\+hal\+\_\+adc.\+h}}.
+
+\mbox{\Hypertarget{group___a_d_c___private___macros_gaf160864141810a124f506714b47446ca}\label{group___a_d_c___private___macros_gaf160864141810a124f506714b47446ca}} 
+\index{ADC Private Macros@{ADC Private Macros}!ADC\_SCANDIR@{ADC\_SCANDIR}}
+\index{ADC\_SCANDIR@{ADC\_SCANDIR}!ADC Private Macros@{ADC Private Macros}}
+\doxysubsubsection{\texorpdfstring{ADC\_SCANDIR}{ADC\_SCANDIR}}
+{\footnotesize\ttfamily \#define ADC\+\_\+\+SCANDIR(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+SCAN\+\_\+\+MODE\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ (\ (\ (\_SCAN\_MODE\_)\ ==\ (\mbox{\hyperlink{group___a_d_c___scan__mode_gae160445e1a005fba64d739c321ae61b9}{ADC\_SCAN\_DIRECTION\_BACKWARD}})\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ )?\ (\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga138c4d67e5735326ffc922409f3fc8f4}{ADC\_CFGR1\_SCANDIR}})\ :\ (0x00000000)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ )}
+
+\end{DoxyCode}
+
+
+Enable ADC scan mode to convert multiple ranks with sequencer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+SCAN\+\_\+\+MODE\+\_\+} & Scan conversion mode. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__adc_8h_source_l00804}{804}} of file \mbox{\hyperlink{stm32f0xx__hal__adc_8h_source}{stm32f0xx\+\_\+hal\+\_\+adc.\+h}}.
+
+\mbox{\Hypertarget{group___a_d_c___private___macros_ga84692d85aac11c581274b17e74cabc08}\label{group___a_d_c___private___macros_ga84692d85aac11c581274b17e74cabc08}} 
+\index{ADC Private Macros@{ADC Private Macros}!ADC\_SMPR\_SET@{ADC\_SMPR\_SET}}
+\index{ADC\_SMPR\_SET@{ADC\_SMPR\_SET}!ADC Private Macros@{ADC Private Macros}}
+\doxysubsubsection{\texorpdfstring{ADC\_SMPR\_SET}{ADC\_SMPR\_SET}}
+{\footnotesize\ttfamily \#define ADC\+\_\+\+SMPR\+\_\+\+SET(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+SAMPLETIME\+\_\+ }\end{DoxyParamCaption})~  ((\+\_\+\+SAMPLETIME\+\_\+) \& (\mbox{\hyperlink{group___peripheral___registers___bits___definition_gaceac2124a2a41388f9f5e5c2c310a27e}{ADC\+\_\+\+SMPR\+\_\+\+SMP}}))}
+
+
+
+Set the ADC\textquotesingle{}s sample time. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+SAMPLETIME\+\_\+} & Sample time parameter. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__adc_8h_source_l00739}{739}} of file \mbox{\hyperlink{stm32f0xx__hal__adc_8h_source}{stm32f0xx\+\_\+hal\+\_\+adc.\+h}}.
+
+\mbox{\Hypertarget{group___a_d_c___private___macros_gaaf93e91b164d4a220aae475eff82665f}\label{group___a_d_c___private___macros_gaaf93e91b164d4a220aae475eff82665f}} 
+\index{ADC Private Macros@{ADC Private Macros}!ADC\_STATE\_CLR\_SET@{ADC\_STATE\_CLR\_SET}}
+\index{ADC\_STATE\_CLR\_SET@{ADC\_STATE\_CLR\_SET}!ADC Private Macros@{ADC Private Macros}}
+\doxysubsubsection{\texorpdfstring{ADC\_STATE\_CLR\_SET}{ADC\_STATE\_CLR\_SET}}
+{\footnotesize\ttfamily \#define ADC\+\_\+\+STATE\+\_\+\+CLR\+\_\+\+SET~\mbox{\hyperlink{group___exported__macros_ga6553c99f510c3bab8cc0a91602053247}{MODIFY\+\_\+\+REG}}}
+
+
+
+Simultaneously clears and sets specific bits of the handle State. 
+
+\begin{DoxyNote}{Note}
+\+: \mbox{\hyperlink{group___a_d_c___private___macros_gaaf93e91b164d4a220aae475eff82665f}{ADC\+\_\+\+STATE\+\_\+\+CLR\+\_\+\+SET()}} macro is merely aliased to generic macro \mbox{\hyperlink{group___exported__macros_ga6553c99f510c3bab8cc0a91602053247}{MODIFY\+\_\+\+REG()}}, the first parameter is the ADC handle State, the second parameter is the bit field to clear, the third and last parameter is the bit field to set. 
+\end{DoxyNote}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__adc_8h_source_l00688}{688}} of file \mbox{\hyperlink{stm32f0xx__hal__adc_8h_source}{stm32f0xx\+\_\+hal\+\_\+adc.\+h}}.
+
+\mbox{\Hypertarget{group___a_d_c___private___macros_gaa93c21f107b7c38b524cd72b12ec18ac}\label{group___a_d_c___private___macros_gaa93c21f107b7c38b524cd72b12ec18ac}} 
+\index{ADC Private Macros@{ADC Private Macros}!ADC\_TRX\_HIGHTHRESHOLD@{ADC\_TRX\_HIGHTHRESHOLD}}
+\index{ADC\_TRX\_HIGHTHRESHOLD@{ADC\_TRX\_HIGHTHRESHOLD}!ADC Private Macros@{ADC Private Macros}}
+\doxysubsubsection{\texorpdfstring{ADC\_TRX\_HIGHTHRESHOLD}{ADC\_TRX\_HIGHTHRESHOLD}}
+{\footnotesize\ttfamily \#define ADC\+\_\+\+TRX\+\_\+\+HIGHTHRESHOLD(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+Threshold\+\_\+ }\end{DoxyParamCaption})~  ((\+\_\+\+Threshold\+\_\+) $<$$<$ 16U)}
+
+
+
+Configure the analog watchdog high threshold into register TR. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+Threshold\+\_\+} & Threshold value \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__adc_8h_source_l00822}{822}} of file \mbox{\hyperlink{stm32f0xx__hal__adc_8h_source}{stm32f0xx\+\_\+hal\+\_\+adc.\+h}}.
+
+\mbox{\Hypertarget{group___a_d_c___private___macros_ga331ffc36ba5922efeff033f075e8174d}\label{group___a_d_c___private___macros_ga331ffc36ba5922efeff033f075e8174d}} 
+\index{ADC Private Macros@{ADC Private Macros}!IS\_ADC\_ANALOG\_WATCHDOG\_MODE@{IS\_ADC\_ANALOG\_WATCHDOG\_MODE}}
+\index{IS\_ADC\_ANALOG\_WATCHDOG\_MODE@{IS\_ADC\_ANALOG\_WATCHDOG\_MODE}!ADC Private Macros@{ADC Private Macros}}
+\doxysubsubsection{\texorpdfstring{IS\_ADC\_ANALOG\_WATCHDOG\_MODE}{IS\_ADC\_ANALOG\_WATCHDOG\_MODE}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+ADC\+\_\+\+ANALOG\+\_\+\+WATCHDOG\+\_\+\+MODE(\begin{DoxyParamCaption}\item[{}]{WATCHDOG }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((WATCHDOG)\ ==\ \mbox{\hyperlink{group___a_d_c__analog__watchdog__mode_gad173f9dd01d4585c9b7c8c324de399c0}{ADC\_ANALOGWATCHDOG\_NONE}})\ \ \ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((WATCHDOG)\ ==\ \mbox{\hyperlink{group___a_d_c__analog__watchdog__mode_gad4cf176e721fd2382fbc7937e352db67}{ADC\_ANALOGWATCHDOG\_SINGLE\_REG}})\ \ \ \ \ \ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((WATCHDOG)\ ==\ \mbox{\hyperlink{group___a_d_c__analog__watchdog__mode_gad9d25140644089dd34084cb4dfa7ebd8}{ADC\_ANALOGWATCHDOG\_ALL\_REG}})\ \ \ \ \ \ \ \ \ \ \ \ )}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__adc_8h_source_l00879}{879}} of file \mbox{\hyperlink{stm32f0xx__hal__adc_8h_source}{stm32f0xx\+\_\+hal\+\_\+adc.\+h}}.
+
+\mbox{\Hypertarget{group___a_d_c___private___macros_ga519de99233de22e355a7702a7dab2f06}\label{group___a_d_c___private___macros_ga519de99233de22e355a7702a7dab2f06}} 
+\index{ADC Private Macros@{ADC Private Macros}!IS\_ADC\_CLOCKPRESCALER@{IS\_ADC\_CLOCKPRESCALER}}
+\index{IS\_ADC\_CLOCKPRESCALER@{IS\_ADC\_CLOCKPRESCALER}!ADC Private Macros@{ADC Private Macros}}
+\doxysubsubsection{\texorpdfstring{IS\_ADC\_CLOCKPRESCALER}{IS\_ADC\_CLOCKPRESCALER}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+ADC\+\_\+\+CLOCKPRESCALER(\begin{DoxyParamCaption}\item[{}]{ADC\+\_\+\+CLOCK }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((ADC\_CLOCK)\ ==\ \mbox{\hyperlink{group___a_d_c___clock_prescaler_ga092c0277fd6db9b905d229c9f8dda8ab}{ADC\_CLOCK\_ASYNC\_DIV1}})\ \ \ \ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((ADC\_CLOCK)\ ==\ \mbox{\hyperlink{group___a_d_c___clock_prescaler_ga71571b183aa6d0ddbaeef8a1da11d00a}{ADC\_CLOCK\_SYNC\_PCLK\_DIV2}})\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((ADC\_CLOCK)\ ==\ \mbox{\hyperlink{group___a_d_c___clock_prescaler_ga41b6a6d1cdf7806ec1e5790fc7fdc651}{ADC\_CLOCK\_SYNC\_PCLK\_DIV4}})\ \ \ )}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__adc_8h_source_l00841}{841}} of file \mbox{\hyperlink{stm32f0xx__hal__adc_8h_source}{stm32f0xx\+\_\+hal\+\_\+adc.\+h}}.
+
+\mbox{\Hypertarget{group___a_d_c___private___macros_ga2903b620e3c61dc47ed8c0fbf4197801}\label{group___a_d_c___private___macros_ga2903b620e3c61dc47ed8c0fbf4197801}} 
+\index{ADC Private Macros@{ADC Private Macros}!IS\_ADC\_DATA\_ALIGN@{IS\_ADC\_DATA\_ALIGN}}
+\index{IS\_ADC\_DATA\_ALIGN@{IS\_ADC\_DATA\_ALIGN}!ADC Private Macros@{ADC Private Macros}}
+\doxysubsubsection{\texorpdfstring{IS\_ADC\_DATA\_ALIGN}{IS\_ADC\_DATA\_ALIGN}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+ADC\+\_\+\+DATA\+\_\+\+ALIGN(\begin{DoxyParamCaption}\item[{}]{ALIGN }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((ALIGN)\ ==\ \mbox{\hyperlink{group___a_d_c___data__align_gafed5c0d327ad6d2cc0960f7943beb265}{ADC\_DATAALIGN\_RIGHT}})\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((ALIGN)\ ==\ \mbox{\hyperlink{group___a_d_c___data__align_ga8afeead661c1ffbc27a5405a254d60ba}{ADC\_DATAALIGN\_LEFT}})\ \ \ \ )}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__adc_8h_source_l00850}{850}} of file \mbox{\hyperlink{stm32f0xx__hal__adc_8h_source}{stm32f0xx\+\_\+hal\+\_\+adc.\+h}}.
+
+\mbox{\Hypertarget{group___a_d_c___private___macros_ga9e0a777b64cb66657c862021cd05ae64}\label{group___a_d_c___private___macros_ga9e0a777b64cb66657c862021cd05ae64}} 
+\index{ADC Private Macros@{ADC Private Macros}!IS\_ADC\_EOC\_SELECTION@{IS\_ADC\_EOC\_SELECTION}}
+\index{IS\_ADC\_EOC\_SELECTION@{IS\_ADC\_EOC\_SELECTION}!ADC Private Macros@{ADC Private Macros}}
+\doxysubsubsection{\texorpdfstring{IS\_ADC\_EOC\_SELECTION}{IS\_ADC\_EOC\_SELECTION}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+ADC\+\_\+\+EOC\+\_\+\+SELECTION(\begin{DoxyParamCaption}\item[{}]{EOC\+\_\+\+SELECTION }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((EOC\_SELECTION)\ ==\ \mbox{\hyperlink{group___a_d_c___e_o_c_selection_ga4c455483d74c1be899d4b2e8f45f202b}{ADC\_EOC\_SINGLE\_CONV}})\ \ \ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((EOC\_SELECTION)\ ==\ \mbox{\hyperlink{group___a_d_c___e_o_c_selection_ga6c71ff64c9ecc9ba19ac088009f36cd8}{ADC\_EOC\_SEQ\_CONV}})\ \ )}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__adc_8h_source_l00861}{861}} of file \mbox{\hyperlink{stm32f0xx__hal__adc_8h_source}{stm32f0xx\+\_\+hal\+\_\+adc.\+h}}.
+
+\mbox{\Hypertarget{group___a_d_c___private___macros_ga26fd0ba397566ade5d960ff29bccbc31}\label{group___a_d_c___private___macros_ga26fd0ba397566ade5d960ff29bccbc31}} 
+\index{ADC Private Macros@{ADC Private Macros}!IS\_ADC\_EVENT\_TYPE@{IS\_ADC\_EVENT\_TYPE}}
+\index{IS\_ADC\_EVENT\_TYPE@{IS\_ADC\_EVENT\_TYPE}!ADC Private Macros@{ADC Private Macros}}
+\doxysubsubsection{\texorpdfstring{IS\_ADC\_EVENT\_TYPE}{IS\_ADC\_EVENT\_TYPE}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+ADC\+\_\+\+EVENT\+\_\+\+TYPE(\begin{DoxyParamCaption}\item[{}]{EVENT }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((EVENT)\ ==\ \mbox{\hyperlink{group___a_d_c___event__type_ga2d1d545ea1bfecba7a7081be6ef2cb93}{ADC\_AWD\_EVENT}})\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((EVENT)\ ==\ \mbox{\hyperlink{group___a_d_c___event__type_gae1ef5aaecb2d24cac50a59f1bc311221}{ADC\_OVR\_EVENT}})\ \ \ )}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__adc_8h_source_l00883}{883}} of file \mbox{\hyperlink{stm32f0xx__hal__adc_8h_source}{stm32f0xx\+\_\+hal\+\_\+adc.\+h}}.
+
+\mbox{\Hypertarget{group___a_d_c___private___macros_gaa862868aea997c7a9e1c808faee75e6c}\label{group___a_d_c___private___macros_gaa862868aea997c7a9e1c808faee75e6c}} 
+\index{ADC Private Macros@{ADC Private Macros}!IS\_ADC\_EXTTRIG\_EDGE@{IS\_ADC\_EXTTRIG\_EDGE}}
+\index{IS\_ADC\_EXTTRIG\_EDGE@{IS\_ADC\_EXTTRIG\_EDGE}!ADC Private Macros@{ADC Private Macros}}
+\doxysubsubsection{\texorpdfstring{IS\_ADC\_EXTTRIG\_EDGE}{IS\_ADC\_EXTTRIG\_EDGE}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+ADC\+\_\+\+EXTTRIG\+\_\+\+EDGE(\begin{DoxyParamCaption}\item[{}]{EDGE }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((EDGE)\ ==\ \mbox{\hyperlink{group___a_d_c___external__trigger__edge___regular_gab2e3a19c05441925f9b9a482238994ac}{ADC\_EXTERNALTRIGCONVEDGE\_NONE}})\ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((EDGE)\ ==\ \mbox{\hyperlink{group___a_d_c___external__trigger__edge___regular_ga0aaa4e876de630733ca4ca4116b9608e}{ADC\_EXTERNALTRIGCONVEDGE\_RISING}})\ \ \ \ \ \ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((EDGE)\ ==\ \mbox{\hyperlink{group___a_d_c___external__trigger__edge___regular_ga15975c01b6a514f346272a1373239c54}{ADC\_EXTERNALTRIGCONVEDGE\_FALLING}})\ \ \ \ \ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((EDGE)\ ==\ \mbox{\hyperlink{group___a_d_c___external__trigger__edge___regular_gab4221f5f52b5f75dc8cea701bb57be35}{ADC\_EXTERNALTRIGCONVEDGE\_RISINGFALLING}})\ \ )}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__adc_8h_source_l00856}{856}} of file \mbox{\hyperlink{stm32f0xx__hal__adc_8h_source}{stm32f0xx\+\_\+hal\+\_\+adc.\+h}}.
+
+\mbox{\Hypertarget{group___a_d_c___private___macros_ga99e2ba194894e94fd851e3852dbbc4eb}\label{group___a_d_c___private___macros_ga99e2ba194894e94fd851e3852dbbc4eb}} 
+\index{ADC Private Macros@{ADC Private Macros}!IS\_ADC\_OVERRUN@{IS\_ADC\_OVERRUN}}
+\index{IS\_ADC\_OVERRUN@{IS\_ADC\_OVERRUN}!ADC Private Macros@{ADC Private Macros}}
+\doxysubsubsection{\texorpdfstring{IS\_ADC\_OVERRUN}{IS\_ADC\_OVERRUN}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+ADC\+\_\+\+OVERRUN(\begin{DoxyParamCaption}\item[{}]{OVR }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((OVR)\ ==\ \mbox{\hyperlink{group___a_d_c___overrun_ga5e6fdbe9cab7436c3bf4551944c5c04d}{ADC\_OVR\_DATA\_PRESERVED}})\ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((OVR)\ ==\ \mbox{\hyperlink{group___a_d_c___overrun_gaeafc365762736ea8b5d73ba8c163548a}{ADC\_OVR\_DATA\_OVERWRITTEN}})\ \ )}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__adc_8h_source_l00864}{864}} of file \mbox{\hyperlink{stm32f0xx__hal__adc_8h_source}{stm32f0xx\+\_\+hal\+\_\+adc.\+h}}.
+
+\mbox{\Hypertarget{group___a_d_c___private___macros_gaa961c34cbbbfe877ec9ab52a12dcf79b}\label{group___a_d_c___private___macros_gaa961c34cbbbfe877ec9ab52a12dcf79b}} 
+\index{ADC Private Macros@{ADC Private Macros}!IS\_ADC\_RANK@{IS\_ADC\_RANK}}
+\index{IS\_ADC\_RANK@{IS\_ADC\_RANK}!ADC Private Macros@{ADC Private Macros}}
+\doxysubsubsection{\texorpdfstring{IS\_ADC\_RANK}{IS\_ADC\_RANK}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+ADC\+\_\+\+RANK(\begin{DoxyParamCaption}\item[{}]{WATCHDOG }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((WATCHDOG)\ ==\ \mbox{\hyperlink{group___a_d_c__rank_ga25907c7d81b72261eff9adc6e9726690}{ADC\_RANK\_CHANNEL\_NUMBER}})\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((WATCHDOG)\ ==\ \mbox{\hyperlink{group___a_d_c__rank_gace464dc0c5d9a401d2842f7f1629d5cd}{ADC\_RANK\_NONE}})\ \ \ \ \ \ \ \ \ \ \ \ \ )}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__adc_8h_source_l00867}{867}} of file \mbox{\hyperlink{stm32f0xx__hal__adc_8h_source}{stm32f0xx\+\_\+hal\+\_\+adc.\+h}}.
+
+\mbox{\Hypertarget{group___a_d_c___private___macros_ga346d83dd4af81b36a6dbd78c7bf2ff0a}\label{group___a_d_c___private___macros_ga346d83dd4af81b36a6dbd78c7bf2ff0a}} 
+\index{ADC Private Macros@{ADC Private Macros}!IS\_ADC\_RESOLUTION@{IS\_ADC\_RESOLUTION}}
+\index{IS\_ADC\_RESOLUTION@{IS\_ADC\_RESOLUTION}!ADC Private Macros@{ADC Private Macros}}
+\doxysubsubsection{\texorpdfstring{IS\_ADC\_RESOLUTION}{IS\_ADC\_RESOLUTION}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+ADC\+\_\+\+RESOLUTION(\begin{DoxyParamCaption}\item[{}]{RESOLUTION }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((RESOLUTION)\ ==\ \mbox{\hyperlink{group___a_d_c___resolution_ga49c8408a1cdbf97bbf29234c3770fa74}{ADC\_RESOLUTION\_12B}})\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((RESOLUTION)\ ==\ \mbox{\hyperlink{group___a_d_c___resolution_ga91289e269eb3080d25301909c0f417e5}{ADC\_RESOLUTION\_10B}})\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((RESOLUTION)\ ==\ \mbox{\hyperlink{group___a_d_c___resolution_ga39925af93719877bdcc5664e4b95e69a}{ADC\_RESOLUTION\_8B}})\ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((RESOLUTION)\ ==\ \mbox{\hyperlink{group___a_d_c___resolution_ga24c5226e05db78b4065f2f187d497b04}{ADC\_RESOLUTION\_6B}})\ \ \ \ )}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__adc_8h_source_l00845}{845}} of file \mbox{\hyperlink{stm32f0xx__hal__adc_8h_source}{stm32f0xx\+\_\+hal\+\_\+adc.\+h}}.
+
+\mbox{\Hypertarget{group___a_d_c___private___macros_ga30e0307fa009e1c383d3047b48e94644}\label{group___a_d_c___private___macros_ga30e0307fa009e1c383d3047b48e94644}} 
+\index{ADC Private Macros@{ADC Private Macros}!IS\_ADC\_SAMPLE\_TIME@{IS\_ADC\_SAMPLE\_TIME}}
+\index{IS\_ADC\_SAMPLE\_TIME@{IS\_ADC\_SAMPLE\_TIME}!ADC Private Macros@{ADC Private Macros}}
+\doxysubsubsection{\texorpdfstring{IS\_ADC\_SAMPLE\_TIME}{IS\_ADC\_SAMPLE\_TIME}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+ADC\+\_\+\+SAMPLE\+\_\+\+TIME(\begin{DoxyParamCaption}\item[{}]{TIME }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((TIME)\ ==\ \mbox{\hyperlink{group___a_d_c__sampling__times_ga01ae8ddd4c3f0a7cace13273c1e67fdd}{ADC\_SAMPLETIME\_1CYCLE\_5}})\ \ \ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((TIME)\ ==\ \mbox{\hyperlink{group___a_d_c__sampling__times_gac0aff040aa3a0e63147fcdd8ab805af1}{ADC\_SAMPLETIME\_7CYCLES\_5}})\ \ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((TIME)\ ==\ \mbox{\hyperlink{group___a_d_c__sampling__times_ga96ddc2c8f5aec56ef5b6dc7cf908842a}{ADC\_SAMPLETIME\_13CYCLES\_5}})\ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((TIME)\ ==\ \mbox{\hyperlink{group___a_d_c__sampling__times_ga2fb67421195d0c9f1edb705dcfcd754f}{ADC\_SAMPLETIME\_28CYCLES\_5}})\ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((TIME)\ ==\ \mbox{\hyperlink{group___a_d_c__sampling__times_ga190357836133681e150ddc7242151661}{ADC\_SAMPLETIME\_41CYCLES\_5}})\ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((TIME)\ ==\ \mbox{\hyperlink{group___a_d_c__sampling__times_ga4ea55e3a10a04630820387755f4f448a}{ADC\_SAMPLETIME\_55CYCLES\_5}})\ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((TIME)\ ==\ \mbox{\hyperlink{group___a_d_c__sampling__times_ga15c48307b1f2aed2a1c3c6338c13b070}{ADC\_SAMPLETIME\_71CYCLES\_5}})\ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((TIME)\ ==\ \mbox{\hyperlink{group___a_d_c__sampling__times_ga7172f3d957445df5b98648b25ccc64d4}{ADC\_SAMPLETIME\_239CYCLES\_5}})\ \ \ )}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__adc_8h_source_l00870}{870}} of file \mbox{\hyperlink{stm32f0xx__hal__adc_8h_source}{stm32f0xx\+\_\+hal\+\_\+adc.\+h}}.
+
+\mbox{\Hypertarget{group___a_d_c___private___macros_gad86e7d7e94679a54f66e79b002f936f0}\label{group___a_d_c___private___macros_gad86e7d7e94679a54f66e79b002f936f0}} 
+\index{ADC Private Macros@{ADC Private Macros}!IS\_ADC\_SCAN\_MODE@{IS\_ADC\_SCAN\_MODE}}
+\index{IS\_ADC\_SCAN\_MODE@{IS\_ADC\_SCAN\_MODE}!ADC Private Macros@{ADC Private Macros}}
+\doxysubsubsection{\texorpdfstring{IS\_ADC\_SCAN\_MODE}{IS\_ADC\_SCAN\_MODE}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+ADC\+\_\+\+SCAN\+\_\+\+MODE(\begin{DoxyParamCaption}\item[{}]{SCAN\+\_\+\+MODE }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((SCAN\_MODE)\ ==\ \mbox{\hyperlink{group___a_d_c___scan__mode_ga68fdaadb92f6293fc63cdeefd0c93a4f}{ADC\_SCAN\_DIRECTION\_FORWARD}})\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((SCAN\_MODE)\ ==\ \mbox{\hyperlink{group___a_d_c___scan__mode_gae160445e1a005fba64d739c321ae61b9}{ADC\_SCAN\_DIRECTION\_BACKWARD}})\ \ )}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__adc_8h_source_l00853}{853}} of file \mbox{\hyperlink{stm32f0xx__hal__adc_8h_source}{stm32f0xx\+\_\+hal\+\_\+adc.\+h}}.
+

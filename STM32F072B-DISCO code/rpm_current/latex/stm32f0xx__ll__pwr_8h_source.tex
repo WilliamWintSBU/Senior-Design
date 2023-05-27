@@ -1,0 +1,223 @@
+\hypertarget{stm32f0xx__ll__pwr_8h_source}{}\doxysection{stm32f0xx\+\_\+ll\+\_\+pwr.\+h}
+\label{stm32f0xx__ll__pwr_8h_source}\index{Drivers/STM32F0xx\_HAL\_Driver/Inc/stm32f0xx\_ll\_pwr.h@{Drivers/STM32F0xx\_HAL\_Driver/Inc/stm32f0xx\_ll\_pwr.h}}
+\mbox{\hyperlink{stm32f0xx__ll__pwr_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00019}00019\ \textcolor{comment}{/*\ Define\ to\ prevent\ recursive\ inclusion\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00020}00020\ \textcolor{preprocessor}{\#ifndef\ \_\_STM32F0xx\_LL\_PWR\_H}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00021}00021\ \textcolor{preprocessor}{\#define\ \_\_STM32F0xx\_LL\_PWR\_H}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00022}00022\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00023}00023\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00024}00024\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00025}00025\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00027}00027\ \textcolor{comment}{/*\ Includes\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00028}00028\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{stm32f0xx_8h}{stm32f0xx.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00034}00034\ \textcolor{preprocessor}{\#if\ defined(PWR)}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00040}00040\ \textcolor{comment}{/*\ Private\ types\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00041}00041\ \textcolor{comment}{/*\ Private\ variables\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00042}00042\ \textcolor{comment}{/*\ Private\ constants\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00043}00043\ \textcolor{comment}{/*\ Private\ macros\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00044}00044\ \textcolor{comment}{/*\ Exported\ types\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00045}00045\ \textcolor{comment}{/*\ Exported\ constants\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00054}00054\ \textcolor{preprocessor}{\#define\ LL\_PWR\_CR\_CSBF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ PWR\_CR\_CSBF\ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00055}00055\ \textcolor{preprocessor}{\#define\ LL\_PWR\_CR\_CWUF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ PWR\_CR\_CWUF\ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00064}00064\ \textcolor{preprocessor}{\#define\ LL\_PWR\_CSR\_WUF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ PWR\_CSR\_WUF\ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00065}00065\ \textcolor{preprocessor}{\#define\ LL\_PWR\_CSR\_SBF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ PWR\_CSR\_SBF\ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00066}00066\ \textcolor{preprocessor}{\#if\ defined(PWR\_PVD\_SUPPORT)}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00067}00067\ \textcolor{preprocessor}{\#define\ LL\_PWR\_CSR\_PVDO\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ PWR\_CSR\_PVDO\ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00068}00068\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ PWR\_PVD\_SUPPORT\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00069}00069\ \textcolor{preprocessor}{\#if\ defined(PWR\_CSR\_VREFINTRDYF)}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00070}00070\ \textcolor{preprocessor}{\#define\ LL\_PWR\_CSR\_VREFINTRDYF\ \ \ \ \ \ \ \ \ \ \ \ \ PWR\_CSR\_VREFINTRDYF\ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00071}00071\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ PWR\_CSR\_VREFINTRDYF\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00072}00072\ \textcolor{preprocessor}{\#define\ LL\_PWR\_CSR\_EWUP1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ PWR\_CSR\_EWUP1\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00073}00073\ \textcolor{preprocessor}{\#define\ LL\_PWR\_CSR\_EWUP2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ PWR\_CSR\_EWUP2\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00074}00074\ \textcolor{preprocessor}{\#if\ defined(PWR\_CSR\_EWUP3)}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00075}00075\ \textcolor{preprocessor}{\#define\ LL\_PWR\_CSR\_EWUP3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ PWR\_CSR\_EWUP3\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00076}00076\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ PWR\_CSR\_EWUP3\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00077}00077\ \textcolor{preprocessor}{\#if\ defined(PWR\_CSR\_EWUP4)}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00078}00078\ \textcolor{preprocessor}{\#define\ LL\_PWR\_CSR\_EWUP4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ PWR\_CSR\_EWUP4\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00079}00079\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ PWR\_CSR\_EWUP4\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00080}00080\ \textcolor{preprocessor}{\#if\ defined(PWR\_CSR\_EWUP5)}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00081}00081\ \textcolor{preprocessor}{\#define\ LL\_PWR\_CSR\_EWUP5\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ PWR\_CSR\_EWUP5\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00082}00082\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ PWR\_CSR\_EWUP5\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00083}00083\ \textcolor{preprocessor}{\#if\ defined(PWR\_CSR\_EWUP6)}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00084}00084\ \textcolor{preprocessor}{\#define\ LL\_PWR\_CSR\_EWUP6\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ PWR\_CSR\_EWUP6\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00085}00085\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ PWR\_CSR\_EWUP6\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00086}00086\ \textcolor{preprocessor}{\#if\ defined(PWR\_CSR\_EWUP7)}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00087}00087\ \textcolor{preprocessor}{\#define\ LL\_PWR\_CSR\_EWUP7\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ PWR\_CSR\_EWUP7\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00088}00088\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ PWR\_CSR\_EWUP7\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00089}00089\ \textcolor{preprocessor}{\#if\ defined(PWR\_CSR\_EWUP8)}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00090}00090\ \textcolor{preprocessor}{\#define\ LL\_PWR\_CSR\_EWUP8\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ PWR\_CSR\_EWUP8\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00091}00091\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ PWR\_CSR\_EWUP8\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00100}00100\ \textcolor{preprocessor}{\#define\ LL\_PWR\_MODE\_STOP\_MAINREGU\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000U\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00101}00101\ \textcolor{preprocessor}{\#define\ LL\_PWR\_MODE\_STOP\_LPREGU\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (PWR\_CR\_LPDS)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00102}00102\ \textcolor{preprocessor}{\#define\ LL\_PWR\_MODE\_STANDBY\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (PWR\_CR\_PDDS)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00107}00107\ \textcolor{preprocessor}{\#if\ defined(PWR\_CR\_LPDS)}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00111}00111\ \textcolor{preprocessor}{\#define\ LL\_PWR\_REGU\_DSMODE\_MAIN\ \ \ \ \ \ \ \ 0x00000000U\ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00112}00112\ \textcolor{preprocessor}{\#define\ LL\_PWR\_REGU\_DSMODE\_LOW\_POWER\ \ \ (PWR\_CR\_LPDS)\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00116}00116\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ PWR\_CR\_LPDS\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00117}00117\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00118}00118\ \textcolor{preprocessor}{\#if\ defined(PWR\_PVD\_SUPPORT)}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00122}00122\ \textcolor{preprocessor}{\#define\ LL\_PWR\_PVDLEVEL\_0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (PWR\_CR\_PLS\_LEV0)\ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00123}00123\ \textcolor{preprocessor}{\#define\ LL\_PWR\_PVDLEVEL\_1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (PWR\_CR\_PLS\_LEV1)\ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00124}00124\ \textcolor{preprocessor}{\#define\ LL\_PWR\_PVDLEVEL\_2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (PWR\_CR\_PLS\_LEV2)\ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00125}00125\ \textcolor{preprocessor}{\#define\ LL\_PWR\_PVDLEVEL\_3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (PWR\_CR\_PLS\_LEV3)\ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00126}00126\ \textcolor{preprocessor}{\#define\ LL\_PWR\_PVDLEVEL\_4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (PWR\_CR\_PLS\_LEV4)\ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00127}00127\ \textcolor{preprocessor}{\#define\ LL\_PWR\_PVDLEVEL\_5\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (PWR\_CR\_PLS\_LEV5)\ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00128}00128\ \textcolor{preprocessor}{\#define\ LL\_PWR\_PVDLEVEL\_6\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (PWR\_CR\_PLS\_LEV6)\ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00129}00129\ \textcolor{preprocessor}{\#define\ LL\_PWR\_PVDLEVEL\_7\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (PWR\_CR\_PLS\_LEV7)\ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00133}00133\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ PWR\_PVD\_SUPPORT\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00137}00137\ \textcolor{preprocessor}{\#define\ LL\_PWR\_WAKEUP\_PIN1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (PWR\_CSR\_EWUP1)\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00138}00138\ \textcolor{preprocessor}{\#define\ LL\_PWR\_WAKEUP\_PIN2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (PWR\_CSR\_EWUP2)\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00139}00139\ \textcolor{preprocessor}{\#if\ defined(PWR\_CSR\_EWUP3)}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00140}00140\ \textcolor{preprocessor}{\#define\ LL\_PWR\_WAKEUP\_PIN3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (PWR\_CSR\_EWUP3)\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00141}00141\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ PWR\_CSR\_EWUP3\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00142}00142\ \textcolor{preprocessor}{\#if\ defined(PWR\_CSR\_EWUP4)}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00143}00143\ \textcolor{preprocessor}{\#define\ LL\_PWR\_WAKEUP\_PIN4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (PWR\_CSR\_EWUP4)\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00144}00144\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ PWR\_CSR\_EWUP4\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00145}00145\ \textcolor{preprocessor}{\#if\ defined(PWR\_CSR\_EWUP5)}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00146}00146\ \textcolor{preprocessor}{\#define\ LL\_PWR\_WAKEUP\_PIN5\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (PWR\_CSR\_EWUP5)\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00147}00147\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ PWR\_CSR\_EWUP5\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00148}00148\ \textcolor{preprocessor}{\#if\ defined(PWR\_CSR\_EWUP6)}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00149}00149\ \textcolor{preprocessor}{\#define\ LL\_PWR\_WAKEUP\_PIN6\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (PWR\_CSR\_EWUP6)\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00150}00150\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ PWR\_CSR\_EWUP6\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00151}00151\ \textcolor{preprocessor}{\#if\ defined(PWR\_CSR\_EWUP7)}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00152}00152\ \textcolor{preprocessor}{\#define\ LL\_PWR\_WAKEUP\_PIN7\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (PWR\_CSR\_EWUP7)\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00153}00153\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ PWR\_CSR\_EWUP7\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00154}00154\ \textcolor{preprocessor}{\#if\ defined(PWR\_CSR\_EWUP8)}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00155}00155\ \textcolor{preprocessor}{\#define\ LL\_PWR\_WAKEUP\_PIN8\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (PWR\_CSR\_EWUP8)\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00156}00156\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ PWR\_CSR\_EWUP8\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00166}00166\ \textcolor{comment}{/*\ Exported\ macro\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00181}00181\ \textcolor{preprocessor}{\#define\ LL\_PWR\_WriteReg(\_\_REG\_\_,\ \_\_VALUE\_\_)\ WRITE\_REG(PWR-\/>\_\_REG\_\_,\ (\_\_VALUE\_\_))}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00182}00182\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00188}00188\ \textcolor{preprocessor}{\#define\ LL\_PWR\_ReadReg(\_\_REG\_\_)\ READ\_REG(PWR-\/>\_\_REG\_\_)}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00197}00197\ \textcolor{comment}{/*\ Exported\ functions\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00211}00211\ \mbox{\hyperlink{cmsis__armcc_8h_aba87361bfad2ae52cfe2f40c1a1dbf9c}{\_\_STATIC\_INLINE}}\ \textcolor{keywordtype}{void}\ LL\_PWR\_EnableBkUpAccess(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00212}00212\ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00213}00213\ \ \ \mbox{\hyperlink{group___exported__macros_ga26474f43799fbade9cf300e21dd3a91a}{SET\_BIT}}(\mbox{\hyperlink{group___peripheral__declaration_ga04651c526497822a859942b928e57f8e}{PWR}}-\/>CR,\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_gaf5c65ab845794ef48f09faa2ee44f718}{PWR\_CR\_DBP}});}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00214}00214\ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00215}00215\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00221}00221\ \mbox{\hyperlink{cmsis__armcc_8h_aba87361bfad2ae52cfe2f40c1a1dbf9c}{\_\_STATIC\_INLINE}}\ \textcolor{keywordtype}{void}\ LL\_PWR\_DisableBkUpAccess(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00222}00222\ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00223}00223\ \ \ \mbox{\hyperlink{group___exported__macros_ga133aae6fc0d41bffab39ab223a7001de}{CLEAR\_BIT}}(\mbox{\hyperlink{group___peripheral__declaration_ga04651c526497822a859942b928e57f8e}{PWR}}-\/>CR,\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_gaf5c65ab845794ef48f09faa2ee44f718}{PWR\_CR\_DBP}});}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00224}00224\ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00225}00225\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00231}00231\ \mbox{\hyperlink{cmsis__armcc_8h_aba87361bfad2ae52cfe2f40c1a1dbf9c}{\_\_STATIC\_INLINE}}\ uint32\_t\ LL\_PWR\_IsEnabledBkUpAccess(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00232}00232\ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00233}00233\ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{group___exported__macros_ga822bb1bb9710d5f2fa6396b84e583c33}{READ\_BIT}}(\mbox{\hyperlink{group___peripheral__declaration_ga04651c526497822a859942b928e57f8e}{PWR}}-\/>CR,\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_gaf5c65ab845794ef48f09faa2ee44f718}{PWR\_CR\_DBP}})\ ==\ (\mbox{\hyperlink{group___peripheral___registers___bits___definition_gaf5c65ab845794ef48f09faa2ee44f718}{PWR\_CR\_DBP}}));}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00234}00234\ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00235}00235\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00236}00236\ \textcolor{preprocessor}{\#if\ defined(PWR\_CR\_LPDS)}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00245}00245\ \mbox{\hyperlink{cmsis__armcc_8h_aba87361bfad2ae52cfe2f40c1a1dbf9c}{\_\_STATIC\_INLINE}}\ \textcolor{keywordtype}{void}\ LL\_PWR\_SetRegulModeDS(uint32\_t\ RegulMode)}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00246}00246\ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00247}00247\ \ \ \mbox{\hyperlink{group___exported__macros_ga6553c99f510c3bab8cc0a91602053247}{MODIFY\_REG}}(\mbox{\hyperlink{group___peripheral__declaration_ga04651c526497822a859942b928e57f8e}{PWR}}-\/>CR,\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga3aeb8d6f2539b0a3a4b851aeba0eea66}{PWR\_CR\_LPDS}},\ RegulMode);}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00248}00248\ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00249}00249\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00257}00257\ \mbox{\hyperlink{cmsis__armcc_8h_aba87361bfad2ae52cfe2f40c1a1dbf9c}{\_\_STATIC\_INLINE}}\ uint32\_t\ LL\_PWR\_GetRegulModeDS(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00258}00258\ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00259}00259\ \ \ \textcolor{keywordflow}{return}\ (uint32\_t)(\mbox{\hyperlink{group___exported__macros_ga822bb1bb9710d5f2fa6396b84e583c33}{READ\_BIT}}(\mbox{\hyperlink{group___peripheral__declaration_ga04651c526497822a859942b928e57f8e}{PWR}}-\/>CR,\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga3aeb8d6f2539b0a3a4b851aeba0eea66}{PWR\_CR\_LPDS}}));}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00260}00260\ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00261}00261\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ PWR\_CR\_LPDS\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00262}00262\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00273}00273\ \mbox{\hyperlink{cmsis__armcc_8h_aba87361bfad2ae52cfe2f40c1a1dbf9c}{\_\_STATIC\_INLINE}}\ \textcolor{keywordtype}{void}\ LL\_PWR\_SetPowerMode(uint32\_t\ PDMode)}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00274}00274\ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00275}00275\ \ \ \mbox{\hyperlink{group___exported__macros_ga6553c99f510c3bab8cc0a91602053247}{MODIFY\_REG}}(\mbox{\hyperlink{group___peripheral__declaration_ga04651c526497822a859942b928e57f8e}{PWR}}-\/>CR,\ (\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga8c8075e98772470804c9e3fe74984115}{PWR\_CR\_PDDS}}|\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga3aeb8d6f2539b0a3a4b851aeba0eea66}{PWR\_CR\_LPDS}}),\ PDMode);}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00276}00276\ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00277}00277\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00287}00287\ \mbox{\hyperlink{cmsis__armcc_8h_aba87361bfad2ae52cfe2f40c1a1dbf9c}{\_\_STATIC\_INLINE}}\ uint32\_t\ LL\_PWR\_GetPowerMode(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00288}00288\ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00289}00289\ \ \ \textcolor{keywordflow}{return}\ (uint32\_t)(\mbox{\hyperlink{group___exported__macros_ga822bb1bb9710d5f2fa6396b84e583c33}{READ\_BIT}}(\mbox{\hyperlink{group___peripheral__declaration_ga04651c526497822a859942b928e57f8e}{PWR}}-\/>CR,\ (\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga8c8075e98772470804c9e3fe74984115}{PWR\_CR\_PDDS}}|\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga3aeb8d6f2539b0a3a4b851aeba0eea66}{PWR\_CR\_LPDS}})));}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00290}00290\ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00291}00291\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00292}00292\ \textcolor{preprocessor}{\#if\ defined(PWR\_PVD\_SUPPORT)}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00307}00307\ \mbox{\hyperlink{cmsis__armcc_8h_aba87361bfad2ae52cfe2f40c1a1dbf9c}{\_\_STATIC\_INLINE}}\ \textcolor{keywordtype}{void}\ LL\_PWR\_SetPVDLevel(uint32\_t\ PVDLevel)}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00308}00308\ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00309}00309\ \ \ \mbox{\hyperlink{group___exported__macros_ga6553c99f510c3bab8cc0a91602053247}{MODIFY\_REG}}(\mbox{\hyperlink{group___peripheral__declaration_ga04651c526497822a859942b928e57f8e}{PWR}}-\/>CR,\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_gac73c24d43953c7598e42acdd4c4e7435}{PWR\_CR\_PLS}},\ PVDLevel);}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00310}00310\ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00311}00311\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00325}00325\ \mbox{\hyperlink{cmsis__armcc_8h_aba87361bfad2ae52cfe2f40c1a1dbf9c}{\_\_STATIC\_INLINE}}\ uint32\_t\ LL\_PWR\_GetPVDLevel(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00326}00326\ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00327}00327\ \ \ \textcolor{keywordflow}{return}\ (uint32\_t)(\mbox{\hyperlink{group___exported__macros_ga822bb1bb9710d5f2fa6396b84e583c33}{READ\_BIT}}(\mbox{\hyperlink{group___peripheral__declaration_ga04651c526497822a859942b928e57f8e}{PWR}}-\/>CR,\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_gac73c24d43953c7598e42acdd4c4e7435}{PWR\_CR\_PLS}}));}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00328}00328\ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00329}00329\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00335}00335\ \mbox{\hyperlink{cmsis__armcc_8h_aba87361bfad2ae52cfe2f40c1a1dbf9c}{\_\_STATIC\_INLINE}}\ \textcolor{keywordtype}{void}\ LL\_PWR\_EnablePVD(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00336}00336\ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00337}00337\ \ \ \mbox{\hyperlink{group___exported__macros_ga26474f43799fbade9cf300e21dd3a91a}{SET\_BIT}}(\mbox{\hyperlink{group___peripheral__declaration_ga04651c526497822a859942b928e57f8e}{PWR}}-\/>CR,\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga05d5c39759e69a294c0ab9bea8f142e5}{PWR\_CR\_PVDE}});}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00338}00338\ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00339}00339\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00345}00345\ \mbox{\hyperlink{cmsis__armcc_8h_aba87361bfad2ae52cfe2f40c1a1dbf9c}{\_\_STATIC\_INLINE}}\ \textcolor{keywordtype}{void}\ LL\_PWR\_DisablePVD(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00346}00346\ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00347}00347\ \ \ \mbox{\hyperlink{group___exported__macros_ga133aae6fc0d41bffab39ab223a7001de}{CLEAR\_BIT}}(\mbox{\hyperlink{group___peripheral__declaration_ga04651c526497822a859942b928e57f8e}{PWR}}-\/>CR,\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga05d5c39759e69a294c0ab9bea8f142e5}{PWR\_CR\_PVDE}});}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00348}00348\ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00349}00349\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00355}00355\ \mbox{\hyperlink{cmsis__armcc_8h_aba87361bfad2ae52cfe2f40c1a1dbf9c}{\_\_STATIC\_INLINE}}\ uint32\_t\ LL\_PWR\_IsEnabledPVD(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00356}00356\ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00357}00357\ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{group___exported__macros_ga822bb1bb9710d5f2fa6396b84e583c33}{READ\_BIT}}(\mbox{\hyperlink{group___peripheral__declaration_ga04651c526497822a859942b928e57f8e}{PWR}}-\/>CR,\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga05d5c39759e69a294c0ab9bea8f142e5}{PWR\_CR\_PVDE}})\ ==\ (\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga05d5c39759e69a294c0ab9bea8f142e5}{PWR\_CR\_PVDE}}));}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00358}00358\ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00359}00359\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ PWR\_PVD\_SUPPORT\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00360}00360\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00384}00384\ \mbox{\hyperlink{cmsis__armcc_8h_aba87361bfad2ae52cfe2f40c1a1dbf9c}{\_\_STATIC\_INLINE}}\ \textcolor{keywordtype}{void}\ LL\_PWR\_EnableWakeUpPin(uint32\_t\ WakeUpPin)}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00385}00385\ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00386}00386\ \ \ \mbox{\hyperlink{group___exported__macros_ga26474f43799fbade9cf300e21dd3a91a}{SET\_BIT}}(\mbox{\hyperlink{group___peripheral__declaration_ga04651c526497822a859942b928e57f8e}{PWR}}-\/>CSR,\ WakeUpPin);}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00387}00387\ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00388}00388\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00412}00412\ \mbox{\hyperlink{cmsis__armcc_8h_aba87361bfad2ae52cfe2f40c1a1dbf9c}{\_\_STATIC\_INLINE}}\ \textcolor{keywordtype}{void}\ LL\_PWR\_DisableWakeUpPin(uint32\_t\ WakeUpPin)}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00413}00413\ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00414}00414\ \ \ \mbox{\hyperlink{group___exported__macros_ga133aae6fc0d41bffab39ab223a7001de}{CLEAR\_BIT}}(\mbox{\hyperlink{group___peripheral__declaration_ga04651c526497822a859942b928e57f8e}{PWR}}-\/>CSR,\ WakeUpPin);}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00415}00415\ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00416}00416\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00440}00440\ \mbox{\hyperlink{cmsis__armcc_8h_aba87361bfad2ae52cfe2f40c1a1dbf9c}{\_\_STATIC\_INLINE}}\ uint32\_t\ LL\_PWR\_IsEnabledWakeUpPin(uint32\_t\ WakeUpPin)}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00441}00441\ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00442}00442\ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{group___exported__macros_ga822bb1bb9710d5f2fa6396b84e583c33}{READ\_BIT}}(\mbox{\hyperlink{group___peripheral__declaration_ga04651c526497822a859942b928e57f8e}{PWR}}-\/>CSR,\ WakeUpPin)\ ==\ (WakeUpPin));}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00443}00443\ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00444}00444\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00445}00445\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00459}00459\ \mbox{\hyperlink{cmsis__armcc_8h_aba87361bfad2ae52cfe2f40c1a1dbf9c}{\_\_STATIC\_INLINE}}\ uint32\_t\ LL\_PWR\_IsActiveFlag\_WU(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00460}00460\ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00461}00461\ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{group___exported__macros_ga822bb1bb9710d5f2fa6396b84e583c33}{READ\_BIT}}(\mbox{\hyperlink{group___peripheral__declaration_ga04651c526497822a859942b928e57f8e}{PWR}}-\/>CSR,\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga9465bb7ad9ca936688344e2a077539e6}{PWR\_CSR\_WUF}})\ ==\ (\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga9465bb7ad9ca936688344e2a077539e6}{PWR\_CSR\_WUF}}));}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00462}00462\ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00463}00463\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00469}00469\ \mbox{\hyperlink{cmsis__armcc_8h_aba87361bfad2ae52cfe2f40c1a1dbf9c}{\_\_STATIC\_INLINE}}\ uint32\_t\ LL\_PWR\_IsActiveFlag\_SB(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00470}00470\ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00471}00471\ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{group___exported__macros_ga822bb1bb9710d5f2fa6396b84e583c33}{READ\_BIT}}(\mbox{\hyperlink{group___peripheral__declaration_ga04651c526497822a859942b928e57f8e}{PWR}}-\/>CSR,\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_gab4fd42f153660593cad6f4fe22ff76bb}{PWR\_CSR\_SBF}})\ ==\ (\mbox{\hyperlink{group___peripheral___registers___bits___definition_gab4fd42f153660593cad6f4fe22ff76bb}{PWR\_CSR\_SBF}}));}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00472}00472\ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00473}00473\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00474}00474\ \textcolor{preprocessor}{\#if\ defined(PWR\_PVD\_SUPPORT)}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00480}00480\ \mbox{\hyperlink{cmsis__armcc_8h_aba87361bfad2ae52cfe2f40c1a1dbf9c}{\_\_STATIC\_INLINE}}\ uint32\_t\ LL\_PWR\_IsActiveFlag\_PVDO(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00481}00481\ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00482}00482\ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{group___exported__macros_ga822bb1bb9710d5f2fa6396b84e583c33}{READ\_BIT}}(\mbox{\hyperlink{group___peripheral__declaration_ga04651c526497822a859942b928e57f8e}{PWR}}-\/>CSR,\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga3535ce181895cc00afeb28dcac68d04c}{PWR\_CSR\_PVDO}})\ ==\ (\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga3535ce181895cc00afeb28dcac68d04c}{PWR\_CSR\_PVDO}}));}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00483}00483\ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00484}00484\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ PWR\_PVD\_SUPPORT\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00485}00485\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00486}00486\ \textcolor{preprocessor}{\#if\ defined(PWR\_CSR\_VREFINTRDYF)}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00492}00492\ \mbox{\hyperlink{cmsis__armcc_8h_aba87361bfad2ae52cfe2f40c1a1dbf9c}{\_\_STATIC\_INLINE}}\ uint32\_t\ LL\_PWR\_IsActiveFlag\_VREFINTRDY(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00493}00493\ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00494}00494\ \ \ \textcolor{keywordflow}{return}\ (\mbox{\hyperlink{group___exported__macros_ga822bb1bb9710d5f2fa6396b84e583c33}{READ\_BIT}}(\mbox{\hyperlink{group___peripheral__declaration_ga04651c526497822a859942b928e57f8e}{PWR}}-\/>CSR,\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga918aa3e6e5f97f7032d3eae8ac324eba}{PWR\_CSR\_VREFINTRDYF}})\ ==\ (\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga918aa3e6e5f97f7032d3eae8ac324eba}{PWR\_CSR\_VREFINTRDYF}}));}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00495}00495\ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00496}00496\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ PWR\_CSR\_VREFINTRDYF\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00502}00502\ \mbox{\hyperlink{cmsis__armcc_8h_aba87361bfad2ae52cfe2f40c1a1dbf9c}{\_\_STATIC\_INLINE}}\ \textcolor{keywordtype}{void}\ LL\_PWR\_ClearFlag\_SB(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00503}00503\ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00504}00504\ \ \ \mbox{\hyperlink{group___exported__macros_ga26474f43799fbade9cf300e21dd3a91a}{SET\_BIT}}(\mbox{\hyperlink{group___peripheral__declaration_ga04651c526497822a859942b928e57f8e}{PWR}}-\/>CR,\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_gab44484cacc35c80cf82eb011d6cbe13a}{PWR\_CR\_CSBF}});}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00505}00505\ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00506}00506\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00512}00512\ \mbox{\hyperlink{cmsis__armcc_8h_aba87361bfad2ae52cfe2f40c1a1dbf9c}{\_\_STATIC\_INLINE}}\ \textcolor{keywordtype}{void}\ LL\_PWR\_ClearFlag\_WU(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00513}00513\ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00514}00514\ \ \ \mbox{\hyperlink{group___exported__macros_ga26474f43799fbade9cf300e21dd3a91a}{SET\_BIT}}(\mbox{\hyperlink{group___peripheral__declaration_ga04651c526497822a859942b928e57f8e}{PWR}}-\/>CR,\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga3928de64f633b84770b1cfecea702fa7}{PWR\_CR\_CWUF}});}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00515}00515\ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00516}00516\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00521}00521\ \textcolor{preprocessor}{\#if\ defined(USE\_FULL\_LL\_DRIVER)}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00525}00525\ \mbox{\hyperlink{group___exported__types_ga8333b96c67f83cba354b3407fcbb6ee8}{ErrorStatus}}\ LL\_PWR\_DeInit(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00529}00529\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ USE\_FULL\_LL\_DRIVER\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00530}00530\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00539}00539\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ defined(PWR)\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00540}00540\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00545}00545\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00546}00546\ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00547}00547\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00548}00548\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__pwr_8h_source_l00549}00549\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_\_STM32F0xx\_LL\_PWR\_H\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

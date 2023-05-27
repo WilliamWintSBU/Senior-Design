@@ -1,0 +1,46 @@
+\hypertarget{group___r_c_c_ex___l_s_e___configuration}{}\doxysection{LSE Drive Configuration}
+\label{group___r_c_c_ex___l_s_e___configuration}\index{LSE Drive Configuration@{LSE Drive Configuration}}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___r_c_c_ex___l_s_e___configuration_ga9e21c193560567cfc3f908d733d9b19b}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+LSEDRIVE\+\_\+\+CONFIG}}(\+\_\+\+\_\+\+RCC\+\_\+\+LSEDRIVE\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Macro to configure the External Low Speed oscillator (LSE) drive capability. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+~\newline
+ 
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group___r_c_c_ex___l_s_e___configuration_ga9e21c193560567cfc3f908d733d9b19b}\label{group___r_c_c_ex___l_s_e___configuration_ga9e21c193560567cfc3f908d733d9b19b}} 
+\index{LSE Drive Configuration@{LSE Drive Configuration}!\_\_HAL\_RCC\_LSEDRIVE\_CONFIG@{\_\_HAL\_RCC\_LSEDRIVE\_CONFIG}}
+\index{\_\_HAL\_RCC\_LSEDRIVE\_CONFIG@{\_\_HAL\_RCC\_LSEDRIVE\_CONFIG}!LSE Drive Configuration@{LSE Drive Configuration}}
+\doxysubsubsection{\texorpdfstring{\_\_HAL\_RCC\_LSEDRIVE\_CONFIG}{\_\_HAL\_RCC\_LSEDRIVE\_CONFIG}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+LSEDRIVE\+\_\+\+CONFIG(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+RCC\+\_\+\+LSEDRIVE\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ (\mbox{\hyperlink{group___exported__macros_ga6553c99f510c3bab8cc0a91602053247}{MODIFY\_REG}}(\mbox{\hyperlink{group___peripheral__declaration_ga74944438a086975793d26ae48d5882d4}{RCC}}-\/>BDCR,\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \mbox{\hyperlink{group___peripheral___registers___bits___definition_gaa9e761cf5e09906a38e9c7e8e750514c}{RCC\_BDCR\_LSEDRV}},\ (uint32\_t)(\_\_RCC\_LSEDRIVE\_\_)\ ))}
+
+\end{DoxyCode}
+
+
+Macro to configure the External Low Speed oscillator (LSE) drive capability. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+RCC\+\_\+\+LSEDRIVE\+\_\+\+\_\+} & specifies the new state of the LSE drive capability. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item \mbox{\hyperlink{group___r_c_c_ex___l_s_e_drive___configuration_gab5fa5b50304710db2d7f6d583a225da3}{RCC\+\_\+\+LSEDRIVE\+\_\+\+LOW}} LSE oscillator low drive capability. \item \mbox{\hyperlink{group___r_c_c_ex___l_s_e_drive___configuration_ga1151beb7f9869e91fe7617936ad0efff}{RCC\+\_\+\+LSEDRIVE\+\_\+\+MEDIUMLOW}} LSE oscillator medium low drive capability. \item \mbox{\hyperlink{group___r_c_c_ex___l_s_e_drive___configuration_ga295eed1e1368d526fa0f6356ceecbc48}{RCC\+\_\+\+LSEDRIVE\+\_\+\+MEDIUMHIGH}} LSE oscillator medium high drive capability. \item \mbox{\hyperlink{group___r_c_c_ex___l_s_e_drive___configuration_ga90b0854f3813d7ab2781519bfa58fd95}{RCC\+\_\+\+LSEDRIVE\+\_\+\+HIGH}} LSE oscillator high drive capability. \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__rcc__ex_8h_source_l01856}{1856}} of file \mbox{\hyperlink{stm32f0xx__hal__rcc__ex_8h_source}{stm32f0xx\+\_\+hal\+\_\+rcc\+\_\+ex.\+h}}.
+

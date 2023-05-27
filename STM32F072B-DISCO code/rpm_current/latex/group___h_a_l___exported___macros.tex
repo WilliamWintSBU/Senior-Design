@@ -1,0 +1,67 @@
+\hypertarget{group___h_a_l___exported___macros}{}\doxysection{HAL Exported Macros}
+\label{group___h_a_l___exported___macros}\index{HAL Exported Macros@{HAL Exported Macros}}
+\doxysubsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group___h_a_l___freeze___unfreeze___peripherals}{HAL Freeze Unfreeze Peripherals}}
+\begin{DoxyCompactList}\small\item\em Freeze/\+Unfreeze Peripherals in Debug mode ~\newline
+ \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group___memory___mapping___selection}{Memory Mapping Selection}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___h_a_l___exported___macros_ga61181f4b4955f17858475485f8cd366c}{\+\_\+\+\_\+\+HAL\+\_\+\+SYSCFG\+\_\+\+FASTMODEPLUS\+\_\+\+ENABLE}}(\+\_\+\+\_\+\+FASTMODEPLUS\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Fast-\/mode Plus driving capability enable/disable macros. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___h_a_l___exported___macros_ga5f20cbc8ad78101d527209003dc014f2}{\+\_\+\+\_\+\+HAL\+\_\+\+SYSCFG\+\_\+\+FASTMODEPLUS\+\_\+\+DISABLE}}(\+\_\+\+\_\+\+FASTMODEPLUS\+\_\+\+\_\+)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+~\newline
+ 
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group___h_a_l___exported___macros_ga5f20cbc8ad78101d527209003dc014f2}\label{group___h_a_l___exported___macros_ga5f20cbc8ad78101d527209003dc014f2}} 
+\index{HAL Exported Macros@{HAL Exported Macros}!\_\_HAL\_SYSCFG\_FASTMODEPLUS\_DISABLE@{\_\_HAL\_SYSCFG\_FASTMODEPLUS\_DISABLE}}
+\index{\_\_HAL\_SYSCFG\_FASTMODEPLUS\_DISABLE@{\_\_HAL\_SYSCFG\_FASTMODEPLUS\_DISABLE}!HAL Exported Macros@{HAL Exported Macros}}
+\doxysubsubsection{\texorpdfstring{\_\_HAL\_SYSCFG\_FASTMODEPLUS\_DISABLE}{\_\_HAL\_SYSCFG\_FASTMODEPLUS\_DISABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+SYSCFG\+\_\+\+FASTMODEPLUS\+\_\+\+DISABLE(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+FASTMODEPLUS\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{do}\ \{\mbox{\hyperlink{stm32f0xx__hal__conf_8h_a631dea7b230e600555f979c62af1de21}{assert\_param}}(\mbox{\hyperlink{group___h_a_l___private___macros_ga2d44c67961ec9f4feecec777364c13a0}{IS\_SYSCFG\_FASTMODEPLUS}}((\_\_FASTMODEPLUS\_\_)));\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ CLEAR\_BIT(\mbox{\hyperlink{group___peripheral__declaration_ga3c833fe1c486cb62250ccbca32899cb8}{SYSCFG}}-\/>CFGR1,\ (\_\_FASTMODEPLUS\_\_));\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{while}(0)}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal_8h_source_l00399}{399}} of file \mbox{\hyperlink{stm32f0xx__hal_8h_source}{stm32f0xx\+\_\+hal.\+h}}.
+
+\mbox{\Hypertarget{group___h_a_l___exported___macros_ga61181f4b4955f17858475485f8cd366c}\label{group___h_a_l___exported___macros_ga61181f4b4955f17858475485f8cd366c}} 
+\index{HAL Exported Macros@{HAL Exported Macros}!\_\_HAL\_SYSCFG\_FASTMODEPLUS\_ENABLE@{\_\_HAL\_SYSCFG\_FASTMODEPLUS\_ENABLE}}
+\index{\_\_HAL\_SYSCFG\_FASTMODEPLUS\_ENABLE@{\_\_HAL\_SYSCFG\_FASTMODEPLUS\_ENABLE}!HAL Exported Macros@{HAL Exported Macros}}
+\doxysubsubsection{\texorpdfstring{\_\_HAL\_SYSCFG\_FASTMODEPLUS\_ENABLE}{\_\_HAL\_SYSCFG\_FASTMODEPLUS\_ENABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+SYSCFG\+\_\+\+FASTMODEPLUS\+\_\+\+ENABLE(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+FASTMODEPLUS\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{do}\ \{\mbox{\hyperlink{stm32f0xx__hal__conf_8h_a631dea7b230e600555f979c62af1de21}{assert\_param}}(\mbox{\hyperlink{group___h_a_l___private___macros_ga2d44c67961ec9f4feecec777364c13a0}{IS\_SYSCFG\_FASTMODEPLUS}}((\_\_FASTMODEPLUS\_\_)));\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SET\_BIT(\mbox{\hyperlink{group___peripheral__declaration_ga3c833fe1c486cb62250ccbca32899cb8}{SYSCFG}}-\/>CFGR1,\ (\_\_FASTMODEPLUS\_\_));\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\textcolor{keywordflow}{while}(0)}
+
+\end{DoxyCode}
+
+
+Fast-\/mode Plus driving capability enable/disable macros. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+FASTMODEPLUS\+\_\+\+\_\+} & This parameter can be a value of \mbox{\hyperlink{group___s_y_s_c_f_g___fast_mode_plus___g_p_i_o}{Fast-\/mode Plus on GPIO}} values. That you can find above these macros. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal_8h_source_l00395}{395}} of file \mbox{\hyperlink{stm32f0xx__hal_8h_source}{stm32f0xx\+\_\+hal.\+h}}.
+

@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['gps_5fblocking_0',['gps_blocking',['../my__code_8h.html#ad846ea8b61f1637b61cab2cd3d5d9661',1,'my_code.h']]],
-  ['gps_5frx_1',['gps_rx',['../my__code_8h.html#ab55f9f16932b73a407fa0bca4730d476',1,'gps_rx():&#160;my_code.c'],['../my__code_8c.html#ab55f9f16932b73a407fa0bca4730d476',1,'gps_rx():&#160;my_code.c']]]
+  ['flash_5fwaitforlastoperation_0',['FLASH_WaitForLastOperation',['../group___f_l_a_s_h___private___functions.html#gaf89afc110a32ac9dcf0d06b89ffd9224',1,'stm32f0xx_hal_flash.h']]]
 ];

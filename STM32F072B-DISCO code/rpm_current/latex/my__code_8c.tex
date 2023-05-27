@@ -11,6 +11,8 @@
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
+void \mbox{\hyperlink{my__code_8c_a29d7b6715dbf6dfe6b4da72f234cbd9c}{ADC\+\_\+\+Disable\+\_\+channels}} (void)
+\item 
 void \mbox{\hyperlink{my__code_8c_a4fc01d736fe50cf5b977f755b675f11d}{setup}} ()
 \begin{DoxyCompactList}\small\item\em called before while loop of auto generated \mbox{\hyperlink{main_8c}{main.\+c}}. Runs once \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{my__code_8c_afe461d27b9c48d5921c00d521181f12f}{loop}} ()
@@ -23,13 +25,13 @@ void \mbox{\hyperlink{my__code_8c_a98b85952932b02fafbcf56ac1f246954}{hall\+\_\+c
 \item 
 void \mbox{\hyperlink{my__code_8c_ab55f9f16932b73a407fa0bca4730d476}{gps\+\_\+rx}} ()
 \begin{DoxyCompactList}\small\item\em Passes received nema string to lwgps. Must be called at least once per second. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{my__code_8c_ae494a9643f29b87d6d81e5264e60e57b}{HAL\+\_\+\+UART\+\_\+\+Rx\+Cplt\+Callback}} (UART\+\_\+\+Handle\+Type\+Def $\ast$huart)
+void \mbox{\hyperlink{group___u_a_r_t___exported___functions___group2_gae494a9643f29b87d6d81e5264e60e57b}{HAL\+\_\+\+UART\+\_\+\+Rx\+Cplt\+Callback}} (\mbox{\hyperlink{group___u_a_r_t___exported___types_ga5de4a49eb132735325e706f406c69d6e}{UART\+\_\+\+Handle\+Type\+Def}} $\ast$huart)
 \begin{DoxyCompactList}\small\item\em Callback for uart RX interrupts. Processes GPS strings. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{my__code_8c_a69cac0eadc64f447090ab8ac43653a12}{lora\+\_\+\+TX\+\_\+blocking}} (char $\ast$payload, int length)
 \item 
 void \mbox{\hyperlink{my__code_8c_a3379ea969e8f3d0b3feff28db2ef81f8}{lora\+\_\+tx\+\_\+it}} (char $\ast$payload, int length)
 \begin{DoxyCompactList}\small\item\em Transmits a string over Lo\+Ra using interrupts. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{my__code_8c_a77a2401a35ddd9bd0b8fc28331b81381}{HAL\+\_\+\+TIM\+\_\+\+IC\+\_\+\+Capture\+Callback}} (TIM\+\_\+\+Handle\+Type\+Def $\ast$htim)
+void \mbox{\hyperlink{group___t_i_m___exported___functions___group9_ga77a2401a35ddd9bd0b8fc28331b81381}{HAL\+\_\+\+TIM\+\_\+\+IC\+\_\+\+Capture\+Callback}} (\mbox{\hyperlink{struct_t_i_m___handle_type_def}{TIM\+\_\+\+Handle\+Type\+Def}} $\ast$htim)
 \item 
 void \mbox{\hyperlink{my__code_8c_acd5eb894164a07a00867af26c324b26a}{read\+Voltage}} (float div)
 \begin{DoxyCompactList}\small\item\em reads all voltages from internal ADC. \end{DoxyCompactList}\item 
@@ -91,6 +93,16 @@ float \mbox{\hyperlink{my__code_8c_a03220cc699ee703ec90047e2a87c4785}{volt0}} = 
 
 
 \doxysubsection{Function Documentation}
+\mbox{\Hypertarget{my__code_8c_a29d7b6715dbf6dfe6b4da72f234cbd9c}\label{my__code_8c_a29d7b6715dbf6dfe6b4da72f234cbd9c}} 
+\index{my\_code.c@{my\_code.c}!ADC\_Disable\_channels@{ADC\_Disable\_channels}}
+\index{ADC\_Disable\_channels@{ADC\_Disable\_channels}!my\_code.c@{my\_code.c}}
+\doxysubsubsection{\texorpdfstring{ADC\_Disable\_channels()}{ADC\_Disable\_channels()}}
+{\footnotesize\ttfamily void ADC\+\_\+\+Disable\+\_\+channels (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line \mbox{\hyperlink{my__code_8c_source_l00522}{522}} of file \mbox{\hyperlink{my__code_8c_source}{my\+\_\+code.\+c}}.
+
 \mbox{\Hypertarget{my__code_8c_a251b2b87677061134af81bc00ad40c70}\label{my__code_8c_a251b2b87677061134af81bc00ad40c70}} 
 \index{my\_code.c@{my\_code.c}!ADC\_Select\_CH0@{ADC\_Select\_CH0}}
 \index{ADC\_Select\_CH0@{ADC\_Select\_CH0}!my\_code.c@{my\_code.c}}
@@ -103,7 +115,7 @@ configures the internal ADC to use input channel 0
 
 
 
-Definition at line \mbox{\hyperlink{my__code_8c_source_l00561}{561}} of file \mbox{\hyperlink{my__code_8c_source}{my\+\_\+code.\+c}}.
+Definition at line \mbox{\hyperlink{my__code_8c_source_l00613}{613}} of file \mbox{\hyperlink{my__code_8c_source}{my\+\_\+code.\+c}}.
 
 \mbox{\Hypertarget{my__code_8c_acb840db66fc6cc2cc8f57bd208fabd0b}\label{my__code_8c_acb840db66fc6cc2cc8f57bd208fabd0b}} 
 \index{my\_code.c@{my\_code.c}!ADC\_Select\_CH1@{ADC\_Select\_CH1}}
@@ -117,7 +129,7 @@ configures the internal ADC to use input channel 1
 
 
 
-Definition at line \mbox{\hyperlink{my__code_8c_source_l00510}{510}} of file \mbox{\hyperlink{my__code_8c_source}{my\+\_\+code.\+c}}.
+Definition at line \mbox{\hyperlink{my__code_8c_source_l00562}{562}} of file \mbox{\hyperlink{my__code_8c_source}{my\+\_\+code.\+c}}.
 
 \mbox{\Hypertarget{my__code_8c_adb4a850ae98f4c5235a813f1f92ae52d}\label{my__code_8c_adb4a850ae98f4c5235a813f1f92ae52d}} 
 \index{my\_code.c@{my\_code.c}!ADC\_Select\_CH2@{ADC\_Select\_CH2}}
@@ -131,7 +143,7 @@ configures the internal ADC to use input channel 2
 
 
 
-Definition at line \mbox{\hyperlink{my__code_8c_source_l00527}{527}} of file \mbox{\hyperlink{my__code_8c_source}{my\+\_\+code.\+c}}.
+Definition at line \mbox{\hyperlink{my__code_8c_source_l00579}{579}} of file \mbox{\hyperlink{my__code_8c_source}{my\+\_\+code.\+c}}.
 
 \mbox{\Hypertarget{my__code_8c_aa35b535901d9f153065156a93abeb107}\label{my__code_8c_aa35b535901d9f153065156a93abeb107}} 
 \index{my\_code.c@{my\_code.c}!ADC\_Select\_CH3@{ADC\_Select\_CH3}}
@@ -145,7 +157,7 @@ configures the internal ADC to use input channel 3
 
 
 
-Definition at line \mbox{\hyperlink{my__code_8c_source_l00544}{544}} of file \mbox{\hyperlink{my__code_8c_source}{my\+\_\+code.\+c}}.
+Definition at line \mbox{\hyperlink{my__code_8c_source_l00596}{596}} of file \mbox{\hyperlink{my__code_8c_source}{my\+\_\+code.\+c}}.
 
 \mbox{\Hypertarget{my__code_8c_ab55f9f16932b73a407fa0bca4730d476}\label{my__code_8c_ab55f9f16932b73a407fa0bca4730d476}} 
 \index{my\_code.c@{my\_code.c}!gps\_rx@{gps\_rx}}
@@ -159,42 +171,7 @@ Passes received nema string to lwgps. Must be called at least once per second.
 
 
 
-Definition at line \mbox{\hyperlink{my__code_8c_source_l00282}{282}} of file \mbox{\hyperlink{my__code_8c_source}{my\+\_\+code.\+c}}.
-
-\mbox{\Hypertarget{my__code_8c_a77a2401a35ddd9bd0b8fc28331b81381}\label{my__code_8c_a77a2401a35ddd9bd0b8fc28331b81381}} 
-\index{my\_code.c@{my\_code.c}!HAL\_TIM\_IC\_CaptureCallback@{HAL\_TIM\_IC\_CaptureCallback}}
-\index{HAL\_TIM\_IC\_CaptureCallback@{HAL\_TIM\_IC\_CaptureCallback}!my\_code.c@{my\_code.c}}
-\doxysubsubsection{\texorpdfstring{HAL\_TIM\_IC\_CaptureCallback()}{HAL\_TIM\_IC\_CaptureCallback()}}
-{\footnotesize\ttfamily void HAL\+\_\+\+TIM\+\_\+\+IC\+\_\+\+Capture\+Callback (\begin{DoxyParamCaption}\item[{TIM\+\_\+\+Handle\+Type\+Def $\ast$}]{htim }\end{DoxyParamCaption})}
-
-
-
-Definition at line \mbox{\hyperlink{my__code_8c_source_l00427}{427}} of file \mbox{\hyperlink{my__code_8c_source}{my\+\_\+code.\+c}}.
-
-\mbox{\Hypertarget{my__code_8c_ae494a9643f29b87d6d81e5264e60e57b}\label{my__code_8c_ae494a9643f29b87d6d81e5264e60e57b}} 
-\index{my\_code.c@{my\_code.c}!HAL\_UART\_RxCpltCallback@{HAL\_UART\_RxCpltCallback}}
-\index{HAL\_UART\_RxCpltCallback@{HAL\_UART\_RxCpltCallback}!my\_code.c@{my\_code.c}}
-\doxysubsubsection{\texorpdfstring{HAL\_UART\_RxCpltCallback()}{HAL\_UART\_RxCpltCallback()}}
-{\footnotesize\ttfamily void HAL\+\_\+\+UART\+\_\+\+Rx\+Cplt\+Callback (\begin{DoxyParamCaption}\item[{UART\+\_\+\+Handle\+Type\+Def $\ast$}]{huart }\end{DoxyParamCaption})}
-
-
-
-Callback for uart RX interrupts. Processes GPS strings. 
-
-Parses incoming serial data one byte at a time using a state machine. Uses state variables defined in \mbox{\hyperlink{structgps__struct}{gps\+\_\+struct}} \mbox{\hyperlink{my__code_8h}{my\+\_\+code.\+h}}. When it has received the number of lines in one transmission from the sensor, it changes gps.\+buff\+State\+Flag from write to read.
-
-\mbox{\hyperlink{my__code_8c_ab55f9f16932b73a407fa0bca4730d476}{gps\+\_\+rx()}} polls for this flag. As long as \mbox{\hyperlink{my__code_8c_ab55f9f16932b73a407fa0bca4730d476}{gps\+\_\+rx()}} is called once per second no data is lost.
-
-In the future I might add functionality so it discards data and starts over if it has been more than one second since it has seen the last line.
-
-
-\begin{DoxyParams}[1]{Parameters}
-\mbox{\texttt{ in}}  & {\em huart} & uart peripheral that has interrupted. Returns immediately if not huart3 \\
-\hline
-\end{DoxyParams}
-
-
-Definition at line \mbox{\hyperlink{my__code_8c_source_l00330}{330}} of file \mbox{\hyperlink{my__code_8c_source}{my\+\_\+code.\+c}}.
+Definition at line \mbox{\hyperlink{my__code_8c_source_l00290}{290}} of file \mbox{\hyperlink{my__code_8c_source}{my\+\_\+code.\+c}}.
 
 \mbox{\Hypertarget{my__code_8c_a98b85952932b02fafbcf56ac1f246954}\label{my__code_8c_a98b85952932b02fafbcf56ac1f246954}} 
 \index{my\_code.c@{my\_code.c}!hall\_calibrate@{hall\_calibrate}}
@@ -204,7 +181,7 @@ Definition at line \mbox{\hyperlink{my__code_8c_source_l00330}{330}} of file \mb
 
 
 
-Definition at line \mbox{\hyperlink{my__code_8c_source_l00259}{259}} of file \mbox{\hyperlink{my__code_8c_source}{my\+\_\+code.\+c}}.
+Definition at line \mbox{\hyperlink{my__code_8c_source_l00267}{267}} of file \mbox{\hyperlink{my__code_8c_source}{my\+\_\+code.\+c}}.
 
 \mbox{\Hypertarget{my__code_8c_a562b46db6df8519948cd3397d0a74c9f}\label{my__code_8c_a562b46db6df8519948cd3397d0a74c9f}} 
 \index{my\_code.c@{my\_code.c}!hall\_read@{hall\_read}}
@@ -214,7 +191,7 @@ Definition at line \mbox{\hyperlink{my__code_8c_source_l00259}{259}} of file \mb
 
 
 
-Definition at line \mbox{\hyperlink{my__code_8c_source_l00216}{216}} of file \mbox{\hyperlink{my__code_8c_source}{my\+\_\+code.\+c}}.
+Definition at line \mbox{\hyperlink{my__code_8c_source_l00224}{224}} of file \mbox{\hyperlink{my__code_8c_source}{my\+\_\+code.\+c}}.
 
 \mbox{\Hypertarget{my__code_8c_a7259c0cadb7bc3e6b343edc3189990e7}\label{my__code_8c_a7259c0cadb7bc3e6b343edc3189990e7}} 
 \index{my\_code.c@{my\_code.c}!LCD\_paint@{LCD\_paint}}
@@ -228,7 +205,7 @@ This function assembles a message and sends it to the display. It may block temp
 
 
 
-Definition at line \mbox{\hyperlink{my__code_8c_source_l00174}{174}} of file \mbox{\hyperlink{my__code_8c_source}{my\+\_\+code.\+c}}.
+Definition at line \mbox{\hyperlink{my__code_8c_source_l00175}{175}} of file \mbox{\hyperlink{my__code_8c_source}{my\+\_\+code.\+c}}.
 
 \mbox{\Hypertarget{my__code_8c_afe461d27b9c48d5921c00d521181f12f}\label{my__code_8c_afe461d27b9c48d5921c00d521181f12f}} 
 \index{my\_code.c@{my\_code.c}!loop@{loop}}
@@ -242,7 +219,7 @@ called in while loop of auto generated \mbox{\hyperlink{main_8c}{main.\+c}}. Run
 
 
 
-Definition at line \mbox{\hyperlink{my__code_8c_source_l00126}{126}} of file \mbox{\hyperlink{my__code_8c_source}{my\+\_\+code.\+c}}.
+Definition at line \mbox{\hyperlink{my__code_8c_source_l00127}{127}} of file \mbox{\hyperlink{my__code_8c_source}{my\+\_\+code.\+c}}.
 
 \mbox{\Hypertarget{my__code_8c_a69cac0eadc64f447090ab8ac43653a12}\label{my__code_8c_a69cac0eadc64f447090ab8ac43653a12}} 
 \index{my\_code.c@{my\_code.c}!lora\_TX\_blocking@{lora\_TX\_blocking}}
@@ -252,7 +229,7 @@ Definition at line \mbox{\hyperlink{my__code_8c_source_l00126}{126}} of file \mb
 
 
 
-Definition at line \mbox{\hyperlink{my__code_8c_source_l00381}{381}} of file \mbox{\hyperlink{my__code_8c_source}{my\+\_\+code.\+c}}.
+Definition at line \mbox{\hyperlink{my__code_8c_source_l00389}{389}} of file \mbox{\hyperlink{my__code_8c_source}{my\+\_\+code.\+c}}.
 
 \mbox{\Hypertarget{my__code_8c_a3379ea969e8f3d0b3feff28db2ef81f8}\label{my__code_8c_a3379ea969e8f3d0b3feff28db2ef81f8}} 
 \index{my\_code.c@{my\_code.c}!lora\_tx\_it@{lora\_tx\_it}}
@@ -266,7 +243,7 @@ Transmits a string over Lo\+Ra using interrupts.
 
 
 
-Definition at line \mbox{\hyperlink{my__code_8c_source_l00402}{402}} of file \mbox{\hyperlink{my__code_8c_source}{my\+\_\+code.\+c}}.
+Definition at line \mbox{\hyperlink{my__code_8c_source_l00410}{410}} of file \mbox{\hyperlink{my__code_8c_source}{my\+\_\+code.\+c}}.
 
 \mbox{\Hypertarget{my__code_8c_a656e85eaba42f1b5ea2488b0375ecf22}\label{my__code_8c_a656e85eaba42f1b5ea2488b0375ecf22}} 
 \index{my\_code.c@{my\_code.c}!readCurrent@{readCurrent}}
@@ -276,7 +253,7 @@ Definition at line \mbox{\hyperlink{my__code_8c_source_l00402}{402}} of file \mb
 
 
 
-Definition at line \mbox{\hyperlink{my__code_8c_source_l00496}{496}} of file \mbox{\hyperlink{my__code_8c_source}{my\+\_\+code.\+c}}.
+Definition at line \mbox{\hyperlink{my__code_8c_source_l00511}{511}} of file \mbox{\hyperlink{my__code_8c_source}{my\+\_\+code.\+c}}.
 
 \mbox{\Hypertarget{my__code_8c_acd5eb894164a07a00867af26c324b26a}\label{my__code_8c_acd5eb894164a07a00867af26c324b26a}} 
 \index{my\_code.c@{my\_code.c}!readVoltage@{readVoltage}}
@@ -290,7 +267,7 @@ reads all voltages from internal ADC.
 
 
 
-Definition at line \mbox{\hyperlink{my__code_8c_source_l00457}{457}} of file \mbox{\hyperlink{my__code_8c_source}{my\+\_\+code.\+c}}.
+Definition at line \mbox{\hyperlink{my__code_8c_source_l00465}{465}} of file \mbox{\hyperlink{my__code_8c_source}{my\+\_\+code.\+c}}.
 
 \mbox{\Hypertarget{my__code_8c_a4fc01d736fe50cf5b977f755b675f11d}\label{my__code_8c_a4fc01d736fe50cf5b977f755b675f11d}} 
 \index{my\_code.c@{my\_code.c}!setup@{setup}}
@@ -304,7 +281,7 @@ called before while loop of auto generated \mbox{\hyperlink{main_8c}{main.\+c}}.
 
 
 
-Definition at line \mbox{\hyperlink{my__code_8c_source_l00080}{80}} of file \mbox{\hyperlink{my__code_8c_source}{my\+\_\+code.\+c}}.
+Definition at line \mbox{\hyperlink{my__code_8c_source_l00081}{81}} of file \mbox{\hyperlink{my__code_8c_source}{my\+\_\+code.\+c}}.
 
 
 

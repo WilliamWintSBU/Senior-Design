@@ -1,0 +1,209 @@
+\hypertarget{struct_a_d_c___init_type_def}{}\doxysection{ADC\+\_\+\+Init\+Type\+Def Struct Reference}
+\label{struct_a_d_c___init_type_def}\index{ADC\_InitTypeDef@{ADC\_InitTypeDef}}
+
+
+Structure definition of ADC initialization and regular group ~\newline
+  
+
+
+
+
+{\ttfamily \#include $<$stm32f0xx\+\_\+hal\+\_\+adc.\+h$>$}
+
+\doxysubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_a_d_c___init_type_def_ab791f8fac403d508e1c53b6f27cf1f24}{Clock\+Prescaler}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_a_d_c___init_type_def_a6613985e603e784c30fb3689f2c6fa5f}{Resolution}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_a_d_c___init_type_def_afe646b2571044212378bf5f722544359}{Data\+Align}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_a_d_c___init_type_def_a67902b5cdd3d1aa4af49654409412a08}{Scan\+Conv\+Mode}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_a_d_c___init_type_def_a92de48abe9cbd958145ce5bc090ea383}{EOCSelection}}
+\item 
+\mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} \mbox{\hyperlink{struct_a_d_c___init_type_def_a17f2a28967e1ad48b687c1a670f567b7}{Low\+Power\+Auto\+Wait}}
+\item 
+\mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} \mbox{\hyperlink{struct_a_d_c___init_type_def_ac56937adb92acc92a4d4b56e9aff70ce}{Low\+Power\+Auto\+Power\+Off}}
+\item 
+\mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} \mbox{\hyperlink{struct_a_d_c___init_type_def_acb089820ffd05cfa35a3b0b89b7945fd}{Continuous\+Conv\+Mode}}
+\item 
+\mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} \mbox{\hyperlink{struct_a_d_c___init_type_def_aa314a1478944f8457d9c9e423719d893}{Discontinuous\+Conv\+Mode}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_a_d_c___init_type_def_a3f4a71424165638d6621d75a351cb5e0}{External\+Trig\+Conv}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_a_d_c___init_type_def_ace2c616b80bb7f1982e8a52131a2732c}{External\+Trig\+Conv\+Edge}}
+\item 
+\mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} \mbox{\hyperlink{struct_a_d_c___init_type_def_a535b571cac727283b16e159fe6acdcd8}{DMAContinuous\+Requests}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_a_d_c___init_type_def_ac20c5da6d0ffd3de9c705eff0f5a13bc}{Overrun}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_a_d_c___init_type_def_a66567dbf0cd76f9d381c9f1d5994c7ed}{Sampling\+Time\+Common}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Structure definition of ADC initialization and regular group ~\newline
+ 
+
+\begin{DoxyNote}{Note}
+The setting of these parameters with function \mbox{\hyperlink{group___a_d_c___exported___functions___group1_ga33ddb73d4880bd425aaa43c5c52bb13a}{HAL\+\_\+\+ADC\+\_\+\+Init()}} is conditioned to ADC state. ADC state can be either\+:
+\begin{DoxyItemize}
+\item For all parameters\+: ADC disabled (this is the only possible ADC state to modify parameter \textquotesingle{}Clock\+Prescaler\textquotesingle{})
+\item For all parameters except \textquotesingle{}Clock\+Prescaler\textquotesingle{} and \textquotesingle{}resolution\textquotesingle{}\+: ADC enabled without conversion on going on regular group. If ADC is not in the appropriate state to modify some parameters, these parameters setting is bypassed without error reporting (as it can be the expected behaviour in case of intended action to update another parameter (which fulfills the ADC state condition) on the fly). 
+\end{DoxyItemize}
+\end{DoxyNote}
+
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__adc_8h_source_l00052}{52}} of file \mbox{\hyperlink{stm32f0xx__hal__adc_8h_source}{stm32f0xx\+\_\+hal\+\_\+adc.\+h}}.
+
+
+
+\doxysubsection{Field Documentation}
+\mbox{\Hypertarget{struct_a_d_c___init_type_def_ab791f8fac403d508e1c53b6f27cf1f24}\label{struct_a_d_c___init_type_def_ab791f8fac403d508e1c53b6f27cf1f24}} 
+\index{ADC\_InitTypeDef@{ADC\_InitTypeDef}!ClockPrescaler@{ClockPrescaler}}
+\index{ClockPrescaler@{ClockPrescaler}!ADC\_InitTypeDef@{ADC\_InitTypeDef}}
+\doxysubsubsection{\texorpdfstring{ClockPrescaler}{ClockPrescaler}}
+{\footnotesize\ttfamily uint32\+\_\+t Clock\+Prescaler}
+
+Select ADC clock source (synchronous clock derived from APB clock or asynchronous clock derived from ADC dedicated HSI RC oscillator 14MHz) and clock prescaler. This parameter can be a value of \mbox{\hyperlink{group___a_d_c___clock_prescaler}{ADC Clock\+Prescaler}} Note\+: In case of usage of the ADC dedicated HSI RC oscillator, it must be preliminarily enabled at RCC top level. Note\+: This parameter can be modified only if the ADC is disabled 
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__adc_8h_source_l00054}{54}} of file \mbox{\hyperlink{stm32f0xx__hal__adc_8h_source}{stm32f0xx\+\_\+hal\+\_\+adc.\+h}}.
+
+\mbox{\Hypertarget{struct_a_d_c___init_type_def_acb089820ffd05cfa35a3b0b89b7945fd}\label{struct_a_d_c___init_type_def_acb089820ffd05cfa35a3b0b89b7945fd}} 
+\index{ADC\_InitTypeDef@{ADC\_InitTypeDef}!ContinuousConvMode@{ContinuousConvMode}}
+\index{ContinuousConvMode@{ContinuousConvMode}!ADC\_InitTypeDef@{ADC\_InitTypeDef}}
+\doxysubsubsection{\texorpdfstring{ContinuousConvMode}{ContinuousConvMode}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} Continuous\+Conv\+Mode}
+
+Specifies whether the conversion is performed in single mode (one conversion) or continuous mode for regular group, after the selected trigger occurred (software start or external trigger). This parameter can be set to ENABLE or DISABLE. 
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__adc_8h_source_l00082}{82}} of file \mbox{\hyperlink{stm32f0xx__hal__adc_8h_source}{stm32f0xx\+\_\+hal\+\_\+adc.\+h}}.
+
+\mbox{\Hypertarget{struct_a_d_c___init_type_def_afe646b2571044212378bf5f722544359}\label{struct_a_d_c___init_type_def_afe646b2571044212378bf5f722544359}} 
+\index{ADC\_InitTypeDef@{ADC\_InitTypeDef}!DataAlign@{DataAlign}}
+\index{DataAlign@{DataAlign}!ADC\_InitTypeDef@{ADC\_InitTypeDef}}
+\doxysubsubsection{\texorpdfstring{DataAlign}{DataAlign}}
+{\footnotesize\ttfamily uint32\+\_\+t Data\+Align}
+
+Specifies whether the ADC data alignment is left or right. ~\newline
+ This parameter can be a value of \mbox{\hyperlink{group___a_d_c___data__align}{ADC Data\+\_\+align}} 
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__adc_8h_source_l00060}{60}} of file \mbox{\hyperlink{stm32f0xx__hal__adc_8h_source}{stm32f0xx\+\_\+hal\+\_\+adc.\+h}}.
+
+\mbox{\Hypertarget{struct_a_d_c___init_type_def_aa314a1478944f8457d9c9e423719d893}\label{struct_a_d_c___init_type_def_aa314a1478944f8457d9c9e423719d893}} 
+\index{ADC\_InitTypeDef@{ADC\_InitTypeDef}!DiscontinuousConvMode@{DiscontinuousConvMode}}
+\index{DiscontinuousConvMode@{DiscontinuousConvMode}!ADC\_InitTypeDef@{ADC\_InitTypeDef}}
+\doxysubsubsection{\texorpdfstring{DiscontinuousConvMode}{DiscontinuousConvMode}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} Discontinuous\+Conv\+Mode}
+
+Specifies whether the conversions sequence of regular group is performed in Complete-\/sequence/\+Discontinuous-\/sequence (main sequence subdivided in successive parts). Discontinuous mode is used only if sequencer is enabled (parameter \textquotesingle{}Scan\+Conv\+Mode\textquotesingle{}). If sequencer is disabled, this parameter is discarded. Discontinuous mode can be enabled only if continuous mode is disabled. If continuous mode is enabled, this parameter setting is discarded. This parameter can be set to ENABLE or DISABLE Note\+: Number of discontinuous ranks increment is fixed to one-\/by-\/one. 
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__adc_8h_source_l00085}{85}} of file \mbox{\hyperlink{stm32f0xx__hal__adc_8h_source}{stm32f0xx\+\_\+hal\+\_\+adc.\+h}}.
+
+\mbox{\Hypertarget{struct_a_d_c___init_type_def_a535b571cac727283b16e159fe6acdcd8}\label{struct_a_d_c___init_type_def_a535b571cac727283b16e159fe6acdcd8}} 
+\index{ADC\_InitTypeDef@{ADC\_InitTypeDef}!DMAContinuousRequests@{DMAContinuousRequests}}
+\index{DMAContinuousRequests@{DMAContinuousRequests}!ADC\_InitTypeDef@{ADC\_InitTypeDef}}
+\doxysubsubsection{\texorpdfstring{DMAContinuousRequests}{DMAContinuousRequests}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} DMAContinuous\+Requests}
+
+Specifies whether the DMA requests are performed in one shot mode (DMA transfer stop when number of conversions is reached) or in Continuous mode (DMA transfer unlimited, whatever number of conversions). Note\+: In continuous mode, DMA must be configured in circular mode. Otherwise an overrun will be triggered when DMA buffer maximum pointer is reached. This parameter can be set to ENABLE or DISABLE. 
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__adc_8h_source_l00096}{96}} of file \mbox{\hyperlink{stm32f0xx__hal__adc_8h_source}{stm32f0xx\+\_\+hal\+\_\+adc.\+h}}.
+
+\mbox{\Hypertarget{struct_a_d_c___init_type_def_a92de48abe9cbd958145ce5bc090ea383}\label{struct_a_d_c___init_type_def_a92de48abe9cbd958145ce5bc090ea383}} 
+\index{ADC\_InitTypeDef@{ADC\_InitTypeDef}!EOCSelection@{EOCSelection}}
+\index{EOCSelection@{EOCSelection}!ADC\_InitTypeDef@{ADC\_InitTypeDef}}
+\doxysubsubsection{\texorpdfstring{EOCSelection}{EOCSelection}}
+{\footnotesize\ttfamily uint32\+\_\+t EOCSelection}
+
+Specifies what EOC (End Of Conversion) flag is used for conversion by polling and interruption\+: end of conversion of each rank or complete sequence. This parameter can be a value of \mbox{\hyperlink{group___a_d_c___e_o_c_selection}{ADC EOCSelection}}. 
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__adc_8h_source_l00069}{69}} of file \mbox{\hyperlink{stm32f0xx__hal__adc_8h_source}{stm32f0xx\+\_\+hal\+\_\+adc.\+h}}.
+
+\mbox{\Hypertarget{struct_a_d_c___init_type_def_a3f4a71424165638d6621d75a351cb5e0}\label{struct_a_d_c___init_type_def_a3f4a71424165638d6621d75a351cb5e0}} 
+\index{ADC\_InitTypeDef@{ADC\_InitTypeDef}!ExternalTrigConv@{ExternalTrigConv}}
+\index{ExternalTrigConv@{ExternalTrigConv}!ADC\_InitTypeDef@{ADC\_InitTypeDef}}
+\doxysubsubsection{\texorpdfstring{ExternalTrigConv}{ExternalTrigConv}}
+{\footnotesize\ttfamily uint32\+\_\+t External\+Trig\+Conv}
+
+Selects the external event used to trigger the conversion start of regular group. If set to ADC\+\_\+\+SOFTWARE\+\_\+\+START, external triggers are disabled. This parameter can be a value of \mbox{\hyperlink{group___a_d_c___external__trigger__source___regular}{ADC External trigger source Regular}} 
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__adc_8h_source_l00090}{90}} of file \mbox{\hyperlink{stm32f0xx__hal__adc_8h_source}{stm32f0xx\+\_\+hal\+\_\+adc.\+h}}.
+
+\mbox{\Hypertarget{struct_a_d_c___init_type_def_ace2c616b80bb7f1982e8a52131a2732c}\label{struct_a_d_c___init_type_def_ace2c616b80bb7f1982e8a52131a2732c}} 
+\index{ADC\_InitTypeDef@{ADC\_InitTypeDef}!ExternalTrigConvEdge@{ExternalTrigConvEdge}}
+\index{ExternalTrigConvEdge@{ExternalTrigConvEdge}!ADC\_InitTypeDef@{ADC\_InitTypeDef}}
+\doxysubsubsection{\texorpdfstring{ExternalTrigConvEdge}{ExternalTrigConvEdge}}
+{\footnotesize\ttfamily uint32\+\_\+t External\+Trig\+Conv\+Edge}
+
+Selects the external trigger edge of regular group. If trigger is set to ADC\+\_\+\+SOFTWARE\+\_\+\+START, this parameter is discarded. This parameter can be a value of \mbox{\hyperlink{group___a_d_c___external__trigger__edge___regular}{ADC External trigger edge Regular}} 
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__adc_8h_source_l00093}{93}} of file \mbox{\hyperlink{stm32f0xx__hal__adc_8h_source}{stm32f0xx\+\_\+hal\+\_\+adc.\+h}}.
+
+\mbox{\Hypertarget{struct_a_d_c___init_type_def_ac56937adb92acc92a4d4b56e9aff70ce}\label{struct_a_d_c___init_type_def_ac56937adb92acc92a4d4b56e9aff70ce}} 
+\index{ADC\_InitTypeDef@{ADC\_InitTypeDef}!LowPowerAutoPowerOff@{LowPowerAutoPowerOff}}
+\index{LowPowerAutoPowerOff@{LowPowerAutoPowerOff}!ADC\_InitTypeDef@{ADC\_InitTypeDef}}
+\doxysubsubsection{\texorpdfstring{LowPowerAutoPowerOff}{LowPowerAutoPowerOff}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} Low\+Power\+Auto\+Power\+Off}
+
+Selects the auto-\/off mode\+: the ADC automatically powers-\/off after a conversion and automatically wakes-\/up when a new conversion is triggered (with startup time between trigger and start of sampling). This feature can be combined with automatic wait mode (parameter \textquotesingle{}Low\+Power\+Auto\+Wait\textquotesingle{}). This parameter can be set to ENABLE or DISABLE. Note\+: If enabled, this feature also turns off the ADC dedicated 14 MHz RC oscillator (HSI14) 
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__adc_8h_source_l00078}{78}} of file \mbox{\hyperlink{stm32f0xx__hal__adc_8h_source}{stm32f0xx\+\_\+hal\+\_\+adc.\+h}}.
+
+\mbox{\Hypertarget{struct_a_d_c___init_type_def_a17f2a28967e1ad48b687c1a670f567b7}\label{struct_a_d_c___init_type_def_a17f2a28967e1ad48b687c1a670f567b7}} 
+\index{ADC\_InitTypeDef@{ADC\_InitTypeDef}!LowPowerAutoWait@{LowPowerAutoWait}}
+\index{LowPowerAutoWait@{LowPowerAutoWait}!ADC\_InitTypeDef@{ADC\_InitTypeDef}}
+\doxysubsubsection{\texorpdfstring{LowPowerAutoWait}{LowPowerAutoWait}}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___exported__types_gac9a7e9a35d2513ec15c3b537aaa4fba1}{Functional\+State}} Low\+Power\+Auto\+Wait}
+
+Selects the dynamic low power Auto Delay\+: new conversion start only when the previous conversion (for regular group) has been treated by user software, using function \mbox{\hyperlink{group___a_d_c___exported___functions___group2_ga421008ca3885339acb12f400958ffbe4}{HAL\+\_\+\+ADC\+\_\+\+Get\+Value()}}. This feature automatically adapts the ADC conversions trigs to the speed of the system that reads the data. Moreover, this avoids risk of overrun for low frequency applications. This parameter can be set to ENABLE or DISABLE. Note\+: Do not use with interruption or DMA (\mbox{\hyperlink{group___a_d_c___exported___functions___group2_gaeb53035f47a937d54de2164d6c939a04}{HAL\+\_\+\+ADC\+\_\+\+Start\+\_\+\+IT()}}, \mbox{\hyperlink{group___a_d_c___exported___functions___group2_ga7c3ef5532dddebe7fd76bb8f589d11fd}{HAL\+\_\+\+ADC\+\_\+\+Start\+\_\+\+DMA()}}) since they have to clear immediately the EOC flag to free the IRQ vector sequencer. Do use with polling\+: 1. Start conversion with \mbox{\hyperlink{group___a_d_c___exported___functions___group2_ga193666e3bde978627c9ee1e2073c69c0}{HAL\+\_\+\+ADC\+\_\+\+Start()}}, 2. Later on, when conversion data is needed\+: use \mbox{\hyperlink{group___a_d_c___exported___functions___group2_gad9c0b5763ab75357407e22d310befc30}{HAL\+\_\+\+ADC\+\_\+\+Poll\+For\+Conversion()}} to ensure that conversion is completed and use \mbox{\hyperlink{group___a_d_c___exported___functions___group2_ga421008ca3885339acb12f400958ffbe4}{HAL\+\_\+\+ADC\+\_\+\+Get\+Value()}} to retrieve conversion result and trig another conversion. 
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__adc_8h_source_l00071}{71}} of file \mbox{\hyperlink{stm32f0xx__hal__adc_8h_source}{stm32f0xx\+\_\+hal\+\_\+adc.\+h}}.
+
+\mbox{\Hypertarget{struct_a_d_c___init_type_def_ac20c5da6d0ffd3de9c705eff0f5a13bc}\label{struct_a_d_c___init_type_def_ac20c5da6d0ffd3de9c705eff0f5a13bc}} 
+\index{ADC\_InitTypeDef@{ADC\_InitTypeDef}!Overrun@{Overrun}}
+\index{Overrun@{Overrun}!ADC\_InitTypeDef@{ADC\_InitTypeDef}}
+\doxysubsubsection{\texorpdfstring{Overrun}{Overrun}}
+{\footnotesize\ttfamily uint32\+\_\+t Overrun}
+
+Select the behaviour in case of overrun\+: data preserved or overwritten This parameter has an effect on regular group only, including in DMA mode. This parameter can be a value of \mbox{\hyperlink{group___a_d_c___overrun}{ADC Overrun}} 
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__adc_8h_source_l00100}{100}} of file \mbox{\hyperlink{stm32f0xx__hal__adc_8h_source}{stm32f0xx\+\_\+hal\+\_\+adc.\+h}}.
+
+\mbox{\Hypertarget{struct_a_d_c___init_type_def_a6613985e603e784c30fb3689f2c6fa5f}\label{struct_a_d_c___init_type_def_a6613985e603e784c30fb3689f2c6fa5f}} 
+\index{ADC\_InitTypeDef@{ADC\_InitTypeDef}!Resolution@{Resolution}}
+\index{Resolution@{Resolution}!ADC\_InitTypeDef@{ADC\_InitTypeDef}}
+\doxysubsubsection{\texorpdfstring{Resolution}{Resolution}}
+{\footnotesize\ttfamily uint32\+\_\+t Resolution}
+
+Configures the ADC resolution. This parameter can be a value of \mbox{\hyperlink{group___a_d_c___resolution}{ADC Resolution}} 
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__adc_8h_source_l00058}{58}} of file \mbox{\hyperlink{stm32f0xx__hal__adc_8h_source}{stm32f0xx\+\_\+hal\+\_\+adc.\+h}}.
+
+\mbox{\Hypertarget{struct_a_d_c___init_type_def_a66567dbf0cd76f9d381c9f1d5994c7ed}\label{struct_a_d_c___init_type_def_a66567dbf0cd76f9d381c9f1d5994c7ed}} 
+\index{ADC\_InitTypeDef@{ADC\_InitTypeDef}!SamplingTimeCommon@{SamplingTimeCommon}}
+\index{SamplingTimeCommon@{SamplingTimeCommon}!ADC\_InitTypeDef@{ADC\_InitTypeDef}}
+\doxysubsubsection{\texorpdfstring{SamplingTimeCommon}{SamplingTimeCommon}}
+{\footnotesize\ttfamily uint32\+\_\+t Sampling\+Time\+Common}
+
+Sampling time value to be set for the selected channel. Unit\+: ADC clock cycles Conversion time is the addition of sampling time and processing time (12.\+5 ADC clock cycles at ADC resolution 12 bits, 10.\+5 cycles at 10 bits, 8.\+5 cycles at 8 bits, 6.\+5 cycles at 6 bits). Note\+: On STM32\+F0 devices, the sampling time setting is common to all channels. On some other STM32 devices, this parameter in channel wise and is located into ADC channel initialization structure. This parameter can be a value of \mbox{\hyperlink{group___a_d_c__sampling__times}{ADC sampling times}} Note\+: In case of usage of internal measurement channels (Vref\+Int/\+Vbat/\+Temp\+Sensor), sampling time constraints must be respected (sampling time can be adjusted in function of ADC clock frequency and sampling time setting) Refer to device datasheet for timings values, parameters TS\+\_\+vrefint, TS\+\_\+vbat, TS\+\_\+temp (values rough order\+: 5us to 17us). 
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__adc_8h_source_l00103}{103}} of file \mbox{\hyperlink{stm32f0xx__hal__adc_8h_source}{stm32f0xx\+\_\+hal\+\_\+adc.\+h}}.
+
+\mbox{\Hypertarget{struct_a_d_c___init_type_def_a67902b5cdd3d1aa4af49654409412a08}\label{struct_a_d_c___init_type_def_a67902b5cdd3d1aa4af49654409412a08}} 
+\index{ADC\_InitTypeDef@{ADC\_InitTypeDef}!ScanConvMode@{ScanConvMode}}
+\index{ScanConvMode@{ScanConvMode}!ADC\_InitTypeDef@{ADC\_InitTypeDef}}
+\doxysubsubsection{\texorpdfstring{ScanConvMode}{ScanConvMode}}
+{\footnotesize\ttfamily uint32\+\_\+t Scan\+Conv\+Mode}
+
+Configures the sequencer of regular group. This parameter can be associated to parameter \textquotesingle{}Discontinuous\+Conv\+Mode\textquotesingle{} to have main sequence subdivided in successive parts. Sequencer is automatically enabled if several channels are set (sequencer cannot be disabled, as it can be the case on other STM32 devices)\+: If only 1 channel is set\+: Conversion is performed in single mode. If several channels are set\+: Conversions are performed in sequence mode (ranks defined by each channel number\+: channel 0 fixed on rank 0, channel 1 fixed on rank1, ...). Scan direction can be set to forward (from channel 0 to channel 18) or backward (from channel 18 to channel 0). This parameter can be a value of \mbox{\hyperlink{group___a_d_c___scan__mode}{ADC Scan mode}} 
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__adc_8h_source_l00062}{62}} of file \mbox{\hyperlink{stm32f0xx__hal__adc_8h_source}{stm32f0xx\+\_\+hal\+\_\+adc.\+h}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Drivers/\+STM32\+F0xx\+\_\+\+HAL\+\_\+\+Driver/\+Inc/\mbox{\hyperlink{stm32f0xx__hal__adc_8h}{stm32f0xx\+\_\+hal\+\_\+adc.\+h}}\end{DoxyCompactItemize}

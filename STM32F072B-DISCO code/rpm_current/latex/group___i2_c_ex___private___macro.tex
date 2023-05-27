@@ -1,0 +1,66 @@
+\hypertarget{group___i2_c_ex___private___macro}{}\doxysection{I2C Extended Private Macros}
+\label{group___i2_c_ex___private___macro}\index{I2C Extended Private Macros@{I2C Extended Private Macros}}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___i2_c_ex___private___macro_ga2ca73a919482ef22e5f3bcd5e4a0c820}{IS\+\_\+\+I2\+C\+\_\+\+ANALOG\+\_\+\+FILTER}}(FILTER)
+\item 
+\#define \mbox{\hyperlink{group___i2_c_ex___private___macro_gac10d26772d885184a7a30d9a2adee453}{IS\+\_\+\+I2\+C\+\_\+\+DIGITAL\+\_\+\+FILTER}}(FILTER)~((FILTER) $<$= 0x0000000\+FU)
+\item 
+\#define \mbox{\hyperlink{group___i2_c_ex___private___macro_ga834beb1e67c16ce8e161c6d4047665d1}{IS\+\_\+\+I2\+C\+\_\+\+FASTMODEPLUS}}(\+\_\+\+\_\+\+CONFIG\+\_\+\+\_\+)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group___i2_c_ex___private___macro_ga2ca73a919482ef22e5f3bcd5e4a0c820}\label{group___i2_c_ex___private___macro_ga2ca73a919482ef22e5f3bcd5e4a0c820}} 
+\index{I2C Extended Private Macros@{I2C Extended Private Macros}!IS\_I2C\_ANALOG\_FILTER@{IS\_I2C\_ANALOG\_FILTER}}
+\index{IS\_I2C\_ANALOG\_FILTER@{IS\_I2C\_ANALOG\_FILTER}!I2C Extended Private Macros@{I2C Extended Private Macros}}
+\doxysubsubsection{\texorpdfstring{IS\_I2C\_ANALOG\_FILTER}{IS\_I2C\_ANALOG\_FILTER}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+I2\+C\+\_\+\+ANALOG\+\_\+\+FILTER(\begin{DoxyParamCaption}\item[{}]{FILTER }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((FILTER)\ ==\ \mbox{\hyperlink{group___i2_c_ex___analog___filter_gae13bf4e7efd918ab0d13d04472d12069}{I2C\_ANALOGFILTER\_ENABLE}})\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((FILTER)\ ==\ \mbox{\hyperlink{group___i2_c_ex___analog___filter_gaa6abec6bc8906cae55371c8e953353b8}{I2C\_ANALOGFILTER\_DISABLE}}))}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__i2c__ex_8h_source_l00143}{143}} of file \mbox{\hyperlink{stm32f0xx__hal__i2c__ex_8h_source}{stm32f0xx\+\_\+hal\+\_\+i2c\+\_\+ex.\+h}}.
+
+\mbox{\Hypertarget{group___i2_c_ex___private___macro_gac10d26772d885184a7a30d9a2adee453}\label{group___i2_c_ex___private___macro_gac10d26772d885184a7a30d9a2adee453}} 
+\index{I2C Extended Private Macros@{I2C Extended Private Macros}!IS\_I2C\_DIGITAL\_FILTER@{IS\_I2C\_DIGITAL\_FILTER}}
+\index{IS\_I2C\_DIGITAL\_FILTER@{IS\_I2C\_DIGITAL\_FILTER}!I2C Extended Private Macros@{I2C Extended Private Macros}}
+\doxysubsubsection{\texorpdfstring{IS\_I2C\_DIGITAL\_FILTER}{IS\_I2C\_DIGITAL\_FILTER}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+I2\+C\+\_\+\+DIGITAL\+\_\+\+FILTER(\begin{DoxyParamCaption}\item[{}]{FILTER }\end{DoxyParamCaption})~((FILTER) $<$= 0x0000000\+FU)}
+
+
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__i2c__ex_8h_source_l00146}{146}} of file \mbox{\hyperlink{stm32f0xx__hal__i2c__ex_8h_source}{stm32f0xx\+\_\+hal\+\_\+i2c\+\_\+ex.\+h}}.
+
+\mbox{\Hypertarget{group___i2_c_ex___private___macro_ga834beb1e67c16ce8e161c6d4047665d1}\label{group___i2_c_ex___private___macro_ga834beb1e67c16ce8e161c6d4047665d1}} 
+\index{I2C Extended Private Macros@{I2C Extended Private Macros}!IS\_I2C\_FASTMODEPLUS@{IS\_I2C\_FASTMODEPLUS}}
+\index{IS\_I2C\_FASTMODEPLUS@{IS\_I2C\_FASTMODEPLUS}!I2C Extended Private Macros@{I2C Extended Private Macros}}
+\doxysubsubsection{\texorpdfstring{IS\_I2C\_FASTMODEPLUS}{IS\_I2C\_FASTMODEPLUS}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+I2\+C\+\_\+\+FASTMODEPLUS(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+CONFIG\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((((\_\_CONFIG\_\_)\ \&\ \mbox{\hyperlink{group___i2_c_ex___fast_mode_plus_ga3a3da061fa78faa209f0feb39e20ef43}{I2C\_FMP\_NOT\_SUPPORTED}})\ !=\ \mbox{\hyperlink{group___i2_c_ex___fast_mode_plus_ga3a3da061fa78faa209f0feb39e20ef43}{I2C\_FMP\_NOT\_SUPPORTED}})\ \&\&\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((((\_\_CONFIG\_\_)\ \&\ (\mbox{\hyperlink{group___i2_c_ex___fast_mode_plus_ga2e335d4993c228bb7aa778890e29ce57}{I2C\_FASTMODEPLUS\_PA9}}))\ \ ==\ \mbox{\hyperlink{group___i2_c_ex___fast_mode_plus_ga2e335d4993c228bb7aa778890e29ce57}{I2C\_FASTMODEPLUS\_PA9}})\ \ \ \ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((\_\_CONFIG\_\_)\ \&\ (\mbox{\hyperlink{group___i2_c_ex___fast_mode_plus_gacef0dcd4551b31cb585fa7e7044a50da}{I2C\_FASTMODEPLUS\_PA10}}))\ ==\ \mbox{\hyperlink{group___i2_c_ex___fast_mode_plus_gacef0dcd4551b31cb585fa7e7044a50da}{I2C\_FASTMODEPLUS\_PA10}})\ \ \ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((\_\_CONFIG\_\_)\ \&\ (\mbox{\hyperlink{group___i2_c_ex___fast_mode_plus_ga9b3b77b0f00f09ee6d272d70dd5663f5}{I2C\_FASTMODEPLUS\_PB6}}))\ \ ==\ \mbox{\hyperlink{group___i2_c_ex___fast_mode_plus_ga9b3b77b0f00f09ee6d272d70dd5663f5}{I2C\_FASTMODEPLUS\_PB6}})\ \ \ \ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((\_\_CONFIG\_\_)\ \&\ (\mbox{\hyperlink{group___i2_c_ex___fast_mode_plus_gaaa6d3f6c1d635a2f5e4dbe2ef66ce1c3}{I2C\_FASTMODEPLUS\_PB7}}))\ \ ==\ \mbox{\hyperlink{group___i2_c_ex___fast_mode_plus_gaaa6d3f6c1d635a2f5e4dbe2ef66ce1c3}{I2C\_FASTMODEPLUS\_PB7}})\ \ \ \ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((\_\_CONFIG\_\_)\ \&\ (\mbox{\hyperlink{group___i2_c_ex___fast_mode_plus_gaf8d6aa219f041b552b3d3cd53cb78a26}{I2C\_FASTMODEPLUS\_PB8}}))\ \ ==\ \mbox{\hyperlink{group___i2_c_ex___fast_mode_plus_gaf8d6aa219f041b552b3d3cd53cb78a26}{I2C\_FASTMODEPLUS\_PB8}})\ \ \ \ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((\_\_CONFIG\_\_)\ \&\ (\mbox{\hyperlink{group___i2_c_ex___fast_mode_plus_gafab6e63d100bf337bf9f0bf6a607636d}{I2C\_FASTMODEPLUS\_PB9}}))\ \ ==\ \mbox{\hyperlink{group___i2_c_ex___fast_mode_plus_gafab6e63d100bf337bf9f0bf6a607636d}{I2C\_FASTMODEPLUS\_PB9}})\ \ \ \ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((\_\_CONFIG\_\_)\ \&\ (\mbox{\hyperlink{group___i2_c_ex___fast_mode_plus_ga3a8064ecfa3b33115f62123f7162770e}{I2C\_FASTMODEPLUS\_I2C1}}))\ ==\ \mbox{\hyperlink{group___i2_c_ex___fast_mode_plus_ga3a8064ecfa3b33115f62123f7162770e}{I2C\_FASTMODEPLUS\_I2C1}})\ \ \ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((\_\_CONFIG\_\_)\ \&\ (\mbox{\hyperlink{group___i2_c_ex___fast_mode_plus_gaa5c33513afa036a6f97e9cbf2d61f4b2}{I2C\_FASTMODEPLUS\_I2C2}}))\ ==\ \mbox{\hyperlink{group___i2_c_ex___fast_mode_plus_gaa5c33513afa036a6f97e9cbf2d61f4b2}{I2C\_FASTMODEPLUS\_I2C2}})))}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__i2c__ex_8h_source_l00148}{148}} of file \mbox{\hyperlink{stm32f0xx__hal__i2c__ex_8h_source}{stm32f0xx\+\_\+hal\+\_\+i2c\+\_\+ex.\+h}}.
+

@@ -15,6 +15,10 @@
 #define LORA_RECIVER_ADDRESS 5
 #define ADS1115_ADDRESS 0b1001000;
 #define HALL_SENSITIVITY 600.0 / 625.0 // sensitivity of current sensor in A/mV
+#define LORA_PAYLOAD_MAX_LENGTH 256
+#define ADC_CAL_MULTIPLIER 1
+#define VOLT_DIV_RATIO 1
+#define ADC_PROCESS_VOLTAGE(rawVoltage) rawvoltage * ADC_CAL_MULTIPLIER * VOLT_DIV_RATIO
 
 // macros for vikash's code
 #define TIMCLOCK  48000000

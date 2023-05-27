@@ -1,0 +1,198 @@
+\hypertarget{group___f_l_a_s_h_ex___private___macros}{}\doxysection{FLASHEx\+\_\+\+Private\+\_\+\+Macros}
+\label{group___f_l_a_s_h_ex___private___macros}\index{FLASHEx\_Private\_Macros@{FLASHEx\_Private\_Macros}}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h_ex___private___macros_gaf15a6822d2421a33b6857059348ab476}{IS\+\_\+\+FLASH\+\_\+\+TYPEERASE}}(VALUE)
+\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h_ex___private___macros_ga87cd48c2373f47668470a38892ed07e3}{IS\+\_\+\+OPTIONBYTE}}(VALUE)~((VALUE) $<$= (\mbox{\hyperlink{group___f_l_a_s_h_ex___o_b___type_ga48712a166ea192ddcda0f2653679f9ec}{OPTIONBYTE\+\_\+\+WRP}} $\vert$ \mbox{\hyperlink{group___f_l_a_s_h_ex___o_b___type_ga8f0bdb21ef13bae39d5d8b6619e2df06}{OPTIONBYTE\+\_\+\+RDP}} $\vert$ \mbox{\hyperlink{group___f_l_a_s_h_ex___o_b___type_gac7d843e666e15c79688a1914e8ffe7a5}{OPTIONBYTE\+\_\+\+USER}} $\vert$ \mbox{\hyperlink{group___f_l_a_s_h_ex___o_b___type_gad0c29c84acfb46de1708a670529175a5}{OPTIONBYTE\+\_\+\+DATA}}))
+\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h_ex___private___macros_ga8164622401a6cacf006679166de93c21}{IS\+\_\+\+WRPSTATE}}(VALUE)
+\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h_ex___private___macros_ga73fcac8d5f301a5c98518374ae926633}{IS\+\_\+\+OB\+\_\+\+DATA\+\_\+\+ADDRESS}}(ADDRESS)~(((ADDRESS) == \mbox{\hyperlink{group___f_l_a_s_h_ex___o_b___data___address_gab29881e9575bfff3504b84afa20cafbe}{OB\+\_\+\+DATA\+\_\+\+ADDRESS\+\_\+\+DATA0}}) $\vert$$\vert$ ((ADDRESS) == \mbox{\hyperlink{group___f_l_a_s_h_ex___o_b___data___address_ga33cb1b378fd742c722f5bdce21c65b0e}{OB\+\_\+\+DATA\+\_\+\+ADDRESS\+\_\+\+DATA1}}))
+\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h_ex___private___macros_ga8d602a97cd688390b3d1956d9970e712}{IS\+\_\+\+OB\+\_\+\+RDP\+\_\+\+LEVEL}}(LEVEL)
+\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h_ex___private___macros_gaf2871652c08e76499d9449be6556f12c}{IS\+\_\+\+OB\+\_\+\+IWDG\+\_\+\+SOURCE}}(SOURCE)~(((SOURCE) == \mbox{\hyperlink{group___f_l_a_s_h_ex___o_b___i_watchdog_ga5a357e232c955444c3f2ccb9a937ffce}{OB\+\_\+\+IWDG\+\_\+\+SW}}) $\vert$$\vert$ ((SOURCE) == \mbox{\hyperlink{group___f_l_a_s_h_ex___o_b___i_watchdog_gadfcbfa963d79c339ec8e2d5a7734e47a}{OB\+\_\+\+IWDG\+\_\+\+HW}}))
+\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h_ex___private___macros_ga131ae3434f300c8317dd6b3b349c7cab}{IS\+\_\+\+OB\+\_\+\+STOP\+\_\+\+SOURCE}}(SOURCE)~(((SOURCE) == \mbox{\hyperlink{group___f_l_a_s_h_ex___o_b__n_r_s_t___s_t_o_p_ga7344fe0ec25c5eb2d11db7c855325436}{OB\+\_\+\+STOP\+\_\+\+NO\+\_\+\+RST}}) $\vert$$\vert$ ((SOURCE) == \mbox{\hyperlink{group___f_l_a_s_h_ex___o_b__n_r_s_t___s_t_o_p_gaef92c03b1f279c532bfa13d3bb074b57}{OB\+\_\+\+STOP\+\_\+\+RST}}))
+\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h_ex___private___macros_ga8a05393df3a5e89551b4e2e1e8c5b884}{IS\+\_\+\+OB\+\_\+\+STDBY\+\_\+\+SOURCE}}(SOURCE)~(((SOURCE) == \mbox{\hyperlink{group___f_l_a_s_h_ex___o_b__n_r_s_t___s_t_d_b_y_gad776ed7b3b9a98013aac9976eedb7e94}{OB\+\_\+\+STDBY\+\_\+\+NO\+\_\+\+RST}}) $\vert$$\vert$ ((SOURCE) == \mbox{\hyperlink{group___f_l_a_s_h_ex___o_b__n_r_s_t___s_t_d_b_y_ga69451a6f69247528f58735c9c83499ce}{OB\+\_\+\+STDBY\+\_\+\+RST}}))
+\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h_ex___private___macros_ga26df186538e46cd9a3c667f5c5fe9c5b}{IS\+\_\+\+OB\+\_\+\+BOOT1}}(BOOT1)~(((BOOT1) == \mbox{\hyperlink{group___f_l_a_s_h_ex___o_b___b_o_o_t1_gafe362a7cea11cf64fa8a9de83b4c58fd}{OB\+\_\+\+BOOT1\+\_\+\+RESET}}) $\vert$$\vert$ ((BOOT1) == \mbox{\hyperlink{group___f_l_a_s_h_ex___o_b___b_o_o_t1_gac7e604e3f2f7fb9513e54217bc5f2cdc}{OB\+\_\+\+BOOT1\+\_\+\+SET}}))
+\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h_ex___private___macros_gabf78876b5591eb25a3f4e63f5077dadc}{IS\+\_\+\+OB\+\_\+\+VDDA\+\_\+\+ANALOG}}(ANALOG)~(((ANALOG) == \mbox{\hyperlink{group___f_l_a_s_h_ex___o_b___v_d_d_a___analog___monitoring_ga4761fde7c57b2b54ca9801daeb50c323}{OB\+\_\+\+VDDA\+\_\+\+ANALOG\+\_\+\+ON}}) $\vert$$\vert$ ((ANALOG) == \mbox{\hyperlink{group___f_l_a_s_h_ex___o_b___v_d_d_a___analog___monitoring_ga7c18e60ba77007074e6ac9b151a01b5e}{OB\+\_\+\+VDDA\+\_\+\+ANALOG\+\_\+\+OFF}}))
+\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h_ex___private___macros_gaadd4427f42c653a148c2ce8035c25ab0}{IS\+\_\+\+OB\+\_\+\+SRAM\+\_\+\+PARITY}}(PARITY)~(((PARITY) == \mbox{\hyperlink{group___f_l_a_s_h_ex___o_b___r_a_m___parity___check___enable_gab108dcd65836f802216f11c238450cd6}{OB\+\_\+\+SRAM\+\_\+\+PARITY\+\_\+\+SET}}) $\vert$$\vert$ ((PARITY) == \mbox{\hyperlink{group___f_l_a_s_h_ex___o_b___r_a_m___parity___check___enable_gab408447c5e7a9bd087e9346cc3b3021b}{OB\+\_\+\+SRAM\+\_\+\+PARITY\+\_\+\+RESET}}))
+\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h_ex___private___macros_ga0833946dba77c6e2537b4afe94c2bfe1}{IS\+\_\+\+OB\+\_\+\+WRP}}(PAGE)~(((PAGE) != 0x0000000U))
+\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h_ex___private___macros_gaba549bf655e360311b0cd69878ba5bc1}{IS\+\_\+\+FLASH\+\_\+\+NB\+\_\+\+PAGES}}(ADDRESS,  NBPAGES)~((ADDRESS)+((NBPAGES)$\ast$FLASH\+\_\+\+PAGE\+\_\+\+SIZE)-\/1 $<$= \mbox{\hyperlink{group___peripheral__memory__map_ga443a2786535d83e32dfdc2b29e379332}{FLASH\+\_\+\+BANK1\+\_\+\+END}})
+\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h_ex___private___macros_ga90c8441d56b937cea616856695a8a20a}{IS\+\_\+\+FLASH\+\_\+\+PROGRAM\+\_\+\+ADDRESS}}(ADDRESS)~(((ADDRESS) $>$= \mbox{\hyperlink{group___peripheral__memory__map_ga23a9099a5f8fc9c6e253c0eecb2be8db}{FLASH\+\_\+\+BASE}}) \&\& ((ADDRESS) $<$= \mbox{\hyperlink{group___peripheral__memory__map_ga443a2786535d83e32dfdc2b29e379332}{FLASH\+\_\+\+BANK1\+\_\+\+END}}))
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group___f_l_a_s_h_ex___private___macros_gaba549bf655e360311b0cd69878ba5bc1}\label{group___f_l_a_s_h_ex___private___macros_gaba549bf655e360311b0cd69878ba5bc1}} 
+\index{FLASHEx\_Private\_Macros@{FLASHEx\_Private\_Macros}!IS\_FLASH\_NB\_PAGES@{IS\_FLASH\_NB\_PAGES}}
+\index{IS\_FLASH\_NB\_PAGES@{IS\_FLASH\_NB\_PAGES}!FLASHEx\_Private\_Macros@{FLASHEx\_Private\_Macros}}
+\doxysubsubsection{\texorpdfstring{IS\_FLASH\_NB\_PAGES}{IS\_FLASH\_NB\_PAGES}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+FLASH\+\_\+\+NB\+\_\+\+PAGES(\begin{DoxyParamCaption}\item[{}]{ADDRESS,  }\item[{}]{NBPAGES }\end{DoxyParamCaption})~((ADDRESS)+((NBPAGES)$\ast$FLASH\+\_\+\+PAGE\+\_\+\+SIZE)-\/1 $<$= \mbox{\hyperlink{group___peripheral__memory__map_ga443a2786535d83e32dfdc2b29e379332}{FLASH\+\_\+\+BANK1\+\_\+\+END}})}
+
+
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__flash__ex_8h_source_l00073}{73}} of file \mbox{\hyperlink{stm32f0xx__hal__flash__ex_8h_source}{stm32f0xx\+\_\+hal\+\_\+flash\+\_\+ex.\+h}}.
+
+\mbox{\Hypertarget{group___f_l_a_s_h_ex___private___macros_ga90c8441d56b937cea616856695a8a20a}\label{group___f_l_a_s_h_ex___private___macros_ga90c8441d56b937cea616856695a8a20a}} 
+\index{FLASHEx\_Private\_Macros@{FLASHEx\_Private\_Macros}!IS\_FLASH\_PROGRAM\_ADDRESS@{IS\_FLASH\_PROGRAM\_ADDRESS}}
+\index{IS\_FLASH\_PROGRAM\_ADDRESS@{IS\_FLASH\_PROGRAM\_ADDRESS}!FLASHEx\_Private\_Macros@{FLASHEx\_Private\_Macros}}
+\doxysubsubsection{\texorpdfstring{IS\_FLASH\_PROGRAM\_ADDRESS}{IS\_FLASH\_PROGRAM\_ADDRESS}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+FLASH\+\_\+\+PROGRAM\+\_\+\+ADDRESS(\begin{DoxyParamCaption}\item[{}]{ADDRESS }\end{DoxyParamCaption})~(((ADDRESS) $>$= \mbox{\hyperlink{group___peripheral__memory__map_ga23a9099a5f8fc9c6e253c0eecb2be8db}{FLASH\+\_\+\+BASE}}) \&\& ((ADDRESS) $<$= \mbox{\hyperlink{group___peripheral__memory__map_ga443a2786535d83e32dfdc2b29e379332}{FLASH\+\_\+\+BANK1\+\_\+\+END}}))}
+
+
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__flash__ex_8h_source_l00075}{75}} of file \mbox{\hyperlink{stm32f0xx__hal__flash__ex_8h_source}{stm32f0xx\+\_\+hal\+\_\+flash\+\_\+ex.\+h}}.
+
+\mbox{\Hypertarget{group___f_l_a_s_h_ex___private___macros_gaf15a6822d2421a33b6857059348ab476}\label{group___f_l_a_s_h_ex___private___macros_gaf15a6822d2421a33b6857059348ab476}} 
+\index{FLASHEx\_Private\_Macros@{FLASHEx\_Private\_Macros}!IS\_FLASH\_TYPEERASE@{IS\_FLASH\_TYPEERASE}}
+\index{IS\_FLASH\_TYPEERASE@{IS\_FLASH\_TYPEERASE}!FLASHEx\_Private\_Macros@{FLASHEx\_Private\_Macros}}
+\doxysubsubsection{\texorpdfstring{IS\_FLASH\_TYPEERASE}{IS\_FLASH\_TYPEERASE}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+FLASH\+\_\+\+TYPEERASE(\begin{DoxyParamCaption}\item[{}]{VALUE }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((VALUE)\ ==\ \mbox{\hyperlink{group___f_l_a_s_h_ex___type___erase_ga3664ce55155ec4990873c51737d787ce}{FLASH\_TYPEERASE\_PAGES}})\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((VALUE)\ ==\ \mbox{\hyperlink{group___f_l_a_s_h_ex___type___erase_ga9bc03534e69c625e1b4f0f05c3852243}{FLASH\_TYPEERASE\_MASSERASE}}))}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__flash__ex_8h_source_l00040}{40}} of file \mbox{\hyperlink{stm32f0xx__hal__flash__ex_8h_source}{stm32f0xx\+\_\+hal\+\_\+flash\+\_\+ex.\+h}}.
+
+\mbox{\Hypertarget{group___f_l_a_s_h_ex___private___macros_ga26df186538e46cd9a3c667f5c5fe9c5b}\label{group___f_l_a_s_h_ex___private___macros_ga26df186538e46cd9a3c667f5c5fe9c5b}} 
+\index{FLASHEx\_Private\_Macros@{FLASHEx\_Private\_Macros}!IS\_OB\_BOOT1@{IS\_OB\_BOOT1}}
+\index{IS\_OB\_BOOT1@{IS\_OB\_BOOT1}!FLASHEx\_Private\_Macros@{FLASHEx\_Private\_Macros}}
+\doxysubsubsection{\texorpdfstring{IS\_OB\_BOOT1}{IS\_OB\_BOOT1}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+OB\+\_\+\+BOOT1(\begin{DoxyParamCaption}\item[{}]{BOOT1 }\end{DoxyParamCaption})~(((BOOT1) == \mbox{\hyperlink{group___f_l_a_s_h_ex___o_b___b_o_o_t1_gafe362a7cea11cf64fa8a9de83b4c58fd}{OB\+\_\+\+BOOT1\+\_\+\+RESET}}) $\vert$$\vert$ ((BOOT1) == \mbox{\hyperlink{group___f_l_a_s_h_ex___o_b___b_o_o_t1_gac7e604e3f2f7fb9513e54217bc5f2cdc}{OB\+\_\+\+BOOT1\+\_\+\+SET}}))}
+
+
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__flash__ex_8h_source_l00059}{59}} of file \mbox{\hyperlink{stm32f0xx__hal__flash__ex_8h_source}{stm32f0xx\+\_\+hal\+\_\+flash\+\_\+ex.\+h}}.
+
+\mbox{\Hypertarget{group___f_l_a_s_h_ex___private___macros_ga73fcac8d5f301a5c98518374ae926633}\label{group___f_l_a_s_h_ex___private___macros_ga73fcac8d5f301a5c98518374ae926633}} 
+\index{FLASHEx\_Private\_Macros@{FLASHEx\_Private\_Macros}!IS\_OB\_DATA\_ADDRESS@{IS\_OB\_DATA\_ADDRESS}}
+\index{IS\_OB\_DATA\_ADDRESS@{IS\_OB\_DATA\_ADDRESS}!FLASHEx\_Private\_Macros@{FLASHEx\_Private\_Macros}}
+\doxysubsubsection{\texorpdfstring{IS\_OB\_DATA\_ADDRESS}{IS\_OB\_DATA\_ADDRESS}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+OB\+\_\+\+DATA\+\_\+\+ADDRESS(\begin{DoxyParamCaption}\item[{}]{ADDRESS }\end{DoxyParamCaption})~(((ADDRESS) == \mbox{\hyperlink{group___f_l_a_s_h_ex___o_b___data___address_gab29881e9575bfff3504b84afa20cafbe}{OB\+\_\+\+DATA\+\_\+\+ADDRESS\+\_\+\+DATA0}}) $\vert$$\vert$ ((ADDRESS) == \mbox{\hyperlink{group___f_l_a_s_h_ex___o_b___data___address_ga33cb1b378fd742c722f5bdce21c65b0e}{OB\+\_\+\+DATA\+\_\+\+ADDRESS\+\_\+\+DATA1}}))}
+
+
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__flash__ex_8h_source_l00048}{48}} of file \mbox{\hyperlink{stm32f0xx__hal__flash__ex_8h_source}{stm32f0xx\+\_\+hal\+\_\+flash\+\_\+ex.\+h}}.
+
+\mbox{\Hypertarget{group___f_l_a_s_h_ex___private___macros_gaf2871652c08e76499d9449be6556f12c}\label{group___f_l_a_s_h_ex___private___macros_gaf2871652c08e76499d9449be6556f12c}} 
+\index{FLASHEx\_Private\_Macros@{FLASHEx\_Private\_Macros}!IS\_OB\_IWDG\_SOURCE@{IS\_OB\_IWDG\_SOURCE}}
+\index{IS\_OB\_IWDG\_SOURCE@{IS\_OB\_IWDG\_SOURCE}!FLASHEx\_Private\_Macros@{FLASHEx\_Private\_Macros}}
+\doxysubsubsection{\texorpdfstring{IS\_OB\_IWDG\_SOURCE}{IS\_OB\_IWDG\_SOURCE}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+OB\+\_\+\+IWDG\+\_\+\+SOURCE(\begin{DoxyParamCaption}\item[{}]{SOURCE }\end{DoxyParamCaption})~(((SOURCE) == \mbox{\hyperlink{group___f_l_a_s_h_ex___o_b___i_watchdog_ga5a357e232c955444c3f2ccb9a937ffce}{OB\+\_\+\+IWDG\+\_\+\+SW}}) $\vert$$\vert$ ((SOURCE) == \mbox{\hyperlink{group___f_l_a_s_h_ex___o_b___i_watchdog_gadfcbfa963d79c339ec8e2d5a7734e47a}{OB\+\_\+\+IWDG\+\_\+\+HW}}))}
+
+
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__flash__ex_8h_source_l00053}{53}} of file \mbox{\hyperlink{stm32f0xx__hal__flash__ex_8h_source}{stm32f0xx\+\_\+hal\+\_\+flash\+\_\+ex.\+h}}.
+
+\mbox{\Hypertarget{group___f_l_a_s_h_ex___private___macros_ga8d602a97cd688390b3d1956d9970e712}\label{group___f_l_a_s_h_ex___private___macros_ga8d602a97cd688390b3d1956d9970e712}} 
+\index{FLASHEx\_Private\_Macros@{FLASHEx\_Private\_Macros}!IS\_OB\_RDP\_LEVEL@{IS\_OB\_RDP\_LEVEL}}
+\index{IS\_OB\_RDP\_LEVEL@{IS\_OB\_RDP\_LEVEL}!FLASHEx\_Private\_Macros@{FLASHEx\_Private\_Macros}}
+\doxysubsubsection{\texorpdfstring{IS\_OB\_RDP\_LEVEL}{IS\_OB\_RDP\_LEVEL}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+OB\+\_\+\+RDP\+\_\+\+LEVEL(\begin{DoxyParamCaption}\item[{}]{LEVEL }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((LEVEL)\ ==\ \mbox{\hyperlink{group___f_l_a_s_h_ex___o_b___read___protection_ga22c7871bda267a2844ab9ca9f7bd38e4}{OB\_RDP\_LEVEL\_0}})\ \ \ ||\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((LEVEL)\ ==\ \mbox{\hyperlink{group___f_l_a_s_h_ex___o_b___read___protection_ga778207f0d12d87bbff9d55e985aba5bc}{OB\_RDP\_LEVEL\_1}}))\textcolor{comment}{/*||\(\backslash\)}}
+\DoxyCodeLine{\textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((LEVEL)\ ==\ OB\_RDP\_LEVEL\_2))*/}}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__flash__ex_8h_source_l00050}{50}} of file \mbox{\hyperlink{stm32f0xx__hal__flash__ex_8h_source}{stm32f0xx\+\_\+hal\+\_\+flash\+\_\+ex.\+h}}.
+
+\mbox{\Hypertarget{group___f_l_a_s_h_ex___private___macros_gaadd4427f42c653a148c2ce8035c25ab0}\label{group___f_l_a_s_h_ex___private___macros_gaadd4427f42c653a148c2ce8035c25ab0}} 
+\index{FLASHEx\_Private\_Macros@{FLASHEx\_Private\_Macros}!IS\_OB\_SRAM\_PARITY@{IS\_OB\_SRAM\_PARITY}}
+\index{IS\_OB\_SRAM\_PARITY@{IS\_OB\_SRAM\_PARITY}!FLASHEx\_Private\_Macros@{FLASHEx\_Private\_Macros}}
+\doxysubsubsection{\texorpdfstring{IS\_OB\_SRAM\_PARITY}{IS\_OB\_SRAM\_PARITY}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+OB\+\_\+\+SRAM\+\_\+\+PARITY(\begin{DoxyParamCaption}\item[{}]{PARITY }\end{DoxyParamCaption})~(((PARITY) == \mbox{\hyperlink{group___f_l_a_s_h_ex___o_b___r_a_m___parity___check___enable_gab108dcd65836f802216f11c238450cd6}{OB\+\_\+\+SRAM\+\_\+\+PARITY\+\_\+\+SET}}) $\vert$$\vert$ ((PARITY) == \mbox{\hyperlink{group___f_l_a_s_h_ex___o_b___r_a_m___parity___check___enable_gab408447c5e7a9bd087e9346cc3b3021b}{OB\+\_\+\+SRAM\+\_\+\+PARITY\+\_\+\+RESET}}))}
+
+
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__flash__ex_8h_source_l00063}{63}} of file \mbox{\hyperlink{stm32f0xx__hal__flash__ex_8h_source}{stm32f0xx\+\_\+hal\+\_\+flash\+\_\+ex.\+h}}.
+
+\mbox{\Hypertarget{group___f_l_a_s_h_ex___private___macros_ga8a05393df3a5e89551b4e2e1e8c5b884}\label{group___f_l_a_s_h_ex___private___macros_ga8a05393df3a5e89551b4e2e1e8c5b884}} 
+\index{FLASHEx\_Private\_Macros@{FLASHEx\_Private\_Macros}!IS\_OB\_STDBY\_SOURCE@{IS\_OB\_STDBY\_SOURCE}}
+\index{IS\_OB\_STDBY\_SOURCE@{IS\_OB\_STDBY\_SOURCE}!FLASHEx\_Private\_Macros@{FLASHEx\_Private\_Macros}}
+\doxysubsubsection{\texorpdfstring{IS\_OB\_STDBY\_SOURCE}{IS\_OB\_STDBY\_SOURCE}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+OB\+\_\+\+STDBY\+\_\+\+SOURCE(\begin{DoxyParamCaption}\item[{}]{SOURCE }\end{DoxyParamCaption})~(((SOURCE) == \mbox{\hyperlink{group___f_l_a_s_h_ex___o_b__n_r_s_t___s_t_d_b_y_gad776ed7b3b9a98013aac9976eedb7e94}{OB\+\_\+\+STDBY\+\_\+\+NO\+\_\+\+RST}}) $\vert$$\vert$ ((SOURCE) == \mbox{\hyperlink{group___f_l_a_s_h_ex___o_b__n_r_s_t___s_t_d_b_y_ga69451a6f69247528f58735c9c83499ce}{OB\+\_\+\+STDBY\+\_\+\+RST}}))}
+
+
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__flash__ex_8h_source_l00057}{57}} of file \mbox{\hyperlink{stm32f0xx__hal__flash__ex_8h_source}{stm32f0xx\+\_\+hal\+\_\+flash\+\_\+ex.\+h}}.
+
+\mbox{\Hypertarget{group___f_l_a_s_h_ex___private___macros_ga131ae3434f300c8317dd6b3b349c7cab}\label{group___f_l_a_s_h_ex___private___macros_ga131ae3434f300c8317dd6b3b349c7cab}} 
+\index{FLASHEx\_Private\_Macros@{FLASHEx\_Private\_Macros}!IS\_OB\_STOP\_SOURCE@{IS\_OB\_STOP\_SOURCE}}
+\index{IS\_OB\_STOP\_SOURCE@{IS\_OB\_STOP\_SOURCE}!FLASHEx\_Private\_Macros@{FLASHEx\_Private\_Macros}}
+\doxysubsubsection{\texorpdfstring{IS\_OB\_STOP\_SOURCE}{IS\_OB\_STOP\_SOURCE}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+OB\+\_\+\+STOP\+\_\+\+SOURCE(\begin{DoxyParamCaption}\item[{}]{SOURCE }\end{DoxyParamCaption})~(((SOURCE) == \mbox{\hyperlink{group___f_l_a_s_h_ex___o_b__n_r_s_t___s_t_o_p_ga7344fe0ec25c5eb2d11db7c855325436}{OB\+\_\+\+STOP\+\_\+\+NO\+\_\+\+RST}}) $\vert$$\vert$ ((SOURCE) == \mbox{\hyperlink{group___f_l_a_s_h_ex___o_b__n_r_s_t___s_t_o_p_gaef92c03b1f279c532bfa13d3bb074b57}{OB\+\_\+\+STOP\+\_\+\+RST}}))}
+
+
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__flash__ex_8h_source_l00055}{55}} of file \mbox{\hyperlink{stm32f0xx__hal__flash__ex_8h_source}{stm32f0xx\+\_\+hal\+\_\+flash\+\_\+ex.\+h}}.
+
+\mbox{\Hypertarget{group___f_l_a_s_h_ex___private___macros_gabf78876b5591eb25a3f4e63f5077dadc}\label{group___f_l_a_s_h_ex___private___macros_gabf78876b5591eb25a3f4e63f5077dadc}} 
+\index{FLASHEx\_Private\_Macros@{FLASHEx\_Private\_Macros}!IS\_OB\_VDDA\_ANALOG@{IS\_OB\_VDDA\_ANALOG}}
+\index{IS\_OB\_VDDA\_ANALOG@{IS\_OB\_VDDA\_ANALOG}!FLASHEx\_Private\_Macros@{FLASHEx\_Private\_Macros}}
+\doxysubsubsection{\texorpdfstring{IS\_OB\_VDDA\_ANALOG}{IS\_OB\_VDDA\_ANALOG}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+OB\+\_\+\+VDDA\+\_\+\+ANALOG(\begin{DoxyParamCaption}\item[{}]{ANALOG }\end{DoxyParamCaption})~(((ANALOG) == \mbox{\hyperlink{group___f_l_a_s_h_ex___o_b___v_d_d_a___analog___monitoring_ga4761fde7c57b2b54ca9801daeb50c323}{OB\+\_\+\+VDDA\+\_\+\+ANALOG\+\_\+\+ON}}) $\vert$$\vert$ ((ANALOG) == \mbox{\hyperlink{group___f_l_a_s_h_ex___o_b___v_d_d_a___analog___monitoring_ga7c18e60ba77007074e6ac9b151a01b5e}{OB\+\_\+\+VDDA\+\_\+\+ANALOG\+\_\+\+OFF}}))}
+
+
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__flash__ex_8h_source_l00061}{61}} of file \mbox{\hyperlink{stm32f0xx__hal__flash__ex_8h_source}{stm32f0xx\+\_\+hal\+\_\+flash\+\_\+ex.\+h}}.
+
+\mbox{\Hypertarget{group___f_l_a_s_h_ex___private___macros_ga0833946dba77c6e2537b4afe94c2bfe1}\label{group___f_l_a_s_h_ex___private___macros_ga0833946dba77c6e2537b4afe94c2bfe1}} 
+\index{FLASHEx\_Private\_Macros@{FLASHEx\_Private\_Macros}!IS\_OB\_WRP@{IS\_OB\_WRP}}
+\index{IS\_OB\_WRP@{IS\_OB\_WRP}!FLASHEx\_Private\_Macros@{FLASHEx\_Private\_Macros}}
+\doxysubsubsection{\texorpdfstring{IS\_OB\_WRP}{IS\_OB\_WRP}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+OB\+\_\+\+WRP(\begin{DoxyParamCaption}\item[{}]{PAGE }\end{DoxyParamCaption})~(((PAGE) != 0x0000000U))}
+
+
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__flash__ex_8h_source_l00071}{71}} of file \mbox{\hyperlink{stm32f0xx__hal__flash__ex_8h_source}{stm32f0xx\+\_\+hal\+\_\+flash\+\_\+ex.\+h}}.
+
+\mbox{\Hypertarget{group___f_l_a_s_h_ex___private___macros_ga87cd48c2373f47668470a38892ed07e3}\label{group___f_l_a_s_h_ex___private___macros_ga87cd48c2373f47668470a38892ed07e3}} 
+\index{FLASHEx\_Private\_Macros@{FLASHEx\_Private\_Macros}!IS\_OPTIONBYTE@{IS\_OPTIONBYTE}}
+\index{IS\_OPTIONBYTE@{IS\_OPTIONBYTE}!FLASHEx\_Private\_Macros@{FLASHEx\_Private\_Macros}}
+\doxysubsubsection{\texorpdfstring{IS\_OPTIONBYTE}{IS\_OPTIONBYTE}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+OPTIONBYTE(\begin{DoxyParamCaption}\item[{}]{VALUE }\end{DoxyParamCaption})~((VALUE) $<$= (\mbox{\hyperlink{group___f_l_a_s_h_ex___o_b___type_ga48712a166ea192ddcda0f2653679f9ec}{OPTIONBYTE\+\_\+\+WRP}} $\vert$ \mbox{\hyperlink{group___f_l_a_s_h_ex___o_b___type_ga8f0bdb21ef13bae39d5d8b6619e2df06}{OPTIONBYTE\+\_\+\+RDP}} $\vert$ \mbox{\hyperlink{group___f_l_a_s_h_ex___o_b___type_gac7d843e666e15c79688a1914e8ffe7a5}{OPTIONBYTE\+\_\+\+USER}} $\vert$ \mbox{\hyperlink{group___f_l_a_s_h_ex___o_b___type_gad0c29c84acfb46de1708a670529175a5}{OPTIONBYTE\+\_\+\+DATA}}))}
+
+
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__flash__ex_8h_source_l00043}{43}} of file \mbox{\hyperlink{stm32f0xx__hal__flash__ex_8h_source}{stm32f0xx\+\_\+hal\+\_\+flash\+\_\+ex.\+h}}.
+
+\mbox{\Hypertarget{group___f_l_a_s_h_ex___private___macros_ga8164622401a6cacf006679166de93c21}\label{group___f_l_a_s_h_ex___private___macros_ga8164622401a6cacf006679166de93c21}} 
+\index{FLASHEx\_Private\_Macros@{FLASHEx\_Private\_Macros}!IS\_WRPSTATE@{IS\_WRPSTATE}}
+\index{IS\_WRPSTATE@{IS\_WRPSTATE}!FLASHEx\_Private\_Macros@{FLASHEx\_Private\_Macros}}
+\doxysubsubsection{\texorpdfstring{IS\_WRPSTATE}{IS\_WRPSTATE}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+WRPSTATE(\begin{DoxyParamCaption}\item[{}]{VALUE }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((VALUE)\ ==\ \mbox{\hyperlink{group___f_l_a_s_h_ex___o_b___w_r_p___state_gaa34eb6205fe554f65a311ee974d5a4ab}{OB\_WRPSTATE\_DISABLE}})\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((VALUE)\ ==\ \mbox{\hyperlink{group___f_l_a_s_h_ex___o_b___w_r_p___state_ga9fc463145ab57616baa36d95523186a1}{OB\_WRPSTATE\_ENABLE}}))}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__flash__ex_8h_source_l00045}{45}} of file \mbox{\hyperlink{stm32f0xx__hal__flash__ex_8h_source}{stm32f0xx\+\_\+hal\+\_\+flash\+\_\+ex.\+h}}.
+

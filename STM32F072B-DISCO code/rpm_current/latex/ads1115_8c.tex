@@ -6,18 +6,18 @@
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-HAL\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{ads1115_8c_a67052e36b856806aa4c2b53802d557d4}{ADS1115\+\_\+\+Init}} (I2\+C\+\_\+\+Handle\+Type\+Def $\ast$handler, uint16\+\_\+t set\+Data\+Rate, uint16\+\_\+t set\+PGA)
+\mbox{\hyperlink{stm32f0xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{ads1115_8c_a67052e36b856806aa4c2b53802d557d4}{ADS1115\+\_\+\+Init}} (\mbox{\hyperlink{group___i2_c__handle___structure__definition_ga31b88eb31a4622a50e34f02a1c3d516b}{I2\+C\+\_\+\+Handle\+Type\+Def}} $\ast$handler, uint16\+\_\+t set\+Data\+Rate, uint16\+\_\+t set\+PGA)
 \item 
-HAL\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{ads1115_8c_a044eb864a349393a1666537b4e5f35af}{ADS1115\+\_\+read\+Single\+Ended}} (uint16\+\_\+t mux\+Port, float $\ast$voltage)
+\mbox{\hyperlink{stm32f0xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{ads1115_8c_a044eb864a349393a1666537b4e5f35af}{ADS1115\+\_\+read\+Single\+Ended}} (uint16\+\_\+t mux\+Port, float $\ast$voltage)
 \item 
-HAL\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{ads1115_8c_aeec6c2ea094d21a583046bdbe4d2b540}{ADS1115\+\_\+read}} (uint16\+\_\+t mux\+Port, float $\ast$voltage)
+\mbox{\hyperlink{stm32f0xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{ads1115_8c_aeec6c2ea094d21a583046bdbe4d2b540}{ADS1115\+\_\+read}} (uint16\+\_\+t mux\+Port, float $\ast$voltage)
 \end{DoxyCompactItemize}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
 uint8\+\_\+t \mbox{\hyperlink{ads1115_8c_a0f5c74bc200ec98fd70a4524ac1f2cbe}{ADS1115\+\_\+dev\+Address}} = 0b1001000
 \item 
-I2\+C\+\_\+\+Handle\+Type\+Def \mbox{\hyperlink{ads1115_8c_a6756d7253127536d3c7e2437b5bc2ed0}{ADS1115\+\_\+\+I2\+C\+\_\+\+Handler}}
+\mbox{\hyperlink{group___i2_c__handle___structure__definition_ga31b88eb31a4622a50e34f02a1c3d516b}{I2\+C\+\_\+\+Handle\+Type\+Def}} \mbox{\hyperlink{ads1115_8c_a6756d7253127536d3c7e2437b5bc2ed0}{ADS1115\+\_\+\+I2\+C\+\_\+\+Handler}}
 \item 
 uint16\+\_\+t \mbox{\hyperlink{ads1115_8c_a48675510b7f0c04bbed76175858020d9}{ADS1115\+\_\+data\+Rate}} = \mbox{\hyperlink{ads1115_8h_a5f04733fd41167c9e31232a21b0d6c25}{ADS1115\+\_\+\+DATA\+\_\+\+RATE\+\_\+128}}
 \item 
@@ -38,7 +38,7 @@ float \mbox{\hyperlink{ads1115_8c_a120e7277bcb2b099ce2c7c9f36d8b4b0}{ADS1115\+\_
 \index{ads1115.c@{ads1115.c}!ADS1115\_Init@{ADS1115\_Init}}
 \index{ADS1115\_Init@{ADS1115\_Init}!ads1115.c@{ads1115.c}}
 \doxysubsubsection{\texorpdfstring{ADS1115\_Init()}{ADS1115\_Init()}}
-{\footnotesize\ttfamily HAL\+\_\+\+Status\+Type\+Def ADS1115\+\_\+\+Init (\begin{DoxyParamCaption}\item[{I2\+C\+\_\+\+Handle\+Type\+Def $\ast$}]{handler,  }\item[{uint16\+\_\+t}]{set\+Data\+Rate,  }\item[{uint16\+\_\+t}]{set\+PGA }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{stm32f0xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} ADS1115\+\_\+\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___i2_c__handle___structure__definition_ga31b88eb31a4622a50e34f02a1c3d516b}{I2\+C\+\_\+\+Handle\+Type\+Def}} $\ast$}]{handler,  }\item[{uint16\+\_\+t}]{set\+Data\+Rate,  }\item[{uint16\+\_\+t}]{set\+PGA }\end{DoxyParamCaption})}
 
 
 
@@ -48,7 +48,7 @@ Definition at line \mbox{\hyperlink{ads1115_8c_source_l00066}{66}} of file \mbox
 \index{ads1115.c@{ads1115.c}!ADS1115\_read@{ADS1115\_read}}
 \index{ADS1115\_read@{ADS1115\_read}!ads1115.c@{ads1115.c}}
 \doxysubsubsection{\texorpdfstring{ADS1115\_read()}{ADS1115\_read()}}
-{\footnotesize\ttfamily HAL\+\_\+\+Status\+Type\+Def ADS1115\+\_\+read (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{mux\+Port,  }\item[{float $\ast$}]{voltage }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{stm32f0xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} ADS1115\+\_\+read (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{mux\+Port,  }\item[{float $\ast$}]{voltage }\end{DoxyParamCaption})}
 
 
 
@@ -58,7 +58,7 @@ Definition at line \mbox{\hyperlink{ads1115_8c_source_l00138}{138}} of file \mbo
 \index{ads1115.c@{ads1115.c}!ADS1115\_readSingleEnded@{ADS1115\_readSingleEnded}}
 \index{ADS1115\_readSingleEnded@{ADS1115\_readSingleEnded}!ads1115.c@{ads1115.c}}
 \doxysubsubsection{\texorpdfstring{ADS1115\_readSingleEnded()}{ADS1115\_readSingleEnded()}}
-{\footnotesize\ttfamily HAL\+\_\+\+Status\+Type\+Def ADS1115\+\_\+read\+Single\+Ended (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{mux\+Port,  }\item[{float $\ast$}]{voltage }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{stm32f0xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} ADS1115\+\_\+read\+Single\+Ended (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{mux\+Port,  }\item[{float $\ast$}]{voltage }\end{DoxyParamCaption})}
 
 
 
@@ -101,7 +101,7 @@ Definition at line \mbox{\hyperlink{ads1115_8c_source_l00053}{53}} of file \mbox
 \index{ads1115.c@{ads1115.c}!ADS1115\_I2C\_Handler@{ADS1115\_I2C\_Handler}}
 \index{ADS1115\_I2C\_Handler@{ADS1115\_I2C\_Handler}!ads1115.c@{ads1115.c}}
 \doxysubsubsection{\texorpdfstring{ADS1115\_I2C\_Handler}{ADS1115\_I2C\_Handler}}
-{\footnotesize\ttfamily I2\+C\+\_\+\+Handle\+Type\+Def ADS1115\+\_\+\+I2\+C\+\_\+\+Handler}
+{\footnotesize\ttfamily \mbox{\hyperlink{group___i2_c__handle___structure__definition_ga31b88eb31a4622a50e34f02a1c3d516b}{I2\+C\+\_\+\+Handle\+Type\+Def}} ADS1115\+\_\+\+I2\+C\+\_\+\+Handler}
 
 
 

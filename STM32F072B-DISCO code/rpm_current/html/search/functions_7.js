@@ -1,28 +1,7 @@
 var searchData=
 [
-  ['lcd_5fblinkoff_0',['LCD_BlinkOff',['../_l_c_d_8h.html#aad5a60aa1fd648946ccaecb7da96e1b0',1,'LCD_BlinkOff(void):&#160;LCD.c'],['../_l_c_d_8c.html#aad5a60aa1fd648946ccaecb7da96e1b0',1,'LCD_BlinkOff(void):&#160;LCD.c']]],
-  ['lcd_5fblinkon_1',['LCD_BlinkOn',['../_l_c_d_8h.html#a9677072bace50b3d32e2a0ea6ee83852',1,'LCD_BlinkOn(void):&#160;LCD.c'],['../_l_c_d_8c.html#a9677072bace50b3d32e2a0ea6ee83852',1,'LCD_BlinkOn(void):&#160;LCD.c']]],
-  ['lcd_5fclear_2',['LCD_Clear',['../_l_c_d_8h.html#ae60d0b62d7eb3fa31266c095d7b3c245',1,'LCD_Clear(void):&#160;LCD.c'],['../_l_c_d_8c.html#ae60d0b62d7eb3fa31266c095d7b3c245',1,'LCD_Clear(void):&#160;LCD.c']]],
-  ['lcd_5fcreatechar_3',['LCD_CreateChar',['../_l_c_d_8h.html#a6ca1d4a8d86b95e0a0cf82316e599b50',1,'LCD_CreateChar(uint8_t location, uint8_t *data):&#160;LCD.c'],['../_l_c_d_8c.html#a6ca1d4a8d86b95e0a0cf82316e599b50',1,'LCD_CreateChar(uint8_t location, uint8_t *data):&#160;LCD.c']]],
-  ['lcd_5fcursoroff_4',['LCD_CursorOff',['../_l_c_d_8h.html#aa509f803ac990627d8ecafbcedd01c93',1,'LCD_CursorOff(void):&#160;LCD.c'],['../_l_c_d_8c.html#aa509f803ac990627d8ecafbcedd01c93',1,'LCD_CursorOff(void):&#160;LCD.c']]],
-  ['lcd_5fcursoron_5',['LCD_CursorOn',['../_l_c_d_8h.html#af500d4a2cd7b63f7611de261597fb21c',1,'LCD_CursorOn(void):&#160;LCD.c'],['../_l_c_d_8c.html#af500d4a2cd7b63f7611de261597fb21c',1,'LCD_CursorOn(void):&#160;LCD.c']]],
-  ['lcd_5fdelay_5fms_6',['LCD_Delay_ms',['../_l_c_d_8c.html#ae46b2bb2cbe656124560359274b905b9',1,'LCD.c']]],
-  ['lcd_5fdelay_5fus_7',['LCD_Delay_us',['../_l_c_d_8c.html#a58106dc6cba6399a9f06dd0abc0d956e',1,'LCD.c']]],
-  ['lcd_5fdisplayoff_8',['LCD_DisplayOff',['../_l_c_d_8h.html#ae06ea1bb5f28922b6017676d1aaa61e4',1,'LCD_DisplayOff(void):&#160;LCD.c'],['../_l_c_d_8c.html#ae06ea1bb5f28922b6017676d1aaa61e4',1,'LCD_DisplayOff(void):&#160;LCD.c']]],
-  ['lcd_5fdisplayon_9',['LCD_DisplayOn',['../_l_c_d_8h.html#aed5bd5f3f7340dbdb2e7f50f94163789',1,'LCD_DisplayOn(void):&#160;LCD.c'],['../_l_c_d_8c.html#aed5bd5f3f7340dbdb2e7f50f94163789',1,'LCD_DisplayOn(void):&#160;LCD.c']]],
-  ['lcd_5finit_10',['LCD_Init',['../_l_c_d_8h.html#aa53c9d40f3aa552a9974cd55ac510cb3',1,'LCD_Init(void):&#160;LCD.c'],['../_l_c_d_8c.html#aa53c9d40f3aa552a9974cd55ac510cb3',1,'LCD_Init(void):&#160;LCD.c']]],
-  ['lcd_5fpaint_11',['LCD_paint',['../my__code_8h.html#a7259c0cadb7bc3e6b343edc3189990e7',1,'LCD_paint():&#160;my_code.c'],['../my__code_8c.html#a7259c0cadb7bc3e6b343edc3189990e7',1,'LCD_paint():&#160;my_code.c']]],
-  ['lcd_5fput_12',['LCD_Put',['../_l_c_d_8h.html#a649f1654ecc70d947c691ebd685a4914',1,'LCD_Put(uint8_t Data):&#160;LCD.c'],['../_l_c_d_8c.html#a649f1654ecc70d947c691ebd685a4914',1,'LCD_Put(uint8_t Data):&#160;LCD.c']]],
-  ['lcd_5fputcustom_13',['LCD_PutCustom',['../_l_c_d_8h.html#ae8c2d3a2991a7eb9a2b5e6e285b02f08',1,'LCD_PutCustom(uint8_t x, uint8_t y, uint8_t location):&#160;LCD.c'],['../_l_c_d_8c.html#ae8c2d3a2991a7eb9a2b5e6e285b02f08',1,'LCD_PutCustom(uint8_t x, uint8_t y, uint8_t location):&#160;LCD.c']]],
-  ['lcd_5fputs_14',['LCD_Puts',['../_l_c_d_8h.html#a688d80a383c2d920397e8b3a494c4b53',1,'LCD_Puts(uint8_t x, uint8_t y, char *str):&#160;LCD.c'],['../_l_c_d_8c.html#a688d80a383c2d920397e8b3a494c4b53',1,'LCD_Puts(uint8_t x, uint8_t y, char *str):&#160;LCD.c']]],
-  ['lcd_5fscrollleft_15',['LCD_ScrollLeft',['../_l_c_d_8h.html#acfe2a38f3b189de3d27cfac838cd7cb0',1,'LCD_ScrollLeft(void):&#160;LCD.c'],['../_l_c_d_8c.html#acfe2a38f3b189de3d27cfac838cd7cb0',1,'LCD_ScrollLeft(void):&#160;LCD.c']]],
-  ['lcd_5fscrollright_16',['LCD_ScrollRight',['../_l_c_d_8h.html#a33fff36345a1287de5142e15ef824968',1,'LCD_ScrollRight(void):&#160;LCD.c'],['../_l_c_d_8c.html#a33fff36345a1287de5142e15ef824968',1,'LCD_ScrollRight(void):&#160;LCD.c']]],
-  ['lcd_5ftest_17',['LCD_test',['../my__code_8h.html#a12475d06ee16c914cad1ae639534cbdf',1,'my_code.h']]],
-  ['loop_18',['loop',['../my__code_8h.html#afe461d27b9c48d5921c00d521181f12f',1,'loop():&#160;my_code.c'],['../my__code_8c.html#afe461d27b9c48d5921c00d521181f12f',1,'loop():&#160;my_code.c']]],
-  ['lora_5ftx_5fblocking_19',['lora_TX_blocking',['../my__code_8h.html#a69cac0eadc64f447090ab8ac43653a12',1,'lora_TX_blocking(char *payload, int length):&#160;my_code.c'],['../my__code_8c.html#a69cac0eadc64f447090ab8ac43653a12',1,'lora_TX_blocking(char *payload, int length):&#160;my_code.c']]],
-  ['lora_5ftx_5fit_20',['lora_tx_it',['../my__code_8h.html#a3379ea969e8f3d0b3feff28db2ef81f8',1,'lora_tx_it(char *payload, int length):&#160;my_code.c'],['../my__code_8c.html#a3379ea969e8f3d0b3feff28db2ef81f8',1,'lora_tx_it(char *payload, int length):&#160;my_code.c']]],
-  ['lwgps_5fdistance_5fbearing_21',['lwgps_distance_bearing',['../group___l_w_g_p_s.html#ga547ed9d1fcff169ef72060f3e70b29f4',1,'lwgps.h']]],
-  ['lwgps_5finit_22',['lwgps_init',['../group___l_w_g_p_s.html#gaf69993c7ad6cb474707f86d4d986d87f',1,'lwgps_init(lwgps_t *gh):&#160;lwgps.c'],['../group___l_w_g_p_s.html#gaf69993c7ad6cb474707f86d4d986d87f',1,'lwgps_init(lwgps_t *gh):&#160;lwgps.c']]],
-  ['lwgps_5fprocess_23',['lwgps_process',['../group___l_w_g_p_s.html#gaf169c4cd93a4c22c976c9f17b69055a0',1,'lwgps_process(lwgps_t *gh, const void *data, size_t len):&#160;lwgps.c'],['../group___l_w_g_p_s.html#gaf169c4cd93a4c22c976c9f17b69055a0',1,'lwgps_process(lwgps_t *gh, const void *data, size_t len):&#160;lwgps.c']]],
-  ['lwgps_5fto_5fspeed_24',['lwgps_to_speed',['../group___l_w_g_p_s.html#gacb9e55ca2fc668510c417a180c99abe7',1,'lwgps_to_speed(lwgps_float_t sik, lwgps_speed_t ts):&#160;lwgps.c'],['../group___l_w_g_p_s.html#gacb9e55ca2fc668510c417a180c99abe7',1,'lwgps_to_speed(lwgps_float_t sik, lwgps_speed_t ts):&#160;lwgps.c']]]
+  ['initialise_5fmonitor_5fhandles_0',['initialise_monitor_handles',['../syscalls_8c.html#a25c7f100d498300fff65568c2fcfe639',1,'syscalls.c']]],
+  ['itm_5fcheckchar_1',['ITM_CheckChar',['../group___c_m_s_i_s__core___debug_functions.html#gae61ce9ca5917735325cd93b0fb21dd29',1,'core_armv8mml.h']]],
+  ['itm_5freceivechar_2',['ITM_ReceiveChar',['../group___c_m_s_i_s__core___debug_functions.html#gac3ee2c30a1ac4ed34c8a866a17decd53',1,'core_armv8mml.h']]],
+  ['itm_5fsendchar_3',['ITM_SendChar',['../group___c_m_s_i_s__core___debug_functions.html#gac90a497bd64286b84552c2c553d3419e',1,'core_armv8mml.h']]]
 ];

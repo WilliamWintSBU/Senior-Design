@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['lwgps_5fspeed_5ft_0',['lwgps_speed_t',['../group___l_w_g_p_s.html#ga8028585ea87281677e6add0512bb8c92',1,'lwgps.h']]],
-  ['lwgps_5fstatement_5ft_1',['lwgps_statement_t',['../group___l_w_g_p_s.html#gabab85c279fb364e161ba08aaf8a14284',1,'lwgps.h']]]
+  ['errorstatus_0',['ErrorStatus',['../group___exported__types.html#ga8333b96c67f83cba354b3407fcbb6ee8',1,'stm32f0xx.h']]],
+  ['exti_5fcallbackidtypedef_1',['EXTI_CallbackIDTypeDef',['../group___e_x_t_i___exported___types.html#ga0ff36e8796a6ad3f2fc211e534c54c0e',1,'stm32f0xx_hal_exti.h']]]
 ];

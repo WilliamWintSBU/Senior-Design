@@ -1,0 +1,50 @@
+\hypertarget{group___h_a_l___private___macros}{}\doxysection{HAL Private Macros}
+\label{group___h_a_l___private___macros}\index{HAL Private Macros@{HAL Private Macros}}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___h_a_l___private___macros_ga2d44c67961ec9f4feecec777364c13a0}{IS\+\_\+\+SYSCFG\+\_\+\+FASTMODEPLUS}}(\+\_\+\+\_\+\+PIN\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{group___h_a_l___private___macros_ga2a86bf8a89ad75716cd92e932a8ae71e}{IS\+\_\+\+TICKFREQ}}(FREQ)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group___h_a_l___private___macros_ga2d44c67961ec9f4feecec777364c13a0}\label{group___h_a_l___private___macros_ga2d44c67961ec9f4feecec777364c13a0}} 
+\index{HAL Private Macros@{HAL Private Macros}!IS\_SYSCFG\_FASTMODEPLUS@{IS\_SYSCFG\_FASTMODEPLUS}}
+\index{IS\_SYSCFG\_FASTMODEPLUS@{IS\_SYSCFG\_FASTMODEPLUS}!HAL Private Macros@{HAL Private Macros}}
+\doxysubsubsection{\texorpdfstring{IS\_SYSCFG\_FASTMODEPLUS}{IS\_SYSCFG\_FASTMODEPLUS}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+SYSCFG\+\_\+\+FASTMODEPLUS(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+PIN\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((((\_\_PIN\_\_)\ \&\ \mbox{\hyperlink{group___s_y_s_c_f_g___fast_mode_plus___g_p_i_o_ga1f9beaf68b00ae5598cb8d930da05704}{SYSCFG\_FASTMODEPLUS\_PB6}})\ \ ==\ \mbox{\hyperlink{group___s_y_s_c_f_g___fast_mode_plus___g_p_i_o_ga1f9beaf68b00ae5598cb8d930da05704}{SYSCFG\_FASTMODEPLUS\_PB6}})\ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((\_\_PIN\_\_)\ \&\ \mbox{\hyperlink{group___s_y_s_c_f_g___fast_mode_plus___g_p_i_o_ga4b939ef5ec69e81277ef2323d5917eb5}{SYSCFG\_FASTMODEPLUS\_PB7}})\ \ ==\ \mbox{\hyperlink{group___s_y_s_c_f_g___fast_mode_plus___g_p_i_o_ga4b939ef5ec69e81277ef2323d5917eb5}{SYSCFG\_FASTMODEPLUS\_PB7}})\ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((\_\_PIN\_\_)\ \&\ \mbox{\hyperlink{group___s_y_s_c_f_g___fast_mode_plus___g_p_i_o_ga2cd8442a02f25ed8e7e0ba6e5723edd4}{SYSCFG\_FASTMODEPLUS\_PB8}})\ \ ==\ \mbox{\hyperlink{group___s_y_s_c_f_g___fast_mode_plus___g_p_i_o_ga2cd8442a02f25ed8e7e0ba6e5723edd4}{SYSCFG\_FASTMODEPLUS\_PB8}})\ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((\_\_PIN\_\_)\ \&\ \mbox{\hyperlink{group___s_y_s_c_f_g___fast_mode_plus___g_p_i_o_ga71c50ae2406cd9b6dff73cd9cd189c3d}{SYSCFG\_FASTMODEPLUS\_PB9}})\ \ ==\ \mbox{\hyperlink{group___s_y_s_c_f_g___fast_mode_plus___g_p_i_o_ga71c50ae2406cd9b6dff73cd9cd189c3d}{SYSCFG\_FASTMODEPLUS\_PB9}}))}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal_8h_source_l00053}{53}} of file \mbox{\hyperlink{stm32f0xx__hal_8h_source}{stm32f0xx\+\_\+hal.\+h}}.
+
+\mbox{\Hypertarget{group___h_a_l___private___macros_ga2a86bf8a89ad75716cd92e932a8ae71e}\label{group___h_a_l___private___macros_ga2a86bf8a89ad75716cd92e932a8ae71e}} 
+\index{HAL Private Macros@{HAL Private Macros}!IS\_TICKFREQ@{IS\_TICKFREQ}}
+\index{IS\_TICKFREQ@{IS\_TICKFREQ}!HAL Private Macros@{HAL Private Macros}}
+\doxysubsubsection{\texorpdfstring{IS\_TICKFREQ}{IS\_TICKFREQ}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+TICKFREQ(\begin{DoxyParamCaption}\item[{}]{FREQ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((FREQ)\ ==\ \mbox{\hyperlink{group___h_a_l___t_i_c_k___f_r_e_q_ggab36ec81674817249c46734772ff3b73aabf4d022d85adb437a57c1f45d6345092}{HAL\_TICK\_FREQ\_10HZ}})\ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((FREQ)\ ==\ \mbox{\hyperlink{group___h_a_l___t_i_c_k___f_r_e_q_ggab36ec81674817249c46734772ff3b73aacb1ef3a0e9632aafe0fd162e2cd88408}{HAL\_TICK\_FREQ\_100HZ}})\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((FREQ)\ ==\ \mbox{\hyperlink{group___h_a_l___t_i_c_k___f_r_e_q_ggab36ec81674817249c46734772ff3b73aabef41c8ee13ca1d48eb49dac912f9689}{HAL\_TICK\_FREQ\_1KHZ}}))}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal_8h_source_l00502}{502}} of file \mbox{\hyperlink{stm32f0xx__hal_8h_source}{stm32f0xx\+\_\+hal.\+h}}.
+

@@ -1,0 +1,99 @@
+\hypertarget{stm32f0xx__hal__adc__ex_8h}{}\doxysection{Drivers/\+STM32\+F0xx\+\_\+\+HAL\+\_\+\+Driver/\+Inc/stm32f0xx\+\_\+hal\+\_\+adc\+\_\+ex.h File Reference}
+\label{stm32f0xx__hal__adc__ex_8h}\index{Drivers/STM32F0xx\_HAL\_Driver/Inc/stm32f0xx\_hal\_adc\_ex.h@{Drivers/STM32F0xx\_HAL\_Driver/Inc/stm32f0xx\_hal\_adc\_ex.h}}
+
+
+Header file of ADC HAL Extension module.  
+
+
+{\ttfamily \#include \char`\"{}stm32f0xx\+\_\+hal\+\_\+def.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___a_d_c___exported___constants_ga2297a78b023d2afe83499724566e6cde}{ADC\+\_\+\+CCR\+\_\+\+ALL}}~(\mbox{\hyperlink{group___peripheral___registers___bits___definition_gaaeefa6f00268db0df10fb97112a9f456}{ADC\+\_\+\+CCR\+\_\+\+VBATEN}} $\vert$ \mbox{\hyperlink{group___peripheral___registers___bits___definition_gaec05330012f52f35421531c72819fada}{ADC\+\_\+\+CCR\+\_\+\+TSEN}} $\vert$ \mbox{\hyperlink{group___peripheral___registers___bits___definition_gaecc47464aaa52f565d8daa9cf1a86054}{ADC\+\_\+\+CCR\+\_\+\+VREFEN}})
+\item 
+\#define \mbox{\hyperlink{group___a_d_c___external__trigger__source___regular_gabd4ea0756910a3cdd6942254473a40b3}{ADC\+\_\+\+EXTERNALTRIGCONV\+\_\+\+T1\+\_\+\+TRGO}}~\mbox{\hyperlink{group___a_d_c___internal___h_a_l__driver___ext__trig__src___regular_gaaa9a402d55b7d3b9412ad2d9c8b3c596}{ADC1\+\_\+2\+\_\+\+EXTERNALTRIG\+\_\+\+T1\+\_\+\+TRGO}}
+\item 
+\#define \mbox{\hyperlink{group___a_d_c___external__trigger__source___regular_ga112435eac802af17d8a61d30a1e6d1dc}{ADC\+\_\+\+EXTERNALTRIGCONV\+\_\+\+T1\+\_\+\+CC4}}~\mbox{\hyperlink{group___a_d_c___internal___h_a_l__driver___ext__trig__src___regular_ga67ffe1784bc032efb1ea187d8aefc7d1}{ADC1\+\_\+2\+\_\+\+EXTERNALTRIG\+\_\+\+T1\+\_\+\+CC4}}
+\item 
+\#define \mbox{\hyperlink{group___a_d_c___external__trigger__source___regular_ga41bef7b6bfdb6641a97e89aa4abc405e}{ADC\+\_\+\+EXTERNALTRIGCONV\+\_\+\+T3\+\_\+\+TRGO}}~\mbox{\hyperlink{group___a_d_c___internal___h_a_l__driver___ext__trig__src___regular_ga0ba310c2b48bef9a7efb244a057c743b}{ADC1\+\_\+2\+\_\+\+EXTERNALTRIG\+\_\+\+T3\+\_\+\+TRGO}}
+\item 
+\#define \mbox{\hyperlink{group___a_d_c___external__trigger__source___regular_ga349ec6a1c2a362fba718cbfd068e50dc}{ADC\+\_\+\+SOFTWARE\+\_\+\+START}}~(\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga01460f832e7bd04e150f86425aa922dd}{ADC\+\_\+\+CFGR1\+\_\+\+EXTSEL}} + 1U)
+\item 
+\#define \mbox{\hyperlink{group___a_d_c___external__trigger__source___regular_gaa964f17f527400095888ca28c65507c4}{ADC\+\_\+\+EXTERNALTRIGCONV\+\_\+\+T2\+\_\+\+TRGO}}~\mbox{\hyperlink{group___a_d_c___internal___h_a_l__driver___ext__trig__src___regular_ga4f651a2afa7c5e18d9ad2e3f5742d1c1}{ADC1\+\_\+2\+\_\+\+EXTERNALTRIG\+\_\+\+T2\+\_\+\+TRGO}}
+\item 
+\#define \mbox{\hyperlink{group___a_d_c___external__trigger__source___regular_ga3c78f17752bc26b7f69139668e4f793b}{ADC\+\_\+\+EXTERNALTRIGCONV\+\_\+\+T15\+\_\+\+TRGO}}~\mbox{\hyperlink{group___a_d_c___internal___h_a_l__driver___ext__trig__src___regular_ga127cdc8e6c3145ef6b6c447f8a8b6277}{ADC1\+\_\+2\+\_\+\+EXTERNALTRIG\+\_\+\+T15\+\_\+\+TRGO}}
+\item 
+\#define \mbox{\hyperlink{group___a_d_c__channels_ga3c5075aee5af4eae02f1a72d6216199c}{ADC\+\_\+\+CHANNEL\+\_\+0}}~( 0x00000000U)
+\item 
+\#define \mbox{\hyperlink{group___a_d_c__channels_gaeb119201733a871c94971c51843ffaac}{ADC\+\_\+\+CHANNEL\+\_\+1}}~( 0x00000001U)
+\item 
+\#define \mbox{\hyperlink{group___a_d_c__channels_gad576132ebd78a3429be34f44e474c914}{ADC\+\_\+\+CHANNEL\+\_\+2}}~( 0x00000002U)
+\item 
+\#define \mbox{\hyperlink{group___a_d_c__channels_ga56dba5d35f1f7bcad41e4f9a7da3b125}{ADC\+\_\+\+CHANNEL\+\_\+3}}~( 0x00000003U)
+\item 
+\#define \mbox{\hyperlink{group___a_d_c__channels_ga66f19737ad81a0a62eb97854d0e41a54}{ADC\+\_\+\+CHANNEL\+\_\+4}}~( 0x00000004U)
+\item 
+\#define \mbox{\hyperlink{group___a_d_c__channels_ga716f2836f655c753c629de439ce50ecf}{ADC\+\_\+\+CHANNEL\+\_\+5}}~( 0x00000005U)
+\item 
+\#define \mbox{\hyperlink{group___a_d_c__channels_ga418f0223ea88773157638097391716a5}{ADC\+\_\+\+CHANNEL\+\_\+6}}~( 0x00000006U)
+\item 
+\#define \mbox{\hyperlink{group___a_d_c__channels_ga03b8138c2d87274f94ba675a7e18e666}{ADC\+\_\+\+CHANNEL\+\_\+7}}~( 0x00000007U)
+\item 
+\#define \mbox{\hyperlink{group___a_d_c__channels_gab0917f6b66213f33f2e2ea8781df5aa9}{ADC\+\_\+\+CHANNEL\+\_\+8}}~( 0x00000008U)
+\item 
+\#define \mbox{\hyperlink{group___a_d_c__channels_ga95f485ecc05187c3d475238a88beef1c}{ADC\+\_\+\+CHANNEL\+\_\+9}}~( 0x00000009U)
+\item 
+\#define \mbox{\hyperlink{group___a_d_c__channels_gaa55df8c97225d32b495959896897567c}{ADC\+\_\+\+CHANNEL\+\_\+10}}~( 0x0000000\+AU)
+\item 
+\#define \mbox{\hyperlink{group___a_d_c__channels_gaf36361a33c07b04f8ab1d58d232bc434}{ADC\+\_\+\+CHANNEL\+\_\+11}}~( 0x0000000\+BU)
+\item 
+\#define \mbox{\hyperlink{group___a_d_c__channels_gad5ff4f4f0e5f6f9ffbdfb6f4cbc3a6e0}{ADC\+\_\+\+CHANNEL\+\_\+12}}~( 0x0000000\+CU)
+\item 
+\#define \mbox{\hyperlink{group___a_d_c__channels_gad7550270d90a1a12b00cd9f8ad9f1fc2}{ADC\+\_\+\+CHANNEL\+\_\+13}}~( 0x0000000\+DU)
+\item 
+\#define \mbox{\hyperlink{group___a_d_c__channels_ga9caff32bcda5dd83f662bf398ab14d36}{ADC\+\_\+\+CHANNEL\+\_\+14}}~( 0x0000000\+EU)
+\item 
+\#define \mbox{\hyperlink{group___a_d_c__channels_ga66f41aad197a6de160dd8958c90653a2}{ADC\+\_\+\+CHANNEL\+\_\+15}}~( 0x0000000\+FU)
+\item 
+\#define \mbox{\hyperlink{group___a_d_c__channels_ga7892590f524e7356deb1e513bbc0cdaf}{ADC\+\_\+\+CHANNEL\+\_\+16}}~( 0x00000010U)
+\item 
+\#define \mbox{\hyperlink{group___a_d_c__channels_gaf7760a480f79c62d19260291f8afb6e1}{ADC\+\_\+\+CHANNEL\+\_\+17}}~( 0x00000011U)
+\item 
+\#define \mbox{\hyperlink{group___a_d_c__channels_ga8f0da1e8fa8504c92a368f6eb8e229b3}{ADC\+\_\+\+CHANNEL\+\_\+\+TEMPSENSOR}}~\mbox{\hyperlink{group___a_d_c__channels_ga7892590f524e7356deb1e513bbc0cdaf}{ADC\+\_\+\+CHANNEL\+\_\+16}}
+\item 
+\#define \mbox{\hyperlink{group___a_d_c__channels_ga2647a044275a295693e8fb01db3172f9}{ADC\+\_\+\+CHANNEL\+\_\+\+VREFINT}}~\mbox{\hyperlink{group___a_d_c__channels_gaf7760a480f79c62d19260291f8afb6e1}{ADC\+\_\+\+CHANNEL\+\_\+17}}
+\item 
+\#define \mbox{\hyperlink{group___a_d_c__channels_ga30fc8e77b4c89d3ea0609cfbc7fc90fd}{ADC\+\_\+\+CHANNEL\+\_\+18}}~( 0x00000012U)
+\item 
+\#define \mbox{\hyperlink{group___a_d_c__channels_ga60210f1e9305301dea9e42afedd9093f}{ADC\+\_\+\+CHANNEL\+\_\+\+VBAT}}~\mbox{\hyperlink{group___a_d_c__channels_ga30fc8e77b4c89d3ea0609cfbc7fc90fd}{ADC\+\_\+\+CHANNEL\+\_\+18}}
+\item 
+\#define \mbox{\hyperlink{group___a_d_c_ex___private___macros_gafc2b5a27b9e60b2822591a19cbca11ff}{ADC\+\_\+\+IS\+\_\+\+CHANNEL\+\_\+\+INTERNAL}}(\+\_\+\+\_\+\+CHANNEL\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Test if the selected ADC channel is an internal channel Vref\+Int/\+Temp\+Sensor/\+Vbat Note\+: On STM32\+F0, availability of internal channel Vbat depends on devices lines. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___a_d_c_ex___private___macros_ga27b743f3afcb778ad1885debb677080b}{ADC\+\_\+\+CHANNEL\+\_\+\+INTERNAL\+\_\+\+PATH}}(\+\_\+\+\_\+\+CHANNEL\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Select the internal measurement path to be enabled/disabled corresponding to the selected ADC internal channel Vref\+Int/\+Temp\+Sensor/\+Vbat. Note\+: On STM32\+F0, availability of internal channel Vbat depends on devices lines. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___a_d_c_ex___private___macros_gab3f646d603911820b104dd134c42f028}{IS\+\_\+\+ADC\+\_\+\+EXTTRIG}}(REGTRIG)
+\item 
+\#define \mbox{\hyperlink{group___a_d_c_ex___private___macros_gaba41910dcb2b449c613a5ef638862e77}{IS\+\_\+\+ADC\+\_\+\+CHANNEL}}(CHANNEL)
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{stm32f0xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___a_d_c_ex___exported___functions___group1_gabb53dc2716c8250256368c4f60701dab}{HAL\+\_\+\+ADCEx\+\_\+\+Calibration\+\_\+\+Start}} (\mbox{\hyperlink{group___a_d_c___exported___types_ga46483fcdb7a528252920c304ec59d006}{ADC\+\_\+\+Handle\+Type\+Def}} $\ast$\mbox{\hyperlink{adc_8h_a62fcafba91cf315db7e0e0c8f22c656f}{hadc}})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header file of ADC HAL Extension module. 
+
+\begin{DoxyAuthor}{Author}
+MCD Application Team 
+\end{DoxyAuthor}
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+Copyright (c) 2016 STMicroelectronics. All rights reserved.
+
+This software is licensed under terms that can be found in the LICENSE file in the root directory of this software component. If no LICENSE file comes with this software, it is provided AS-\/\+IS. 
+
+Definition in file \mbox{\hyperlink{stm32f0xx__hal__adc__ex_8h_source}{stm32f0xx\+\_\+hal\+\_\+adc\+\_\+ex.\+h}}.
+

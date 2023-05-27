@@ -1,0 +1,110 @@
+\hypertarget{group___r_c_c___h_s_i14___configuration}{}\doxysection{RCC\+\_\+\+HSI14\+\_\+\+Configuration}
+\label{group___r_c_c___h_s_i14___configuration}\index{RCC\_HSI14\_Configuration@{RCC\_HSI14\_Configuration}}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___r_c_c___h_s_i14___configuration_gae918e3236290b9f03f6bd7dc192dceae}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+HSI14\+\_\+\+ENABLE}}()~\mbox{\hyperlink{group___exported__macros_ga26474f43799fbade9cf300e21dd3a91a}{SET\+\_\+\+BIT}}(\mbox{\hyperlink{group___peripheral__declaration_ga74944438a086975793d26ae48d5882d4}{RCC}}-\/$>$CR2, \mbox{\hyperlink{group___peripheral___registers___bits___definition_gaf600a82eec2d1445e91af6f98baf042e}{RCC\+\_\+\+CR2\+\_\+\+HSI14\+ON}})
+\begin{DoxyCompactList}\small\item\em Macro to enable the Internal 14Mhz High Speed oscillator (HSI14). \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_c_c___h_s_i14___configuration_ga55588a95af70bea78b741ac53ecd4110}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+HSI14\+\_\+\+DISABLE}}()~\mbox{\hyperlink{group___exported__macros_ga133aae6fc0d41bffab39ab223a7001de}{CLEAR\+\_\+\+BIT}}(\mbox{\hyperlink{group___peripheral__declaration_ga74944438a086975793d26ae48d5882d4}{RCC}}-\/$>$CR2, \mbox{\hyperlink{group___peripheral___registers___bits___definition_gaf600a82eec2d1445e91af6f98baf042e}{RCC\+\_\+\+CR2\+\_\+\+HSI14\+ON}})
+\begin{DoxyCompactList}\small\item\em Macro to disable the Internal 14Mhz High Speed oscillator (HSI14). \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_c_c___h_s_i14___configuration_ga34755f0502ea1ee4d6a80abefc4156a4}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+HSI14\+ADC\+\_\+\+ENABLE}}()~\mbox{\hyperlink{group___exported__macros_ga133aae6fc0d41bffab39ab223a7001de}{CLEAR\+\_\+\+BIT}}(\mbox{\hyperlink{group___peripheral__declaration_ga74944438a086975793d26ae48d5882d4}{RCC}}-\/$>$CR2, \mbox{\hyperlink{group___peripheral___registers___bits___definition_gaa9533da17718a4111cd8e1108b41d3a4}{RCC\+\_\+\+CR2\+\_\+\+HSI14\+DIS}})
+\begin{DoxyCompactList}\small\item\em Macro to enable the Internal 14Mhz High Speed oscillator (HSI14) used by ADC. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_c_c___h_s_i14___configuration_gae157dfee3a911f84a68d420e61359a68}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+HSI14\+ADC\+\_\+\+DISABLE}}()~\mbox{\hyperlink{group___exported__macros_ga26474f43799fbade9cf300e21dd3a91a}{SET\+\_\+\+BIT}}(\mbox{\hyperlink{group___peripheral__declaration_ga74944438a086975793d26ae48d5882d4}{RCC}}-\/$>$CR2, \mbox{\hyperlink{group___peripheral___registers___bits___definition_gaa9533da17718a4111cd8e1108b41d3a4}{RCC\+\_\+\+CR2\+\_\+\+HSI14\+DIS}})
+\begin{DoxyCompactList}\small\item\em Macro to disable the Internal 14Mhz High Speed oscillator (HSI14) used by ADC. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___r_c_c___h_s_i14___configuration_ga50813225c13400010fba77b1b67783f4}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+HSI14\+\_\+\+CALIBRATIONVALUE\+\_\+\+ADJUST}}(\+\_\+\+\_\+\+HSI14\+CALIBRATIONVALUE\+\_\+\+\_\+)~                  \mbox{\hyperlink{group___exported__macros_ga6553c99f510c3bab8cc0a91602053247}{MODIFY\+\_\+\+REG}}(\mbox{\hyperlink{group___peripheral__declaration_ga74944438a086975793d26ae48d5882d4}{RCC}}-\/$>$CR2, \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga45b76ccb2dacdf483d281725ce92d61a}{RCC\+\_\+\+CR2\+\_\+\+HSI14\+TRIM}}, (uint32\+\_\+t)(\+\_\+\+\_\+\+HSI14\+CALIBRATIONVALUE\+\_\+\+\_\+) $<$$<$ \mbox{\hyperlink{group___r_c_c___private___constants_ga7ea919938864083978f5e25891622ef1}{RCC\+\_\+\+HSI14\+TRIM\+\_\+\+BIT\+\_\+\+NUMBER}})
+\begin{DoxyCompactList}\small\item\em Macro to adjust the Internal 14Mhz High Speed oscillator (HSI) calibration value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+~\newline
+ 
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group___r_c_c___h_s_i14___configuration_ga50813225c13400010fba77b1b67783f4}\label{group___r_c_c___h_s_i14___configuration_ga50813225c13400010fba77b1b67783f4}} 
+\index{RCC\_HSI14\_Configuration@{RCC\_HSI14\_Configuration}!\_\_HAL\_RCC\_HSI14\_CALIBRATIONVALUE\_ADJUST@{\_\_HAL\_RCC\_HSI14\_CALIBRATIONVALUE\_ADJUST}}
+\index{\_\_HAL\_RCC\_HSI14\_CALIBRATIONVALUE\_ADJUST@{\_\_HAL\_RCC\_HSI14\_CALIBRATIONVALUE\_ADJUST}!RCC\_HSI14\_Configuration@{RCC\_HSI14\_Configuration}}
+\doxysubsubsection{\texorpdfstring{\_\_HAL\_RCC\_HSI14\_CALIBRATIONVALUE\_ADJUST}{\_\_HAL\_RCC\_HSI14\_CALIBRATIONVALUE\_ADJUST}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+HSI14\+\_\+\+CALIBRATIONVALUE\+\_\+\+ADJUST(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HSI14\+CALIBRATIONVALUE\+\_\+\+\_\+ }\end{DoxyParamCaption})~                  \mbox{\hyperlink{group___exported__macros_ga6553c99f510c3bab8cc0a91602053247}{MODIFY\+\_\+\+REG}}(\mbox{\hyperlink{group___peripheral__declaration_ga74944438a086975793d26ae48d5882d4}{RCC}}-\/$>$CR2, \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga45b76ccb2dacdf483d281725ce92d61a}{RCC\+\_\+\+CR2\+\_\+\+HSI14\+TRIM}}, (uint32\+\_\+t)(\+\_\+\+\_\+\+HSI14\+CALIBRATIONVALUE\+\_\+\+\_\+) $<$$<$ \mbox{\hyperlink{group___r_c_c___private___constants_ga7ea919938864083978f5e25891622ef1}{RCC\+\_\+\+HSI14\+TRIM\+\_\+\+BIT\+\_\+\+NUMBER}})}
+
+
+
+Macro to adjust the Internal 14Mhz High Speed oscillator (HSI) calibration value. 
+
+\begin{DoxyNote}{Note}
+The calibration is used to compensate for the variations in voltage and temperature that influence the frequency of the internal HSI14 RC. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+HSI14\+CALIBRATIONVALUE\+\_\+\+\_\+} & specifies the calibration trimming value (default is RCC\+\_\+\+HSI14\+CALIBRATION\+\_\+\+DEFAULT). This parameter must be a number between 0 and 0x1F. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__rcc_8h_source_l01160}{1160}} of file \mbox{\hyperlink{stm32f0xx__hal__rcc_8h_source}{stm32f0xx\+\_\+hal\+\_\+rcc.\+h}}.
+
+\mbox{\Hypertarget{group___r_c_c___h_s_i14___configuration_ga55588a95af70bea78b741ac53ecd4110}\label{group___r_c_c___h_s_i14___configuration_ga55588a95af70bea78b741ac53ecd4110}} 
+\index{RCC\_HSI14\_Configuration@{RCC\_HSI14\_Configuration}!\_\_HAL\_RCC\_HSI14\_DISABLE@{\_\_HAL\_RCC\_HSI14\_DISABLE}}
+\index{\_\_HAL\_RCC\_HSI14\_DISABLE@{\_\_HAL\_RCC\_HSI14\_DISABLE}!RCC\_HSI14\_Configuration@{RCC\_HSI14\_Configuration}}
+\doxysubsubsection{\texorpdfstring{\_\_HAL\_RCC\_HSI14\_DISABLE}{\_\_HAL\_RCC\_HSI14\_DISABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+HSI14\+\_\+\+DISABLE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~\mbox{\hyperlink{group___exported__macros_ga133aae6fc0d41bffab39ab223a7001de}{CLEAR\+\_\+\+BIT}}(\mbox{\hyperlink{group___peripheral__declaration_ga74944438a086975793d26ae48d5882d4}{RCC}}-\/$>$CR2, \mbox{\hyperlink{group___peripheral___registers___bits___definition_gaf600a82eec2d1445e91af6f98baf042e}{RCC\+\_\+\+CR2\+\_\+\+HSI14\+ON}})}
+
+
+
+Macro to disable the Internal 14Mhz High Speed oscillator (HSI14). 
+
+\begin{DoxyNote}{Note}
+The HSI14 is stopped by hardware when entering STOP and STANDBY modes. 
+
+HSI14 can not be stopped if it is used as system clock source. In this case, you have to select another source of the system clock then stop the HSI14. 
+
+When the HSI14 is stopped, HSI14\+RDY flag goes low after 6 HSI14 oscillator clock cycles. 
+\end{DoxyNote}
+
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__rcc_8h_source_l01143}{1143}} of file \mbox{\hyperlink{stm32f0xx__hal__rcc_8h_source}{stm32f0xx\+\_\+hal\+\_\+rcc.\+h}}.
+
+\mbox{\Hypertarget{group___r_c_c___h_s_i14___configuration_gae918e3236290b9f03f6bd7dc192dceae}\label{group___r_c_c___h_s_i14___configuration_gae918e3236290b9f03f6bd7dc192dceae}} 
+\index{RCC\_HSI14\_Configuration@{RCC\_HSI14\_Configuration}!\_\_HAL\_RCC\_HSI14\_ENABLE@{\_\_HAL\_RCC\_HSI14\_ENABLE}}
+\index{\_\_HAL\_RCC\_HSI14\_ENABLE@{\_\_HAL\_RCC\_HSI14\_ENABLE}!RCC\_HSI14\_Configuration@{RCC\_HSI14\_Configuration}}
+\doxysubsubsection{\texorpdfstring{\_\_HAL\_RCC\_HSI14\_ENABLE}{\_\_HAL\_RCC\_HSI14\_ENABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+HSI14\+\_\+\+ENABLE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~\mbox{\hyperlink{group___exported__macros_ga26474f43799fbade9cf300e21dd3a91a}{SET\+\_\+\+BIT}}(\mbox{\hyperlink{group___peripheral__declaration_ga74944438a086975793d26ae48d5882d4}{RCC}}-\/$>$CR2, \mbox{\hyperlink{group___peripheral___registers___bits___definition_gaf600a82eec2d1445e91af6f98baf042e}{RCC\+\_\+\+CR2\+\_\+\+HSI14\+ON}})}
+
+
+
+Macro to enable the Internal 14Mhz High Speed oscillator (HSI14). 
+
+\begin{DoxyNote}{Note}
+After enabling the HSI14 with \mbox{\hyperlink{group___r_c_c___h_s_i14___configuration_gae918e3236290b9f03f6bd7dc192dceae}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+HSI14\+\_\+\+ENABLE()}}, the application software should wait on HSI14\+RDY flag to be set indicating that HSI clock is stable and can be used as system clock source. This is not necessary if \mbox{\hyperlink{group___r_c_c___exported___functions___group1_ga9c504088722e03830df6caad932ad06b}{HAL\+\_\+\+RCC\+\_\+\+Osc\+Config()}} is used. clock cycles. 
+\end{DoxyNote}
+
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__rcc_8h_source_l01134}{1134}} of file \mbox{\hyperlink{stm32f0xx__hal__rcc_8h_source}{stm32f0xx\+\_\+hal\+\_\+rcc.\+h}}.
+
+\mbox{\Hypertarget{group___r_c_c___h_s_i14___configuration_gae157dfee3a911f84a68d420e61359a68}\label{group___r_c_c___h_s_i14___configuration_gae157dfee3a911f84a68d420e61359a68}} 
+\index{RCC\_HSI14\_Configuration@{RCC\_HSI14\_Configuration}!\_\_HAL\_RCC\_HSI14ADC\_DISABLE@{\_\_HAL\_RCC\_HSI14ADC\_DISABLE}}
+\index{\_\_HAL\_RCC\_HSI14ADC\_DISABLE@{\_\_HAL\_RCC\_HSI14ADC\_DISABLE}!RCC\_HSI14\_Configuration@{RCC\_HSI14\_Configuration}}
+\doxysubsubsection{\texorpdfstring{\_\_HAL\_RCC\_HSI14ADC\_DISABLE}{\_\_HAL\_RCC\_HSI14ADC\_DISABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+HSI14\+ADC\+\_\+\+DISABLE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~\mbox{\hyperlink{group___exported__macros_ga26474f43799fbade9cf300e21dd3a91a}{SET\+\_\+\+BIT}}(\mbox{\hyperlink{group___peripheral__declaration_ga74944438a086975793d26ae48d5882d4}{RCC}}-\/$>$CR2, \mbox{\hyperlink{group___peripheral___registers___bits___definition_gaa9533da17718a4111cd8e1108b41d3a4}{RCC\+\_\+\+CR2\+\_\+\+HSI14\+DIS}})}
+
+
+
+Macro to disable the Internal 14Mhz High Speed oscillator (HSI14) used by ADC. 
+
+
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__rcc_8h_source_l01151}{1151}} of file \mbox{\hyperlink{stm32f0xx__hal__rcc_8h_source}{stm32f0xx\+\_\+hal\+\_\+rcc.\+h}}.
+
+\mbox{\Hypertarget{group___r_c_c___h_s_i14___configuration_ga34755f0502ea1ee4d6a80abefc4156a4}\label{group___r_c_c___h_s_i14___configuration_ga34755f0502ea1ee4d6a80abefc4156a4}} 
+\index{RCC\_HSI14\_Configuration@{RCC\_HSI14\_Configuration}!\_\_HAL\_RCC\_HSI14ADC\_ENABLE@{\_\_HAL\_RCC\_HSI14ADC\_ENABLE}}
+\index{\_\_HAL\_RCC\_HSI14ADC\_ENABLE@{\_\_HAL\_RCC\_HSI14ADC\_ENABLE}!RCC\_HSI14\_Configuration@{RCC\_HSI14\_Configuration}}
+\doxysubsubsection{\texorpdfstring{\_\_HAL\_RCC\_HSI14ADC\_ENABLE}{\_\_HAL\_RCC\_HSI14ADC\_ENABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+HSI14\+ADC\+\_\+\+ENABLE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~\mbox{\hyperlink{group___exported__macros_ga133aae6fc0d41bffab39ab223a7001de}{CLEAR\+\_\+\+BIT}}(\mbox{\hyperlink{group___peripheral__declaration_ga74944438a086975793d26ae48d5882d4}{RCC}}-\/$>$CR2, \mbox{\hyperlink{group___peripheral___registers___bits___definition_gaa9533da17718a4111cd8e1108b41d3a4}{RCC\+\_\+\+CR2\+\_\+\+HSI14\+DIS}})}
+
+
+
+Macro to enable the Internal 14Mhz High Speed oscillator (HSI14) used by ADC. 
+
+
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__rcc_8h_source_l01147}{1147}} of file \mbox{\hyperlink{stm32f0xx__hal__rcc_8h_source}{stm32f0xx\+\_\+hal\+\_\+rcc.\+h}}.
+

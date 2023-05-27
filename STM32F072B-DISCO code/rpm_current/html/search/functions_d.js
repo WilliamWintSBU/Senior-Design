@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['tim2_5firqhandler_0',['TIM2_IRQHandler',['../stm32f0xx__it_8h.html#a38ad4725462bdc5e86c4ead4f04b9fc2',1,'TIM2_IRQHandler(void):&#160;stm32f0xx_it.c'],['../stm32f0xx__it_8c.html#a38ad4725462bdc5e86c4ead4f04b9fc2',1,'TIM2_IRQHandler(void):&#160;stm32f0xx_it.c']]]
+  ['readcurrent_0',['readCurrent',['../my__code_8c.html#a656e85eaba42f1b5ea2488b0375ecf22',1,'my_code.c']]],
+  ['readvoltage_1',['readVoltage',['../my__code_8h.html#acd5eb894164a07a00867af26c324b26a',1,'readVoltage(float div):&#160;my_code.c'],['../my__code_8c.html#acd5eb894164a07a00867af26c324b26a',1,'readVoltage(float div):&#160;my_code.c']]]
 ];

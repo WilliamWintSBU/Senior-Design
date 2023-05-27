@@ -36,7 +36,7 @@
 
 /* define global variables */
 
-char message[] = "hello world";
+char lora_payload[LORA_PAYLOAD_MAX_LENGTH];
 
 /* define GPS stuff */
 volatile struct gps_struct gps; /// custom struct see my_code.h
@@ -73,6 +73,7 @@ float volt2 = 0;
 float volt3 = 0;
 float volt0 = 0;
 
+void ADC_Disable_channels(void);
 
 /**
  * \brief called before while loop of auto generated main.c. Runs once
@@ -87,6 +88,9 @@ void setup()
 	pcf8574_cursor(0, 0);
 	pcf8574_send_string("  HELLO SKIPPER O7");
 	HAL_Delay(1000);
+
+	// tach setup
+	//HAL_TIM_IC_Start_IT(&htim2, TIM_CHANNEL_1);
 
 
 	// gps setup code
@@ -107,10 +111,12 @@ void setup()
 		pcf8574_send_string("EXT ADC INIT FAILED");
 		HAL_Delay(1000);
 	}
-		//end external ADC setup code
+	//end external ADC setup code
 
 	// init internal adc
-	//HAL_ADC_Start(&hadc);
+	HAL_ADC_Stop(&hadc);
+	HAL_ADCEx_Calibration_Start (&hadc);
+	HAL_ADC_Start(&hadc);
 
 	//test_gps_blocking();
 
@@ -134,8 +140,9 @@ void loop()
 
 	//get voltage
 	/* Poll for voltage divider*/
-	readVoltage(100.0);
+	readVoltage(1.0);
 
+	volt1 = volt1 * ((2700.0 + 36000.0) / 2700.0) * (1183.0/1305.0) ;
 
 
 	//get temperature
@@ -153,15 +160,17 @@ void loop()
 
 	//message code,lat,long,Speed,Battery Current,Motor 1 Current,Motor 2 current,Solar current,V12,V24,V36,Vm1,Vm2,Vsolar,Temp1,Temp2
 	//0,40.546906,73.0733222,12.3,200.1,400.1,400.1,40.1,12.1,24.2,36.3,16.1,16.1,17.5,20.5,30.5
-	char payload[256];
-	//sprintf(payload,"%d,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f,%f",420,hgps.latitude,hgps.longitude,hgps.speed,hall1.current,hall2.current,hall3.current,420.0,420.0,42.0,420.0,420.0,420.0,420.0,420.0,420.0);
+	char lora_message[LORA_PAYLOAD_MAX_LENGTH];
+	sprintf(lora_message,"%d,%f,%f,%.1f,%.1f,%.1f,%.1f,%.1f,%.1f,%.1f,%.1f,%.1f,%.1f,%.1f,%.1f,%.1f",0,hgps.latitude,hgps.longitude,hgps.speed,hall1.current,hall2.current,hall3.current,420.0,420.0,42.0,420.0,420.0,420.0,420.0,420.0,420.0);
 
 	//sprintf(payload,"%d RPM, %d c, %d s, %d lat , %d lon",(int)rpm,(int)pt100Temp, (int) hgps.speed /10, hgps.latitude * 1000000 , hgps.longitude * 1000000);
-	sprintf(payload,"testing");
-	lora_tx_it(payload , strlen(payload));
+	//sprintf(lora_message,"0,40.546906,73.0733222,12.3,200.1,400.1,400.1,40.1,12.1,24.2,36.3,16.1,16.1,17.5,20.5,30.5");
+	//lora_TX_blocking(payload, strlen(payload));
+	lora_tx_it(lora_message , strlen(lora_message));
+
 
 	// delay
-	HAL_Delay(500);
+	HAL_Delay(1000);
 
 }
 
@@ -188,11 +197,18 @@ void LCD_paint()
 	*/
 
 	/*GPS test*/
+	/*
 	sprintf(line1,"Lat:%f",hgps.latitude);
 	sprintf(line2,"Lon:%f",hgps.longitude);
 	sprintf(line3,"Speed:%f",hgps.speed);
 	sprintf(line4,"fix type: %d",hgps.fix_mode);
+	*/
 
+	/*Internal ADC test*/
+	sprintf(line1,"V0:%f",volt0);
+	sprintf(line2,"V1:%f",volt1);
+	sprintf(line3,"V2:%f",volt2);
+	sprintf(line4,"V3:%f",volt3);
 
 
 	// update LCD
@@ -208,9 +224,10 @@ void LCD_paint()
 }
 
 
-/*
- * \brief This function reads current from each hall effect current sensor
- * using an ADS1115 external ADC. All 3 Vref outputs are connected
+/**
+ * @brief This function reads current from each hall effect current sensor.
+ *
+ * It uses an ADS1115 external ADC. All 3 Vref outputs are connected
  * to AIN3, and all Vout outputs are read relative to that
  * */
 void hall_read()
@@ -252,7 +269,7 @@ void hall_read()
 	}
 }
 
-/*
+/**
  * \brief This function zeros all three hall effect sensors
  *  it will block due to internal delay functions
  * */
@@ -278,6 +295,8 @@ void hall_calibrate()
 
 /**
  * \brief Passes received nema string to lwgps. Must be called at least once per second.
+ *
+ * lwgps (lightweight gps) is a nema string parsing library. see documentation for details)
  * */
 void gps_rx()
 {
@@ -287,26 +306,7 @@ void gps_rx()
 		/* Process all input data */
 		lwgps_process(&hgps, gps.buff, gps.tail - 1);
 
-		/* Print messages for debugging */
-		/*
-		char message[64];
-		sprintf(message, "Valid status: %d\r\n", hgps.is_valid);
-		HAL_UART_Transmit( &huart1 , (uint8_t *) message , strlen(message) , HAL_MAX_DELAY);
-		sprintf(message, "Latitude: %f degrees\r\n", hgps.latitude);
-		HAL_UART_Transmit( &huart1 , (uint8_t *) message , strlen(message) , HAL_MAX_DELAY);
-		sprintf(message, "Longitude: %f degrees\r\n", hgps.longitude);
-		HAL_UART_Transmit( &huart1 , (uint8_t *) message , strlen(message) , HAL_MAX_DELAY);
-		sprintf(message, "Altitude: %f meters\r\n", hgps.altitude);
-		HAL_UART_Transmit( &huart1 , (uint8_t *) message , strlen(message) , HAL_MAX_DELAY);
-		sprintf(message, "Speed: %f knots\r\n", hgps.speed);
-		HAL_UART_Transmit( &huart1 , (uint8_t *) message , strlen(message) , HAL_MAX_DELAY);
-		sprintf(message, "Fix Mode: %d \r\n", hgps.fix_mode);
-		HAL_UART_Transmit( &huart1 , (uint8_t *) message , strlen(message) , HAL_MAX_DELAY);
-		*/
-
 		/* put receiver back in RX state */
-
-
 		gps.buffStateFlag = write;
 		gps.tail = 0;
 	}
@@ -386,7 +386,7 @@ void lora_TX_blocking(char * payload, int length)
 	* brackets are not sent
 	*/
 
-	char message[64];
+	char message[128];
 
 	sprintf(message, "AT+SEND=%d,%d,%s\r\n",LORA_RECIVER_ADDRESS,length,payload);
 
@@ -408,12 +408,16 @@ void lora_tx_it(char * payload , int length)
 	* Response received on success is "+OK\r\n"
 	*/
 
-		char message[64];
 
-		// generate message string
-		sprintf(message, "AT+SEND=%d,%d,%s\r\n",LORA_RECIVER_ADDRESS,length,payload);
 
-		HAL_UART_Transmit_IT( &huart1 , (uint8_t *) message , strlen(message));
+		/*
+		 * generate message string
+		 * Make sure that it is saved to a global variable that won't go out of scope
+		 * (I lost sleep over this)
+		*/
+		sprintf(lora_payload,"AT+SEND=%d,%d,%s\r\n",LORA_RECIVER_ADDRESS,length,payload);
+
+		HAL_UART_Transmit_IT( &huart1 , (uint8_t *) lora_payload , strlen(lora_payload));
 
 		/*
 		 * TX takes some time, which can be calculated in theory
@@ -423,6 +427,7 @@ void lora_tx_it(char * payload , int length)
 		 * (this is not currently implemented)
 		 */
 }
+
 
 void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim){
   if(htim->Channel == HAL_TIM_ACTIVE_CHANNEL_1) {
@@ -451,45 +456,53 @@ void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef *htim){
   }
 }
 
+
 /**
  * \brief reads all voltages from internal ADC.
  * */
 void readVoltage(float div){
 
 	  /* Poll for voltage divider*/
-	  ADC_Select_CH0();
-	  HAL_ADC_Start(&hadc);
-	  HAL_ADC_PollForConversion(&hadc,1000);
-	  readValue = HAL_ADC_GetValue(&hadc);
-	  volt0 = ((float) readValue * 3.3 / 4095.0) / (float) div ;
-	  HAL_Delay (100);
-	  HAL_ADC_Stop(&hadc);
-	  // .9104151493
+	HAL_StatusTypeDef retval;
+	ADC_Disable_channels();
 
-	  ADC_Select_CH1();
-	  HAL_ADC_Start(&hadc);
-	  HAL_ADC_PollForConversion(&hadc,1000);
-	  readValue = HAL_ADC_GetValue(&hadc);
-	  volt1 = ((float) readValue * 3.3 * .9104151493 / 4095.0) / (float) div ;
+	ADC_Select_CH0();
+	HAL_ADC_Start(&hadc);
+	retval = HAL_ADC_PollForConversion(&hadc,1000);
+	readValue = HAL_ADC_GetValue(&hadc);
+	volt0 = ((float) readValue * 3.3 / 4095.0) / (float) div ;
+	//HAL_Delay (100);
+	HAL_ADC_Stop(&hadc);
 
-	  HAL_Delay (100);
-	  HAL_ADC_Stop(&hadc);
+	ADC_Disable_channels();
 
-	  ADC_Select_CH2();
-	  HAL_ADC_Start(&hadc);
-	  HAL_ADC_PollForConversion(&hadc,1000);
-	  readValue = HAL_ADC_GetValue(&hadc);
-	  volt2 = ((float) readValue * 3.3 * .9104151493 / 4095.0) / (float) div ;
-	  HAL_Delay (100);
-	  HAL_ADC_Stop(&hadc);
+	ADC_Select_CH1();
+	HAL_ADC_Start(&hadc);
+	retval = HAL_ADC_PollForConversion(&hadc,1000);
+	readValue = HAL_ADC_GetValue(&hadc);
+	volt1 = ((float) readValue * 3.3  / 4095.0) / (float) div ;
+	//HAL_Delay (100);
+	HAL_ADC_Stop(&hadc);
+	ADC_Disable_channels();
 
-	  ADC_Select_CH3();
-	  HAL_ADC_Start(&hadc);
-	  HAL_ADC_PollForConversion(&hadc,1000);
-	  readValue = HAL_ADC_GetValue(&hadc);
-	  volt3 = ((float) readValue * 3.3 * .9104151493 / 4095.0) / (float) div ;
-	  HAL_Delay (100);
-	  HAL_ADC_Stop(&hadc);
+	ADC_Select_CH2();
+	HAL_ADC_Start(&hadc);
+	retval = HAL_ADC_PollForConversion(&hadc,1000);
+	readValue = HAL_ADC_GetValue(&hadc);
+	volt2 = ((float) readValue * 3.3  / 4095.0) / (float) div ;
+	//HAL_Delay (100);
+	HAL_ADC_Stop(&hadc);
+	ADC_Disable_channels();
+
+	ADC_Select_CH3();
+	HAL_ADC_Start(&hadc);
+	retval = HAL_ADC_PollForConversion(&hadc,1000);
+	readValue = HAL_ADC_GetValue(&hadc);
+	volt3 = ((float) readValue * 3.3  / 4095.0) / (float) div ;
+	//HAL_Delay (100);
+	HAL_ADC_Stop(&hadc);
+
+	Frequency = retval;
 
 }
 
@@ -504,6 +517,43 @@ float readCurrent(void){
 	  return current;
 }
 
+void ADC_Disable_channels(void)
+{
+	ADC_ChannelConfTypeDef sConfig = {0};
+
+	//disable channel 0
+	sConfig.Channel = ADC_CHANNEL_0;
+	sConfig.Rank = ADC_RANK_NONE;
+	sConfig.SamplingTime =  ADC_SAMPLETIME_239CYCLES_5;
+	if (HAL_ADC_ConfigChannel(&hadc, &sConfig) != HAL_OK)
+	{
+	Error_Handler();
+	}
+
+	//disable channel 1
+	sConfig.Channel = ADC_CHANNEL_1;
+	if (HAL_ADC_ConfigChannel(&hadc, &sConfig) != HAL_OK)
+	{
+	Error_Handler();
+	}
+
+	//disable channel 2
+	sConfig.Channel = ADC_CHANNEL_2;
+	if (HAL_ADC_ConfigChannel(&hadc, &sConfig) != HAL_OK)
+	{
+	Error_Handler();
+	}
+
+	//disable channel 3
+	sConfig.Channel = ADC_CHANNEL_3;
+	if (HAL_ADC_ConfigChannel(&hadc, &sConfig) != HAL_OK)
+	{
+	Error_Handler();
+	}
+
+
+}
+
 /**
  * \brief configures the internal ADC to use input channel 1
  * */
@@ -512,9 +562,9 @@ void ADC_Select_CH1 (void)
 	ADC_ChannelConfTypeDef sConfig = {0};
 	  // Configure for the selected ADC regular channel its corresponding rank in the sequencer and its sample time.
 
-	  sConfig.Channel = ADC_CHANNEL_1;
-	  sConfig.Rank = 1;
-	  sConfig.SamplingTime =  ADC_SAMPLETIME_1CYCLE_5;
+	  sConfig.Channel =ADC_CHANNEL_1;
+	  sConfig.Rank = ADC_RANK_CHANNEL_NUMBER;
+	  sConfig.SamplingTime =  ADC_SAMPLETIME_239CYCLES_5;
 	  if (HAL_ADC_ConfigChannel(&hadc, &sConfig) != HAL_OK)
 	  {
 	    Error_Handler();
@@ -530,8 +580,8 @@ void ADC_Select_CH2 (void)
 	  // Configure for the selected ADC regular channel its corresponding rank in the sequencer and its sample time.
 
 	  sConfig.Channel = ADC_CHANNEL_2;
-	  sConfig.Rank = 1;
-	  sConfig.SamplingTime =  ADC_SAMPLETIME_1CYCLE_5;
+	  sConfig.Rank = ADC_RANK_CHANNEL_NUMBER;
+	  sConfig.SamplingTime =  ADC_SAMPLETIME_239CYCLES_5;
 	  if (HAL_ADC_ConfigChannel(&hadc, &sConfig) != HAL_OK)
 	  {
 	    Error_Handler();
@@ -547,8 +597,8 @@ void ADC_Select_CH3 (void)
 	  // Configure for the selected ADC regular channel its corresponding rank in the sequencer and its sample time.
 
 	  sConfig.Channel = ADC_CHANNEL_3;
-	  sConfig.Rank = 1;
-	  sConfig.SamplingTime =  ADC_SAMPLETIME_1CYCLE_5;
+	  sConfig.Rank = ADC_RANK_CHANNEL_NUMBER;
+	  sConfig.SamplingTime =  ADC_SAMPLETIME_239CYCLES_5;
 	  if (HAL_ADC_ConfigChannel(&hadc, &sConfig) != HAL_OK)
 	  {
 	    Error_Handler();
@@ -564,8 +614,8 @@ void ADC_Select_CH0 (void)
 	  // Configure for the selected ADC regular channel its corresponding rank in the sequencer and its sample time.
 
 	  sConfig.Channel = ADC_CHANNEL_0;
-	  sConfig.Rank = 1;
-	  sConfig.SamplingTime =  ADC_SAMPLETIME_1CYCLE_5;
+	  sConfig.Rank = ADC_RANK_CHANNEL_NUMBER;
+	  sConfig.SamplingTime =  ADC_SAMPLETIME_239CYCLES_5;
 	  if (HAL_ADC_ConfigChannel(&hadc, &sConfig) != HAL_OK)
 	  {
 	    Error_Handler();

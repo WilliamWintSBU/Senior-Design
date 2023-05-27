@@ -1,0 +1,128 @@
+\hypertarget{stm32f0xx__hal__flash__ex_8h}{}\doxysection{Drivers/\+STM32\+F0xx\+\_\+\+HAL\+\_\+\+Driver/\+Inc/stm32f0xx\+\_\+hal\+\_\+flash\+\_\+ex.h File Reference}
+\label{stm32f0xx__hal__flash__ex_8h}\index{Drivers/STM32F0xx\_HAL\_Driver/Inc/stm32f0xx\_hal\_flash\_ex.h@{Drivers/STM32F0xx\_HAL\_Driver/Inc/stm32f0xx\_hal\_flash\_ex.h}}
+
+
+Header file of Flash HAL Extended module.  
+
+
+{\ttfamily \#include \char`\"{}stm32f0xx\+\_\+hal\+\_\+def.\+h\char`\"{}}\newline
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_f_l_a_s_h___erase_init_type_def}{FLASH\+\_\+\+Erase\+Init\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em FLASH Erase structure definition. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_f_l_a_s_h___o_b_program_init_type_def}{FLASH\+\_\+\+OBProgram\+Init\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em FLASH Options bytes program structure definition. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h_ex___private___macros_gaf15a6822d2421a33b6857059348ab476}{IS\+\_\+\+FLASH\+\_\+\+TYPEERASE}}(VALUE)
+\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h_ex___private___macros_ga87cd48c2373f47668470a38892ed07e3}{IS\+\_\+\+OPTIONBYTE}}(VALUE)~((VALUE) $<$= (\mbox{\hyperlink{group___f_l_a_s_h_ex___o_b___type_ga48712a166ea192ddcda0f2653679f9ec}{OPTIONBYTE\+\_\+\+WRP}} $\vert$ \mbox{\hyperlink{group___f_l_a_s_h_ex___o_b___type_ga8f0bdb21ef13bae39d5d8b6619e2df06}{OPTIONBYTE\+\_\+\+RDP}} $\vert$ \mbox{\hyperlink{group___f_l_a_s_h_ex___o_b___type_gac7d843e666e15c79688a1914e8ffe7a5}{OPTIONBYTE\+\_\+\+USER}} $\vert$ \mbox{\hyperlink{group___f_l_a_s_h_ex___o_b___type_gad0c29c84acfb46de1708a670529175a5}{OPTIONBYTE\+\_\+\+DATA}}))
+\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h_ex___private___macros_ga8164622401a6cacf006679166de93c21}{IS\+\_\+\+WRPSTATE}}(VALUE)
+\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h_ex___private___macros_ga73fcac8d5f301a5c98518374ae926633}{IS\+\_\+\+OB\+\_\+\+DATA\+\_\+\+ADDRESS}}(ADDRESS)~(((ADDRESS) == \mbox{\hyperlink{group___f_l_a_s_h_ex___o_b___data___address_gab29881e9575bfff3504b84afa20cafbe}{OB\+\_\+\+DATA\+\_\+\+ADDRESS\+\_\+\+DATA0}}) $\vert$$\vert$ ((ADDRESS) == \mbox{\hyperlink{group___f_l_a_s_h_ex___o_b___data___address_ga33cb1b378fd742c722f5bdce21c65b0e}{OB\+\_\+\+DATA\+\_\+\+ADDRESS\+\_\+\+DATA1}}))
+\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h_ex___private___macros_ga8d602a97cd688390b3d1956d9970e712}{IS\+\_\+\+OB\+\_\+\+RDP\+\_\+\+LEVEL}}(LEVEL)
+\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h_ex___private___macros_gaf2871652c08e76499d9449be6556f12c}{IS\+\_\+\+OB\+\_\+\+IWDG\+\_\+\+SOURCE}}(SOURCE)~(((SOURCE) == \mbox{\hyperlink{group___f_l_a_s_h_ex___o_b___i_watchdog_ga5a357e232c955444c3f2ccb9a937ffce}{OB\+\_\+\+IWDG\+\_\+\+SW}}) $\vert$$\vert$ ((SOURCE) == \mbox{\hyperlink{group___f_l_a_s_h_ex___o_b___i_watchdog_gadfcbfa963d79c339ec8e2d5a7734e47a}{OB\+\_\+\+IWDG\+\_\+\+HW}}))
+\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h_ex___private___macros_ga131ae3434f300c8317dd6b3b349c7cab}{IS\+\_\+\+OB\+\_\+\+STOP\+\_\+\+SOURCE}}(SOURCE)~(((SOURCE) == \mbox{\hyperlink{group___f_l_a_s_h_ex___o_b__n_r_s_t___s_t_o_p_ga7344fe0ec25c5eb2d11db7c855325436}{OB\+\_\+\+STOP\+\_\+\+NO\+\_\+\+RST}}) $\vert$$\vert$ ((SOURCE) == \mbox{\hyperlink{group___f_l_a_s_h_ex___o_b__n_r_s_t___s_t_o_p_gaef92c03b1f279c532bfa13d3bb074b57}{OB\+\_\+\+STOP\+\_\+\+RST}}))
+\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h_ex___private___macros_ga8a05393df3a5e89551b4e2e1e8c5b884}{IS\+\_\+\+OB\+\_\+\+STDBY\+\_\+\+SOURCE}}(SOURCE)~(((SOURCE) == \mbox{\hyperlink{group___f_l_a_s_h_ex___o_b__n_r_s_t___s_t_d_b_y_gad776ed7b3b9a98013aac9976eedb7e94}{OB\+\_\+\+STDBY\+\_\+\+NO\+\_\+\+RST}}) $\vert$$\vert$ ((SOURCE) == \mbox{\hyperlink{group___f_l_a_s_h_ex___o_b__n_r_s_t___s_t_d_b_y_ga69451a6f69247528f58735c9c83499ce}{OB\+\_\+\+STDBY\+\_\+\+RST}}))
+\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h_ex___private___macros_ga26df186538e46cd9a3c667f5c5fe9c5b}{IS\+\_\+\+OB\+\_\+\+BOOT1}}(BOOT1)~(((BOOT1) == \mbox{\hyperlink{group___f_l_a_s_h_ex___o_b___b_o_o_t1_gafe362a7cea11cf64fa8a9de83b4c58fd}{OB\+\_\+\+BOOT1\+\_\+\+RESET}}) $\vert$$\vert$ ((BOOT1) == \mbox{\hyperlink{group___f_l_a_s_h_ex___o_b___b_o_o_t1_gac7e604e3f2f7fb9513e54217bc5f2cdc}{OB\+\_\+\+BOOT1\+\_\+\+SET}}))
+\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h_ex___private___macros_gabf78876b5591eb25a3f4e63f5077dadc}{IS\+\_\+\+OB\+\_\+\+VDDA\+\_\+\+ANALOG}}(ANALOG)~(((ANALOG) == \mbox{\hyperlink{group___f_l_a_s_h_ex___o_b___v_d_d_a___analog___monitoring_ga4761fde7c57b2b54ca9801daeb50c323}{OB\+\_\+\+VDDA\+\_\+\+ANALOG\+\_\+\+ON}}) $\vert$$\vert$ ((ANALOG) == \mbox{\hyperlink{group___f_l_a_s_h_ex___o_b___v_d_d_a___analog___monitoring_ga7c18e60ba77007074e6ac9b151a01b5e}{OB\+\_\+\+VDDA\+\_\+\+ANALOG\+\_\+\+OFF}}))
+\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h_ex___private___macros_gaadd4427f42c653a148c2ce8035c25ab0}{IS\+\_\+\+OB\+\_\+\+SRAM\+\_\+\+PARITY}}(PARITY)~(((PARITY) == \mbox{\hyperlink{group___f_l_a_s_h_ex___o_b___r_a_m___parity___check___enable_gab108dcd65836f802216f11c238450cd6}{OB\+\_\+\+SRAM\+\_\+\+PARITY\+\_\+\+SET}}) $\vert$$\vert$ ((PARITY) == \mbox{\hyperlink{group___f_l_a_s_h_ex___o_b___r_a_m___parity___check___enable_gab408447c5e7a9bd087e9346cc3b3021b}{OB\+\_\+\+SRAM\+\_\+\+PARITY\+\_\+\+RESET}}))
+\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h_ex___private___macros_ga0833946dba77c6e2537b4afe94c2bfe1}{IS\+\_\+\+OB\+\_\+\+WRP}}(PAGE)~(((PAGE) != 0x0000000U))
+\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h_ex___private___macros_gaba549bf655e360311b0cd69878ba5bc1}{IS\+\_\+\+FLASH\+\_\+\+NB\+\_\+\+PAGES}}(ADDRESS,  NBPAGES)~((ADDRESS)+((NBPAGES)$\ast$FLASH\+\_\+\+PAGE\+\_\+\+SIZE)-\/1 $<$= \mbox{\hyperlink{group___peripheral__memory__map_ga443a2786535d83e32dfdc2b29e379332}{FLASH\+\_\+\+BANK1\+\_\+\+END}})
+\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h_ex___private___macros_ga90c8441d56b937cea616856695a8a20a}{IS\+\_\+\+FLASH\+\_\+\+PROGRAM\+\_\+\+ADDRESS}}(ADDRESS)~(((ADDRESS) $>$= \mbox{\hyperlink{group___peripheral__memory__map_ga23a9099a5f8fc9c6e253c0eecb2be8db}{FLASH\+\_\+\+BASE}}) \&\& ((ADDRESS) $<$= \mbox{\hyperlink{group___peripheral__memory__map_ga443a2786535d83e32dfdc2b29e379332}{FLASH\+\_\+\+BANK1\+\_\+\+END}}))
+\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h_ex___type___erase_ga3664ce55155ec4990873c51737d787ce}{FLASH\+\_\+\+TYPEERASE\+\_\+\+PAGES}}~(0x00U)
+\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h_ex___type___erase_ga9bc03534e69c625e1b4f0f05c3852243}{FLASH\+\_\+\+TYPEERASE\+\_\+\+MASSERASE}}~(0x01U)
+\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h_ex___o_b___type_ga48712a166ea192ddcda0f2653679f9ec}{OPTIONBYTE\+\_\+\+WRP}}~(0x01U)
+\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h_ex___o_b___type_ga8f0bdb21ef13bae39d5d8b6619e2df06}{OPTIONBYTE\+\_\+\+RDP}}~(0x02U)
+\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h_ex___o_b___type_gac7d843e666e15c79688a1914e8ffe7a5}{OPTIONBYTE\+\_\+\+USER}}~(0x04U)
+\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h_ex___o_b___type_gad0c29c84acfb46de1708a670529175a5}{OPTIONBYTE\+\_\+\+DATA}}~(0x08U)
+\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h_ex___o_b___w_r_p___state_gaa34eb6205fe554f65a311ee974d5a4ab}{OB\+\_\+\+WRPSTATE\+\_\+\+DISABLE}}~(0x00U)
+\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h_ex___o_b___w_r_p___state_ga9fc463145ab57616baa36d95523186a1}{OB\+\_\+\+WRPSTATE\+\_\+\+ENABLE}}~(0x01U)
+\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h_ex___o_b___read___protection_ga22c7871bda267a2844ab9ca9f7bd38e4}{OB\+\_\+\+RDP\+\_\+\+LEVEL\+\_\+0}}~((uint8\+\_\+t)0x\+AAU)
+\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h_ex___o_b___read___protection_ga778207f0d12d87bbff9d55e985aba5bc}{OB\+\_\+\+RDP\+\_\+\+LEVEL\+\_\+1}}~((uint8\+\_\+t)0x\+BBU)
+\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h_ex___o_b___read___protection_ga2262afca565429ce2808d835c49e5ee6}{OB\+\_\+\+RDP\+\_\+\+LEVEL\+\_\+2}}~((uint8\+\_\+t)0x\+CCU)
+\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h_ex___o_b___i_watchdog_ga5a357e232c955444c3f2ccb9a937ffce}{OB\+\_\+\+IWDG\+\_\+\+SW}}~((uint8\+\_\+t)0x01U)
+\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h_ex___o_b___i_watchdog_gadfcbfa963d79c339ec8e2d5a7734e47a}{OB\+\_\+\+IWDG\+\_\+\+HW}}~((uint8\+\_\+t)0x00U)
+\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h_ex___o_b__n_r_s_t___s_t_o_p_ga7344fe0ec25c5eb2d11db7c855325436}{OB\+\_\+\+STOP\+\_\+\+NO\+\_\+\+RST}}~((uint8\+\_\+t)0x02U)
+\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h_ex___o_b__n_r_s_t___s_t_o_p_gaef92c03b1f279c532bfa13d3bb074b57}{OB\+\_\+\+STOP\+\_\+\+RST}}~((uint8\+\_\+t)0x00U)
+\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h_ex___o_b__n_r_s_t___s_t_d_b_y_gad776ed7b3b9a98013aac9976eedb7e94}{OB\+\_\+\+STDBY\+\_\+\+NO\+\_\+\+RST}}~((uint8\+\_\+t)0x04U)
+\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h_ex___o_b__n_r_s_t___s_t_d_b_y_ga69451a6f69247528f58735c9c83499ce}{OB\+\_\+\+STDBY\+\_\+\+RST}}~((uint8\+\_\+t)0x00U)
+\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h_ex___o_b___b_o_o_t1_gafe362a7cea11cf64fa8a9de83b4c58fd}{OB\+\_\+\+BOOT1\+\_\+\+RESET}}~((uint8\+\_\+t)0x00U)
+\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h_ex___o_b___b_o_o_t1_gac7e604e3f2f7fb9513e54217bc5f2cdc}{OB\+\_\+\+BOOT1\+\_\+\+SET}}~((uint8\+\_\+t)0x10U)
+\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h_ex___o_b___v_d_d_a___analog___monitoring_ga4761fde7c57b2b54ca9801daeb50c323}{OB\+\_\+\+VDDA\+\_\+\+ANALOG\+\_\+\+ON}}~((uint8\+\_\+t)0x20U)
+\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h_ex___o_b___v_d_d_a___analog___monitoring_ga7c18e60ba77007074e6ac9b151a01b5e}{OB\+\_\+\+VDDA\+\_\+\+ANALOG\+\_\+\+OFF}}~((uint8\+\_\+t)0x00U)
+\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h_ex___o_b___r_a_m___parity___check___enable_gab108dcd65836f802216f11c238450cd6}{OB\+\_\+\+SRAM\+\_\+\+PARITY\+\_\+\+SET}}~((uint8\+\_\+t)0x00U)
+\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h_ex___o_b___r_a_m___parity___check___enable_gab408447c5e7a9bd087e9346cc3b3021b}{OB\+\_\+\+SRAM\+\_\+\+PARITY\+\_\+\+RESET}}~((uint8\+\_\+t)0x40U)
+\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h_ex___o_b___data___address_gab29881e9575bfff3504b84afa20cafbe}{OB\+\_\+\+DATA\+\_\+\+ADDRESS\+\_\+\+DATA0}}~(0x1\+FFFF804U)
+\item 
+\#define \mbox{\hyperlink{group___f_l_a_s_h_ex___o_b___data___address_ga33cb1b378fd742c722f5bdce21c65b0e}{OB\+\_\+\+DATA\+\_\+\+ADDRESS\+\_\+\+DATA1}}~(0x1\+FFFF806U)
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{stm32f0xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___f_l_a_s_h_ex___exported___functions___group1_ga9c4e0c7b4f528b7cccae6ad610eb5953}{HAL\+\_\+\+FLASHEx\+\_\+\+Erase}} (\mbox{\hyperlink{struct_f_l_a_s_h___erase_init_type_def}{FLASH\+\_\+\+Erase\+Init\+Type\+Def}} $\ast$p\+Erase\+Init, uint32\+\_\+t $\ast$Page\+Error)
+\item 
+\mbox{\hyperlink{stm32f0xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___f_l_a_s_h_ex___exported___functions___group1_gaf58c6764859e4febc21abe462dfb2615}{HAL\+\_\+\+FLASHEx\+\_\+\+Erase\+\_\+\+IT}} (\mbox{\hyperlink{struct_f_l_a_s_h___erase_init_type_def}{FLASH\+\_\+\+Erase\+Init\+Type\+Def}} $\ast$p\+Erase\+Init)
+\item 
+\mbox{\hyperlink{stm32f0xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___f_l_a_s_h_ex___exported___functions___group2_ga74d4265b88afed50efe9fda0f025979a}{HAL\+\_\+\+FLASHEx\+\_\+\+OBErase}} (void)
+\item 
+\mbox{\hyperlink{stm32f0xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} \mbox{\hyperlink{group___f_l_a_s_h_ex___exported___functions___group2_ga001dd4a8defa9eb24a17c4df5953a41d}{HAL\+\_\+\+FLASHEx\+\_\+\+OBProgram}} (\mbox{\hyperlink{struct_f_l_a_s_h___o_b_program_init_type_def}{FLASH\+\_\+\+OBProgram\+Init\+Type\+Def}} $\ast$p\+OBInit)
+\item 
+void \mbox{\hyperlink{group___f_l_a_s_h_ex___exported___functions___group2_ga6d45d5442b8147533b1100ec40fe75d7}{HAL\+\_\+\+FLASHEx\+\_\+\+OBGet\+Config}} (\mbox{\hyperlink{struct_f_l_a_s_h___o_b_program_init_type_def}{FLASH\+\_\+\+OBProgram\+Init\+Type\+Def}} $\ast$p\+OBInit)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{group___f_l_a_s_h_ex___exported___functions___group2_ga683593291451ae3e0dd1a6426ba72b3a}{HAL\+\_\+\+FLASHEx\+\_\+\+OBGet\+User\+Data}} (uint32\+\_\+t DATAAdress)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header file of Flash HAL Extended module. 
+
+\begin{DoxyAuthor}{Author}
+MCD Application Team 
+\end{DoxyAuthor}
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+Copyright (c) 2016 STMicroelectronics. All rights reserved.
+
+This software is licensed under terms that can be found in the LICENSE file in the root directory of this software component. If no LICENSE file comes with this software, it is provided AS-\/\+IS. 
+
+Definition in file \mbox{\hyperlink{stm32f0xx__hal__flash__ex_8h_source}{stm32f0xx\+\_\+hal\+\_\+flash\+\_\+ex.\+h}}.
+

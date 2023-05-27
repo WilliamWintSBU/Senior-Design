@@ -1,0 +1,79 @@
+\hypertarget{struct_r_c_c___p_l_l_init_type_def}{}\doxysection{RCC\+\_\+\+PLLInit\+Type\+Def Struct Reference}
+\label{struct_r_c_c___p_l_l_init_type_def}\index{RCC\_PLLInitTypeDef@{RCC\_PLLInitTypeDef}}
+
+
+RCC PLL configuration structure definition ~\newline
+  
+
+
+
+
+{\ttfamily \#include $<$stm32f0xx\+\_\+hal\+\_\+rcc.\+h$>$}
+
+\doxysubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_r_c_c___p_l_l_init_type_def_ab3bb33f461bb409576e1c899c962e0b0}{PLLState}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_r_c_c___p_l_l_init_type_def_a418ecda4a355c6a161e4893a7bc1897f}{PLLSource}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_r_c_c___p_l_l_init_type_def_a4a57e48e8e939695ff2a76456e6360ef}{PLLMUL}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{struct_r_c_c___p_l_l_init_type_def_a0b568dda5046e1a2f02180f20f105aed}{PREDIV}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+RCC PLL configuration structure definition ~\newline
+ 
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__rcc_8h_source_l00193}{193}} of file \mbox{\hyperlink{stm32f0xx__hal__rcc_8h_source}{stm32f0xx\+\_\+hal\+\_\+rcc.\+h}}.
+
+
+
+\doxysubsection{Field Documentation}
+\mbox{\Hypertarget{struct_r_c_c___p_l_l_init_type_def_a4a57e48e8e939695ff2a76456e6360ef}\label{struct_r_c_c___p_l_l_init_type_def_a4a57e48e8e939695ff2a76456e6360ef}} 
+\index{RCC\_PLLInitTypeDef@{RCC\_PLLInitTypeDef}!PLLMUL@{PLLMUL}}
+\index{PLLMUL@{PLLMUL}!RCC\_PLLInitTypeDef@{RCC\_PLLInitTypeDef}}
+\doxysubsubsection{\texorpdfstring{PLLMUL}{PLLMUL}}
+{\footnotesize\ttfamily uint32\+\_\+t PLLMUL}
+
+PLLMUL\+: Multiplication factor for PLL VCO input clock This parameter must be a value of \mbox{\hyperlink{group___r_c_c___p_l_l___multiplication___factor}{RCC PLL Multiplication Factor}} 
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__rcc_8h_source_l00201}{201}} of file \mbox{\hyperlink{stm32f0xx__hal__rcc_8h_source}{stm32f0xx\+\_\+hal\+\_\+rcc.\+h}}.
+
+\mbox{\Hypertarget{struct_r_c_c___p_l_l_init_type_def_a418ecda4a355c6a161e4893a7bc1897f}\label{struct_r_c_c___p_l_l_init_type_def_a418ecda4a355c6a161e4893a7bc1897f}} 
+\index{RCC\_PLLInitTypeDef@{RCC\_PLLInitTypeDef}!PLLSource@{PLLSource}}
+\index{PLLSource@{PLLSource}!RCC\_PLLInitTypeDef@{RCC\_PLLInitTypeDef}}
+\doxysubsubsection{\texorpdfstring{PLLSource}{PLLSource}}
+{\footnotesize\ttfamily uint32\+\_\+t PLLSource}
+
+PLLSource\+: PLL entry clock source. This parameter must be a value of \mbox{\hyperlink{group___r_c_c___p_l_l___clock___source}{PLL Clock Source}} 
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__rcc_8h_source_l00198}{198}} of file \mbox{\hyperlink{stm32f0xx__hal__rcc_8h_source}{stm32f0xx\+\_\+hal\+\_\+rcc.\+h}}.
+
+\mbox{\Hypertarget{struct_r_c_c___p_l_l_init_type_def_ab3bb33f461bb409576e1c899c962e0b0}\label{struct_r_c_c___p_l_l_init_type_def_ab3bb33f461bb409576e1c899c962e0b0}} 
+\index{RCC\_PLLInitTypeDef@{RCC\_PLLInitTypeDef}!PLLState@{PLLState}}
+\index{PLLState@{PLLState}!RCC\_PLLInitTypeDef@{RCC\_PLLInitTypeDef}}
+\doxysubsubsection{\texorpdfstring{PLLState}{PLLState}}
+{\footnotesize\ttfamily uint32\+\_\+t PLLState}
+
+PLLState\+: The new state of the PLL. This parameter can be a value of \mbox{\hyperlink{group___r_c_c___p_l_l___config}{PLL Config}} 
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__rcc_8h_source_l00195}{195}} of file \mbox{\hyperlink{stm32f0xx__hal__rcc_8h_source}{stm32f0xx\+\_\+hal\+\_\+rcc.\+h}}.
+
+\mbox{\Hypertarget{struct_r_c_c___p_l_l_init_type_def_a0b568dda5046e1a2f02180f20f105aed}\label{struct_r_c_c___p_l_l_init_type_def_a0b568dda5046e1a2f02180f20f105aed}} 
+\index{RCC\_PLLInitTypeDef@{RCC\_PLLInitTypeDef}!PREDIV@{PREDIV}}
+\index{PREDIV@{PREDIV}!RCC\_PLLInitTypeDef@{RCC\_PLLInitTypeDef}}
+\doxysubsubsection{\texorpdfstring{PREDIV}{PREDIV}}
+{\footnotesize\ttfamily uint32\+\_\+t PREDIV}
+
+PREDIV\+: Predivision factor for PLL VCO input clock This parameter must be a value of \mbox{\hyperlink{group___r_c_c___p_l_l___prediv___factor}{RCC PLL Prediv Factor}} 
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__rcc_8h_source_l00204}{204}} of file \mbox{\hyperlink{stm32f0xx__hal__rcc_8h_source}{stm32f0xx\+\_\+hal\+\_\+rcc.\+h}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Drivers/\+STM32\+F0xx\+\_\+\+HAL\+\_\+\+Driver/\+Inc/\mbox{\hyperlink{stm32f0xx__hal__rcc_8h}{stm32f0xx\+\_\+hal\+\_\+rcc.\+h}}\end{DoxyCompactItemize}

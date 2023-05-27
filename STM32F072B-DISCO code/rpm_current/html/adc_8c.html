@@ -90,14 +90,14 @@ $(function() {
 Functions</h2></td></tr>
 <tr class="memitem:aca7f21e220653e353491bceced7c5df3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="adc_8c.html#aca7f21e220653e353491bceced7c5df3">MX_ADC_Init</a> (void)</td></tr>
 <tr class="separator:aca7f21e220653e353491bceced7c5df3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac3139540667c403c5dfd37a99c610b1c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="adc_8c.html#ac3139540667c403c5dfd37a99c610b1c">HAL_ADC_MspInit</a> (ADC_HandleTypeDef *adcHandle)</td></tr>
-<tr class="separator:ac3139540667c403c5dfd37a99c610b1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3f61f2c2af0f122f81a87af8ad7b4360"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="adc_8c.html#a3f61f2c2af0f122f81a87af8ad7b4360">HAL_ADC_MspDeInit</a> (ADC_HandleTypeDef *adcHandle)</td></tr>
-<tr class="separator:a3f61f2c2af0f122f81a87af8ad7b4360"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa30863492d5c3103e3e8ce8a63dadd07"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___a_d_c___exported___functions___group1.html#gaa30863492d5c3103e3e8ce8a63dadd07">HAL_ADC_MspInit</a> (<a class="el" href="group___a_d_c___exported___types.html#ga46483fcdb7a528252920c304ec59d006">ADC_HandleTypeDef</a> *adcHandle)</td></tr>
+<tr class="separator:gaa30863492d5c3103e3e8ce8a63dadd07"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga39b0f8e80268ab3e660ead921ad4b22f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___a_d_c___exported___functions___group1.html#ga39b0f8e80268ab3e660ead921ad4b22f">HAL_ADC_MspDeInit</a> (<a class="el" href="group___a_d_c___exported___types.html#ga46483fcdb7a528252920c304ec59d006">ADC_HandleTypeDef</a> *adcHandle)</td></tr>
+<tr class="separator:ga39b0f8e80268ab3e660ead921ad4b22f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a62fcafba91cf315db7e0e0c8f22c656f"><td class="memItemLeft" align="right" valign="top">ADC_HandleTypeDef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="adc_8c.html#a62fcafba91cf315db7e0e0c8f22c656f">hadc</a></td></tr>
+<tr class="memitem:a62fcafba91cf315db7e0e0c8f22c656f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group___a_d_c___exported___types.html#ga46483fcdb7a528252920c304ec59d006">ADC_HandleTypeDef</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="adc_8c.html#a62fcafba91cf315db7e0e0c8f22c656f">hadc</a></td></tr>
 <tr class="separator:a62fcafba91cf315db7e0e0c8f22c656f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -108,48 +108,6 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition in file <a class="el" href="adc_8c_source.html">adc.c</a>.</p>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="a3f61f2c2af0f122f81a87af8ad7b4360" name="a3f61f2c2af0f122f81a87af8ad7b4360"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3f61f2c2af0f122f81a87af8ad7b4360">&#9670;&#160;</a></span>HAL_ADC_MspDeInit()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void HAL_ADC_MspDeInit </td>
-          <td>(</td>
-          <td class="paramtype">ADC_HandleTypeDef *&#160;</td>
-          <td class="paramname"><em>adcHandle</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>ADC GPIO Configuration PA0 ---&mdash;&gt; ADC_IN0 PA1 ---&mdash;&gt; ADC_IN1 PA2 ---&mdash;&gt; ADC_IN2 PA3 ---&mdash;&gt; ADC_IN3</p>
-
-<p class="definition">Definition at line <a class="el" href="adc_8c_source.html#l00133">133</a> of file <a class="el" href="adc_8c_source.html">adc.c</a>.</p>
-
-</div>
-</div>
-<a id="ac3139540667c403c5dfd37a99c610b1c" name="ac3139540667c403c5dfd37a99c610b1c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac3139540667c403c5dfd37a99c610b1c">&#9670;&#160;</a></span>HAL_ADC_MspInit()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void HAL_ADC_MspInit </td>
-          <td>(</td>
-          <td class="paramtype">ADC_HandleTypeDef *&#160;</td>
-          <td class="paramname"><em>adcHandle</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>ADC GPIO Configuration PA0 ---&mdash;&gt; ADC_IN0 PA1 ---&mdash;&gt; ADC_IN1 PA2 ---&mdash;&gt; ADC_IN2 PA3 ---&mdash;&gt; ADC_IN3</p>
-
-<p class="definition">Definition at line <a class="el" href="adc_8c_source.html#l00103">103</a> of file <a class="el" href="adc_8c_source.html">adc.c</a>.</p>
-
-</div>
-</div>
 <a id="aca7f21e220653e353491bceced7c5df3" name="aca7f21e220653e353491bceced7c5df3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aca7f21e220653e353491bceced7c5df3">&#9670;&#160;</a></span>MX_ADC_Init()</h2>
 
@@ -183,7 +141,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">ADC_HandleTypeDef hadc</td>
+          <td class="memname"><a class="el" href="group___a_d_c___exported___types.html#ga46483fcdb7a528252920c304ec59d006">ADC_HandleTypeDef</a> hadc</td>
         </tr>
       </table>
 </div><div class="memdoc">

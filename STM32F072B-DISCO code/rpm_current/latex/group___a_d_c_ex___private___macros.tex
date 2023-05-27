@@ -1,0 +1,144 @@
+\hypertarget{group___a_d_c_ex___private___macros}{}\doxysection{ADCEx Private Macros}
+\label{group___a_d_c_ex___private___macros}\index{ADCEx Private Macros@{ADCEx Private Macros}}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___a_d_c_ex___private___macros_gafc2b5a27b9e60b2822591a19cbca11ff}{ADC\+\_\+\+IS\+\_\+\+CHANNEL\+\_\+\+INTERNAL}}(\+\_\+\+\_\+\+CHANNEL\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Test if the selected ADC channel is an internal channel Vref\+Int/\+Temp\+Sensor/\+Vbat Note\+: On STM32\+F0, availability of internal channel Vbat depends on devices lines. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___a_d_c_ex___private___macros_ga27b743f3afcb778ad1885debb677080b}{ADC\+\_\+\+CHANNEL\+\_\+\+INTERNAL\+\_\+\+PATH}}(\+\_\+\+\_\+\+CHANNEL\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Select the internal measurement path to be enabled/disabled corresponding to the selected ADC internal channel Vref\+Int/\+Temp\+Sensor/\+Vbat. Note\+: On STM32\+F0, availability of internal channel Vbat depends on devices lines. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___a_d_c_ex___private___macros_gab3f646d603911820b104dd134c42f028}{IS\+\_\+\+ADC\+\_\+\+EXTTRIG}}(REGTRIG)
+\item 
+\#define \mbox{\hyperlink{group___a_d_c_ex___private___macros_gaba41910dcb2b449c613a5ef638862e77}{IS\+\_\+\+ADC\+\_\+\+CHANNEL}}(CHANNEL)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group___a_d_c_ex___private___macros_ga27b743f3afcb778ad1885debb677080b}\label{group___a_d_c_ex___private___macros_ga27b743f3afcb778ad1885debb677080b}} 
+\index{ADCEx Private Macros@{ADCEx Private Macros}!ADC\_CHANNEL\_INTERNAL\_PATH@{ADC\_CHANNEL\_INTERNAL\_PATH}}
+\index{ADC\_CHANNEL\_INTERNAL\_PATH@{ADC\_CHANNEL\_INTERNAL\_PATH}!ADCEx Private Macros@{ADCEx Private Macros}}
+\doxysubsubsection{\texorpdfstring{ADC\_CHANNEL\_INTERNAL\_PATH}{ADC\_CHANNEL\_INTERNAL\_PATH}}
+{\footnotesize\ttfamily \#define ADC\+\_\+\+CHANNEL\+\_\+\+INTERNAL\+\_\+\+PATH(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+CHANNEL\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ ((\ (\_\_CHANNEL\_\_)\ ==\ \mbox{\hyperlink{group___a_d_c__channels_ga8f0da1e8fa8504c92a368f6eb8e229b3}{ADC\_CHANNEL\_TEMPSENSOR}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ )?\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ (\mbox{\hyperlink{group___peripheral___registers___bits___definition_gaec05330012f52f35421531c72819fada}{ADC\_CCR\_TSEN}})\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ :\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ (\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ (\ (\_\_CHANNEL\_\_)\ ==\ \mbox{\hyperlink{group___a_d_c__channels_ga2647a044275a295693e8fb01db3172f9}{ADC\_CHANNEL\_VREFINT}}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ )?\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ (\mbox{\hyperlink{group___peripheral___registers___bits___definition_gaecc47464aaa52f565d8daa9cf1a86054}{ADC\_CCR\_VREFEN}})\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ :\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ (\mbox{\hyperlink{group___peripheral___registers___bits___definition_gaaeefa6f00268db0df10fb97112a9f456}{ADC\_CCR\_VBATEN}})\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ )\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ )}
+
+\end{DoxyCode}
+
+
+Select the internal measurement path to be enabled/disabled corresponding to the selected ADC internal channel Vref\+Int/\+Temp\+Sensor/\+Vbat. Note\+: On STM32\+F0, availability of internal channel Vbat depends on devices lines. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+CHANNEL\+\_\+\+\_\+} & ADC channel \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Bit} & of register ADC\+\_\+\+CCR \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__adc__ex_8h_source_l00163}{163}} of file \mbox{\hyperlink{stm32f0xx__hal__adc__ex_8h_source}{stm32f0xx\+\_\+hal\+\_\+adc\+\_\+ex.\+h}}.
+
+\mbox{\Hypertarget{group___a_d_c_ex___private___macros_gafc2b5a27b9e60b2822591a19cbca11ff}\label{group___a_d_c_ex___private___macros_gafc2b5a27b9e60b2822591a19cbca11ff}} 
+\index{ADCEx Private Macros@{ADCEx Private Macros}!ADC\_IS\_CHANNEL\_INTERNAL@{ADC\_IS\_CHANNEL\_INTERNAL}}
+\index{ADC\_IS\_CHANNEL\_INTERNAL@{ADC\_IS\_CHANNEL\_INTERNAL}!ADCEx Private Macros@{ADCEx Private Macros}}
+\doxysubsubsection{\texorpdfstring{ADC\_IS\_CHANNEL\_INTERNAL}{ADC\_IS\_CHANNEL\_INTERNAL}}
+{\footnotesize\ttfamily \#define ADC\+\_\+\+IS\+\_\+\+CHANNEL\+\_\+\+INTERNAL(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+CHANNEL\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ (((\_\_CHANNEL\_\_)\ ==\ \mbox{\hyperlink{group___a_d_c__channels_ga8f0da1e8fa8504c92a368f6eb8e229b3}{ADC\_CHANNEL\_TEMPSENSOR}})\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ ((\_\_CHANNEL\_\_)\ ==\ \mbox{\hyperlink{group___a_d_c__channels_ga2647a044275a295693e8fb01db3172f9}{ADC\_CHANNEL\_VREFINT}})\ \ \ \ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ ((\_\_CHANNEL\_\_)\ ==\ \mbox{\hyperlink{group___a_d_c__channels_ga60210f1e9305301dea9e42afedd9093f}{ADC\_CHANNEL\_VBAT}})\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ )}
+
+\end{DoxyCode}
+
+
+Test if the selected ADC channel is an internal channel Vref\+Int/\+Temp\+Sensor/\+Vbat Note\+: On STM32\+F0, availability of internal channel Vbat depends on devices lines. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \+\_\+\+\_\+\+CHANNEL\+\_\+\+\_\+} & ADC channel \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__adc__ex_8h_source_l00141}{141}} of file \mbox{\hyperlink{stm32f0xx__hal__adc__ex_8h_source}{stm32f0xx\+\_\+hal\+\_\+adc\+\_\+ex.\+h}}.
+
+\mbox{\Hypertarget{group___a_d_c_ex___private___macros_gaba41910dcb2b449c613a5ef638862e77}\label{group___a_d_c_ex___private___macros_gaba41910dcb2b449c613a5ef638862e77}} 
+\index{ADCEx Private Macros@{ADCEx Private Macros}!IS\_ADC\_CHANNEL@{IS\_ADC\_CHANNEL}}
+\index{IS\_ADC\_CHANNEL@{IS\_ADC\_CHANNEL}!ADCEx Private Macros@{ADCEx Private Macros}}
+\doxysubsubsection{\texorpdfstring{IS\_ADC\_CHANNEL}{IS\_ADC\_CHANNEL}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+ADC\+\_\+\+CHANNEL(\begin{DoxyParamCaption}\item[{}]{CHANNEL }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((CHANNEL)\ ==\ \mbox{\hyperlink{group___a_d_c__channels_ga3c5075aee5af4eae02f1a72d6216199c}{ADC\_CHANNEL\_0}})\ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((CHANNEL)\ ==\ \mbox{\hyperlink{group___a_d_c__channels_gaeb119201733a871c94971c51843ffaac}{ADC\_CHANNEL\_1}})\ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((CHANNEL)\ ==\ \mbox{\hyperlink{group___a_d_c__channels_gad576132ebd78a3429be34f44e474c914}{ADC\_CHANNEL\_2}})\ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((CHANNEL)\ ==\ \mbox{\hyperlink{group___a_d_c__channels_ga56dba5d35f1f7bcad41e4f9a7da3b125}{ADC\_CHANNEL\_3}})\ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((CHANNEL)\ ==\ \mbox{\hyperlink{group___a_d_c__channels_ga66f19737ad81a0a62eb97854d0e41a54}{ADC\_CHANNEL\_4}})\ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((CHANNEL)\ ==\ \mbox{\hyperlink{group___a_d_c__channels_ga716f2836f655c753c629de439ce50ecf}{ADC\_CHANNEL\_5}})\ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((CHANNEL)\ ==\ \mbox{\hyperlink{group___a_d_c__channels_ga418f0223ea88773157638097391716a5}{ADC\_CHANNEL\_6}})\ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((CHANNEL)\ ==\ \mbox{\hyperlink{group___a_d_c__channels_ga03b8138c2d87274f94ba675a7e18e666}{ADC\_CHANNEL\_7}})\ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((CHANNEL)\ ==\ \mbox{\hyperlink{group___a_d_c__channels_gab0917f6b66213f33f2e2ea8781df5aa9}{ADC\_CHANNEL\_8}})\ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((CHANNEL)\ ==\ \mbox{\hyperlink{group___a_d_c__channels_ga95f485ecc05187c3d475238a88beef1c}{ADC\_CHANNEL\_9}})\ \ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((CHANNEL)\ ==\ \mbox{\hyperlink{group___a_d_c__channels_gaa55df8c97225d32b495959896897567c}{ADC\_CHANNEL\_10}})\ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((CHANNEL)\ ==\ \mbox{\hyperlink{group___a_d_c__channels_gaf36361a33c07b04f8ab1d58d232bc434}{ADC\_CHANNEL\_11}})\ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((CHANNEL)\ ==\ \mbox{\hyperlink{group___a_d_c__channels_gad5ff4f4f0e5f6f9ffbdfb6f4cbc3a6e0}{ADC\_CHANNEL\_12}})\ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((CHANNEL)\ ==\ \mbox{\hyperlink{group___a_d_c__channels_gad7550270d90a1a12b00cd9f8ad9f1fc2}{ADC\_CHANNEL\_13}})\ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((CHANNEL)\ ==\ \mbox{\hyperlink{group___a_d_c__channels_ga9caff32bcda5dd83f662bf398ab14d36}{ADC\_CHANNEL\_14}})\ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((CHANNEL)\ ==\ \mbox{\hyperlink{group___a_d_c__channels_ga66f41aad197a6de160dd8958c90653a2}{ADC\_CHANNEL\_15}})\ \ \ \ \ \ \ \ \ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((CHANNEL)\ ==\ \mbox{\hyperlink{group___a_d_c__channels_ga8f0da1e8fa8504c92a368f6eb8e229b3}{ADC\_CHANNEL\_TEMPSENSOR}})\ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((CHANNEL)\ ==\ \mbox{\hyperlink{group___a_d_c__channels_ga2647a044275a295693e8fb01db3172f9}{ADC\_CHANNEL\_VREFINT}})\ \ \ \ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((CHANNEL)\ ==\ \mbox{\hyperlink{group___a_d_c__channels_ga60210f1e9305301dea9e42afedd9093f}{ADC\_CHANNEL\_VBAT}})\ \ \ \ \ \ \ \ \ \ )}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__adc__ex_8h_source_l00215}{215}} of file \mbox{\hyperlink{stm32f0xx__hal__adc__ex_8h_source}{stm32f0xx\+\_\+hal\+\_\+adc\+\_\+ex.\+h}}.
+
+\mbox{\Hypertarget{group___a_d_c_ex___private___macros_gab3f646d603911820b104dd134c42f028}\label{group___a_d_c_ex___private___macros_gab3f646d603911820b104dd134c42f028}} 
+\index{ADCEx Private Macros@{ADCEx Private Macros}!IS\_ADC\_EXTTRIG@{IS\_ADC\_EXTTRIG}}
+\index{IS\_ADC\_EXTTRIG@{IS\_ADC\_EXTTRIG}!ADCEx Private Macros@{ADCEx Private Macros}}
+\doxysubsubsection{\texorpdfstring{IS\_ADC\_EXTTRIG}{IS\_ADC\_EXTTRIG}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+ADC\+\_\+\+EXTTRIG(\begin{DoxyParamCaption}\item[{}]{REGTRIG }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (((REGTRIG)\ ==\ \mbox{\hyperlink{group___a_d_c___external__trigger__source___regular_gabd4ea0756910a3cdd6942254473a40b3}{ADC\_EXTERNALTRIGCONV\_T1\_TRGO}})\ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((REGTRIG)\ ==\ \mbox{\hyperlink{group___a_d_c___external__trigger__source___regular_ga112435eac802af17d8a61d30a1e6d1dc}{ADC\_EXTERNALTRIGCONV\_T1\_CC4}})\ \ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((REGTRIG)\ ==\ \mbox{\hyperlink{group___a_d_c___external__trigger__source___regular_gaa964f17f527400095888ca28c65507c4}{ADC\_EXTERNALTRIGCONV\_T2\_TRGO}})\ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((REGTRIG)\ ==\ \mbox{\hyperlink{group___a_d_c___external__trigger__source___regular_ga41bef7b6bfdb6641a97e89aa4abc405e}{ADC\_EXTERNALTRIGCONV\_T3\_TRGO}})\ \ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((REGTRIG)\ ==\ \mbox{\hyperlink{group___a_d_c___external__trigger__source___regular_ga3c78f17752bc26b7f69139668e4f793b}{ADC\_EXTERNALTRIGCONV\_T15\_TRGO}})\ ||\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((REGTRIG)\ ==\ \mbox{\hyperlink{group___a_d_c___external__trigger__source___regular_ga349ec6a1c2a362fba718cbfd068e50dc}{ADC\_SOFTWARE\_START}}))}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__adc__ex_8h_source_l00206}{206}} of file \mbox{\hyperlink{stm32f0xx__hal__adc__ex_8h_source}{stm32f0xx\+\_\+hal\+\_\+adc\+\_\+ex.\+h}}.
+

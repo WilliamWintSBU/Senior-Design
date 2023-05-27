@@ -118,6 +118,7 @@ int main(void)
   MX_I2C2_Init();
   /* USER CODE BEGIN 2 */
 
+  //I am moving this into setup at some point
   HAL_TIM_IC_Start_IT(&htim2, TIM_CHANNEL_1);
 
   setup();

@@ -25,14 +25,14 @@
 \DoxyCodeLine{\Hypertarget{usb_8c_source_l00038}00038\ \ \ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ USB\_Init\ 1\ */}}
 \DoxyCodeLine{\Hypertarget{usb_8c_source_l00039}00039\ }
 \DoxyCodeLine{\Hypertarget{usb_8c_source_l00040}00040\ \ \ \textcolor{comment}{/*\ USER\ CODE\ END\ USB\_Init\ 1\ */}}
-\DoxyCodeLine{\Hypertarget{usb_8c_source_l00041}00041\ \ \ \mbox{\hyperlink{usb_8c_afabb8e1d05154a3b694f4f4d150b194f}{hpcd\_USB\_FS}}.Instance\ =\ USB;}
+\DoxyCodeLine{\Hypertarget{usb_8c_source_l00041}00041\ \ \ \mbox{\hyperlink{usb_8c_afabb8e1d05154a3b694f4f4d150b194f}{hpcd\_USB\_FS}}.Instance\ =\ \mbox{\hyperlink{group___peripheral__declaration_ga779bf099075a999d1074357fccbd466b}{USB}};}
 \DoxyCodeLine{\Hypertarget{usb_8c_source_l00042}00042\ \ \ \mbox{\hyperlink{usb_8c_afabb8e1d05154a3b694f4f4d150b194f}{hpcd\_USB\_FS}}.Init.dev\_endpoints\ =\ 8;}
 \DoxyCodeLine{\Hypertarget{usb_8c_source_l00043}00043\ \ \ \mbox{\hyperlink{usb_8c_afabb8e1d05154a3b694f4f4d150b194f}{hpcd\_USB\_FS}}.Init.speed\ =\ PCD\_SPEED\_FULL;}
 \DoxyCodeLine{\Hypertarget{usb_8c_source_l00044}00044\ \ \ \mbox{\hyperlink{usb_8c_afabb8e1d05154a3b694f4f4d150b194f}{hpcd\_USB\_FS}}.Init.phy\_itface\ =\ PCD\_PHY\_EMBEDDED;}
-\DoxyCodeLine{\Hypertarget{usb_8c_source_l00045}00045\ \ \ \mbox{\hyperlink{usb_8c_afabb8e1d05154a3b694f4f4d150b194f}{hpcd\_USB\_FS}}.Init.low\_power\_enable\ =\ DISABLE;}
-\DoxyCodeLine{\Hypertarget{usb_8c_source_l00046}00046\ \ \ \mbox{\hyperlink{usb_8c_afabb8e1d05154a3b694f4f4d150b194f}{hpcd\_USB\_FS}}.Init.lpm\_enable\ =\ DISABLE;}
-\DoxyCodeLine{\Hypertarget{usb_8c_source_l00047}00047\ \ \ \mbox{\hyperlink{usb_8c_afabb8e1d05154a3b694f4f4d150b194f}{hpcd\_USB\_FS}}.Init.battery\_charging\_enable\ =\ DISABLE;}
-\DoxyCodeLine{\Hypertarget{usb_8c_source_l00048}00048\ \ \ \textcolor{keywordflow}{if}\ (HAL\_PCD\_Init(\&\mbox{\hyperlink{usb_8c_afabb8e1d05154a3b694f4f4d150b194f}{hpcd\_USB\_FS}})\ !=\ HAL\_OK)}
+\DoxyCodeLine{\Hypertarget{usb_8c_source_l00045}00045\ \ \ \mbox{\hyperlink{usb_8c_afabb8e1d05154a3b694f4f4d150b194f}{hpcd\_USB\_FS}}.Init.low\_power\_enable\ =\ \mbox{\hyperlink{group___exported__types_ggac9a7e9a35d2513ec15c3b537aaa4fba1ad3a9df141be0ccf10389b640f492b26d}{DISABLE}};}
+\DoxyCodeLine{\Hypertarget{usb_8c_source_l00046}00046\ \ \ \mbox{\hyperlink{usb_8c_afabb8e1d05154a3b694f4f4d150b194f}{hpcd\_USB\_FS}}.Init.lpm\_enable\ =\ \mbox{\hyperlink{group___exported__types_ggac9a7e9a35d2513ec15c3b537aaa4fba1ad3a9df141be0ccf10389b640f492b26d}{DISABLE}};}
+\DoxyCodeLine{\Hypertarget{usb_8c_source_l00047}00047\ \ \ \mbox{\hyperlink{usb_8c_afabb8e1d05154a3b694f4f4d150b194f}{hpcd\_USB\_FS}}.Init.battery\_charging\_enable\ =\ \mbox{\hyperlink{group___exported__types_ggac9a7e9a35d2513ec15c3b537aaa4fba1ad3a9df141be0ccf10389b640f492b26d}{DISABLE}};}
+\DoxyCodeLine{\Hypertarget{usb_8c_source_l00048}00048\ \ \ \textcolor{keywordflow}{if}\ (HAL\_PCD\_Init(\&\mbox{\hyperlink{usb_8c_afabb8e1d05154a3b694f4f4d150b194f}{hpcd\_USB\_FS}})\ !=\ \mbox{\hyperlink{stm32f0xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478fa6eb724a07061d89a4a2052744e5a3632}{HAL\_OK}})}
 \DoxyCodeLine{\Hypertarget{usb_8c_source_l00049}00049\ \ \ \{}
 \DoxyCodeLine{\Hypertarget{usb_8c_source_l00050}00050\ \ \ \ \ \mbox{\hyperlink{main_8h_a1730ffe1e560465665eb47d9264826f9}{Error\_Handler}}();}
 \DoxyCodeLine{\Hypertarget{usb_8c_source_l00051}00051\ \ \ \}}
@@ -45,7 +45,7 @@
 \DoxyCodeLine{\Hypertarget{usb_8c_source_l00058}\mbox{\hyperlink{usb_8c_ab88e6d72062dc5d478ab12b435695ccb}{00058}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{usb_8c_ab88e6d72062dc5d478ab12b435695ccb}{HAL\_PCD\_MspInit}}(PCD\_HandleTypeDef*\ pcdHandle)}
 \DoxyCodeLine{\Hypertarget{usb_8c_source_l00059}00059\ \{}
 \DoxyCodeLine{\Hypertarget{usb_8c_source_l00060}00060\ }
-\DoxyCodeLine{\Hypertarget{usb_8c_source_l00061}00061\ \ \ \textcolor{keywordflow}{if}(pcdHandle-\/>Instance==USB)}
+\DoxyCodeLine{\Hypertarget{usb_8c_source_l00061}00061\ \ \ \textcolor{keywordflow}{if}(pcdHandle-\/>Instance==\mbox{\hyperlink{group___peripheral__declaration_ga779bf099075a999d1074357fccbd466b}{USB}})}
 \DoxyCodeLine{\Hypertarget{usb_8c_source_l00062}00062\ \ \ \{}
 \DoxyCodeLine{\Hypertarget{usb_8c_source_l00063}00063\ \ \ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ USB\_MspInit\ 0\ */}}
 \DoxyCodeLine{\Hypertarget{usb_8c_source_l00064}00064\ }
@@ -61,7 +61,7 @@
 \DoxyCodeLine{\Hypertarget{usb_8c_source_l00074}\mbox{\hyperlink{usb_8c_a0a53f3c7c744fcfa7bdba6e9badc70d4}{00074}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{usb_8c_a0a53f3c7c744fcfa7bdba6e9badc70d4}{HAL\_PCD\_MspDeInit}}(PCD\_HandleTypeDef*\ pcdHandle)}
 \DoxyCodeLine{\Hypertarget{usb_8c_source_l00075}00075\ \{}
 \DoxyCodeLine{\Hypertarget{usb_8c_source_l00076}00076\ }
-\DoxyCodeLine{\Hypertarget{usb_8c_source_l00077}00077\ \ \ \textcolor{keywordflow}{if}(pcdHandle-\/>Instance==USB)}
+\DoxyCodeLine{\Hypertarget{usb_8c_source_l00077}00077\ \ \ \textcolor{keywordflow}{if}(pcdHandle-\/>Instance==\mbox{\hyperlink{group___peripheral__declaration_ga779bf099075a999d1074357fccbd466b}{USB}})}
 \DoxyCodeLine{\Hypertarget{usb_8c_source_l00078}00078\ \ \ \{}
 \DoxyCodeLine{\Hypertarget{usb_8c_source_l00079}00079\ \ \ \textcolor{comment}{/*\ USER\ CODE\ BEGIN\ USB\_MspDeInit\ 0\ */}}
 \DoxyCodeLine{\Hypertarget{usb_8c_source_l00080}00080\ }

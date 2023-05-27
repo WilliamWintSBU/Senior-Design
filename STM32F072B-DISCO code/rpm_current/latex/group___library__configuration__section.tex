@@ -1,0 +1,155 @@
+\hypertarget{group___library__configuration__section}{}\doxysection{Library\+\_\+configuration\+\_\+section}
+\label{group___library__configuration__section}\index{Library\_configuration\_section@{Library\_configuration\_section}}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___library__configuration__section_ga5ff454728a9a164b5469717c044546f4}{STM32\+F0}}
+\begin{DoxyCompactList}\small\item\em STM32 Family. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___library__configuration__section_ga66dd4a5456033130cc762ae237487dbb}{\+\_\+\+\_\+\+STM32\+F0\+\_\+\+DEVICE\+\_\+\+VERSION\+\_\+\+MAIN}}~(0x02)
+\begin{DoxyCompactList}\small\item\em Comment the line below if you will not use the peripherals drivers. In this case, these drivers will not be included and the application code will be based on direct access to peripherals registers. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group___library__configuration__section_ga27cda80c27dab2457fbd235e998db878}{\+\_\+\+\_\+\+STM32\+F0\+\_\+\+DEVICE\+\_\+\+VERSION\+\_\+\+SUB1}}~(0x03)
+\item 
+\#define \mbox{\hyperlink{group___library__configuration__section_gae421b39741c9fd5aa0f7d4ccf6b6b253}{\+\_\+\+\_\+\+STM32\+F0\+\_\+\+DEVICE\+\_\+\+VERSION\+\_\+\+SUB2}}~(0x07)
+\item 
+\#define \mbox{\hyperlink{group___library__configuration__section_ga745d01d9751b23c2157e1a6710d75235}{\+\_\+\+\_\+\+STM32\+F0\+\_\+\+DEVICE\+\_\+\+VERSION\+\_\+\+RC}}~(0x00)
+\item 
+\#define \mbox{\hyperlink{group___library__configuration__section_gabdc7a0a890fd222cbd0c09e25a1cf438}{\+\_\+\+\_\+\+STM32\+F0\+\_\+\+DEVICE\+\_\+\+VERSION}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group___library__configuration__section_gabdc7a0a890fd222cbd0c09e25a1cf438}\label{group___library__configuration__section_gabdc7a0a890fd222cbd0c09e25a1cf438}} 
+\index{Library\_configuration\_section@{Library\_configuration\_section}!\_\_STM32F0\_DEVICE\_VERSION@{\_\_STM32F0\_DEVICE\_VERSION}}
+\index{\_\_STM32F0\_DEVICE\_VERSION@{\_\_STM32F0\_DEVICE\_VERSION}!Library\_configuration\_section@{Library\_configuration\_section}}
+\doxysubsubsection{\texorpdfstring{\_\_STM32F0\_DEVICE\_VERSION}{\_\_STM32F0\_DEVICE\_VERSION}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+STM32\+F0\+\_\+\+DEVICE\+\_\+\+VERSION}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\mbox{\hyperlink{group___library__configuration__section_ga66dd4a5456033130cc762ae237487dbb}{\_\_STM32F0\_DEVICE\_VERSION\_MAIN}}\ <<\ 24)\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |(\mbox{\hyperlink{group___library__configuration__section_ga27cda80c27dab2457fbd235e998db878}{\_\_STM32F0\_DEVICE\_VERSION\_SUB1}}\ <<\ 16)\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |(\mbox{\hyperlink{group___library__configuration__section_gae421b39741c9fd5aa0f7d4ccf6b6b253}{\_\_STM32F0\_DEVICE\_VERSION\_SUB2}}\ <<\ 8\ )\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |(\mbox{\hyperlink{group___library__configuration__section_ga745d01d9751b23c2157e1a6710d75235}{\_\_STM32F0\_DEVICE\_VERSION\_RC}}))}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{stm32f0xx_8h_source_l00111}{111}} of file \mbox{\hyperlink{stm32f0xx_8h_source}{stm32f0xx.\+h}}.
+
+\mbox{\Hypertarget{group___library__configuration__section_ga66dd4a5456033130cc762ae237487dbb}\label{group___library__configuration__section_ga66dd4a5456033130cc762ae237487dbb}} 
+\index{Library\_configuration\_section@{Library\_configuration\_section}!\_\_STM32F0\_DEVICE\_VERSION\_MAIN@{\_\_STM32F0\_DEVICE\_VERSION\_MAIN}}
+\index{\_\_STM32F0\_DEVICE\_VERSION\_MAIN@{\_\_STM32F0\_DEVICE\_VERSION\_MAIN}!Library\_configuration\_section@{Library\_configuration\_section}}
+\doxysubsubsection{\texorpdfstring{\_\_STM32F0\_DEVICE\_VERSION\_MAIN}{\_\_STM32F0\_DEVICE\_VERSION\_MAIN}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+STM32\+F0\+\_\+\+DEVICE\+\_\+\+VERSION\+\_\+\+MAIN~(0x02)}
+
+
+
+Comment the line below if you will not use the peripherals drivers. In this case, these drivers will not be included and the application code will be based on direct access to peripherals registers. 
+
+Uncomment the line below according to the target STM32 device used in your application. stm32f0xxxx.\+h file contains\+:
+\begin{DoxyItemize}
+\item All the peripheral register\textquotesingle{}s definitions, bits definitions and memory mapping for STM32\+F0xxxx devices
+\item IRQ channel definition
+\item Peripheral memory mapping and physical registers address definition
+\item Peripheral pointer declaration and driver header file inclusion
+\item Product miscellaneous configuration\+: assert macros, … Note\+: These CMSIS drivers (stm32f0xxxx.\+h) are always supporting features of the sub-\/family\textquotesingle{}s superset.
+\end{DoxyItemize}
+
+\texorpdfstring{$<$}{<} STM32\+F030x4, STM32\+F030x6 Devices (STM32\+F030xx microcontrollers where the Flash memory ranges between 16 and 32 Kbytes) ~\newline
+
+
+\texorpdfstring{$<$}{<} STM32\+F030x8 Devices (STM32\+F030xx microcontrollers where the Flash memory is 64 Kbytes) ~\newline
+
+
+\texorpdfstring{$<$}{<} STM32\+F031x4, STM32\+F031x6 Devices (STM32\+F031xx microcontrollers where the Flash memory ranges between 16 and 32 Kbytes) ~\newline
+
+
+\texorpdfstring{$<$}{<} STM32\+F038xx Devices (STM32\+F038xx microcontrollers where the Flash memory is 32 Kbytes) ~\newline
+
+
+\texorpdfstring{$<$}{<} STM32\+F042x4, STM32\+F042x6 Devices (STM32\+F042xx microcontrollers where the Flash memory ranges between 16 and 32 Kbytes) ~\newline
+
+
+\texorpdfstring{$<$}{<} STM32\+F048xx Devices (STM32\+F048xx microcontrollers where the Flash memory is 32 Kbytes) ~\newline
+
+
+\texorpdfstring{$<$}{<} STM32\+F051x4, STM32\+F051x6, STM32\+F051x8 Devices (STM32\+F051xx microcontrollers where the Flash memory ranges between 16 and 64 Kbytes)
+
+\texorpdfstring{$<$}{<} STM32\+F058xx Devices (STM32\+F058xx microcontrollers where the Flash memory is 64 Kbytes) ~\newline
+
+
+\texorpdfstring{$<$}{<} STM32\+F070x6 Devices (STM32\+F070x6 microcontrollers where the Flash memory ranges between 16 and 32 Kbytes) ~\newline
+
+
+\texorpdfstring{$<$}{<} STM32\+F070xB Devices (STM32\+F070xB microcontrollers where the Flash memory ranges between 64 and 128 Kbytes) ~\newline
+
+
+\texorpdfstring{$<$}{<} STM32\+F071x8, STM32\+F071xB Devices (STM32\+F071xx microcontrollers where the Flash memory ranges between 64 and 128 Kbytes) ~\newline
+
+
+\texorpdfstring{$<$}{<} STM32\+F072x8, STM32\+F072xB Devices (STM32\+F072xx microcontrollers where the Flash memory ranges between 64 and 128 Kbytes) ~\newline
+
+
+\texorpdfstring{$<$}{<} STM32\+F078xx Devices (STM32\+F078xx microcontrollers where the Flash memory is 128 Kbytes) ~\newline
+
+
+\texorpdfstring{$<$}{<} STM32\+F030xC Devices (STM32\+F030xC microcontrollers where the Flash memory is 256 Kbytes) ~\newline
+
+
+\texorpdfstring{$<$}{<} STM32\+F091xB, STM32\+F091xC Devices (STM32\+F091xx microcontrollers where the Flash memory ranges between 128 and 256 Kbytes) ~\newline
+
+
+\texorpdfstring{$<$}{<} STM32\+F098xx Devices (STM32\+F098xx microcontrollers where the Flash memory is 256 Kbytes) ~\newline
+
+
+CMSIS Device version number V2.\+3.\+7 \mbox{[}31\+:24\mbox{]} main version 
+
+Definition at line \mbox{\hyperlink{stm32f0xx_8h_source_l00107}{107}} of file \mbox{\hyperlink{stm32f0xx_8h_source}{stm32f0xx.\+h}}.
+
+\mbox{\Hypertarget{group___library__configuration__section_ga745d01d9751b23c2157e1a6710d75235}\label{group___library__configuration__section_ga745d01d9751b23c2157e1a6710d75235}} 
+\index{Library\_configuration\_section@{Library\_configuration\_section}!\_\_STM32F0\_DEVICE\_VERSION\_RC@{\_\_STM32F0\_DEVICE\_VERSION\_RC}}
+\index{\_\_STM32F0\_DEVICE\_VERSION\_RC@{\_\_STM32F0\_DEVICE\_VERSION\_RC}!Library\_configuration\_section@{Library\_configuration\_section}}
+\doxysubsubsection{\texorpdfstring{\_\_STM32F0\_DEVICE\_VERSION\_RC}{\_\_STM32F0\_DEVICE\_VERSION\_RC}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+STM32\+F0\+\_\+\+DEVICE\+\_\+\+VERSION\+\_\+\+RC~(0x00)}
+
+\mbox{[}7\+:0\mbox{]} release candidate 
+
+Definition at line \mbox{\hyperlink{stm32f0xx_8h_source_l00110}{110}} of file \mbox{\hyperlink{stm32f0xx_8h_source}{stm32f0xx.\+h}}.
+
+\mbox{\Hypertarget{group___library__configuration__section_ga27cda80c27dab2457fbd235e998db878}\label{group___library__configuration__section_ga27cda80c27dab2457fbd235e998db878}} 
+\index{Library\_configuration\_section@{Library\_configuration\_section}!\_\_STM32F0\_DEVICE\_VERSION\_SUB1@{\_\_STM32F0\_DEVICE\_VERSION\_SUB1}}
+\index{\_\_STM32F0\_DEVICE\_VERSION\_SUB1@{\_\_STM32F0\_DEVICE\_VERSION\_SUB1}!Library\_configuration\_section@{Library\_configuration\_section}}
+\doxysubsubsection{\texorpdfstring{\_\_STM32F0\_DEVICE\_VERSION\_SUB1}{\_\_STM32F0\_DEVICE\_VERSION\_SUB1}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+STM32\+F0\+\_\+\+DEVICE\+\_\+\+VERSION\+\_\+\+SUB1~(0x03)}
+
+\mbox{[}23\+:16\mbox{]} sub1 version 
+
+Definition at line \mbox{\hyperlink{stm32f0xx_8h_source_l00108}{108}} of file \mbox{\hyperlink{stm32f0xx_8h_source}{stm32f0xx.\+h}}.
+
+\mbox{\Hypertarget{group___library__configuration__section_gae421b39741c9fd5aa0f7d4ccf6b6b253}\label{group___library__configuration__section_gae421b39741c9fd5aa0f7d4ccf6b6b253}} 
+\index{Library\_configuration\_section@{Library\_configuration\_section}!\_\_STM32F0\_DEVICE\_VERSION\_SUB2@{\_\_STM32F0\_DEVICE\_VERSION\_SUB2}}
+\index{\_\_STM32F0\_DEVICE\_VERSION\_SUB2@{\_\_STM32F0\_DEVICE\_VERSION\_SUB2}!Library\_configuration\_section@{Library\_configuration\_section}}
+\doxysubsubsection{\texorpdfstring{\_\_STM32F0\_DEVICE\_VERSION\_SUB2}{\_\_STM32F0\_DEVICE\_VERSION\_SUB2}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+STM32\+F0\+\_\+\+DEVICE\+\_\+\+VERSION\+\_\+\+SUB2~(0x07)}
+
+\mbox{[}15\+:8\mbox{]} sub2 version 
+
+Definition at line \mbox{\hyperlink{stm32f0xx_8h_source_l00109}{109}} of file \mbox{\hyperlink{stm32f0xx_8h_source}{stm32f0xx.\+h}}.
+
+\mbox{\Hypertarget{group___library__configuration__section_ga5ff454728a9a164b5469717c044546f4}\label{group___library__configuration__section_ga5ff454728a9a164b5469717c044546f4}} 
+\index{Library\_configuration\_section@{Library\_configuration\_section}!STM32F0@{STM32F0}}
+\index{STM32F0@{STM32F0}!Library\_configuration\_section@{Library\_configuration\_section}}
+\doxysubsubsection{\texorpdfstring{STM32F0}{STM32F0}}
+{\footnotesize\ttfamily \#define STM32\+F0}
+
+
+
+STM32 Family. 
+
+
+
+Definition at line \mbox{\hyperlink{stm32f0xx_8h_source_l00051}{51}} of file \mbox{\hyperlink{stm32f0xx_8h_source}{stm32f0xx.\+h}}.
+

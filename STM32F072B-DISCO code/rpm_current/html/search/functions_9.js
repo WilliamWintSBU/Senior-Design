@@ -1,4 +1,30 @@
 var searchData=
 [
-  ['nmi_5fhandler_0',['NMI_Handler',['../stm32f0xx__it_8h.html#a6ad7a5e3ee69cb6db6a6b9111ba898bc',1,'NMI_Handler(void):&#160;stm32f0xx_it.c'],['../stm32f0xx__it_8c.html#a6ad7a5e3ee69cb6db6a6b9111ba898bc',1,'NMI_Handler(void):&#160;stm32f0xx_it.c']]]
+  ['main_0',['main',['../main_8c.html#a840291bc02cba5474a4cb46a9b9566fe',1,'main.c']]],
+  ['max31865_5fautoconvert_1',['Max31865_autoConvert',['../_m_a_x31865_8c.html#a205621280de434194dc3efd8e996dfea',1,'MAX31865.c']]],
+  ['max31865_5fclearfault_2',['Max31865_clearFault',['../_m_a_x31865_8c.html#a983960e61a3e138670dd616ce2484ff6',1,'MAX31865.c']]],
+  ['max31865_5fdelay_3',['Max31865_delay',['../_m_a_x31865_8c.html#a9417d597a56290f175e682a52fa743be',1,'MAX31865.c']]],
+  ['max31865_5fenablebias_4',['Max31865_enableBias',['../_m_a_x31865_8c.html#ac7ac63acf4aab42ff359e6b8d44db8e4',1,'MAX31865.c']]],
+  ['max31865_5ffilter_5',['Max31865_Filter',['../_m_a_x31865_8c.html#ad7de685bbd61fb2dd020ad9a15380149',1,'Max31865_Filter(float newInput, float lastOutput, float efectiveFactor):&#160;MAX31865.c'],['../_m_a_x31865_8h.html#ad7de685bbd61fb2dd020ad9a15380149',1,'Max31865_Filter(float newInput, float lastOutput, float efectiveFactor):&#160;MAX31865.c']]],
+  ['max31865_5finit_6',['Max31865_init',['../_m_a_x31865_8c.html#a7af0698160523a69eee213637c8c3ce0',1,'Max31865_init(Max31865_t *max31865, SPI_HandleTypeDef *spi, GPIO_TypeDef *cs_gpio, uint16_t cs_pin, uint8_t numwires, uint8_t filterHz):&#160;MAX31865.c'],['../_m_a_x31865_8h.html#a7af0698160523a69eee213637c8c3ce0',1,'Max31865_init(Max31865_t *max31865, SPI_HandleTypeDef *spi, GPIO_TypeDef *cs_gpio, uint16_t cs_pin, uint8_t numwires, uint8_t filterHz):&#160;MAX31865.c']]],
+  ['max31865_5freadfault_7',['Max31865_readFault',['../_m_a_x31865_8c.html#a4d1b5f6e70785f5feb2c39261b0d2120',1,'MAX31865.c']]],
+  ['max31865_5freadregister16_8',['Max31865_readRegister16',['../_m_a_x31865_8c.html#ae7f625f37f782b985ac5d8ffa6dfd304',1,'MAX31865.c']]],
+  ['max31865_5freadregister8_9',['Max31865_readRegister8',['../_m_a_x31865_8c.html#a1def21e275aba4989d1e188a5742e924',1,'MAX31865.c']]],
+  ['max31865_5freadregistern_10',['Max31865_readRegisterN',['../_m_a_x31865_8c.html#ae7b650a3bb1f982b64641de1b2e8f22f',1,'MAX31865.c']]],
+  ['max31865_5freadrtd_11',['Max31865_readRTD',['../_m_a_x31865_8c.html#a2c7f8f03b79c9a7175978a979bd82ccd',1,'MAX31865.c']]],
+  ['max31865_5freadtempc_12',['Max31865_readTempC',['../_m_a_x31865_8c.html#a16213618890e307f757c658fd64226c2',1,'Max31865_readTempC(Max31865_t *max31865, float *readTemp):&#160;MAX31865.c'],['../_m_a_x31865_8h.html#a16213618890e307f757c658fd64226c2',1,'Max31865_readTempC(Max31865_t *max31865, float *readTemp):&#160;MAX31865.c']]],
+  ['max31865_5freadtempf_13',['Max31865_readTempF',['../_m_a_x31865_8c.html#a99d07f2cc1fcc073a889e28b323d16e4',1,'Max31865_readTempF(Max31865_t *max31865, float *readTemp):&#160;MAX31865.c'],['../_m_a_x31865_8h.html#a99d07f2cc1fcc073a889e28b323d16e4',1,'Max31865_readTempF(Max31865_t *max31865, float *readTemp):&#160;MAX31865.c']]],
+  ['max31865_5fsetfilter_14',['Max31865_setFilter',['../_m_a_x31865_8c.html#adfafc24694570b3dbf8e083246f2b193',1,'MAX31865.c']]],
+  ['max31865_5fsetwires_15',['Max31865_setWires',['../_m_a_x31865_8c.html#a9b2c144b9e5c00f9dc2ea660f7fb06ff',1,'MAX31865.c']]],
+  ['max31865_5fwriteregister8_16',['Max31865_writeRegister8',['../_m_a_x31865_8c.html#a8a760830f5dd73238cfd6c95ff0e6a96',1,'MAX31865.c']]],
+  ['mx_5fadc_5finit_17',['MX_ADC_Init',['../adc_8h.html#aca7f21e220653e353491bceced7c5df3',1,'MX_ADC_Init(void):&#160;adc.c'],['../adc_8c.html#aca7f21e220653e353491bceced7c5df3',1,'MX_ADC_Init(void):&#160;adc.c']]],
+  ['mx_5fgpio_5finit_18',['MX_GPIO_Init',['../gpio_8h.html#ac724e431d2af879252de35615be2bdea',1,'MX_GPIO_Init(void):&#160;gpio.c'],['../gpio_8c.html#ac724e431d2af879252de35615be2bdea',1,'MX_GPIO_Init(void):&#160;gpio.c']]],
+  ['mx_5fi2c1_5finit_19',['MX_I2C1_Init',['../i2c_8h.html#ada6e763cfa4108a8d24cd27b75f2f489',1,'MX_I2C1_Init(void):&#160;i2c.c'],['../i2c_8c.html#ada6e763cfa4108a8d24cd27b75f2f489',1,'MX_I2C1_Init(void):&#160;i2c.c']]],
+  ['mx_5fi2c2_5finit_20',['MX_I2C2_Init',['../i2c_8h.html#a021114cd02d4beb0b256095cfbd088b2',1,'MX_I2C2_Init(void):&#160;i2c.c'],['../i2c_8c.html#a021114cd02d4beb0b256095cfbd088b2',1,'MX_I2C2_Init(void):&#160;i2c.c']]],
+  ['mx_5fspi2_5finit_21',['MX_SPI2_Init',['../spi_8h.html#aea85daa666c03d85fd59edef711ebb08',1,'MX_SPI2_Init(void):&#160;spi.c'],['../spi_8c.html#aea85daa666c03d85fd59edef711ebb08',1,'MX_SPI2_Init(void):&#160;spi.c']]],
+  ['mx_5ftim2_5finit_22',['MX_TIM2_Init',['../tim_8h.html#a4b8ff887fd3fdf26605e35927e4ff202',1,'MX_TIM2_Init(void):&#160;tim.c'],['../tim_8c.html#a4b8ff887fd3fdf26605e35927e4ff202',1,'MX_TIM2_Init(void):&#160;tim.c']]],
+  ['mx_5ftsc_5finit_23',['MX_TSC_Init',['../tsc_8h.html#ab8f5b6f679b228152e65fa25bcfae24f',1,'MX_TSC_Init(void):&#160;tsc.c'],['../tsc_8c.html#ab8f5b6f679b228152e65fa25bcfae24f',1,'MX_TSC_Init(void):&#160;tsc.c']]],
+  ['mx_5fusart1_5fuart_5finit_24',['MX_USART1_UART_Init',['../usart_8h.html#a57d1167735baafab8e3288526c424929',1,'MX_USART1_UART_Init(void):&#160;usart.c'],['../usart_8c.html#a57d1167735baafab8e3288526c424929',1,'MX_USART1_UART_Init(void):&#160;usart.c']]],
+  ['mx_5fusart3_5fuart_5finit_25',['MX_USART3_UART_Init',['../usart_8h.html#a3d04b903a77089f6ce08dd0bf1c81a81',1,'MX_USART3_UART_Init(void):&#160;usart.c'],['../usart_8c.html#a3d04b903a77089f6ce08dd0bf1c81a81',1,'MX_USART3_UART_Init(void):&#160;usart.c']]],
+  ['mx_5fusb_5fpcd_5finit_26',['MX_USB_PCD_Init',['../usb_8h.html#acade11ca9152720e1fcaaf9efa6ed337',1,'MX_USB_PCD_Init(void):&#160;usb.c'],['../usb_8c.html#acade11ca9152720e1fcaaf9efa6ed337',1,'MX_USB_PCD_Init(void):&#160;usb.c']]]
 ];

@@ -1,0 +1,682 @@
+\hypertarget{stm32f0xx__hal__rcc__ex_8c_source}{}\doxysection{stm32f0xx\+\_\+hal\+\_\+rcc\+\_\+ex.\+c}
+\label{stm32f0xx__hal__rcc__ex_8c_source}\index{Drivers/STM32F0xx\_HAL\_Driver/Src/stm32f0xx\_hal\_rcc\_ex.c@{Drivers/STM32F0xx\_HAL\_Driver/Src/stm32f0xx\_hal\_rcc\_ex.c}}
+\mbox{\hyperlink{stm32f0xx__hal__rcc__ex_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00023}00023\ \textcolor{comment}{/*\ Includes\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00024}00024\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{stm32f0xx__hal_8h}{stm32f0xx\_hal.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00030}00030\ \textcolor{preprocessor}{\#ifdef\ HAL\_RCC\_MODULE\_ENABLED}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00037}00037\ \textcolor{comment}{/*\ Private\ typedef\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00038}00038\ \textcolor{comment}{/*\ Private\ define\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00039}00039\ \textcolor{preprocessor}{\#if\ defined(CRS)}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00043}00043\ \textcolor{comment}{/*\ Bit\ position\ in\ register\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00044}00044\ \textcolor{preprocessor}{\#define\ CRS\_CFGR\_FELIM\_BITNUMBER\ \ \ \ 16}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00045}00045\ \textcolor{preprocessor}{\#define\ CRS\_CR\_TRIM\_BITNUMBER\ \ \ \ \ \ \ 8}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00046}00046\ \textcolor{preprocessor}{\#define\ CRS\_ISR\_FECAP\_BITNUMBER\ \ \ \ \ 16}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00050}00050\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ CRS\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00051}00051\ \ \ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00052}00052\ \textcolor{comment}{/*\ Private\ macro\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00060}00060\ \textcolor{comment}{/*\ Private\ variables\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00061}00061\ \textcolor{comment}{/*\ Private\ function\ prototypes\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00062}00062\ \textcolor{comment}{/*\ Private\ functions\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00102}00102\ \mbox{\hyperlink{stm32f0xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\_StatusTypeDef}}\ \mbox{\hyperlink{group___r_c_c_ex___exported___functions___group1_ga0c0f61a1e2f47cc81bc43d83ba3e0d95}{HAL\_RCCEx\_PeriphCLKConfig}}(RCC\_PeriphCLKInitTypeDef\ \ *PeriphClkInit)}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00103}00103\ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00104}00104\ \ \ uint32\_t\ tickstart\ =\ 0U;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00105}00105\ \ \ uint32\_t\ temp\_reg\ =\ 0U;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00106}00106\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00107}00107\ \ \ \textcolor{comment}{/*\ Check\ the\ parameters\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00108}00108\ \ \ \mbox{\hyperlink{stm32f0xx__hal__conf_8h_a631dea7b230e600555f979c62af1de21}{assert\_param}}(IS\_RCC\_PERIPHCLOCK(PeriphClkInit-\/>PeriphClockSelection));}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00109}00109\ \ \ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00110}00110\ \ \ \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ RTC\ configuration\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00111}00111\ \ \ \textcolor{keywordflow}{if}(((PeriphClkInit-\/>PeriphClockSelection)\ \&\ RCC\_PERIPHCLK\_RTC)\ ==\ (RCC\_PERIPHCLK\_RTC))}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00112}00112\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00113}00113\ \ \ \ \ \textcolor{comment}{/*\ check\ for\ RTC\ Parameters\ used\ to\ output\ RTCCLK\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00114}00114\ \ \ \ \ \mbox{\hyperlink{stm32f0xx__hal__conf_8h_a631dea7b230e600555f979c62af1de21}{assert\_param}}(\mbox{\hyperlink{group___r_c_c___private___macros_gacd1d98013cd9a28e8b1544adf931e7b3}{IS\_RCC\_RTCCLKSOURCE}}(PeriphClkInit-\/>RTCClockSelection));}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00115}00115\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00116}00116\ \ \ \ \ \mbox{\hyperlink{group___exported__types_ga89136caac2e14c55151f527ac02daaff}{FlagStatus}}\ \ \ \ \ \ \ pwrclkchanged\ =\ \mbox{\hyperlink{group___exported__types_gga89136caac2e14c55151f527ac02daaffa589b7d94a3d91d145720e2fed0eb3a05}{RESET}};}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00117}00117\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00118}00118\ \ \ \ \ \textcolor{comment}{/*\ As\ soon\ as\ function\ is\ called\ to\ change\ RTC\ clock\ source,\ activation\ of\ the\ }}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00119}00119\ \textcolor{comment}{\ \ \ \ \ \ \ power\ domain\ is\ done.\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00120}00120\ \ \ \ \ \textcolor{comment}{/*\ Requires\ to\ enable\ write\ access\ to\ Backup\ Domain\ of\ necessary\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00121}00121\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{group___r_c_c___a_p_b1___peripheral___clock___enable___disable___status_ga1019fdeb30eb4bcb23a0bea2278a94a2}{\_\_HAL\_RCC\_PWR\_IS\_CLK\_DISABLED}}())}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00122}00122\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00123}00123\ \ \ \ \ \mbox{\hyperlink{group___r_c_c___a_p_b1___clock___enable___disable_ga6c7399cc977622172aeda52a86ceed92}{\_\_HAL\_RCC\_PWR\_CLK\_ENABLE}}();}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00124}00124\ \ \ \ \ \ \ pwrclkchanged\ =\ \mbox{\hyperlink{group___exported__types_gga89136caac2e14c55151f527ac02daaffab44c8101cc294c074709ec1b14211792}{SET}};}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00125}00125\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00126}00126\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00127}00127\ \ \ \ \ \textcolor{keywordflow}{if}(\mbox{\hyperlink{stm32f0xx__hal__def_8h_a82637a84fbdca0e2a25496089b549924}{HAL\_IS\_BIT\_CLR}}(\mbox{\hyperlink{group___peripheral__declaration_ga04651c526497822a859942b928e57f8e}{PWR}}-\/>CR,\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_gaf5c65ab845794ef48f09faa2ee44f718}{PWR\_CR\_DBP}}))}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00128}00128\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00129}00129\ \ \ \ \ \ \ \textcolor{comment}{/*\ Enable\ write\ access\ to\ Backup\ domain\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00130}00130\ \ \ \ \ \ \ \mbox{\hyperlink{group___exported__macros_ga26474f43799fbade9cf300e21dd3a91a}{SET\_BIT}}(\mbox{\hyperlink{group___peripheral__declaration_ga04651c526497822a859942b928e57f8e}{PWR}}-\/>CR,\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_gaf5c65ab845794ef48f09faa2ee44f718}{PWR\_CR\_DBP}});}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00131}00131\ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00132}00132\ \ \ \ \ \ \ \textcolor{comment}{/*\ Wait\ for\ Backup\ domain\ Write\ protection\ disable\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00133}00133\ \ \ \ \ \ \ tickstart\ =\ \mbox{\hyperlink{group___h_a_l___exported___functions___group2_gaf2c4f03d53e997a54e1fd5e80daa55c4}{HAL\_GetTick}}();}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00134}00134\ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00135}00135\ \ \ \ \ \ \ \textcolor{keywordflow}{while}(\mbox{\hyperlink{stm32f0xx__hal__def_8h_a82637a84fbdca0e2a25496089b549924}{HAL\_IS\_BIT\_CLR}}(\mbox{\hyperlink{group___peripheral__declaration_ga04651c526497822a859942b928e57f8e}{PWR}}-\/>CR,\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_gaf5c65ab845794ef48f09faa2ee44f718}{PWR\_CR\_DBP}}))}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00136}00136\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00137}00137\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}((\mbox{\hyperlink{group___h_a_l___exported___functions___group2_gaf2c4f03d53e997a54e1fd5e80daa55c4}{HAL\_GetTick}}()\ -\/\ tickstart)\ >\ \mbox{\hyperlink{group___r_c_c___timeout_gae578b5efd6bd38193ab426ce65cb77b1}{RCC\_DBP\_TIMEOUT\_VALUE}})}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00138}00138\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00139}00139\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{stm32f0xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478fa00c89549bc881c35e8e4cd9e718337e5}{HAL\_TIMEOUT}};}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00140}00140\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00141}00141\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00142}00142\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00143}00143\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00144}00144\ \ \ \ \ \textcolor{comment}{/*\ Reset\ the\ Backup\ domain\ only\ if\ the\ RTC\ Clock\ source\ selection\ is\ modified\ from\ reset\ value\ */}\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00145}00145\ \ \ \ \ temp\_reg\ =\ (\mbox{\hyperlink{group___peripheral__declaration_ga74944438a086975793d26ae48d5882d4}{RCC}}-\/>BDCR\ \&\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_gabe30dbd38f6456990ee641648bc05d40}{RCC\_BDCR\_RTCSEL}});}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00146}00146\ \ \ \ \ \textcolor{keywordflow}{if}((temp\_reg\ !=\ 0x00000000U)\ \&\&\ (temp\_reg\ !=\ (PeriphClkInit-\/>RTCClockSelection\ \&\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_gabe30dbd38f6456990ee641648bc05d40}{RCC\_BDCR\_RTCSEL}})))}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00147}00147\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00148}00148\ \ \ \ \ \ \ \textcolor{comment}{/*\ Store\ the\ content\ of\ BDCR\ register\ before\ the\ reset\ of\ Backup\ Domain\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00149}00149\ \ \ \ \ \ \ temp\_reg\ =\ (\mbox{\hyperlink{group___peripheral__declaration_ga74944438a086975793d26ae48d5882d4}{RCC}}-\/>BDCR\ \&\ \string~(\mbox{\hyperlink{group___peripheral___registers___bits___definition_gabe30dbd38f6456990ee641648bc05d40}{RCC\_BDCR\_RTCSEL}}));}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00150}00150\ \ \ \ \ \ \ \textcolor{comment}{/*\ RTC\ Clock\ selection\ can\ be\ changed\ only\ if\ the\ Backup\ Domain\ is\ reset\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00151}00151\ \ \ \ \ \ \ \mbox{\hyperlink{group___r_c_c___r_t_c___clock___configuration_ga3bf7da608ff985873ca8e248fb1dc4f0}{\_\_HAL\_RCC\_BACKUPRESET\_FORCE}}();}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00152}00152\ \ \ \ \ \ \ \mbox{\hyperlink{group___r_c_c___r_t_c___clock___configuration_ga14f32622c65f4ae239ba8cb00d510321}{\_\_HAL\_RCC\_BACKUPRESET\_RELEASE}}();}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00153}00153\ \ \ \ \ \ \ \textcolor{comment}{/*\ Restore\ the\ Content\ of\ BDCR\ register\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00154}00154\ \ \ \ \ \ \ \mbox{\hyperlink{group___peripheral__declaration_ga74944438a086975793d26ae48d5882d4}{RCC}}-\/>BDCR\ =\ temp\_reg;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00155}00155\ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00156}00156\ \ \ \ \ \ \ \textcolor{comment}{/*\ Wait\ for\ LSERDY\ if\ LSE\ was\ enabled\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00157}00157\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (\mbox{\hyperlink{stm32f0xx__hal__def_8h_a5b44dfd2a26f85f7b628b0945daff2c3}{HAL\_IS\_BIT\_SET}}(temp\_reg,\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga00145f8814cb9a5b180d76499d97aead}{RCC\_BDCR\_LSEON}}))}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00158}00158\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00159}00159\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Get\ Start\ Tick\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00160}00160\ \ \ \ \ \ \ \ \ tickstart\ =\ \mbox{\hyperlink{group___h_a_l___exported___functions___group2_gaf2c4f03d53e997a54e1fd5e80daa55c4}{HAL\_GetTick}}();}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00161}00161\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00162}00162\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Wait\ till\ LSE\ is\ ready\ */}\ \ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00163}00163\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{while}(\mbox{\hyperlink{group___r_c_c___flags___interrupts___management_gae2d7d461630562bf2a2ddb31b1f96449}{\_\_HAL\_RCC\_GET\_FLAG}}(\mbox{\hyperlink{group___r_c_c___flag_gac9fb963db446c16e46a18908f7fe1927}{RCC\_FLAG\_LSERDY}})\ ==\ \mbox{\hyperlink{group___exported__types_gga89136caac2e14c55151f527ac02daaffa589b7d94a3d91d145720e2fed0eb3a05}{RESET}})}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00164}00164\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00165}00165\ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}((\mbox{\hyperlink{group___h_a_l___exported___functions___group2_gaf2c4f03d53e997a54e1fd5e80daa55c4}{HAL\_GetTick}}()\ -\/\ tickstart)\ >\ \mbox{\hyperlink{group___r_c_c___timeout_gafe8ed1c0ca0e1c17ea69e09391498cc7}{RCC\_LSE\_TIMEOUT\_VALUE}})}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00166}00166\ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00167}00167\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{stm32f0xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478fa00c89549bc881c35e8e4cd9e718337e5}{HAL\_TIMEOUT}};}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00168}00168\ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00169}00169\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00170}00170\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00171}00171\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00172}00172\ \ \ \ \ \mbox{\hyperlink{group___r_c_c___r_t_c___clock___configuration_ga2d6c4c7e951bfd007d26988fbfe6eaa4}{\_\_HAL\_RCC\_RTC\_CONFIG}}(PeriphClkInit-\/>RTCClockSelection);}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00173}00173\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00174}00174\ \ \ \ \ \textcolor{comment}{/*\ Require\ to\ disable\ power\ clock\ if\ necessary\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00175}00175\ \ \ \ \ \textcolor{keywordflow}{if}(pwrclkchanged\ ==\ \mbox{\hyperlink{group___exported__types_gga89136caac2e14c55151f527ac02daaffab44c8101cc294c074709ec1b14211792}{SET}})}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00176}00176\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00177}00177\ \ \ \ \ \ \ \mbox{\hyperlink{group___r_c_c___a_p_b1___clock___enable___disable_gaf3db86d2db2bad45732a742b6a91ea0b}{\_\_HAL\_RCC\_PWR\_CLK\_DISABLE}}();}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00178}00178\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00179}00179\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00180}00180\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00181}00181\ \ \ \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ USART1\ Configuration\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00182}00182\ \ \ \textcolor{keywordflow}{if}(((PeriphClkInit-\/>PeriphClockSelection)\ \&\ RCC\_PERIPHCLK\_USART1)\ ==\ RCC\_PERIPHCLK\_USART1)}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00183}00183\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00184}00184\ \ \ \ \ \textcolor{comment}{/*\ Check\ the\ parameters\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00185}00185\ \ \ \ \ \mbox{\hyperlink{stm32f0xx__hal__conf_8h_a631dea7b230e600555f979c62af1de21}{assert\_param}}(\mbox{\hyperlink{group___r_c_c___private___macros_ga6003fec797edb43f2d69424cf9da6a2b}{IS\_RCC\_USART1CLKSOURCE}}(PeriphClkInit-\/>Usart1ClockSelection));}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00186}00186\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00187}00187\ \ \ \ \ \textcolor{comment}{/*\ Configure\ the\ USART1\ clock\ source\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00188}00188\ \ \ \ \ \mbox{\hyperlink{group___r_c_c___u_s_a_r_tx___clock___config_gad24b5e0af45000967f8fc72f2d1ee8b4}{\_\_HAL\_RCC\_USART1\_CONFIG}}(PeriphClkInit-\/>Usart1ClockSelection);}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00189}00189\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00190}00190\ \ \ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00191}00191\ \textcolor{preprocessor}{\#if\ defined(STM32F071xB)\ ||\ defined(STM32F072xB)\ ||\ defined(STM32F078xx)\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00192}00192\ \textcolor{preprocessor}{\ ||\ defined(STM32F091xC)\ ||\ defined(STM32F098xx)}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00193}00193\ \ \ \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ USART2\ Configuration\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00194}00194\ \ \ \textcolor{keywordflow}{if}(((PeriphClkInit-\/>PeriphClockSelection)\ \&\ RCC\_PERIPHCLK\_USART2)\ ==\ RCC\_PERIPHCLK\_USART2)}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00195}00195\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00196}00196\ \ \ \ \ \textcolor{comment}{/*\ Check\ the\ parameters\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00197}00197\ \ \ \ \ \mbox{\hyperlink{stm32f0xx__hal__conf_8h_a631dea7b230e600555f979c62af1de21}{assert\_param}}(IS\_RCC\_USART2CLKSOURCE(PeriphClkInit-\/>Usart2ClockSelection));}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00198}00198\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00199}00199\ \ \ \ \ \textcolor{comment}{/*\ Configure\ the\ USART2\ clock\ source\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00200}00200\ \ \ \ \ \_\_HAL\_RCC\_USART2\_CONFIG(PeriphClkInit-\/>Usart2ClockSelection);}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00201}00201\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00202}00202\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ STM32F071xB\ ||\ STM32F072xB\ ||\ STM32F078xx\ ||\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00203}00203\ \ \ \ \ \ \ \ \textcolor{comment}{/*\ STM32F091xC\ ||\ STM32F098xx\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00204}00204\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00205}00205\ \textcolor{preprocessor}{\#if\ defined(STM32F091xC)\ ||\ defined(STM32F098xx)}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00206}00206\ \ \ \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ USART3\ Configuration\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00207}00207\ \ \ \textcolor{keywordflow}{if}(((PeriphClkInit-\/>PeriphClockSelection)\ \&\ RCC\_PERIPHCLK\_USART3)\ ==\ RCC\_PERIPHCLK\_USART3)}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00208}00208\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00209}00209\ \ \ \ \ \textcolor{comment}{/*\ Check\ the\ parameters\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00210}00210\ \ \ \ \ \mbox{\hyperlink{stm32f0xx__hal__conf_8h_a631dea7b230e600555f979c62af1de21}{assert\_param}}(IS\_RCC\_USART3CLKSOURCE(PeriphClkInit-\/>Usart3ClockSelection));}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00211}00211\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00212}00212\ \ \ \ \ \textcolor{comment}{/*\ Configure\ the\ USART3\ clock\ source\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00213}00213\ \ \ \ \ \_\_HAL\_RCC\_USART3\_CONFIG(PeriphClkInit-\/>Usart3ClockSelection);}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00214}00214\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00215}00215\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ STM32F091xC\ ||\ STM32F098xx\ */}\textcolor{preprocessor}{\ \ }}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00216}00216\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00217}00217\ \ \ \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ I2C1\ Configuration\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00218}00218\ \ \ \textcolor{keywordflow}{if}(((PeriphClkInit-\/>PeriphClockSelection)\ \&\ RCC\_PERIPHCLK\_I2C1)\ ==\ RCC\_PERIPHCLK\_I2C1)}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00219}00219\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00220}00220\ \ \ \ \ \textcolor{comment}{/*\ Check\ the\ parameters\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00221}00221\ \ \ \ \ \mbox{\hyperlink{stm32f0xx__hal__conf_8h_a631dea7b230e600555f979c62af1de21}{assert\_param}}(\mbox{\hyperlink{group___r_c_c___private___macros_ga08abf8048ad8806f0fb9199ee3095436}{IS\_RCC\_I2C1CLKSOURCE}}(PeriphClkInit-\/>I2c1ClockSelection));}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00222}00222\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00223}00223\ \ \ \ \ \textcolor{comment}{/*\ Configure\ the\ I2C1\ clock\ source\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00224}00224\ \ \ \ \ \mbox{\hyperlink{group___r_c_c___i2_cx___clock___config_gaa6b4549872ed37d14913c6e0bd91a671}{\_\_HAL\_RCC\_I2C1\_CONFIG}}(PeriphClkInit-\/>I2c1ClockSelection);}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00225}00225\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00226}00226\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00227}00227\ \textcolor{preprocessor}{\#if\ defined(STM32F042x6)\ ||\ defined(STM32F048xx)\ ||\ defined(STM32F072xB)\ ||\ defined(STM32F078xx)\ ||\ defined(STM32F070xB)\ ||\ defined(STM32F070x6)}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00228}00228\ \ \ \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ USB\ Configuration\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00229}00229\ \ \ \textcolor{keywordflow}{if}(((PeriphClkInit-\/>PeriphClockSelection)\ \&\ RCC\_PERIPHCLK\_USB)\ ==\ RCC\_PERIPHCLK\_USB)}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00230}00230\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00231}00231\ \ \ \ \ \textcolor{comment}{/*\ Check\ the\ parameters\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00232}00232\ \ \ \ \ \mbox{\hyperlink{stm32f0xx__hal__conf_8h_a631dea7b230e600555f979c62af1de21}{assert\_param}}(IS\_RCC\_USBCLKSOURCE(PeriphClkInit-\/>UsbClockSelection));}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00233}00233\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00234}00234\ \ \ \ \ \textcolor{comment}{/*\ Configure\ the\ USB\ clock\ source\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00235}00235\ \ \ \ \ \_\_HAL\_RCC\_USB\_CONFIG(PeriphClkInit-\/>UsbClockSelection);}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00236}00236\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00237}00237\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ STM32F042x6\ ||\ STM32F048xx\ ||\ STM32F072xB\ ||\ STM32F078xx\ ||\ STM32F070xB\ ||\ STM32F070x6\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00238}00238\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00239}00239\ \textcolor{preprocessor}{\#if\ defined(STM32F042x6)\ ||\ defined(STM32F048xx)\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00240}00240\ \textcolor{preprocessor}{\ ||\ defined(STM32F051x8)\ ||\ defined(STM32F058xx)\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00241}00241\ \textcolor{preprocessor}{\ ||\ defined(STM32F071xB)\ ||\ defined(STM32F072xB)\ ||\ defined(STM32F078xx)\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00242}00242\ \textcolor{preprocessor}{\ ||\ defined(STM32F091xC)\ ||\ defined(STM32F098xx)}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00243}00243\ \ \ \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ CEC\ clock\ Configuration\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00244}00244\ \ \ \textcolor{keywordflow}{if}(((PeriphClkInit-\/>PeriphClockSelection)\ \&\ RCC\_PERIPHCLK\_CEC)\ ==\ RCC\_PERIPHCLK\_CEC)}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00245}00245\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00246}00246\ \ \ \ \ \textcolor{comment}{/*\ Check\ the\ parameters\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00247}00247\ \ \ \ \ \mbox{\hyperlink{stm32f0xx__hal__conf_8h_a631dea7b230e600555f979c62af1de21}{assert\_param}}(IS\_RCC\_CECCLKSOURCE(PeriphClkInit-\/>CecClockSelection));}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00248}00248\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00249}00249\ \ \ \ \ \textcolor{comment}{/*\ Configure\ the\ CEC\ clock\ source\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00250}00250\ \ \ \ \ \_\_HAL\_RCC\_CEC\_CONFIG(PeriphClkInit-\/>CecClockSelection);}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00251}00251\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00252}00252\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ STM32F042x6\ ||\ STM32F048xx\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00253}00253\ \ \ \ \ \ \ \ \textcolor{comment}{/*\ STM32F051x8\ ||\ STM32F058xx\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00254}00254\ \ \ \ \ \ \ \ \textcolor{comment}{/*\ STM32F071xB\ ||\ STM32F072xB\ ||\ STM32F078xx\ ||\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00255}00255\ \ \ \ \ \ \ \ \textcolor{comment}{/*\ STM32F091xC\ ||\ STM32F098xx\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00256}00256\ \ \ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00257}00257\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{stm32f0xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478fa6eb724a07061d89a4a2052744e5a3632}{HAL\_OK}};}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00258}00258\ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00259}00259\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00268}00268\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___r_c_c_ex___exported___functions___group1_ga754fc5136c63ad52b7c459aafc8a3927}{HAL\_RCCEx\_GetPeriphCLKConfig}}(RCC\_PeriphCLKInitTypeDef\ \ *PeriphClkInit)}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00269}00269\ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00270}00270\ \ \ \textcolor{comment}{/*\ Set\ all\ possible\ values\ for\ the\ extended\ clock\ type\ parameter-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00271}00271\ \ \ \textcolor{comment}{/*\ Common\ part\ first\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00272}00272\ \ \ PeriphClkInit-\/>PeriphClockSelection\ =\ RCC\_PERIPHCLK\_USART1\ |\ RCC\_PERIPHCLK\_I2C1\ \ \ |\ RCC\_PERIPHCLK\_RTC;\ \ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00273}00273\ \ \ \textcolor{comment}{/*\ Get\ the\ RTC\ configuration\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00274}00274\ \ \ PeriphClkInit-\/>RTCClockSelection\ =\ \mbox{\hyperlink{group___r_c_c___r_t_c___clock___configuration_gad40d00ff1c984ebd011ea9f6e7f93c44}{\_\_HAL\_RCC\_GET\_RTC\_SOURCE}}();}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00275}00275\ \ \ \textcolor{comment}{/*\ Get\ the\ USART1\ clock\ configuration\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00276}00276\ \ \ PeriphClkInit-\/>Usart1ClockSelection\ =\ \mbox{\hyperlink{group___r_c_c___u_s_a_r_tx___clock___config_gaf6ff545446befd6af48cd5108e8fbc2e}{\_\_HAL\_RCC\_GET\_USART1\_SOURCE}}();}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00277}00277\ \ \ \textcolor{comment}{/*\ Get\ the\ I2C1\ clock\ source\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00278}00278\ \ \ PeriphClkInit-\/>I2c1ClockSelection\ =\ \mbox{\hyperlink{group___r_c_c___i2_cx___clock___config_gab9372aa811e622a602d2b3657790c8e7}{\_\_HAL\_RCC\_GET\_I2C1\_SOURCE}}();}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00279}00279\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00280}00280\ \textcolor{preprocessor}{\#if\ defined(STM32F071xB)\ ||\ defined(STM32F072xB)\ ||\ defined(STM32F078xx)\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00281}00281\ \textcolor{preprocessor}{\ ||\ defined(STM32F091xC)\ ||\ defined(STM32F098xx)}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00282}00282\ \ \ PeriphClkInit-\/>PeriphClockSelection\ |=\ RCC\_PERIPHCLK\_USART2;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00283}00283\ \ \ \textcolor{comment}{/*\ Get\ the\ USART2\ clock\ source\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00284}00284\ \ \ PeriphClkInit-\/>Usart2ClockSelection\ =\ \_\_HAL\_RCC\_GET\_USART2\_SOURCE();}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00285}00285\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ STM32F071xB\ ||\ STM32F072xB\ ||\ STM32F078xx\ ||\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00286}00286\ \ \ \ \ \ \ \ \textcolor{comment}{/*\ STM32F091xC\ ||\ STM32F098xx\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00287}00287\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00288}00288\ \textcolor{preprocessor}{\#if\ defined(STM32F091xC)\ ||\ defined(STM32F098xx)}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00289}00289\ \ \ PeriphClkInit-\/>PeriphClockSelection\ |=\ RCC\_PERIPHCLK\_USART3;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00290}00290\ \ \ \textcolor{comment}{/*\ Get\ the\ USART3\ clock\ source\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00291}00291\ \ \ PeriphClkInit-\/>Usart3ClockSelection\ =\ \_\_HAL\_RCC\_GET\_USART3\_SOURCE();}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00292}00292\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ STM32F091xC\ ||\ STM32F098xx\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00293}00293\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00294}00294\ \textcolor{preprocessor}{\#if\ defined(STM32F042x6)\ ||\ defined(STM32F048xx)\ ||\ defined(STM32F072xB)\ ||\ defined(STM32F078xx)\ ||\ defined(STM32F070xB)\ ||\ defined(STM32F070x6)}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00295}00295\ \ \ PeriphClkInit-\/>PeriphClockSelection\ |=\ RCC\_PERIPHCLK\_USB;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00296}00296\ \ \ \textcolor{comment}{/*\ Get\ the\ USB\ clock\ source\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00297}00297\ \ \ PeriphClkInit-\/>UsbClockSelection\ =\ \_\_HAL\_RCC\_GET\_USB\_SOURCE();}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00298}00298\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ STM32F042x6\ ||\ STM32F048xx\ ||\ STM32F072xB\ ||\ STM32F078xx\ ||\ STM32F070xB\ ||\ STM32F070x6\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00299}00299\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00300}00300\ \textcolor{preprocessor}{\#if\ defined(STM32F042x6)\ ||\ defined(STM32F048xx)\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00301}00301\ \textcolor{preprocessor}{\ ||\ defined(STM32F051x8)\ ||\ defined(STM32F058xx)\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00302}00302\ \textcolor{preprocessor}{\ ||\ defined(STM32F071xB)\ ||\ defined(STM32F072xB)\ ||\ defined(STM32F078xx)\(\backslash\)}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00303}00303\ \textcolor{preprocessor}{\ ||\ defined(STM32F091xC)\ ||\ defined(STM32F098xx)}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00304}00304\ \ \ PeriphClkInit-\/>PeriphClockSelection\ |=\ RCC\_PERIPHCLK\_CEC;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00305}00305\ \ \ \textcolor{comment}{/*\ Get\ the\ CEC\ clock\ source\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00306}00306\ \ \ PeriphClkInit-\/>CecClockSelection\ =\ \_\_HAL\_RCC\_GET\_CEC\_SOURCE();}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00307}00307\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ STM32F042x6\ ||\ STM32F048xx\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00308}00308\ \ \ \ \ \ \ \ \textcolor{comment}{/*\ STM32F051x8\ ||\ STM32F058xx\ ||\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00309}00309\ \ \ \ \ \ \ \ \textcolor{comment}{/*\ STM32F071xB\ ||\ STM32F072xB\ ||\ STM32F078xx\ ||\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00310}00310\ \ \ \ \ \ \ \ \textcolor{comment}{/*\ STM32F091xC\ ||\ STM32F098xx\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00311}00311\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00312}00312\ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00313}00313\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00368}00368\ uint32\_t\ \mbox{\hyperlink{group___r_c_c_ex___exported___functions___group1_ga14acaeb88163a6bb0839470b753ba1bd}{HAL\_RCCEx\_GetPeriphCLKFreq}}(uint32\_t\ PeriphClk)}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00369}00369\ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00370}00370\ \ \ \textcolor{comment}{/*\ frequency\ ==\ 0\ :\ means\ that\ no\ available\ frequency\ for\ the\ peripheral\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00371}00371\ \ \ uint32\_t\ frequency\ =\ 0U;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00372}00372\ \ \ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00373}00373\ \ \ uint32\_t\ srcclk\ =\ 0U;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00374}00374\ \textcolor{preprocessor}{\#if\ defined(USB)}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00375}00375\ \ \ uint32\_t\ pllmull\ =\ 0U,\ pllsource\ =\ 0U,\ predivfactor\ =\ 0U;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00376}00376\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ USB\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00377}00377\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00378}00378\ \ \ \textcolor{comment}{/*\ Check\ the\ parameters\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00379}00379\ \ \ \mbox{\hyperlink{stm32f0xx__hal__conf_8h_a631dea7b230e600555f979c62af1de21}{assert\_param}}(IS\_RCC\_PERIPHCLOCK(PeriphClk));}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00380}00380\ \ \ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00381}00381\ \ \ \textcolor{keywordflow}{switch}\ (PeriphClk)}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00382}00382\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00383}00383\ \ \ \textcolor{keywordflow}{case}\ RCC\_PERIPHCLK\_RTC:}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00384}00384\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00385}00385\ \ \ \ \ \ \ \textcolor{comment}{/*\ Get\ the\ current\ RTC\ source\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00386}00386\ \ \ \ \ \ \ srcclk\ =\ \mbox{\hyperlink{group___r_c_c___r_t_c___clock___configuration_gad40d00ff1c984ebd011ea9f6e7f93c44}{\_\_HAL\_RCC\_GET\_RTC\_SOURCE}}();}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00387}00387\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00388}00388\ \ \ \ \ \ \ \textcolor{comment}{/*\ Check\ if\ LSE\ is\ ready\ and\ if\ RTC\ clock\ selection\ is\ LSE\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00389}00389\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((srcclk\ ==\ \mbox{\hyperlink{group___r_c_c___r_t_c___clock___source_ga5dca8d63f250a20bd6bc005670d0c150}{RCC\_RTCCLKSOURCE\_LSE}})\ \&\&\ (\mbox{\hyperlink{stm32f0xx__hal__def_8h_a5b44dfd2a26f85f7b628b0945daff2c3}{HAL\_IS\_BIT\_SET}}(\mbox{\hyperlink{group___peripheral__declaration_ga74944438a086975793d26ae48d5882d4}{RCC}}-\/>BDCR,\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_gaafca81172ed857ce6b94582fcaada87c}{RCC\_BDCR\_LSERDY}})))}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00390}00390\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00391}00391\ \ \ \ \ \ \ \ \ frequency\ =\ \mbox{\hyperlink{stm32f0xx__hal__conf_8h_a7bbb9d19e5189a6ccd0fb6fa6177d20d}{LSE\_VALUE}};}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00392}00392\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00393}00393\ \ \ \ \ \ \ \textcolor{comment}{/*\ Check\ if\ LSI\ is\ ready\ and\ if\ RTC\ clock\ selection\ is\ LSI\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00394}00394\ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ ((srcclk\ ==\ \mbox{\hyperlink{group___r_c_c___r_t_c___clock___source_gab47a1afb8b5eef9f20f4772961d0a5f4}{RCC\_RTCCLKSOURCE\_LSI}})\ \&\&\ (\mbox{\hyperlink{stm32f0xx__hal__def_8h_a5b44dfd2a26f85f7b628b0945daff2c3}{HAL\_IS\_BIT\_SET}}(\mbox{\hyperlink{group___peripheral__declaration_ga74944438a086975793d26ae48d5882d4}{RCC}}-\/>CSR,\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_gab569110e757aee573ebf9ad80812e8bb}{RCC\_CSR\_LSIRDY}})))}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00395}00395\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00396}00396\ \ \ \ \ \ \ \ \ frequency\ =\ \mbox{\hyperlink{stm32f0xx__hal__conf_8h_a4872023e65449c0506aac3ea6bec99e9}{LSI\_VALUE}};}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00397}00397\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00398}00398\ \ \ \ \ \ \ \textcolor{comment}{/*\ Check\ if\ HSE\ is\ ready\ \ and\ if\ RTC\ clock\ selection\ is\ HSI\_DIV32*/}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00399}00399\ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ ((srcclk\ ==\ \mbox{\hyperlink{group___r_c_c___r_t_c___clock___source_ga070b819c6eca00d4b89cbf35216c3a92}{RCC\_RTCCLKSOURCE\_HSE\_DIV32}})\ \&\&\ (\mbox{\hyperlink{stm32f0xx__hal__def_8h_a5b44dfd2a26f85f7b628b0945daff2c3}{HAL\_IS\_BIT\_SET}}(\mbox{\hyperlink{group___peripheral__declaration_ga74944438a086975793d26ae48d5882d4}{RCC}}-\/>CR,\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga86a34e00182c83409d89ff566cb02cc4}{RCC\_CR\_HSERDY}})))}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00400}00400\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00401}00401\ \ \ \ \ \ \ \ \ frequency\ =\ \mbox{\hyperlink{stm32f0xx__hal__conf_8h_aeafcff4f57440c60e64812dddd13e7cb}{HSE\_VALUE}}\ /\ 32U;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00402}00402\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00403}00403\ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00404}00404\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00405}00405\ \ \ \textcolor{keywordflow}{case}\ RCC\_PERIPHCLK\_USART1:}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00406}00406\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00407}00407\ \ \ \ \ \ \ \textcolor{comment}{/*\ Get\ the\ current\ USART1\ source\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00408}00408\ \ \ \ \ \ \ srcclk\ =\ \mbox{\hyperlink{group___r_c_c___u_s_a_r_tx___clock___config_gaf6ff545446befd6af48cd5108e8fbc2e}{\_\_HAL\_RCC\_GET\_USART1\_SOURCE}}();}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00409}00409\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00410}00410\ \ \ \ \ \ \ \textcolor{comment}{/*\ Check\ if\ USART1\ clock\ selection\ is\ PCLK1\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00411}00411\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (srcclk\ ==\ \mbox{\hyperlink{group___r_c_c___u_s_a_r_t1___clock___source_ga577d17f0ddb77fa4416338cd4d1891b5}{RCC\_USART1CLKSOURCE\_PCLK1}})}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00412}00412\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00413}00413\ \ \ \ \ \ \ \ \ frequency\ =\ \mbox{\hyperlink{group___r_c_c___exported___functions___group2_gab3042d8ac5703ac696cabf0ee461c599}{HAL\_RCC\_GetPCLK1Freq}}();}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00414}00414\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00415}00415\ \ \ \ \ \ \ \textcolor{comment}{/*\ Check\ if\ HSI\ is\ ready\ and\ if\ USART1\ clock\ selection\ is\ HSI\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00416}00416\ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ ((srcclk\ ==\ \mbox{\hyperlink{group___r_c_c___u_s_a_r_t1___clock___source_ga15818f4637d9721117cf6751ad79af28}{RCC\_USART1CLKSOURCE\_HSI}})\ \&\&\ (\mbox{\hyperlink{stm32f0xx__hal__def_8h_a5b44dfd2a26f85f7b628b0945daff2c3}{HAL\_IS\_BIT\_SET}}(\mbox{\hyperlink{group___peripheral__declaration_ga74944438a086975793d26ae48d5882d4}{RCC}}-\/>CR,\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga9dbac3f2bc04f04ebafe1e66ae3fcf0d}{RCC\_CR\_HSIRDY}})))}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00417}00417\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00418}00418\ \ \ \ \ \ \ \ \ frequency\ =\ \mbox{\hyperlink{stm32f0xx__hal__conf_8h_aaa8c76e274d0f6dd2cefb5d0b17fbc37}{HSI\_VALUE}};}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00419}00419\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00420}00420\ \ \ \ \ \ \ \textcolor{comment}{/*\ Check\ if\ USART1\ clock\ selection\ is\ SYSCLK\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00421}00421\ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (srcclk\ ==\ \mbox{\hyperlink{group___r_c_c___u_s_a_r_t1___clock___source_ga50441be9ccc8a7abbdba23cfd7f7286c}{RCC\_USART1CLKSOURCE\_SYSCLK}})}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00422}00422\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00423}00423\ \ \ \ \ \ \ \ \ frequency\ =\ \mbox{\hyperlink{group___r_c_c___exported___functions___group2_ga887cafe88b21a059061b077a1e3fa7d8}{HAL\_RCC\_GetSysClockFreq}}();}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00424}00424\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00425}00425\ \ \ \ \ \ \ \textcolor{comment}{/*\ Check\ if\ LSE\ is\ ready\ \ and\ if\ USART1\ clock\ selection\ is\ LSE\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00426}00426\ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ ((srcclk\ ==\ \mbox{\hyperlink{group___r_c_c___u_s_a_r_t1___clock___source_gac2e82299a4295d0e5bf42950f99ddb39}{RCC\_USART1CLKSOURCE\_LSE}})\ \&\&\ (\mbox{\hyperlink{stm32f0xx__hal__def_8h_a5b44dfd2a26f85f7b628b0945daff2c3}{HAL\_IS\_BIT\_SET}}(\mbox{\hyperlink{group___peripheral__declaration_ga74944438a086975793d26ae48d5882d4}{RCC}}-\/>BDCR,\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_gaafca81172ed857ce6b94582fcaada87c}{RCC\_BDCR\_LSERDY}})))}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00427}00427\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00428}00428\ \ \ \ \ \ \ \ \ frequency\ =\ \mbox{\hyperlink{stm32f0xx__hal__conf_8h_a7bbb9d19e5189a6ccd0fb6fa6177d20d}{LSE\_VALUE}};}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00429}00429\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00430}00430\ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00431}00431\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00432}00432\ \textcolor{preprocessor}{\#if\ defined(RCC\_CFGR3\_USART2SW)}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00433}00433\ \ \ \textcolor{keywordflow}{case}\ RCC\_PERIPHCLK\_USART2:}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00434}00434\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00435}00435\ \ \ \ \ \ \ \textcolor{comment}{/*\ Get\ the\ current\ USART2\ source\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00436}00436\ \ \ \ \ \ \ srcclk\ =\ \_\_HAL\_RCC\_GET\_USART2\_SOURCE();}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00437}00437\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00438}00438\ \ \ \ \ \ \ \textcolor{comment}{/*\ Check\ if\ USART2\ clock\ selection\ is\ PCLK1\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00439}00439\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (srcclk\ ==\ RCC\_USART2CLKSOURCE\_PCLK1)}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00440}00440\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00441}00441\ \ \ \ \ \ \ \ \ frequency\ =\ \mbox{\hyperlink{group___r_c_c___exported___functions___group2_gab3042d8ac5703ac696cabf0ee461c599}{HAL\_RCC\_GetPCLK1Freq}}();}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00442}00442\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00443}00443\ \ \ \ \ \ \ \textcolor{comment}{/*\ Check\ if\ HSI\ is\ ready\ and\ if\ USART2\ clock\ selection\ is\ HSI\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00444}00444\ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ ((srcclk\ ==\ RCC\_USART2CLKSOURCE\_HSI)\ \&\&\ (\mbox{\hyperlink{stm32f0xx__hal__def_8h_a5b44dfd2a26f85f7b628b0945daff2c3}{HAL\_IS\_BIT\_SET}}(\mbox{\hyperlink{group___peripheral__declaration_ga74944438a086975793d26ae48d5882d4}{RCC}}-\/>CR,\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga9dbac3f2bc04f04ebafe1e66ae3fcf0d}{RCC\_CR\_HSIRDY}})))}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00445}00445\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00446}00446\ \ \ \ \ \ \ \ \ frequency\ =\ \mbox{\hyperlink{stm32f0xx__hal__conf_8h_aaa8c76e274d0f6dd2cefb5d0b17fbc37}{HSI\_VALUE}};}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00447}00447\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00448}00448\ \ \ \ \ \ \ \textcolor{comment}{/*\ Check\ if\ USART2\ clock\ selection\ is\ SYSCLK\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00449}00449\ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (srcclk\ ==\ RCC\_USART2CLKSOURCE\_SYSCLK)}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00450}00450\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00451}00451\ \ \ \ \ \ \ \ \ frequency\ =\ \mbox{\hyperlink{group___r_c_c___exported___functions___group2_ga887cafe88b21a059061b077a1e3fa7d8}{HAL\_RCC\_GetSysClockFreq}}();}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00452}00452\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00453}00453\ \ \ \ \ \ \ \textcolor{comment}{/*\ Check\ if\ LSE\ is\ ready\ \ and\ if\ USART2\ clock\ selection\ is\ LSE\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00454}00454\ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ ((srcclk\ ==\ RCC\_USART2CLKSOURCE\_LSE)\ \&\&\ (\mbox{\hyperlink{stm32f0xx__hal__def_8h_a5b44dfd2a26f85f7b628b0945daff2c3}{HAL\_IS\_BIT\_SET}}(\mbox{\hyperlink{group___peripheral__declaration_ga74944438a086975793d26ae48d5882d4}{RCC}}-\/>BDCR,\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_gaafca81172ed857ce6b94582fcaada87c}{RCC\_BDCR\_LSERDY}})))}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00455}00455\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00456}00456\ \ \ \ \ \ \ \ \ frequency\ =\ \mbox{\hyperlink{stm32f0xx__hal__conf_8h_a7bbb9d19e5189a6ccd0fb6fa6177d20d}{LSE\_VALUE}};}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00457}00457\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00458}00458\ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00459}00459\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00460}00460\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ RCC\_CFGR3\_USART2SW\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00461}00461\ \textcolor{preprocessor}{\#if\ defined(RCC\_CFGR3\_USART3SW)}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00462}00462\ \ \ \textcolor{keywordflow}{case}\ RCC\_PERIPHCLK\_USART3:}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00463}00463\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00464}00464\ \ \ \ \ \ \ \textcolor{comment}{/*\ Get\ the\ current\ USART3\ source\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00465}00465\ \ \ \ \ \ \ srcclk\ =\ \_\_HAL\_RCC\_GET\_USART3\_SOURCE();}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00466}00466\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00467}00467\ \ \ \ \ \ \ \textcolor{comment}{/*\ Check\ if\ USART3\ clock\ selection\ is\ PCLK1\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00468}00468\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (srcclk\ ==\ RCC\_USART3CLKSOURCE\_PCLK1)}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00469}00469\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00470}00470\ \ \ \ \ \ \ \ \ frequency\ =\ \mbox{\hyperlink{group___r_c_c___exported___functions___group2_gab3042d8ac5703ac696cabf0ee461c599}{HAL\_RCC\_GetPCLK1Freq}}();}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00471}00471\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00472}00472\ \ \ \ \ \ \ \textcolor{comment}{/*\ Check\ if\ HSI\ is\ ready\ and\ if\ USART3\ clock\ selection\ is\ HSI\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00473}00473\ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ ((srcclk\ ==\ RCC\_USART3CLKSOURCE\_HSI)\ \&\&\ (\mbox{\hyperlink{stm32f0xx__hal__def_8h_a5b44dfd2a26f85f7b628b0945daff2c3}{HAL\_IS\_BIT\_SET}}(\mbox{\hyperlink{group___peripheral__declaration_ga74944438a086975793d26ae48d5882d4}{RCC}}-\/>CR,\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga9dbac3f2bc04f04ebafe1e66ae3fcf0d}{RCC\_CR\_HSIRDY}})))}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00474}00474\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00475}00475\ \ \ \ \ \ \ \ \ frequency\ =\ \mbox{\hyperlink{stm32f0xx__hal__conf_8h_aaa8c76e274d0f6dd2cefb5d0b17fbc37}{HSI\_VALUE}};}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00476}00476\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00477}00477\ \ \ \ \ \ \ \textcolor{comment}{/*\ Check\ if\ USART3\ clock\ selection\ is\ SYSCLK\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00478}00478\ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (srcclk\ ==\ RCC\_USART3CLKSOURCE\_SYSCLK)}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00479}00479\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00480}00480\ \ \ \ \ \ \ \ \ frequency\ =\ \mbox{\hyperlink{group___r_c_c___exported___functions___group2_ga887cafe88b21a059061b077a1e3fa7d8}{HAL\_RCC\_GetSysClockFreq}}();}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00481}00481\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00482}00482\ \ \ \ \ \ \ \textcolor{comment}{/*\ Check\ if\ LSE\ is\ ready\ \ and\ if\ USART3\ clock\ selection\ is\ LSE\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00483}00483\ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ ((srcclk\ ==\ RCC\_USART3CLKSOURCE\_LSE)\ \&\&\ (\mbox{\hyperlink{stm32f0xx__hal__def_8h_a5b44dfd2a26f85f7b628b0945daff2c3}{HAL\_IS\_BIT\_SET}}(\mbox{\hyperlink{group___peripheral__declaration_ga74944438a086975793d26ae48d5882d4}{RCC}}-\/>BDCR,\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_gaafca81172ed857ce6b94582fcaada87c}{RCC\_BDCR\_LSERDY}})))}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00484}00484\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00485}00485\ \ \ \ \ \ \ \ \ frequency\ =\ \mbox{\hyperlink{stm32f0xx__hal__conf_8h_a7bbb9d19e5189a6ccd0fb6fa6177d20d}{LSE\_VALUE}};}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00486}00486\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00487}00487\ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00488}00488\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00489}00489\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ RCC\_CFGR3\_USART3SW\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00490}00490\ \ \ \textcolor{keywordflow}{case}\ RCC\_PERIPHCLK\_I2C1:}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00491}00491\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00492}00492\ \ \ \ \ \ \ \textcolor{comment}{/*\ Get\ the\ current\ I2C1\ source\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00493}00493\ \ \ \ \ \ \ srcclk\ =\ \mbox{\hyperlink{group___r_c_c___i2_cx___clock___config_gab9372aa811e622a602d2b3657790c8e7}{\_\_HAL\_RCC\_GET\_I2C1\_SOURCE}}();}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00494}00494\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00495}00495\ \ \ \ \ \ \ \textcolor{comment}{/*\ Check\ if\ HSI\ is\ ready\ and\ if\ I2C1\ clock\ selection\ is\ HSI\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00496}00496\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((srcclk\ ==\ \mbox{\hyperlink{group___r_c_c___i2_c1___clock___source_ga5645524b292048cfe127da02ba9b3df7}{RCC\_I2C1CLKSOURCE\_HSI}})\ \&\&\ (\mbox{\hyperlink{stm32f0xx__hal__def_8h_a5b44dfd2a26f85f7b628b0945daff2c3}{HAL\_IS\_BIT\_SET}}(\mbox{\hyperlink{group___peripheral__declaration_ga74944438a086975793d26ae48d5882d4}{RCC}}-\/>CR,\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga9dbac3f2bc04f04ebafe1e66ae3fcf0d}{RCC\_CR\_HSIRDY}})))}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00497}00497\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00498}00498\ \ \ \ \ \ \ \ \ frequency\ =\ \mbox{\hyperlink{stm32f0xx__hal__conf_8h_aaa8c76e274d0f6dd2cefb5d0b17fbc37}{HSI\_VALUE}};}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00499}00499\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00500}00500\ \ \ \ \ \ \ \textcolor{comment}{/*\ Check\ if\ I2C1\ clock\ selection\ is\ SYSCLK\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00501}00501\ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (srcclk\ ==\ \mbox{\hyperlink{group___r_c_c___i2_c1___clock___source_ga1a04c52a4f4665188e40cd7f4018ea3f}{RCC\_I2C1CLKSOURCE\_SYSCLK}})}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00502}00502\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00503}00503\ \ \ \ \ \ \ \ \ frequency\ =\ \mbox{\hyperlink{group___r_c_c___exported___functions___group2_ga887cafe88b21a059061b077a1e3fa7d8}{HAL\_RCC\_GetSysClockFreq}}();}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00504}00504\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00505}00505\ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00506}00506\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00507}00507\ \textcolor{preprocessor}{\#if\ defined(USB)}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00508}00508\ \ \ \textcolor{keywordflow}{case}\ RCC\_PERIPHCLK\_USB:}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00509}00509\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00510}00510\ \ \ \ \ \ \ \textcolor{comment}{/*\ Get\ the\ current\ USB\ source\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00511}00511\ \ \ \ \ \ \ srcclk\ =\ \_\_HAL\_RCC\_GET\_USB\_SOURCE();}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00512}00512\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00513}00513\ \ \ \ \ \ \ \textcolor{comment}{/*\ Check\ if\ PLL\ is\ ready\ and\ if\ USB\ clock\ selection\ is\ PLL\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00514}00514\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((srcclk\ ==\ RCC\_USBCLKSOURCE\_PLL)\ \&\&\ (\mbox{\hyperlink{stm32f0xx__hal__def_8h_a5b44dfd2a26f85f7b628b0945daff2c3}{HAL\_IS\_BIT\_SET}}(\mbox{\hyperlink{group___peripheral__declaration_ga74944438a086975793d26ae48d5882d4}{RCC}}-\/>CR,\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_gafa12d7ac6a7f0f91d066aeb2c6071888}{RCC\_CR\_PLLRDY}})))}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00515}00515\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00516}00516\ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Get\ PLL\ clock\ source\ and\ multiplication\ factor\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00517}00517\ \ \ \ \ \ \ \ \ pllmull\ \ \ \ \ \ =\ \mbox{\hyperlink{group___peripheral__declaration_ga74944438a086975793d26ae48d5882d4}{RCC}}-\/>CFGR\ \&\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga538fd5df8d890696483a0e901d739309}{RCC\_CFGR\_PLLMUL}};}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00518}00518\ \ \ \ \ \ \ \ \ pllsource\ \ \ \ =\ \mbox{\hyperlink{group___peripheral__declaration_ga74944438a086975793d26ae48d5882d4}{RCC}}-\/>CFGR\ \&\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_gaba4a5dbbd286f07a97f5aa6e6f3f6a57}{RCC\_CFGR\_PLLSRC}};}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00519}00519\ \ \ \ \ \ \ \ \ pllmull\ \ \ \ \ \ =\ (pllmull\ >>\ \mbox{\hyperlink{group___r_c_c___private___constants_ga079518093199981a158bb627d6f04ee7}{RCC\_CFGR\_PLLMUL\_BITNUMBER}})\ +\ 2U;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00520}00520\ \ \ \ \ \ \ \ \ predivfactor\ =\ (\mbox{\hyperlink{group___peripheral__declaration_ga74944438a086975793d26ae48d5882d4}{RCC}}-\/>CFGR2\ \&\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga022892b6d0e4ee671b82e7f6552b0074}{RCC\_CFGR2\_PREDIV}})\ +\ 1U;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00521}00521\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00522}00522\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (pllsource\ ==\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga6088620a3c2162915b628cd7a4492579}{RCC\_CFGR\_PLLSRC\_HSE\_PREDIV}})}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00523}00523\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00524}00524\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ HSE\ used\ as\ PLL\ clock\ source\ :\ frequency\ =\ HSE/PREDIV\ *\ PLLMUL\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00525}00525\ \ \ \ \ \ \ \ \ \ \ frequency\ =\ (\mbox{\hyperlink{stm32f0xx__hal__conf_8h_aeafcff4f57440c60e64812dddd13e7cb}{HSE\_VALUE}}/predivfactor)\ *\ pllmull;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00526}00526\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00527}00527\ \textcolor{preprocessor}{\#if\ defined(RCC\_CR2\_HSI48ON)}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00528}00528\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (pllsource\ ==\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga7c7e06f4fb3061ec060ad9f23b02885e}{RCC\_CFGR\_PLLSRC\_HSI48\_PREDIV}})}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00529}00529\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00530}00530\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ HSI48\ used\ as\ PLL\ clock\ source\ :\ frequency\ =\ HSI48/PREDIV\ *\ PLLMUL\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00531}00531\ \ \ \ \ \ \ \ \ \ \ frequency\ =\ (\mbox{\hyperlink{stm32f0xx__hal__conf_8h_a47f01e5e3f2edfa94bf74c08835f3875}{HSI48\_VALUE}}\ /\ predivfactor)\ *\ pllmull;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00532}00532\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00533}00533\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ RCC\_CR2\_HSI48ON\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00534}00534\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00535}00535\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00536}00536\ \textcolor{preprocessor}{\#if\ defined(STM32F042x6)\ ||\ defined(STM32F048xx)\ ||\ defined(STM32F078xx)\ ||\ defined(STM32F072xB)\ ||\ defined(STM32F070xB)}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00537}00537\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ HSI\ used\ as\ PLL\ clock\ source\ :\ frequency\ =\ HSI/PREDIV\ *\ PLLMUL\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00538}00538\ \ \ \ \ \ \ \ \ \ \ frequency\ =\ (\mbox{\hyperlink{stm32f0xx__hal__conf_8h_aaa8c76e274d0f6dd2cefb5d0b17fbc37}{HSI\_VALUE}}\ /\ predivfactor)\ *\ pllmull;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00539}00539\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00540}00540\ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ HSI\ used\ as\ PLL\ clock\ source\ :\ frequency\ =\ HSI/2U\ *\ PLLMUL\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00541}00541\ \ \ \ \ \ \ \ \ \ \ frequency\ =\ (\mbox{\hyperlink{stm32f0xx__hal__conf_8h_aaa8c76e274d0f6dd2cefb5d0b17fbc37}{HSI\_VALUE}}\ >>\ 1U)\ *\ pllmull;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00542}00542\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ STM32F042x6\ ||\ STM32F048xx\ ||\ STM32F072xB\ ||\ STM32F078xx\ ||\ STM32F070xB\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00543}00543\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00544}00544\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00545}00545\ \textcolor{preprocessor}{\#if\ defined(RCC\_CR2\_HSI48ON)}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00546}00546\ \ \ \ \ \ \ \textcolor{comment}{/*\ Check\ if\ HSI48\ is\ ready\ and\ if\ USB\ clock\ selection\ is\ HSI48\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00547}00547\ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ ((srcclk\ ==\ RCC\_USBCLKSOURCE\_HSI48)\ \&\&\ (\mbox{\hyperlink{stm32f0xx__hal__def_8h_a5b44dfd2a26f85f7b628b0945daff2c3}{HAL\_IS\_BIT\_SET}}(\mbox{\hyperlink{group___peripheral__declaration_ga74944438a086975793d26ae48d5882d4}{RCC}}-\/>CR2,\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_gad03958340799f21487003f60b823d02e}{RCC\_CR2\_HSI48RDY}})))}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00548}00548\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00549}00549\ \ \ \ \ \ \ \ \ frequency\ =\ \mbox{\hyperlink{stm32f0xx__hal__conf_8h_a47f01e5e3f2edfa94bf74c08835f3875}{HSI48\_VALUE}};}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00550}00550\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00551}00551\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ RCC\_CR2\_HSI48ON\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00552}00552\ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00553}00553\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00554}00554\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ USB\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00555}00555\ \textcolor{preprocessor}{\#if\ defined(CEC)}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00556}00556\ \ \ \textcolor{keywordflow}{case}\ RCC\_PERIPHCLK\_CEC:}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00557}00557\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00558}00558\ \ \ \ \ \ \ \textcolor{comment}{/*\ Get\ the\ current\ CEC\ source\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00559}00559\ \ \ \ \ \ \ srcclk\ =\ \_\_HAL\_RCC\_GET\_CEC\_SOURCE();}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00560}00560\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00561}00561\ \ \ \ \ \ \ \textcolor{comment}{/*\ Check\ if\ HSI\ is\ ready\ and\ if\ CEC\ clock\ selection\ is\ HSI\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00562}00562\ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ ((srcclk\ ==\ RCC\_CECCLKSOURCE\_HSI)\ \&\&\ (\mbox{\hyperlink{stm32f0xx__hal__def_8h_a5b44dfd2a26f85f7b628b0945daff2c3}{HAL\_IS\_BIT\_SET}}(\mbox{\hyperlink{group___peripheral__declaration_ga74944438a086975793d26ae48d5882d4}{RCC}}-\/>CR,\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga9dbac3f2bc04f04ebafe1e66ae3fcf0d}{RCC\_CR\_HSIRDY}})))}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00563}00563\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00564}00564\ \ \ \ \ \ \ \ \ frequency\ =\ \mbox{\hyperlink{stm32f0xx__hal__conf_8h_aaa8c76e274d0f6dd2cefb5d0b17fbc37}{HSI\_VALUE}};}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00565}00565\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00566}00566\ \ \ \ \ \ \ \textcolor{comment}{/*\ Check\ if\ LSE\ is\ ready\ \ and\ if\ CEC\ clock\ selection\ is\ LSE\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00567}00567\ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ ((srcclk\ ==\ RCC\_CECCLKSOURCE\_LSE)\ \&\&\ (\mbox{\hyperlink{stm32f0xx__hal__def_8h_a5b44dfd2a26f85f7b628b0945daff2c3}{HAL\_IS\_BIT\_SET}}(\mbox{\hyperlink{group___peripheral__declaration_ga74944438a086975793d26ae48d5882d4}{RCC}}-\/>BDCR,\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_gaafca81172ed857ce6b94582fcaada87c}{RCC\_BDCR\_LSERDY}})))}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00568}00568\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00569}00569\ \ \ \ \ \ \ \ \ frequency\ =\ \mbox{\hyperlink{stm32f0xx__hal__conf_8h_a7bbb9d19e5189a6ccd0fb6fa6177d20d}{LSE\_VALUE}};}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00570}00570\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00571}00571\ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00572}00572\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00573}00573\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ CEC\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00574}00574\ \ \ \textcolor{keywordflow}{default}:\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00575}00575\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00576}00576\ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00577}00577\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00578}00578\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00579}00579\ \ \ \textcolor{keywordflow}{return}(frequency);}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00580}00580\ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00581}00581\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00586}00586\ \textcolor{preprocessor}{\#if\ defined(CRS)}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00587}00587\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00657}00657\ \textcolor{keywordtype}{void}\ HAL\_RCCEx\_CRSConfig(RCC\_CRSInitTypeDef\ *pInit)}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00658}00658\ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00659}00659\ \ \ uint32\_t\ value\ =\ 0U;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00660}00660\ \ \ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00661}00661\ \ \ \textcolor{comment}{/*\ Check\ the\ parameters\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00662}00662\ \ \ \mbox{\hyperlink{stm32f0xx__hal__conf_8h_a631dea7b230e600555f979c62af1de21}{assert\_param}}(IS\_RCC\_CRS\_SYNC\_DIV(pInit-\/>Prescaler));}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00663}00663\ \ \ \mbox{\hyperlink{stm32f0xx__hal__conf_8h_a631dea7b230e600555f979c62af1de21}{assert\_param}}(IS\_RCC\_CRS\_SYNC\_SOURCE(pInit-\/>Source));}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00664}00664\ \ \ \mbox{\hyperlink{stm32f0xx__hal__conf_8h_a631dea7b230e600555f979c62af1de21}{assert\_param}}(IS\_RCC\_CRS\_SYNC\_POLARITY(pInit-\/>Polarity));}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00665}00665\ \ \ \mbox{\hyperlink{stm32f0xx__hal__conf_8h_a631dea7b230e600555f979c62af1de21}{assert\_param}}(IS\_RCC\_CRS\_RELOADVALUE(pInit-\/>ReloadValue));}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00666}00666\ \ \ \mbox{\hyperlink{stm32f0xx__hal__conf_8h_a631dea7b230e600555f979c62af1de21}{assert\_param}}(IS\_RCC\_CRS\_ERRORLIMIT(pInit-\/>ErrorLimitValue));}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00667}00667\ \ \ \mbox{\hyperlink{stm32f0xx__hal__conf_8h_a631dea7b230e600555f979c62af1de21}{assert\_param}}(IS\_RCC\_CRS\_HSI48CALIBRATION(pInit-\/>HSI48CalibrationValue));}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00668}00668\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00669}00669\ \ \ \textcolor{comment}{/*\ CONFIGURATION\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00670}00670\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00671}00671\ \ \ \textcolor{comment}{/*\ Before\ configuration,\ reset\ CRS\ registers\ to\ their\ default\ values*/}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00672}00672\ \ \ \_\_HAL\_RCC\_CRS\_FORCE\_RESET();}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00673}00673\ \ \ \_\_HAL\_RCC\_CRS\_RELEASE\_RESET();}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00674}00674\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00675}00675\ \ \ \textcolor{comment}{/*\ Set\ the\ SYNCDIV[2:0]\ bits\ according\ to\ Prescaler\ value\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00676}00676\ \ \ \textcolor{comment}{/*\ Set\ the\ SYNCSRC[1:0]\ bits\ according\ to\ Source\ value\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00677}00677\ \ \ \textcolor{comment}{/*\ Set\ the\ SYNCSPOL\ bit\ according\ to\ Polarity\ value\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00678}00678\ \ \ value\ =\ (pInit-\/>Prescaler\ |\ pInit-\/>Source\ |\ pInit-\/>Polarity);}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00679}00679\ \ \ \textcolor{comment}{/*\ Set\ the\ RELOAD[15:0]\ bits\ according\ to\ ReloadValue\ value\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00680}00680\ \ \ value\ |=\ pInit-\/>ReloadValue;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00681}00681\ \ \ \textcolor{comment}{/*\ Set\ the\ FELIM[7:0]\ bits\ according\ to\ ErrorLimitValue\ value\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00682}00682\ \ \ value\ |=\ (pInit-\/>ErrorLimitValue\ <<\ CRS\_CFGR\_FELIM\_BITNUMBER);}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00683}00683\ \ \ \mbox{\hyperlink{group___exported__macros_ga32f78bffcaf6d13023dcd7f05e0c4d57}{WRITE\_REG}}(\mbox{\hyperlink{group___peripheral__declaration_gad151b2f8dbc243ac0ce1fad0c4306328}{CRS}}-\/>CFGR,\ value);}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00684}00684\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00685}00685\ \ \ \textcolor{comment}{/*\ Adjust\ HSI48\ oscillator\ smooth\ trimming\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00686}00686\ \ \ \textcolor{comment}{/*\ Set\ the\ TRIM[5:0]\ bits\ according\ to\ RCC\_CRS\_HSI48CalibrationValue\ value\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00687}00687\ \ \ \mbox{\hyperlink{group___exported__macros_ga6553c99f510c3bab8cc0a91602053247}{MODIFY\_REG}}(\mbox{\hyperlink{group___peripheral__declaration_gad151b2f8dbc243ac0ce1fad0c4306328}{CRS}}-\/>CR,\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga755d695431db14c1b3b15a48ede61c13}{CRS\_CR\_TRIM}},\ (pInit-\/>HSI48CalibrationValue\ <<\ CRS\_CR\_TRIM\_BITNUMBER));}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00688}00688\ \ \ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00689}00689\ \ \ \textcolor{comment}{/*\ START\ AUTOMATIC\ SYNCHRONIZATION*/}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00690}00690\ \ \ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00691}00691\ \ \ \textcolor{comment}{/*\ Enable\ Automatic\ trimming\ \&\ Frequency\ error\ counter\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00692}00692\ \ \ \mbox{\hyperlink{group___exported__macros_ga26474f43799fbade9cf300e21dd3a91a}{SET\_BIT}}(\mbox{\hyperlink{group___peripheral__declaration_gad151b2f8dbc243ac0ce1fad0c4306328}{CRS}}-\/>CR,\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_gafa48432b942f1896e05a2eff91178edd}{CRS\_CR\_AUTOTRIMEN}}\ |\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_gace21476d647129c935f84daf84d91699}{CRS\_CR\_CEN}});}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00693}00693\ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00694}00694\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00699}00699\ \textcolor{keywordtype}{void}\ HAL\_RCCEx\_CRSSoftwareSynchronizationGenerate(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00700}00700\ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00701}00701\ \ \ \mbox{\hyperlink{group___exported__macros_ga26474f43799fbade9cf300e21dd3a91a}{SET\_BIT}}(\mbox{\hyperlink{group___peripheral__declaration_gad151b2f8dbc243ac0ce1fad0c4306328}{CRS}}-\/>CR,\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga53d79706214ba4ee9310e4b678d67e44}{CRS\_CR\_SWSYNC}});}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00702}00702\ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00703}00703\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00709}00709\ \textcolor{keywordtype}{void}\ HAL\_RCCEx\_CRSGetSynchronizationInfo(RCC\_CRSSynchroInfoTypeDef\ *pSynchroInfo)}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00710}00710\ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00711}00711\ \ \ \textcolor{comment}{/*\ Check\ the\ parameter\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00712}00712\ \ \ \mbox{\hyperlink{stm32f0xx__hal__conf_8h_a631dea7b230e600555f979c62af1de21}{assert\_param}}(pSynchroInfo\ !=\ NULL);}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00713}00713\ \ \ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00714}00714\ \ \ \textcolor{comment}{/*\ Get\ the\ reload\ value\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00715}00715\ \ \ pSynchroInfo-\/>ReloadValue\ =\ (uint32\_t)(\mbox{\hyperlink{group___exported__macros_ga822bb1bb9710d5f2fa6396b84e583c33}{READ\_BIT}}(\mbox{\hyperlink{group___peripheral__declaration_gad151b2f8dbc243ac0ce1fad0c4306328}{CRS}}-\/>CFGR,\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga7e54b011ada0eeb4b6ed9cdd24d517f9}{CRS\_CFGR\_RELOAD}}));}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00716}00716\ \ \ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00717}00717\ \ \ \textcolor{comment}{/*\ Get\ HSI48\ oscillator\ smooth\ trimming\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00718}00718\ \ \ pSynchroInfo-\/>HSI48CalibrationValue\ =\ (uint32\_t)(\mbox{\hyperlink{group___exported__macros_ga822bb1bb9710d5f2fa6396b84e583c33}{READ\_BIT}}(\mbox{\hyperlink{group___peripheral__declaration_gad151b2f8dbc243ac0ce1fad0c4306328}{CRS}}-\/>CR,\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga755d695431db14c1b3b15a48ede61c13}{CRS\_CR\_TRIM}})\ >>\ CRS\_CR\_TRIM\_BITNUMBER);}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00719}00719\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00720}00720\ \ \ \textcolor{comment}{/*\ Get\ Frequency\ error\ capture\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00721}00721\ \ \ pSynchroInfo-\/>FreqErrorCapture\ =\ (uint32\_t)(\mbox{\hyperlink{group___exported__macros_ga822bb1bb9710d5f2fa6396b84e583c33}{READ\_BIT}}(\mbox{\hyperlink{group___peripheral__declaration_gad151b2f8dbc243ac0ce1fad0c4306328}{CRS}}-\/>ISR,\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_gaf0b8a9757678f28814b1a0c1baca63e2}{CRS\_ISR\_FECAP}})\ >>\ CRS\_ISR\_FECAP\_BITNUMBER);}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00722}00722\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00723}00723\ \ \ \textcolor{comment}{/*\ Get\ Frequency\ error\ direction\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00724}00724\ \ \ pSynchroInfo-\/>FreqErrorDirection\ =\ (uint32\_t)(\mbox{\hyperlink{group___exported__macros_ga822bb1bb9710d5f2fa6396b84e583c33}{READ\_BIT}}(\mbox{\hyperlink{group___peripheral__declaration_gad151b2f8dbc243ac0ce1fad0c4306328}{CRS}}-\/>ISR,\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga91196b059d8ff52c4f28bc964c8a446a}{CRS\_ISR\_FEDIR}}));}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00725}00725\ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00726}00726\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00742}00742\ uint32\_t\ HAL\_RCCEx\_CRSWaitSynchronization(uint32\_t\ Timeout)}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00743}00743\ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00744}00744\ \ \ uint32\_t\ crsstatus\ =\ RCC\_CRS\_NONE;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00745}00745\ \ \ uint32\_t\ tickstart\ =\ 0U;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00746}00746\ \ \ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00747}00747\ \ \ \textcolor{comment}{/*\ Get\ timeout\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00748}00748\ \ \ tickstart\ =\ \mbox{\hyperlink{group___h_a_l___exported___functions___group2_gaf2c4f03d53e997a54e1fd5e80daa55c4}{HAL\_GetTick}}();}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00749}00749\ \ \ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00750}00750\ \ \ \textcolor{comment}{/*\ Wait\ for\ CRS\ flag\ or\ timeout\ detection\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00751}00751\ \ \ \textcolor{keywordflow}{do}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00752}00752\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00753}00753\ \ \ \ \ \textcolor{keywordflow}{if}(Timeout\ !=\ \mbox{\hyperlink{stm32f0xx__hal__def_8h_aad28bc64749c50dcedd6bf819fdc6974}{HAL\_MAX\_DELAY}})}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00754}00754\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00755}00755\ \ \ \ \ \ \ \textcolor{keywordflow}{if}((Timeout\ ==\ 0U)\ ||\ ((\mbox{\hyperlink{group___h_a_l___exported___functions___group2_gaf2c4f03d53e997a54e1fd5e80daa55c4}{HAL\_GetTick}}()\ -\/\ tickstart)\ >\ Timeout))}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00756}00756\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00757}00757\ \ \ \ \ \ \ \ \ crsstatus\ =\ RCC\_CRS\_TIMEOUT;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00758}00758\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00759}00759\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00760}00760\ \ \ \ \ \textcolor{comment}{/*\ Check\ CRS\ SYNCOK\ flag\ \ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00761}00761\ \ \ \ \ \textcolor{keywordflow}{if}(\_\_HAL\_RCC\_CRS\_GET\_FLAG(RCC\_CRS\_FLAG\_SYNCOK))}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00762}00762\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00763}00763\ \ \ \ \ \ \ \textcolor{comment}{/*\ CRS\ SYNC\ event\ OK\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00764}00764\ \ \ \ \ \ \ crsstatus\ |=\ RCC\_CRS\_SYNCOK;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00765}00765\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00766}00766\ \ \ \ \ \ \ \textcolor{comment}{/*\ Clear\ CRS\ SYNC\ event\ OK\ bit\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00767}00767\ \ \ \ \ \ \ \_\_HAL\_RCC\_CRS\_CLEAR\_FLAG(RCC\_CRS\_FLAG\_SYNCOK);}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00768}00768\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00769}00769\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00770}00770\ \ \ \ \ \textcolor{comment}{/*\ Check\ CRS\ SYNCWARN\ flag\ \ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00771}00771\ \ \ \ \ \textcolor{keywordflow}{if}(\_\_HAL\_RCC\_CRS\_GET\_FLAG(RCC\_CRS\_FLAG\_SYNCWARN))}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00772}00772\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00773}00773\ \ \ \ \ \ \ \textcolor{comment}{/*\ CRS\ SYNC\ warning\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00774}00774\ \ \ \ \ \ \ crsstatus\ |=\ RCC\_CRS\_SYNCWARN;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00775}00775\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00776}00776\ \ \ \ \ \ \ \textcolor{comment}{/*\ Clear\ CRS\ SYNCWARN\ bit\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00777}00777\ \ \ \ \ \ \ \_\_HAL\_RCC\_CRS\_CLEAR\_FLAG(RCC\_CRS\_FLAG\_SYNCWARN);}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00778}00778\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00779}00779\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00780}00780\ \ \ \ \ \textcolor{comment}{/*\ Check\ CRS\ TRIM\ overflow\ flag\ \ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00781}00781\ \ \ \ \ \textcolor{keywordflow}{if}(\_\_HAL\_RCC\_CRS\_GET\_FLAG(RCC\_CRS\_FLAG\_TRIMOVF))}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00782}00782\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00783}00783\ \ \ \ \ \ \ \textcolor{comment}{/*\ CRS\ SYNC\ Error\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00784}00784\ \ \ \ \ \ \ crsstatus\ |=\ RCC\_CRS\_TRIMOVF;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00785}00785\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00786}00786\ \ \ \ \ \ \ \textcolor{comment}{/*\ Clear\ CRS\ Error\ bit\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00787}00787\ \ \ \ \ \ \ \_\_HAL\_RCC\_CRS\_CLEAR\_FLAG(RCC\_CRS\_FLAG\_TRIMOVF);}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00788}00788\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00789}00789\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00790}00790\ \ \ \ \ \textcolor{comment}{/*\ Check\ CRS\ Error\ flag\ \ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00791}00791\ \ \ \ \ \textcolor{keywordflow}{if}(\_\_HAL\_RCC\_CRS\_GET\_FLAG(RCC\_CRS\_FLAG\_SYNCERR))}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00792}00792\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00793}00793\ \ \ \ \ \ \ \textcolor{comment}{/*\ CRS\ SYNC\ Error\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00794}00794\ \ \ \ \ \ \ crsstatus\ |=\ RCC\_CRS\_SYNCERR;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00795}00795\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00796}00796\ \ \ \ \ \ \ \textcolor{comment}{/*\ Clear\ CRS\ Error\ bit\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00797}00797\ \ \ \ \ \ \ \_\_HAL\_RCC\_CRS\_CLEAR\_FLAG(RCC\_CRS\_FLAG\_SYNCERR);}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00798}00798\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00799}00799\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00800}00800\ \ \ \ \ \textcolor{comment}{/*\ Check\ CRS\ SYNC\ Missed\ flag\ \ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00801}00801\ \ \ \ \ \textcolor{keywordflow}{if}(\_\_HAL\_RCC\_CRS\_GET\_FLAG(RCC\_CRS\_FLAG\_SYNCMISS))}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00802}00802\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00803}00803\ \ \ \ \ \ \ \textcolor{comment}{/*\ CRS\ SYNC\ Missed\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00804}00804\ \ \ \ \ \ \ crsstatus\ |=\ RCC\_CRS\_SYNCMISS;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00805}00805\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00806}00806\ \ \ \ \ \ \ \textcolor{comment}{/*\ Clear\ CRS\ SYNC\ Missed\ bit\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00807}00807\ \ \ \ \ \ \ \_\_HAL\_RCC\_CRS\_CLEAR\_FLAG(RCC\_CRS\_FLAG\_SYNCMISS);}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00808}00808\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00809}00809\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00810}00810\ \ \ \ \ \textcolor{comment}{/*\ Check\ CRS\ Expected\ SYNC\ flag\ \ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00811}00811\ \ \ \ \ \textcolor{keywordflow}{if}(\_\_HAL\_RCC\_CRS\_GET\_FLAG(RCC\_CRS\_FLAG\_ESYNC))}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00812}00812\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00813}00813\ \ \ \ \ \ \ \textcolor{comment}{/*\ frequency\ error\ counter\ reached\ a\ zero\ value\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00814}00814\ \ \ \ \ \ \ \_\_HAL\_RCC\_CRS\_CLEAR\_FLAG(RCC\_CRS\_FLAG\_ESYNC);}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00815}00815\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00816}00816\ \ \ \}\ \textcolor{keywordflow}{while}(RCC\_CRS\_NONE\ ==\ crsstatus);}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00817}00817\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00818}00818\ \ \ \textcolor{keywordflow}{return}\ crsstatus;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00819}00819\ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00820}00820\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00825}00825\ \textcolor{keywordtype}{void}\ HAL\_RCCEx\_CRS\_IRQHandler(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00826}00826\ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00827}00827\ \ \ uint32\_t\ crserror\ =\ RCC\_CRS\_NONE;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00828}00828\ \ \ \textcolor{comment}{/*\ Get\ current\ IT\ flags\ and\ IT\ sources\ values\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00829}00829\ \ \ uint32\_t\ itflags\ =\ \mbox{\hyperlink{group___exported__macros_gae7f188a4d26c9e713a48414783421071}{READ\_REG}}(\mbox{\hyperlink{group___peripheral__declaration_gad151b2f8dbc243ac0ce1fad0c4306328}{CRS}}-\/>ISR);}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00830}00830\ \ \ uint32\_t\ itsources\ =\ \mbox{\hyperlink{group___exported__macros_gae7f188a4d26c9e713a48414783421071}{READ\_REG}}(\mbox{\hyperlink{group___peripheral__declaration_gad151b2f8dbc243ac0ce1fad0c4306328}{CRS}}-\/>CR);}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00831}00831\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00832}00832\ \ \ \textcolor{comment}{/*\ Check\ CRS\ SYNCOK\ flag\ \ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00833}00833\ \ \ \textcolor{keywordflow}{if}(((itflags\ \&\ RCC\_CRS\_FLAG\_SYNCOK)\ !=\ \mbox{\hyperlink{group___exported__types_gga89136caac2e14c55151f527ac02daaffa589b7d94a3d91d145720e2fed0eb3a05}{RESET}})\ \&\&\ ((itsources\ \&\ RCC\_CRS\_IT\_SYNCOK)\ !=\ \mbox{\hyperlink{group___exported__types_gga89136caac2e14c55151f527ac02daaffa589b7d94a3d91d145720e2fed0eb3a05}{RESET}}))}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00834}00834\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00835}00835\ \ \ \ \ \textcolor{comment}{/*\ Clear\ CRS\ SYNC\ event\ OK\ flag\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00836}00836\ \ \ \ \ \mbox{\hyperlink{group___exported__macros_ga32f78bffcaf6d13023dcd7f05e0c4d57}{WRITE\_REG}}(\mbox{\hyperlink{group___peripheral__declaration_gad151b2f8dbc243ac0ce1fad0c4306328}{CRS}}-\/>ICR,\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_gaa42110e626aeef3ca9d76c8bda1f08d6}{CRS\_ICR\_SYNCOKC}});}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00837}00837\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00838}00838\ \ \ \ \ \textcolor{comment}{/*\ user\ callback\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00839}00839\ \ \ \ \ HAL\_RCCEx\_CRS\_SyncOkCallback();}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00840}00840\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00841}00841\ \ \ \textcolor{comment}{/*\ Check\ CRS\ SYNCWARN\ flag\ \ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00842}00842\ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(((itflags\ \&\ RCC\_CRS\_FLAG\_SYNCWARN)\ !=\ \mbox{\hyperlink{group___exported__types_gga89136caac2e14c55151f527ac02daaffa589b7d94a3d91d145720e2fed0eb3a05}{RESET}})\ \&\&\ ((itsources\ \&\ RCC\_CRS\_IT\_SYNCWARN)\ !=\ \mbox{\hyperlink{group___exported__types_gga89136caac2e14c55151f527ac02daaffa589b7d94a3d91d145720e2fed0eb3a05}{RESET}}))}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00843}00843\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00844}00844\ \ \ \ \ \textcolor{comment}{/*\ Clear\ CRS\ SYNCWARN\ flag\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00845}00845\ \ \ \ \ \mbox{\hyperlink{group___exported__macros_ga32f78bffcaf6d13023dcd7f05e0c4d57}{WRITE\_REG}}(\mbox{\hyperlink{group___peripheral__declaration_gad151b2f8dbc243ac0ce1fad0c4306328}{CRS}}-\/>ICR,\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_gab772d21f8bc42ad5761a270d663be1ce}{CRS\_ICR\_SYNCWARNC}});}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00846}00846\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00847}00847\ \ \ \ \ \textcolor{comment}{/*\ user\ callback\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00848}00848\ \ \ \ \ HAL\_RCCEx\_CRS\_SyncWarnCallback();}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00849}00849\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00850}00850\ \ \ \textcolor{comment}{/*\ Check\ CRS\ Expected\ SYNC\ flag\ \ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00851}00851\ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}(((itflags\ \&\ RCC\_CRS\_FLAG\_ESYNC)\ !=\ \mbox{\hyperlink{group___exported__types_gga89136caac2e14c55151f527ac02daaffa589b7d94a3d91d145720e2fed0eb3a05}{RESET}})\ \&\&\ ((itsources\ \&\ RCC\_CRS\_IT\_ESYNC)\ !=\ \mbox{\hyperlink{group___exported__types_gga89136caac2e14c55151f527ac02daaffa589b7d94a3d91d145720e2fed0eb3a05}{RESET}}))}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00852}00852\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00853}00853\ \ \ \ \ \textcolor{comment}{/*\ frequency\ error\ counter\ reached\ a\ zero\ value\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00854}00854\ \ \ \ \ \mbox{\hyperlink{group___exported__macros_ga32f78bffcaf6d13023dcd7f05e0c4d57}{WRITE\_REG}}(\mbox{\hyperlink{group___peripheral__declaration_gad151b2f8dbc243ac0ce1fad0c4306328}{CRS}}-\/>ICR,\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_gacfaa0b3004143ca5b1a7fe5ed23daccf}{CRS\_ICR\_ESYNCC}});}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00855}00855\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00856}00856\ \ \ \ \ \textcolor{comment}{/*\ user\ callback\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00857}00857\ \ \ \ \ HAL\_RCCEx\_CRS\_ExpectedSyncCallback();}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00858}00858\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00859}00859\ \ \ \textcolor{comment}{/*\ Check\ CRS\ Error\ flags\ \ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00860}00860\ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00861}00861\ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00862}00862\ \ \ \ \ \textcolor{keywordflow}{if}(((itflags\ \&\ RCC\_CRS\_FLAG\_ERR)\ !=\ \mbox{\hyperlink{group___exported__types_gga89136caac2e14c55151f527ac02daaffa589b7d94a3d91d145720e2fed0eb3a05}{RESET}})\ \&\&\ ((itsources\ \&\ RCC\_CRS\_IT\_ERR)\ !=\ \mbox{\hyperlink{group___exported__types_gga89136caac2e14c55151f527ac02daaffa589b7d94a3d91d145720e2fed0eb3a05}{RESET}}))}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00863}00863\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00864}00864\ \ \ \ \ \ \ \textcolor{keywordflow}{if}((itflags\ \&\ RCC\_CRS\_FLAG\_SYNCERR)\ !=\ \mbox{\hyperlink{group___exported__types_gga89136caac2e14c55151f527ac02daaffa589b7d94a3d91d145720e2fed0eb3a05}{RESET}})}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00865}00865\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00866}00866\ \ \ \ \ \ \ \ \ crserror\ |=\ RCC\_CRS\_SYNCERR;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00867}00867\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00868}00868\ \ \ \ \ \ \ \textcolor{keywordflow}{if}((itflags\ \&\ RCC\_CRS\_FLAG\_SYNCMISS)\ !=\ \mbox{\hyperlink{group___exported__types_gga89136caac2e14c55151f527ac02daaffa589b7d94a3d91d145720e2fed0eb3a05}{RESET}})}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00869}00869\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00870}00870\ \ \ \ \ \ \ \ \ crserror\ |=\ RCC\_CRS\_SYNCMISS;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00871}00871\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00872}00872\ \ \ \ \ \ \ \textcolor{keywordflow}{if}((itflags\ \&\ RCC\_CRS\_FLAG\_TRIMOVF)\ !=\ \mbox{\hyperlink{group___exported__types_gga89136caac2e14c55151f527ac02daaffa589b7d94a3d91d145720e2fed0eb3a05}{RESET}})}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00873}00873\ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00874}00874\ \ \ \ \ \ \ \ \ crserror\ |=\ RCC\_CRS\_TRIMOVF;}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00875}00875\ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00876}00876\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00877}00877\ \ \ \ \ \ \ \textcolor{comment}{/*\ Clear\ CRS\ Error\ flags\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00878}00878\ \ \ \ \ \ \ \mbox{\hyperlink{group___exported__macros_ga32f78bffcaf6d13023dcd7f05e0c4d57}{WRITE\_REG}}(\mbox{\hyperlink{group___peripheral__declaration_gad151b2f8dbc243ac0ce1fad0c4306328}{CRS}}-\/>ICR,\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_gae67dc4a9e576468b0c322902c7c47793}{CRS\_ICR\_ERRC}});}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00879}00879\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00880}00880\ \ \ \ \ \ \ \textcolor{comment}{/*\ user\ error\ callback\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00881}00881\ \ \ \ \ \ \ HAL\_RCCEx\_CRS\_ErrorCallback(crserror);}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00882}00882\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00883}00883\ \ \ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00884}00884\ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00885}00885\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00890}00890\ \_\_weak\ \textcolor{keywordtype}{void}\ HAL\_RCCEx\_CRS\_SyncOkCallback(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00891}00891\ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00892}00892\ \ \ \textcolor{comment}{/*\ NOTE\ :\ This\ function\ should\ not\ be\ modified,\ when\ the\ callback\ is\ needed,}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00893}00893\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ the\ @ref\ HAL\_RCCEx\_CRS\_SyncOkCallback\ should\ be\ implemented\ in\ the\ user\ file}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00894}00894\ \textcolor{comment}{\ \ \ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00895}00895\ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00896}00896\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00901}00901\ \_\_weak\ \textcolor{keywordtype}{void}\ HAL\_RCCEx\_CRS\_SyncWarnCallback(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00902}00902\ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00903}00903\ \ \ \textcolor{comment}{/*\ NOTE\ :\ This\ function\ should\ not\ be\ modified,\ when\ the\ callback\ is\ needed,}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00904}00904\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ the\ @ref\ HAL\_RCCEx\_CRS\_SyncWarnCallback\ should\ be\ implemented\ in\ the\ user\ file}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00905}00905\ \textcolor{comment}{\ \ \ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00906}00906\ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00907}00907\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00912}00912\ \_\_weak\ \textcolor{keywordtype}{void}\ HAL\_RCCEx\_CRS\_ExpectedSyncCallback(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00913}00913\ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00914}00914\ \ \ \textcolor{comment}{/*\ NOTE\ :\ This\ function\ should\ not\ be\ modified,\ when\ the\ callback\ is\ needed,}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00915}00915\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ the\ @ref\ HAL\_RCCEx\_CRS\_ExpectedSyncCallback\ should\ be\ implemented\ in\ the\ user\ file}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00916}00916\ \textcolor{comment}{\ \ \ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00917}00917\ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00918}00918\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00928}00928\ \_\_weak\ \textcolor{keywordtype}{void}\ HAL\_RCCEx\_CRS\_ErrorCallback(uint32\_t\ Error)}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00929}00929\ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00930}00930\ \ \ \textcolor{comment}{/*\ Prevent\ unused\ argument(s)\ compilation\ warning\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00931}00931\ \ \ \mbox{\hyperlink{stm32f0xx__hal__def_8h_a6bc306171da085f4c7df2c66d2ff8e47}{UNUSED}}(Error);}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00932}00932\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00933}00933\ \ \ \textcolor{comment}{/*\ NOTE\ :\ This\ function\ should\ not\ be\ modified,\ when\ the\ callback\ is\ needed,}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00934}00934\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ the\ @ref\ HAL\_RCCEx\_CRS\_ErrorCallback\ should\ be\ implemented\ in\ the\ user\ file}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00935}00935\ \textcolor{comment}{\ \ \ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00936}00936\ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00937}00937\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00942}00942\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ CRS\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00943}00943\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00956}00956\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ HAL\_RCC\_MODULE\_ENABLED\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__hal__rcc__ex_8c_source_l00957}00957\ }
+
+\end{DoxyCode}

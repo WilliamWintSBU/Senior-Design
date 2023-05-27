@@ -1,0 +1,1 @@
+timestamp,message code,lat,long,Speed,Battery Current,Motor 1 Current,Motor 2 current,Solar current,V12,V24,V36,Vm1,Vm2,Vsolar,Temp1,Temp2,rpm

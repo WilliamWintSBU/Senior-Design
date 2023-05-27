@@ -1,0 +1,197 @@
+\hypertarget{group___r_c_c___a_p_b1___clock___enable___disable}{}\doxysection{RCC APB1 Clock Enable Disable}
+\label{group___r_c_c___a_p_b1___clock___enable___disable}\index{RCC APB1 Clock Enable Disable@{RCC APB1 Clock Enable Disable}}
+
+
+Enable or disable the Low Speed APB (APB1) peripheral clock.  
+
+
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___r_c_c___a_p_b1___clock___enable___disable_gaf62d32fdde03df10072d856515692c8d}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM3\+\_\+\+CLK\+\_\+\+ENABLE}}()
+\item 
+\#define \mbox{\hyperlink{group___r_c_c___a_p_b1___clock___enable___disable_ga28c0bd63fbc7500f9c209ef42c0931b6}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM14\+\_\+\+CLK\+\_\+\+ENABLE}}()
+\item 
+\#define \mbox{\hyperlink{group___r_c_c___a_p_b1___clock___enable___disable_gab0c13cc10b36c32d750be226d2fda3b2}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+WWDG\+\_\+\+CLK\+\_\+\+ENABLE}}()
+\item 
+\#define \mbox{\hyperlink{group___r_c_c___a_p_b1___clock___enable___disable_gaaeae5b9e93721dd4e34274600996baeb}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+I2\+C1\+\_\+\+CLK\+\_\+\+ENABLE}}()
+\item 
+\#define \mbox{\hyperlink{group___r_c_c___a_p_b1___clock___enable___disable_ga6c7399cc977622172aeda52a86ceed92}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+PWR\+\_\+\+CLK\+\_\+\+ENABLE}}()
+\item 
+\#define \mbox{\hyperlink{group___r_c_c___a_p_b1___clock___enable___disable_ga9fb7035f007ec272b725e51018a36b23}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM3\+\_\+\+CLK\+\_\+\+DISABLE}}()~(\mbox{\hyperlink{group___peripheral__declaration_ga74944438a086975793d26ae48d5882d4}{RCC}}-\/$>$APB1\+ENR \&= $\sim$(\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga75bfa33eb00ee30c6e22f7ceea464ac7}{RCC\+\_\+\+APB1\+ENR\+\_\+\+TIM3\+EN}}))
+\item 
+\#define \mbox{\hyperlink{group___r_c_c___a_p_b1___clock___enable___disable_ga492911cce1e54350519e7793c897102b}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM14\+\_\+\+CLK\+\_\+\+DISABLE}}()~(\mbox{\hyperlink{group___peripheral__declaration_ga74944438a086975793d26ae48d5882d4}{RCC}}-\/$>$APB1\+ENR \&= $\sim$(\mbox{\hyperlink{group___peripheral___registers___bits___definition_gaca040bd66d4a54d4d9e9b261c8102799}{RCC\+\_\+\+APB1\+ENR\+\_\+\+TIM14\+EN}}))
+\item 
+\#define \mbox{\hyperlink{group___r_c_c___a_p_b1___clock___enable___disable_ga6afa0a633cf2553743a494d97aa5b997}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+WWDG\+\_\+\+CLK\+\_\+\+DISABLE}}()~(\mbox{\hyperlink{group___peripheral__declaration_ga74944438a086975793d26ae48d5882d4}{RCC}}-\/$>$APB1\+ENR \&= $\sim$(\mbox{\hyperlink{group___peripheral___registers___bits___definition_gaf712b922ee776a972d2efa3da0ea4733}{RCC\+\_\+\+APB1\+ENR\+\_\+\+WWDGEN}}))
+\item 
+\#define \mbox{\hyperlink{group___r_c_c___a_p_b1___clock___enable___disable_ga490a853eae72da96aad5379a6e939dd8}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+I2\+C1\+\_\+\+CLK\+\_\+\+DISABLE}}()~(\mbox{\hyperlink{group___peripheral__declaration_ga74944438a086975793d26ae48d5882d4}{RCC}}-\/$>$APB1\+ENR \&= $\sim$(\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga5ca3afe0c517702b2d1366b692c8db0e}{RCC\+\_\+\+APB1\+ENR\+\_\+\+I2\+C1\+EN}}))
+\item 
+\#define \mbox{\hyperlink{group___r_c_c___a_p_b1___clock___enable___disable_gaf3db86d2db2bad45732a742b6a91ea0b}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+PWR\+\_\+\+CLK\+\_\+\+DISABLE}}()~(\mbox{\hyperlink{group___peripheral__declaration_ga74944438a086975793d26ae48d5882d4}{RCC}}-\/$>$APB1\+ENR \&= $\sim$(\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga5c19997ccd28464b80a7c3325da0ca60}{RCC\+\_\+\+APB1\+ENR\+\_\+\+PWREN}}))
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Enable or disable the Low Speed APB (APB1) peripheral clock. 
+
+\begin{DoxyNote}{Note}
+After reset, the peripheral clock (used for registers read/write access) is disabled and the application software has to enable this clock before using it. ~\newline
+ 
+\end{DoxyNote}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group___r_c_c___a_p_b1___clock___enable___disable_ga490a853eae72da96aad5379a6e939dd8}\label{group___r_c_c___a_p_b1___clock___enable___disable_ga490a853eae72da96aad5379a6e939dd8}} 
+\index{RCC APB1 Clock Enable Disable@{RCC APB1 Clock Enable Disable}!\_\_HAL\_RCC\_I2C1\_CLK\_DISABLE@{\_\_HAL\_RCC\_I2C1\_CLK\_DISABLE}}
+\index{\_\_HAL\_RCC\_I2C1\_CLK\_DISABLE@{\_\_HAL\_RCC\_I2C1\_CLK\_DISABLE}!RCC APB1 Clock Enable Disable@{RCC APB1 Clock Enable Disable}}
+\doxysubsubsection{\texorpdfstring{\_\_HAL\_RCC\_I2C1\_CLK\_DISABLE}{\_\_HAL\_RCC\_I2C1\_CLK\_DISABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+I2\+C1\+\_\+\+CLK\+\_\+\+DISABLE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~(\mbox{\hyperlink{group___peripheral__declaration_ga74944438a086975793d26ae48d5882d4}{RCC}}-\/$>$APB1\+ENR \&= $\sim$(\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga5ca3afe0c517702b2d1366b692c8db0e}{RCC\+\_\+\+APB1\+ENR\+\_\+\+I2\+C1\+EN}}))}
+
+
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__rcc_8h_source_l00762}{762}} of file \mbox{\hyperlink{stm32f0xx__hal__rcc_8h_source}{stm32f0xx\+\_\+hal\+\_\+rcc.\+h}}.
+
+\mbox{\Hypertarget{group___r_c_c___a_p_b1___clock___enable___disable_gaaeae5b9e93721dd4e34274600996baeb}\label{group___r_c_c___a_p_b1___clock___enable___disable_gaaeae5b9e93721dd4e34274600996baeb}} 
+\index{RCC APB1 Clock Enable Disable@{RCC APB1 Clock Enable Disable}!\_\_HAL\_RCC\_I2C1\_CLK\_ENABLE@{\_\_HAL\_RCC\_I2C1\_CLK\_ENABLE}}
+\index{\_\_HAL\_RCC\_I2C1\_CLK\_ENABLE@{\_\_HAL\_RCC\_I2C1\_CLK\_ENABLE}!RCC APB1 Clock Enable Disable@{RCC APB1 Clock Enable Disable}}
+\doxysubsubsection{\texorpdfstring{\_\_HAL\_RCC\_I2C1\_CLK\_ENABLE}{\_\_HAL\_RCC\_I2C1\_CLK\_ENABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+I2\+C1\+\_\+\+CLK\+\_\+\+ENABLE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{do}\ \{\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{core__armv8mbl_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ uint32\_t\ tmpreg;\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SET\_BIT(\mbox{\hyperlink{group___peripheral__declaration_ga74944438a086975793d26ae48d5882d4}{RCC}}-\/>APB1ENR,\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga5ca3afe0c517702b2d1366b692c8db0e}{RCC\_APB1ENR\_I2C1EN}});\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Delay\ after\ an\ RCC\ peripheral\ clock\ enabling\ */}\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tmpreg\ =\ \mbox{\hyperlink{group___exported__macros_ga822bb1bb9710d5f2fa6396b84e583c33}{READ\_BIT}}(\mbox{\hyperlink{group___peripheral__declaration_ga74944438a086975793d26ae48d5882d4}{RCC}}-\/>APB1ENR,\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga5ca3afe0c517702b2d1366b692c8db0e}{RCC\_APB1ENR\_I2C1EN}});\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UNUSED(tmpreg);\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{while}(0U)}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__rcc_8h_source_l00744}{744}} of file \mbox{\hyperlink{stm32f0xx__hal__rcc_8h_source}{stm32f0xx\+\_\+hal\+\_\+rcc.\+h}}.
+
+\mbox{\Hypertarget{group___r_c_c___a_p_b1___clock___enable___disable_gaf3db86d2db2bad45732a742b6a91ea0b}\label{group___r_c_c___a_p_b1___clock___enable___disable_gaf3db86d2db2bad45732a742b6a91ea0b}} 
+\index{RCC APB1 Clock Enable Disable@{RCC APB1 Clock Enable Disable}!\_\_HAL\_RCC\_PWR\_CLK\_DISABLE@{\_\_HAL\_RCC\_PWR\_CLK\_DISABLE}}
+\index{\_\_HAL\_RCC\_PWR\_CLK\_DISABLE@{\_\_HAL\_RCC\_PWR\_CLK\_DISABLE}!RCC APB1 Clock Enable Disable@{RCC APB1 Clock Enable Disable}}
+\doxysubsubsection{\texorpdfstring{\_\_HAL\_RCC\_PWR\_CLK\_DISABLE}{\_\_HAL\_RCC\_PWR\_CLK\_DISABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+PWR\+\_\+\+CLK\+\_\+\+DISABLE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~(\mbox{\hyperlink{group___peripheral__declaration_ga74944438a086975793d26ae48d5882d4}{RCC}}-\/$>$APB1\+ENR \&= $\sim$(\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga5c19997ccd28464b80a7c3325da0ca60}{RCC\+\_\+\+APB1\+ENR\+\_\+\+PWREN}}))}
+
+
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__rcc_8h_source_l00763}{763}} of file \mbox{\hyperlink{stm32f0xx__hal__rcc_8h_source}{stm32f0xx\+\_\+hal\+\_\+rcc.\+h}}.
+
+\mbox{\Hypertarget{group___r_c_c___a_p_b1___clock___enable___disable_ga6c7399cc977622172aeda52a86ceed92}\label{group___r_c_c___a_p_b1___clock___enable___disable_ga6c7399cc977622172aeda52a86ceed92}} 
+\index{RCC APB1 Clock Enable Disable@{RCC APB1 Clock Enable Disable}!\_\_HAL\_RCC\_PWR\_CLK\_ENABLE@{\_\_HAL\_RCC\_PWR\_CLK\_ENABLE}}
+\index{\_\_HAL\_RCC\_PWR\_CLK\_ENABLE@{\_\_HAL\_RCC\_PWR\_CLK\_ENABLE}!RCC APB1 Clock Enable Disable@{RCC APB1 Clock Enable Disable}}
+\doxysubsubsection{\texorpdfstring{\_\_HAL\_RCC\_PWR\_CLK\_ENABLE}{\_\_HAL\_RCC\_PWR\_CLK\_ENABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+PWR\+\_\+\+CLK\+\_\+\+ENABLE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{do}\ \{\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{core__armv8mbl_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ uint32\_t\ tmpreg;\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SET\_BIT(\mbox{\hyperlink{group___peripheral__declaration_ga74944438a086975793d26ae48d5882d4}{RCC}}-\/>APB1ENR,\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga5c19997ccd28464b80a7c3325da0ca60}{RCC\_APB1ENR\_PWREN}});\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Delay\ after\ an\ RCC\ peripheral\ clock\ enabling\ */}\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tmpreg\ =\ \mbox{\hyperlink{group___exported__macros_ga822bb1bb9710d5f2fa6396b84e583c33}{READ\_BIT}}(\mbox{\hyperlink{group___peripheral__declaration_ga74944438a086975793d26ae48d5882d4}{RCC}}-\/>APB1ENR,\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga5c19997ccd28464b80a7c3325da0ca60}{RCC\_APB1ENR\_PWREN}});\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UNUSED(tmpreg);\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{while}(0U)}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__rcc_8h_source_l00751}{751}} of file \mbox{\hyperlink{stm32f0xx__hal__rcc_8h_source}{stm32f0xx\+\_\+hal\+\_\+rcc.\+h}}.
+
+\mbox{\Hypertarget{group___r_c_c___a_p_b1___clock___enable___disable_ga492911cce1e54350519e7793c897102b}\label{group___r_c_c___a_p_b1___clock___enable___disable_ga492911cce1e54350519e7793c897102b}} 
+\index{RCC APB1 Clock Enable Disable@{RCC APB1 Clock Enable Disable}!\_\_HAL\_RCC\_TIM14\_CLK\_DISABLE@{\_\_HAL\_RCC\_TIM14\_CLK\_DISABLE}}
+\index{\_\_HAL\_RCC\_TIM14\_CLK\_DISABLE@{\_\_HAL\_RCC\_TIM14\_CLK\_DISABLE}!RCC APB1 Clock Enable Disable@{RCC APB1 Clock Enable Disable}}
+\doxysubsubsection{\texorpdfstring{\_\_HAL\_RCC\_TIM14\_CLK\_DISABLE}{\_\_HAL\_RCC\_TIM14\_CLK\_DISABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM14\+\_\+\+CLK\+\_\+\+DISABLE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~(\mbox{\hyperlink{group___peripheral__declaration_ga74944438a086975793d26ae48d5882d4}{RCC}}-\/$>$APB1\+ENR \&= $\sim$(\mbox{\hyperlink{group___peripheral___registers___bits___definition_gaca040bd66d4a54d4d9e9b261c8102799}{RCC\+\_\+\+APB1\+ENR\+\_\+\+TIM14\+EN}}))}
+
+
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__rcc_8h_source_l00760}{760}} of file \mbox{\hyperlink{stm32f0xx__hal__rcc_8h_source}{stm32f0xx\+\_\+hal\+\_\+rcc.\+h}}.
+
+\mbox{\Hypertarget{group___r_c_c___a_p_b1___clock___enable___disable_ga28c0bd63fbc7500f9c209ef42c0931b6}\label{group___r_c_c___a_p_b1___clock___enable___disable_ga28c0bd63fbc7500f9c209ef42c0931b6}} 
+\index{RCC APB1 Clock Enable Disable@{RCC APB1 Clock Enable Disable}!\_\_HAL\_RCC\_TIM14\_CLK\_ENABLE@{\_\_HAL\_RCC\_TIM14\_CLK\_ENABLE}}
+\index{\_\_HAL\_RCC\_TIM14\_CLK\_ENABLE@{\_\_HAL\_RCC\_TIM14\_CLK\_ENABLE}!RCC APB1 Clock Enable Disable@{RCC APB1 Clock Enable Disable}}
+\doxysubsubsection{\texorpdfstring{\_\_HAL\_RCC\_TIM14\_CLK\_ENABLE}{\_\_HAL\_RCC\_TIM14\_CLK\_ENABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM14\+\_\+\+CLK\+\_\+\+ENABLE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{do}\ \{\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{core__armv8mbl_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ uint32\_t\ tmpreg;\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SET\_BIT(\mbox{\hyperlink{group___peripheral__declaration_ga74944438a086975793d26ae48d5882d4}{RCC}}-\/>APB1ENR,\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_gaca040bd66d4a54d4d9e9b261c8102799}{RCC\_APB1ENR\_TIM14EN}});\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Delay\ after\ an\ RCC\ peripheral\ clock\ enabling\ */}\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tmpreg\ =\ \mbox{\hyperlink{group___exported__macros_ga822bb1bb9710d5f2fa6396b84e583c33}{READ\_BIT}}(\mbox{\hyperlink{group___peripheral__declaration_ga74944438a086975793d26ae48d5882d4}{RCC}}-\/>APB1ENR,\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_gaca040bd66d4a54d4d9e9b261c8102799}{RCC\_APB1ENR\_TIM14EN}});\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UNUSED(tmpreg);\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{while}(0U)}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__rcc_8h_source_l00730}{730}} of file \mbox{\hyperlink{stm32f0xx__hal__rcc_8h_source}{stm32f0xx\+\_\+hal\+\_\+rcc.\+h}}.
+
+\mbox{\Hypertarget{group___r_c_c___a_p_b1___clock___enable___disable_ga9fb7035f007ec272b725e51018a36b23}\label{group___r_c_c___a_p_b1___clock___enable___disable_ga9fb7035f007ec272b725e51018a36b23}} 
+\index{RCC APB1 Clock Enable Disable@{RCC APB1 Clock Enable Disable}!\_\_HAL\_RCC\_TIM3\_CLK\_DISABLE@{\_\_HAL\_RCC\_TIM3\_CLK\_DISABLE}}
+\index{\_\_HAL\_RCC\_TIM3\_CLK\_DISABLE@{\_\_HAL\_RCC\_TIM3\_CLK\_DISABLE}!RCC APB1 Clock Enable Disable@{RCC APB1 Clock Enable Disable}}
+\doxysubsubsection{\texorpdfstring{\_\_HAL\_RCC\_TIM3\_CLK\_DISABLE}{\_\_HAL\_RCC\_TIM3\_CLK\_DISABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM3\+\_\+\+CLK\+\_\+\+DISABLE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~(\mbox{\hyperlink{group___peripheral__declaration_ga74944438a086975793d26ae48d5882d4}{RCC}}-\/$>$APB1\+ENR \&= $\sim$(\mbox{\hyperlink{group___peripheral___registers___bits___definition_ga75bfa33eb00ee30c6e22f7ceea464ac7}{RCC\+\_\+\+APB1\+ENR\+\_\+\+TIM3\+EN}}))}
+
+
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__rcc_8h_source_l00759}{759}} of file \mbox{\hyperlink{stm32f0xx__hal__rcc_8h_source}{stm32f0xx\+\_\+hal\+\_\+rcc.\+h}}.
+
+\mbox{\Hypertarget{group___r_c_c___a_p_b1___clock___enable___disable_gaf62d32fdde03df10072d856515692c8d}\label{group___r_c_c___a_p_b1___clock___enable___disable_gaf62d32fdde03df10072d856515692c8d}} 
+\index{RCC APB1 Clock Enable Disable@{RCC APB1 Clock Enable Disable}!\_\_HAL\_RCC\_TIM3\_CLK\_ENABLE@{\_\_HAL\_RCC\_TIM3\_CLK\_ENABLE}}
+\index{\_\_HAL\_RCC\_TIM3\_CLK\_ENABLE@{\_\_HAL\_RCC\_TIM3\_CLK\_ENABLE}!RCC APB1 Clock Enable Disable@{RCC APB1 Clock Enable Disable}}
+\doxysubsubsection{\texorpdfstring{\_\_HAL\_RCC\_TIM3\_CLK\_ENABLE}{\_\_HAL\_RCC\_TIM3\_CLK\_ENABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TIM3\+\_\+\+CLK\+\_\+\+ENABLE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{do}\ \{\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{core__armv8mbl_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ uint32\_t\ tmpreg;\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SET\_BIT(\mbox{\hyperlink{group___peripheral__declaration_ga74944438a086975793d26ae48d5882d4}{RCC}}-\/>APB1ENR,\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga75bfa33eb00ee30c6e22f7ceea464ac7}{RCC\_APB1ENR\_TIM3EN}});\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Delay\ after\ an\ RCC\ peripheral\ clock\ enabling\ */}\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tmpreg\ =\ \mbox{\hyperlink{group___exported__macros_ga822bb1bb9710d5f2fa6396b84e583c33}{READ\_BIT}}(\mbox{\hyperlink{group___peripheral__declaration_ga74944438a086975793d26ae48d5882d4}{RCC}}-\/>APB1ENR,\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_ga75bfa33eb00ee30c6e22f7ceea464ac7}{RCC\_APB1ENR\_TIM3EN}});\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UNUSED(tmpreg);\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{while}(0U)}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__rcc_8h_source_l00723}{723}} of file \mbox{\hyperlink{stm32f0xx__hal__rcc_8h_source}{stm32f0xx\+\_\+hal\+\_\+rcc.\+h}}.
+
+\mbox{\Hypertarget{group___r_c_c___a_p_b1___clock___enable___disable_ga6afa0a633cf2553743a494d97aa5b997}\label{group___r_c_c___a_p_b1___clock___enable___disable_ga6afa0a633cf2553743a494d97aa5b997}} 
+\index{RCC APB1 Clock Enable Disable@{RCC APB1 Clock Enable Disable}!\_\_HAL\_RCC\_WWDG\_CLK\_DISABLE@{\_\_HAL\_RCC\_WWDG\_CLK\_DISABLE}}
+\index{\_\_HAL\_RCC\_WWDG\_CLK\_DISABLE@{\_\_HAL\_RCC\_WWDG\_CLK\_DISABLE}!RCC APB1 Clock Enable Disable@{RCC APB1 Clock Enable Disable}}
+\doxysubsubsection{\texorpdfstring{\_\_HAL\_RCC\_WWDG\_CLK\_DISABLE}{\_\_HAL\_RCC\_WWDG\_CLK\_DISABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+WWDG\+\_\+\+CLK\+\_\+\+DISABLE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~(\mbox{\hyperlink{group___peripheral__declaration_ga74944438a086975793d26ae48d5882d4}{RCC}}-\/$>$APB1\+ENR \&= $\sim$(\mbox{\hyperlink{group___peripheral___registers___bits___definition_gaf712b922ee776a972d2efa3da0ea4733}{RCC\+\_\+\+APB1\+ENR\+\_\+\+WWDGEN}}))}
+
+
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__rcc_8h_source_l00761}{761}} of file \mbox{\hyperlink{stm32f0xx__hal__rcc_8h_source}{stm32f0xx\+\_\+hal\+\_\+rcc.\+h}}.
+
+\mbox{\Hypertarget{group___r_c_c___a_p_b1___clock___enable___disable_gab0c13cc10b36c32d750be226d2fda3b2}\label{group___r_c_c___a_p_b1___clock___enable___disable_gab0c13cc10b36c32d750be226d2fda3b2}} 
+\index{RCC APB1 Clock Enable Disable@{RCC APB1 Clock Enable Disable}!\_\_HAL\_RCC\_WWDG\_CLK\_ENABLE@{\_\_HAL\_RCC\_WWDG\_CLK\_ENABLE}}
+\index{\_\_HAL\_RCC\_WWDG\_CLK\_ENABLE@{\_\_HAL\_RCC\_WWDG\_CLK\_ENABLE}!RCC APB1 Clock Enable Disable@{RCC APB1 Clock Enable Disable}}
+\doxysubsubsection{\texorpdfstring{\_\_HAL\_RCC\_WWDG\_CLK\_ENABLE}{\_\_HAL\_RCC\_WWDG\_CLK\_ENABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+WWDG\+\_\+\+CLK\+\_\+\+ENABLE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{do}\ \{\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{core__armv8mbl_8h_aec43007d9998a0a0e01faede4133d6be}{\_\_IO}}\ uint32\_t\ tmpreg;\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ SET\_BIT(\mbox{\hyperlink{group___peripheral__declaration_ga74944438a086975793d26ae48d5882d4}{RCC}}-\/>APB1ENR,\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_gaf712b922ee776a972d2efa3da0ea4733}{RCC\_APB1ENR\_WWDGEN}});\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Delay\ after\ an\ RCC\ peripheral\ clock\ enabling\ */}\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ tmpreg\ =\ \mbox{\hyperlink{group___exported__macros_ga822bb1bb9710d5f2fa6396b84e583c33}{READ\_BIT}}(\mbox{\hyperlink{group___peripheral__declaration_ga74944438a086975793d26ae48d5882d4}{RCC}}-\/>APB1ENR,\ \mbox{\hyperlink{group___peripheral___registers___bits___definition_gaf712b922ee776a972d2efa3da0ea4733}{RCC\_APB1ENR\_WWDGEN}});\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ UNUSED(tmpreg);\ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{while}(0U)}
+
+\end{DoxyCode}
+
+
+Definition at line \mbox{\hyperlink{stm32f0xx__hal__rcc_8h_source_l00737}{737}} of file \mbox{\hyperlink{stm32f0xx__hal__rcc_8h_source}{stm32f0xx\+\_\+hal\+\_\+rcc.\+h}}.
+

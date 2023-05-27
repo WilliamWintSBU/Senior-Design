@@ -1,0 +1,104 @@
+\hypertarget{stm32f0xx__ll__utils_8h_source}{}\doxysection{stm32f0xx\+\_\+ll\+\_\+utils.\+h}
+\label{stm32f0xx__ll__utils_8h_source}\index{Drivers/STM32F0xx\_HAL\_Driver/Inc/stm32f0xx\_ll\_utils.h@{Drivers/STM32F0xx\_HAL\_Driver/Inc/stm32f0xx\_ll\_utils.h}}
+\mbox{\hyperlink{stm32f0xx__ll__utils_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00032}00032\ \textcolor{comment}{/*\ Define\ to\ prevent\ recursive\ inclusion\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00033}00033\ \textcolor{preprocessor}{\#ifndef\ \_\_STM32F0xx\_LL\_UTILS\_H}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00034}00034\ \textcolor{preprocessor}{\#define\ \_\_STM32F0xx\_LL\_UTILS\_H}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00036}00036\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00037}00037\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00038}00038\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00040}00040\ \textcolor{comment}{/*\ Includes\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00041}00041\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{stm32f0xx_8h}{stm32f0xx.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00051}00051\ \textcolor{comment}{/*\ Private\ types\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00052}00052\ \textcolor{comment}{/*\ Private\ variables\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00054}00054\ \textcolor{comment}{/*\ Private\ constants\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00059}00059\ \textcolor{comment}{/*\ Max\ delay\ can\ be\ used\ in\ LL\_mDelay\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00060}\mbox{\hyperlink{group___u_t_i_l_s___l_l___private___constants_ga29a1b776c24b7c32f30fcd6851ddd028}{00060}}\ \textcolor{preprocessor}{\#define\ LL\_MAX\_DELAY\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFFFFFFFFU}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00065}\mbox{\hyperlink{group___u_t_i_l_s___l_l___private___constants_ga732ec8206df1d365f1c23eee46d681dd}{00065}}\ \textcolor{preprocessor}{\#define\ UID\_BASE\_ADDRESS\ \ \ \ \ \ \ \ \ \ \ \ \ \ UID\_BASE}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00070}\mbox{\hyperlink{group___u_t_i_l_s___l_l___private___constants_ga75b8f6b080a5dfaaf829edeae69bff70}{00070}}\ \textcolor{preprocessor}{\#define\ FLASHSIZE\_BASE\_ADDRESS\ \ \ \ \ \ \ \ FLASHSIZE\_BASE}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00076}00076\ \textcolor{comment}{/*\ Private\ macros\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00083}00083\ \textcolor{comment}{/*\ Exported\ types\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00090}\mbox{\hyperlink{struct_l_l___u_t_i_l_s___p_l_l_init_type_def}{00090}}\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00091}00091\ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00092}\mbox{\hyperlink{struct_l_l___u_t_i_l_s___p_l_l_init_type_def_a1e7c22497d52fbfcd240d98c6a0ba7df}{00092}}\ \ \ uint32\_t\ \mbox{\hyperlink{struct_l_l___u_t_i_l_s___p_l_l_init_type_def_a1e7c22497d52fbfcd240d98c6a0ba7df}{PLLMul}};\ \ \ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00098}00098\ \textcolor{preprocessor}{\#if\ defined(RCC\_PLLSRC\_PREDIV1\_SUPPORT)}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00099}00099\ \ \ uint32\_t\ PLLDiv;\ \ \ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00104}00104\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00105}\mbox{\hyperlink{struct_l_l___u_t_i_l_s___p_l_l_init_type_def_ad1b63b2eb36e28612c093044511dab54}{00105}}\ \ \ uint32\_t\ \mbox{\hyperlink{struct_l_l___u_t_i_l_s___p_l_l_init_type_def_ad1b63b2eb36e28612c093044511dab54}{Prediv}};\ \ \ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00110}00110\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ RCC\_PLLSRC\_PREDIV1\_SUPPORT\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00111}00111\ \}\ \mbox{\hyperlink{struct_l_l___u_t_i_l_s___p_l_l_init_type_def}{LL\_UTILS\_PLLInitTypeDef}};}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00112}00112\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00116}\mbox{\hyperlink{struct_l_l___u_t_i_l_s___clk_init_type_def}{00116}}\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00117}00117\ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00118}\mbox{\hyperlink{struct_l_l___u_t_i_l_s___clk_init_type_def_a082c91ea9f270509aca7ae6ec42c2a54}{00118}}\ \ \ uint32\_t\ \mbox{\hyperlink{struct_l_l___u_t_i_l_s___clk_init_type_def_a082c91ea9f270509aca7ae6ec42c2a54}{AHBCLKDivider}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00124}\mbox{\hyperlink{struct_l_l___u_t_i_l_s___clk_init_type_def_a994aca51c40decfc340e045da1a6ca19}{00124}}\ \ \ uint32\_t\ \mbox{\hyperlink{struct_l_l___u_t_i_l_s___clk_init_type_def_a994aca51c40decfc340e045da1a6ca19}{APB1CLKDivider}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00129}00129\ \}\ \mbox{\hyperlink{struct_l_l___u_t_i_l_s___clk_init_type_def}{LL\_UTILS\_ClkInitTypeDef}};}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00130}00130\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00135}00135\ \textcolor{comment}{/*\ Exported\ constants\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00143}\mbox{\hyperlink{group___u_t_i_l_s___e_c___h_s_e___b_y_p_a_s_s_ga4aab0968739934c6560805bcf222e1fe}{00143}}\ \textcolor{preprocessor}{\#define\ LL\_UTILS\_HSEBYPASS\_OFF\ \ \ \ \ \ \ \ 0x00000000U\ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00144}\mbox{\hyperlink{group___u_t_i_l_s___e_c___h_s_e___b_y_p_a_s_s_ga2053b398a3829ad616af6f1a732dbdd4}{00144}}\ \textcolor{preprocessor}{\#define\ LL\_UTILS\_HSEBYPASS\_ON\ \ \ \ \ \ \ \ \ 0x00000001U\ \ \ \ \ \ \ }}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00153}00153\ \textcolor{comment}{/*\ Exported\ macro\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00154}00154\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00155}00155\ \textcolor{comment}{/*\ Exported\ functions\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00168}\mbox{\hyperlink{group___u_t_i_l_s___e_f___d_e_v_i_c_e___e_l_e_c_t_r_o_n_i_c___s_i_g_n_a_t_u_r_e_ga3a0b557447143f41b93a7fa45270b5b8}{00168}}\ \mbox{\hyperlink{cmsis__armcc_8h_aba87361bfad2ae52cfe2f40c1a1dbf9c}{\_\_STATIC\_INLINE}}\ uint32\_t\ \mbox{\hyperlink{group___u_t_i_l_s___e_f___d_e_v_i_c_e___e_l_e_c_t_r_o_n_i_c___s_i_g_n_a_t_u_r_e_ga3a0b557447143f41b93a7fa45270b5b8}{LL\_GetUID\_Word0}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00169}00169\ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00170}00170\ \ \ \textcolor{keywordflow}{return}\ (uint32\_t)(\mbox{\hyperlink{group___exported__macros_gae7f188a4d26c9e713a48414783421071}{READ\_REG}}(*((uint32\_t\ *)\mbox{\hyperlink{group___u_t_i_l_s___l_l___private___constants_ga732ec8206df1d365f1c23eee46d681dd}{UID\_BASE\_ADDRESS}})));}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00171}00171\ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00172}00172\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00177}\mbox{\hyperlink{group___u_t_i_l_s___e_f___d_e_v_i_c_e___e_l_e_c_t_r_o_n_i_c___s_i_g_n_a_t_u_r_e_ga67007778e77a6fafc8a1fc440dc208b2}{00177}}\ \mbox{\hyperlink{cmsis__armcc_8h_aba87361bfad2ae52cfe2f40c1a1dbf9c}{\_\_STATIC\_INLINE}}\ uint32\_t\ \mbox{\hyperlink{group___u_t_i_l_s___e_f___d_e_v_i_c_e___e_l_e_c_t_r_o_n_i_c___s_i_g_n_a_t_u_r_e_ga67007778e77a6fafc8a1fc440dc208b2}{LL\_GetUID\_Word1}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00178}00178\ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00179}00179\ \ \ \textcolor{keywordflow}{return}\ (uint32\_t)(\mbox{\hyperlink{group___exported__macros_gae7f188a4d26c9e713a48414783421071}{READ\_REG}}(*((uint32\_t\ *)(\mbox{\hyperlink{group___u_t_i_l_s___l_l___private___constants_ga732ec8206df1d365f1c23eee46d681dd}{UID\_BASE\_ADDRESS}}\ +\ 4U))));}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00180}00180\ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00181}00181\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00186}\mbox{\hyperlink{group___u_t_i_l_s___e_f___d_e_v_i_c_e___e_l_e_c_t_r_o_n_i_c___s_i_g_n_a_t_u_r_e_gaa15df2bc902d392f67ee9873943d4904}{00186}}\ \mbox{\hyperlink{cmsis__armcc_8h_aba87361bfad2ae52cfe2f40c1a1dbf9c}{\_\_STATIC\_INLINE}}\ uint32\_t\ \mbox{\hyperlink{group___u_t_i_l_s___e_f___d_e_v_i_c_e___e_l_e_c_t_r_o_n_i_c___s_i_g_n_a_t_u_r_e_gaa15df2bc902d392f67ee9873943d4904}{LL\_GetUID\_Word2}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00187}00187\ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00188}00188\ \ \ \textcolor{keywordflow}{return}\ (uint32\_t)(\mbox{\hyperlink{group___exported__macros_gae7f188a4d26c9e713a48414783421071}{READ\_REG}}(*((uint32\_t\ *)(\mbox{\hyperlink{group___u_t_i_l_s___l_l___private___constants_ga732ec8206df1d365f1c23eee46d681dd}{UID\_BASE\_ADDRESS}}\ +\ 8U))));}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00189}00189\ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00190}00190\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00197}\mbox{\hyperlink{group___u_t_i_l_s___e_f___d_e_v_i_c_e___e_l_e_c_t_r_o_n_i_c___s_i_g_n_a_t_u_r_e_ga0e8379766a1799f3c5fedadaa2b0c47e}{00197}}\ \mbox{\hyperlink{cmsis__armcc_8h_aba87361bfad2ae52cfe2f40c1a1dbf9c}{\_\_STATIC\_INLINE}}\ uint32\_t\ \mbox{\hyperlink{group___u_t_i_l_s___e_f___d_e_v_i_c_e___e_l_e_c_t_r_o_n_i_c___s_i_g_n_a_t_u_r_e_ga0e8379766a1799f3c5fedadaa2b0c47e}{LL\_GetFlashSize}}(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00198}00198\ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00199}00199\ \ \ \textcolor{keywordflow}{return}\ (uint16\_t)(\mbox{\hyperlink{group___exported__macros_gae7f188a4d26c9e713a48414783421071}{READ\_REG}}(*((uint32\_t\ *)\mbox{\hyperlink{group___u_t_i_l_s___l_l___private___constants_ga75b8f6b080a5dfaaf829edeae69bff70}{FLASHSIZE\_BASE\_ADDRESS}})));}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00200}00200\ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00201}00201\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00202}00202\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00219}\mbox{\hyperlink{group___u_t_i_l_s___l_l___e_f___d_e_l_a_y_ga170d1d651b46544daf571fb6b4e3b850}{00219}}\ \mbox{\hyperlink{cmsis__armcc_8h_aba87361bfad2ae52cfe2f40c1a1dbf9c}{\_\_STATIC\_INLINE}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___u_t_i_l_s___l_l___e_f___d_e_l_a_y_ga170d1d651b46544daf571fb6b4e3b850}{LL\_InitTick}}(uint32\_t\ HCLKFrequency,\ uint32\_t\ Ticks)}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00220}00220\ \{}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00221}00221\ \ \ \textcolor{comment}{/*\ Configure\ the\ SysTick\ to\ have\ interrupt\ in\ 1ms\ time\ base\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00222}00222\ \ \ \mbox{\hyperlink{group___c_m_s_i_s__core__base_gacd96c53beeaff8f603fcda425eb295de}{SysTick}}-\/>LOAD\ \ =\ (uint32\_t)((HCLKFrequency\ /\ Ticks)\ -\/\ 1UL);\ \ \textcolor{comment}{/*\ set\ reload\ register\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00223}00223\ \ \ \mbox{\hyperlink{group___c_m_s_i_s__core__base_gacd96c53beeaff8f603fcda425eb295de}{SysTick}}-\/>VAL\ \ \ =\ 0UL;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Load\ the\ SysTick\ Counter\ Value\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00224}00224\ \ \ \mbox{\hyperlink{group___c_m_s_i_s__core__base_gacd96c53beeaff8f603fcda425eb295de}{SysTick}}-\/>CTRL\ \ =\ \mbox{\hyperlink{group___c_m_s_i_s___sys_tick_gaa41d06039797423a46596bd313d57373}{SysTick\_CTRL\_CLKSOURCE\_Msk}}\ |}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00225}00225\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group___c_m_s_i_s___sys_tick_ga16c9fee0ed0235524bdeb38af328fd1f}{SysTick\_CTRL\_ENABLE\_Msk}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ Enable\ the\ Systick\ Timer\ */}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00226}00226\ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00227}00227\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00228}\mbox{\hyperlink{group___u_t_i_l_s___l_l___e_f___d_e_l_a_y_ga485805c708e3aa0820454523782d4de4}{00228}}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \mbox{\hyperlink{group___u_t_i_l_s___l_l___e_f___d_e_l_a_y_ga485805c708e3aa0820454523782d4de4}{LL\_Init1msTick}}(uint32\_t\ HCLKFrequency);}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00229}\mbox{\hyperlink{group___u_t_i_l_s___l_l___e_f___d_e_l_a_y_ga7b7ca6d9cbec320c3e9f326b203807aa}{00229}}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \mbox{\hyperlink{group___u_t_i_l_s___l_l___e_f___d_e_l_a_y_ga7b7ca6d9cbec320c3e9f326b203807aa}{LL\_mDelay}}(uint32\_t\ Delay);}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00230}00230\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00239}\mbox{\hyperlink{group___u_t_i_l_s___e_f___s_y_s_t_e_m_ga5af902d59c4c2d9dc5e189df0bc71ecd}{00239}}\ \textcolor{keywordtype}{void}\ \ \ \ \ \ \ \ \mbox{\hyperlink{group___u_t_i_l_s___e_f___s_y_s_t_e_m_ga5af902d59c4c2d9dc5e189df0bc71ecd}{LL\_SetSystemCoreClock}}(uint32\_t\ HCLKFrequency);}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00240}00240\ \textcolor{preprocessor}{\#if\ defined(FLASH\_ACR\_LATENCY)}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00241}00241\ \mbox{\hyperlink{group___exported__types_ga8333b96c67f83cba354b3407fcbb6ee8}{ErrorStatus}}\ LL\_SetFlashLatency(uint32\_t\ \mbox{\hyperlink{my__code_8c_a9d3c19e881c80a6596884ecb8da4a0f4}{Frequency}});}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00242}00242\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ FLASH\_ACR\_LATENCY\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00243}\mbox{\hyperlink{group___u_t_i_l_s___e_f___s_y_s_t_e_m_ga7ada5e4210f6ef80ef9f55bf9dd048c6}{00243}}\ \mbox{\hyperlink{group___exported__types_ga8333b96c67f83cba354b3407fcbb6ee8}{ErrorStatus}}\ \mbox{\hyperlink{group___u_t_i_l_s___e_f___s_y_s_t_e_m_ga7ada5e4210f6ef80ef9f55bf9dd048c6}{LL\_PLL\_ConfigSystemClock\_HSI}}(\mbox{\hyperlink{struct_l_l___u_t_i_l_s___p_l_l_init_type_def}{LL\_UTILS\_PLLInitTypeDef}}\ *UTILS\_PLLInitStruct,}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00244}00244\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_l_l___u_t_i_l_s___clk_init_type_def}{LL\_UTILS\_ClkInitTypeDef}}\ *UTILS\_ClkInitStruct);}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00245}00245\ \textcolor{preprocessor}{\#if\ defined(RCC\_CFGR\_SW\_HSI48)}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00246}00246\ \mbox{\hyperlink{group___exported__types_ga8333b96c67f83cba354b3407fcbb6ee8}{ErrorStatus}}\ LL\_PLL\_ConfigSystemClock\_HSI48(\mbox{\hyperlink{struct_l_l___u_t_i_l_s___p_l_l_init_type_def}{LL\_UTILS\_PLLInitTypeDef}}\ *UTILS\_PLLInitStruct,}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00247}00247\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_l_l___u_t_i_l_s___clk_init_type_def}{LL\_UTILS\_ClkInitTypeDef}}\ *UTILS\_ClkInitStruct);}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00248}00248\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*RCC\_CFGR\_SW\_HSI48*/}\textcolor{preprocessor}{}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00249}\mbox{\hyperlink{group___u_t_i_l_s___e_f___s_y_s_t_e_m_gaf6c8553d03464d4646b63321b97d25e2}{00249}}\ \mbox{\hyperlink{group___exported__types_ga8333b96c67f83cba354b3407fcbb6ee8}{ErrorStatus}}\ \mbox{\hyperlink{group___u_t_i_l_s___e_f___s_y_s_t_e_m_gaf6c8553d03464d4646b63321b97d25e2}{LL\_PLL\_ConfigSystemClock\_HSE}}(uint32\_t\ HSEFrequency,\ uint32\_t\ HSEBypass,}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00250}00250\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_l_l___u_t_i_l_s___p_l_l_init_type_def}{LL\_UTILS\_PLLInitTypeDef}}\ *UTILS\_PLLInitStruct,\ \mbox{\hyperlink{struct_l_l___u_t_i_l_s___clk_init_type_def}{LL\_UTILS\_ClkInitTypeDef}}\ *UTILS\_ClkInitStruct);}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00251}00251\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00268}00268\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00269}00269\ \}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00270}00270\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00271}00271\ }
+\DoxyCodeLine{\Hypertarget{stm32f0xx__ll__utils_8h_source_l00272}00272\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_\_STM32F0xx\_LL\_UTILS\_H\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}
